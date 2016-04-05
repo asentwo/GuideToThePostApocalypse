@@ -111,8 +111,8 @@ class DragTileVC: UIViewController {
           let Gif = UIImage.gifWithName(gifName)
           let View = UIImageView(image: Gif)
           View.hidden = false
-          View.frame = CGRect(x: 40.0, y: 170.0, width: View.frame.size.width, height: View.frame.size.height)
-          self.view.addSubview(View)
+//          View.frame = CGRect(x: 40.0, y: 170.0, width: View.frame.size.width, height: View.frame.size.height)
+//          self.view.addSubview(View)
           
           if self.finalAnimation == true {
             
