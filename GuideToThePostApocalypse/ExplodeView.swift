@@ -6,13 +6,6 @@
 //  Copyright © 2016 Justin Doo. All rights reserved.
 //
 
-//
-//  Round3_Particles.swift
-//  Wastland_Survival_Guide
-//
-//  Created by Justin Doo on 1/8/16.
-//  Copyright © 2016 Justin Doo. All rights reserved.
-//
 
 import Foundation
 import UIKit

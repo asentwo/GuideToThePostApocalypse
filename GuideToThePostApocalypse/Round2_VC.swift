@@ -56,7 +56,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
      userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
-    print(currentTotalScore)
     totalScore = currentTotalScore
     PlayerScore.text = "Score: \(totalScore)"
   }
@@ -420,22 +419,22 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   func AddAllGraphics() {
     self.view.addSubview(bannersAndVaultBoys.wrongAnswerBanner)
     bannersAndVaultBoys.wrongAnswerBanner.addSubview(bannersAndVaultBoys.wrongAnswerLabel)
-    self.view.addSubview(bannersAndVaultBoys.madVaultBoyImage)
+    //self.view.addSubview(bannersAndVaultBoys.madVaultBoyImage)
     self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
     bannersAndVaultBoys.rightAnswerBanner.addSubview(bannersAndVaultBoys.rightAnswerLabel)
-    view.addSubview(bannersAndVaultBoys.thumbsUpVaultBoyImage)
-    self.view.addSubview(bannersAndVaultBoys.congratulationsBanner)
-    bannersAndVaultBoys.congratulationsBanner.addSubview(bannersAndVaultBoys.congratulationsLabel)
+    //view.addSubview(bannersAndVaultBoys.thumbsUpVaultBoyImage)
+    //self.view.addSubview(bannersAndVaultBoys.congratulationsBanner)
+   // bannersAndVaultBoys.congratulationsBanner.addSubview(bannersAndVaultBoys.congratulationsLabel)
     self.view.addSubview(bannersAndVaultBoys.fireworks_2_gold)
-    self.view.addSubview(bannersAndVaultBoys.congratulationsVaultBoyImage)
-    self.view.addSubview(bannersAndVaultBoys.zeroScoreVaultBoyImage)
+   // self.view.addSubview(bannersAndVaultBoys.congratulationsVaultBoyImage)
+   // self.view.addSubview(bannersAndVaultBoys.zeroScoreVaultBoyImage)
     self.view.addSubview(bannersAndVaultBoys.earnedPerkLabel)
     self.view.addSubview(bannersAndVaultBoys.perkLabel)
     bannersAndVaultBoys.perkLabel.frame = CGRect(x: 110, y: 380, width: 200, height: 200)
     self.view.addSubview(bannersAndVaultBoys.failedLabel)
     self.view.addSubview(buttons.tryBtn)
-    self.view.addSubview(buttons.btn)
-    buttons.btn.setTitle("\(messages.nextRoundMessage)", forState: UIControlState.Normal)
+//    self.view.addSubview(buttons.btn)
+//    buttons.btn.setTitle("\(messages.nextRoundMessage)", forState: UIControlState.Normal)
     self.view.addSubview(bannersAndVaultBoys.yellowBurst)
     self.view.addSubview(bannersAndVaultBoys.survivedLabel)
     self.view.addSubview(buttons.restartBtn)
