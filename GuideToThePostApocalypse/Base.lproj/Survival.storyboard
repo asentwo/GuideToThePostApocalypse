@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aXF-l5-PT1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Overseer Bold.otf">
+            <string>Overseer-Bold</string>
+            <string>Overseer-Bold</string>
+            <string>Overseer-Bold</string>
+            <string>Overseer-Bold</string>
+            <string>Overseer-Bold</string>
+            <string>Overseer-Bold</string>
+        </mutableArray>
+        <mutableArray key="Overseer.otf">
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+            <string>Overseer</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Round1 View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Round_1" id="BYZ-38-t0r" customClass="Round1_ViewController" customModule="Wastland_Survival_Guide" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="K2Z-fO-12b">
+                                <rect key="frame" x="0.0" y="-7" width="320" height="575"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Na-E3-SNW">
+                                <rect key="frame" x="215" y="28" width="61" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="Jbq-sS-ik3"/>
+                                    <constraint firstAttribute="height" constant="18" id="qJA-zn-PSb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (fallout emblem)" translatesAutoresizingMaskIntoConstraints="NO" id="Nir-IO-mlh" userLabel="BackgroundImage">
+                                <rect key="frame" x="49" y="49" width="220" height="217"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfe-pA-Zb0">
+                                <rect key="frame" x="15" y="315" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="zP8-gI-zOA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button1Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHe-h9-41f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjP-vD-1Rt">
+                                <rect key="frame" x="15" y="373" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ONV-Je-i7o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHR-j5-DLT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM2-Tn-vu3">
+                                <rect key="frame" x="15" y="431" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vwq-Ao-oPb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SXR-OI-NeO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-qC-i5Z">
+                                <rect key="frame" x="15" y="488" width="288" height="60"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvp-s9-qvZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiy-ho-cBk">
+                                <rect key="frame" x="83" y="265" width="155" height="49"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-hM-d5l">
+                                <rect key="frame" x="10" y="15" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Vdu-dn-aNt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hintBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Dn-Xh-6lW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="twk-nO-1hd">
+                                <rect key="frame" x="16" y="89" width="288" height="138"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="-2"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="twk-nO-1hd" firstAttribute="centerY" secondItem="Nir-IO-mlh" secondAttribute="centerY" id="19c-C8-W1A"/>
+                            <constraint firstItem="twk-nO-1hd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8G0-Ub-qbd"/>
+                            <constraint firstItem="Nir-IO-mlh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="8GU-6e-Mzx"/>
+                            <constraint firstItem="uM2-Tn-vu3" firstAttribute="leading" secondItem="RjP-vD-1Rt" secondAttribute="leading" id="AIo-YP-r0q"/>
+                            <constraint firstItem="Jiy-ho-cBk" firstAttribute="centerX" secondItem="twk-nO-1hd" secondAttribute="centerX" id="Abr-aH-TZq"/>
+                            <constraint firstAttribute="trailing" secondItem="K2Z-fO-12b" secondAttribute="trailing" id="DBA-hT-WC5"/>
+                            <constraint firstItem="RjP-vD-1Rt" firstAttribute="trailing" secondItem="hfe-pA-Zb0" secondAttribute="trailing" id="KVm-iP-vW2"/>
+                            <constraint firstAttribute="bottom" secondItem="5aI-qC-i5Z" secondAttribute="bottom" constant="20" symbolic="YES" id="Na4-B3-7nw"/>
+                            <constraint firstItem="twk-nO-1hd" firstAttribute="top" secondItem="X8c-hM-d5l" secondAttribute="bottom" constant="14" id="Pxw-3u-vpI"/>
+                            <constraint firstItem="uM2-Tn-vu3" firstAttribute="trailing" secondItem="RjP-vD-1Rt" secondAttribute="trailing" id="QKP-7D-EiS"/>
+                            <constraint firstItem="hfe-pA-Zb0" firstAttribute="leading" secondItem="RjP-vD-1Rt" secondAttribute="leading" id="R56-3w-Vpm"/>
+                            <constraint firstItem="Jiy-ho-cBk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="67" id="SD5-yA-Z9j"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uM2-Tn-vu3" secondAttribute="bottom" constant="77" id="Vip-b8-gHk"/>
+                            <constraint firstItem="uM2-Tn-vu3" firstAttribute="top" secondItem="hfe-pA-Zb0" secondAttribute="bottom" constant="56" id="Wo1-jj-Ktj"/>
+                            <constraint firstItem="X8c-hM-d5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="ZHs-I6-hHS"/>
+                            <constraint firstItem="uM2-Tn-vu3" firstAttribute="leading" secondItem="5aI-qC-i5Z" secondAttribute="leading" id="aGv-s6-Ukr"/>
+                            <constraint firstItem="RjP-vD-1Rt" firstAttribute="top" secondItem="Jiy-ho-cBk" secondAttribute="bottom" constant="59" id="adZ-SV-R9n"/>
+                            <constraint firstItem="5Na-E3-SNW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="agm-vv-CFw"/>
+                            <constraint firstItem="hfe-pA-Zb0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="dKq-eI-614"/>
+                            <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="5Na-E3-SNW" secondAttribute="bottom" constant="3" id="jsd-w1-bWk"/>
+                            <constraint firstItem="twk-nO-1hd" firstAttribute="top" secondItem="5Na-E3-SNW" secondAttribute="bottom" constant="43" id="lVm-TC-XkI"/>
+                            <constraint firstItem="Jiy-ho-cBk" firstAttribute="top" secondItem="twk-nO-1hd" secondAttribute="bottom" constant="38" id="ld3-Xj-FZ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Na-E3-SNW" secondAttribute="trailing" constant="28" id="mD0-wI-p2q"/>
+                            <constraint firstItem="K2Z-fO-12b" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="nM2-Wu-KDV"/>
+                            <constraint firstItem="X8c-hM-d5l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="p0L-r5-voZ"/>
+                            <constraint firstItem="5aI-qC-i5Z" firstAttribute="trailing" secondItem="uM2-Tn-vu3" secondAttribute="trailing" id="pI1-WU-gjL"/>
+                            <constraint firstItem="twk-nO-1hd" firstAttribute="centerX" secondItem="K2Z-fO-12b" secondAttribute="centerX" id="rbT-8v-Y55"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hfe-pA-Zb0" secondAttribute="trailing" constant="1" id="uFl-9N-YSp"/>
+                            <constraint firstItem="K2Z-fO-12b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-7" id="unb-He-eS3"/>
+                            <constraint firstItem="hfe-pA-Zb0" firstAttribute="top" secondItem="Nir-IO-mlh" secondAttribute="bottom" constant="49" id="unq-1f-z2f"/>
+                            <constraint firstItem="hfe-pA-Zb0" firstAttribute="centerX" secondItem="Nir-IO-mlh" secondAttribute="centerX" id="wUz-4z-SGS"/>
+                            <constraint firstItem="K2Z-fO-12b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wbw-aT-R5d"/>
+                            <constraint firstItem="5aI-qC-i5Z" firstAttribute="top" secondItem="RjP-vD-1Rt" secondAttribute="bottom" constant="55" id="xu9-4y-pfc"/>
+                            <constraint firstItem="hfe-pA-Zb0" firstAttribute="top" secondItem="Jiy-ho-cBk" secondAttribute="bottom" constant="1" id="xy3-jv-qsR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="Nir-IO-mlh" id="Jdn-ep-0YT"/>
+                        <outlet property="Button1" destination="hfe-pA-Zb0" id="FUR-mw-fgg"/>
+                        <outlet property="Button2" destination="RjP-vD-1Rt" id="jI0-0D-LbJ"/>
+                        <outlet property="Button3" destination="uM2-Tn-vu3" id="Aic-D0-QZ3"/>
+                        <outlet property="Button4" destination="5aI-qC-i5Z" id="ISK-9N-jc7"/>
+                        <outlet property="CountDownLabel" destination="Jiy-ho-cBk" id="FKK-PU-8de"/>
+                        <outlet property="HintButton" destination="X8c-hM-d5l" id="XXh-ZC-Zb6"/>
+                        <outlet property="PlayerScore" destination="5Na-E3-SNW" id="6f5-Ky-Mm5"/>
+                        <outlet property="QuestionLabel" destination="twk-nO-1hd" id="CXR-Ob-xLF"/>
+                        <segue destination="l35-yK-MFC" kind="modal" identifier="round1ToRound2Segue" modalTransitionStyle="flipHorizontal" id="yhB-aA-3tK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="339"/>
+        </scene>
+        <!--Round4 View Controller-->
+        <scene sceneID="rd0-ZH-65t">
+            <objects>
+                <viewController storyboardIdentifier="Round_4" id="8Ls-PY-UIK" customClass="Round4_ViewController" customModule="Wastland_Survival_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JGs-7y-a1H"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qoa-hm-80J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SjF-kW-lHf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="v4y-C2-doM">
+                                <rect key="frame" x="-10" y="-7" width="330" height="575"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oC-Zl-5zx">
+                                <rect key="frame" x="139" y="299" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0Ok-3I-T6l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-ds-yC3">
+                                <rect key="frame" x="15" y="440" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Zuo-6j-PfS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button3Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="0BE-ZQ-tWF"/>
+                                    <action selector="Button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h9Z-UN-zMs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DM2-dE-foE">
+                                <rect key="frame" x="15" y="493" width="288" height="55"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DsH-jX-YoE"/>
+                                    <action selector="Button4Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="TJd-sF-JUH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chT-gr-C6G">
+                                <rect key="frame" x="20" y="40" width="270" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="8hh-Lz-RUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRq-Zt-EIr">
+                                <rect key="frame" x="215" y="28" width="67" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="71d-Gl-obX"/>
+                                    <constraint firstAttribute="height" constant="18" id="zG0-U9-MDT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwU-Gs-iOu">
+                                <rect key="frame" x="15" y="328" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="bz4-ox-kJc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button1Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="Xyt-dQ-vaJ"/>
+                                    <action selector="Button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEQ-5I-R1A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpJ-Mw-xLI">
+                                <rect key="frame" x="15" y="384" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="SbA-xX-QTL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button2Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="CpD-hu-BBc"/>
+                                    <action selector="Button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="opG-Vc-t6d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFr-ng-mex">
+                                <rect key="frame" x="10" y="15" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7XS-eo-umQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hintBntTapped:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="X0i-4p-qbN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-5D-aaY">
+                                <rect key="frame" x="61" y="75" width="199" height="220"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.084401250141749817" green="0.44475174536767681" blue="0.12018741309255901" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yFr-ng-mex" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-6" id="0Gp-hX-awW"/>
+                            <constraint firstItem="v4y-C2-doM" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-26" id="0tF-V3-aQd"/>
+                            <constraint firstItem="hRq-Zt-EIr" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="8" symbolic="YES" id="1hr-Me-uHe"/>
+                            <constraint firstAttribute="trailing" secondItem="v4y-C2-doM" secondAttribute="trailing" id="3gM-s0-iJD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hRq-Zt-EIr" secondAttribute="trailing" constant="22" id="8vm-bz-eJs"/>
+                            <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="hRq-Zt-EIr" secondAttribute="bottom" constant="29" id="AvF-DT-w8t"/>
+                            <constraint firstItem="mw4-ds-yC3" firstAttribute="trailing" secondItem="jpJ-Mw-xLI" secondAttribute="trailing" id="Bey-qT-sVQ"/>
+                            <constraint firstItem="jpJ-Mw-xLI" firstAttribute="top" secondItem="FwU-Gs-iOu" secondAttribute="bottom" constant="1" id="CY6-MN-eb2"/>
+                            <constraint firstItem="v4y-C2-doM" firstAttribute="centerX" secondItem="chT-gr-C6G" secondAttribute="centerX" id="JB7-Al-gOT"/>
+                            <constraint firstItem="FwU-Gs-iOu" firstAttribute="top" secondItem="3oC-Zl-5zx" secondAttribute="bottom" constant="8" symbolic="YES" id="QFE-EN-FzN"/>
+                            <constraint firstItem="3oC-Zl-5zx" firstAttribute="centerX" secondItem="WpF-5D-aaY" secondAttribute="centerX" id="RjN-Ul-YRq"/>
+                            <constraint firstItem="jpJ-Mw-xLI" firstAttribute="leading" secondItem="FwU-Gs-iOu" secondAttribute="leading" id="S5u-cJ-03z"/>
+                            <constraint firstItem="mw4-ds-yC3" firstAttribute="leading" secondItem="jpJ-Mw-xLI" secondAttribute="leading" id="U8k-zG-u5W"/>
+                            <constraint firstAttribute="bottom" secondItem="DM2-dE-foE" secondAttribute="bottom" constant="20" symbolic="YES" id="UPP-ha-C1g"/>
+                            <constraint firstItem="mw4-ds-yC3" firstAttribute="top" secondItem="jpJ-Mw-xLI" secondAttribute="bottom" constant="1" id="VWO-ZG-8x5"/>
+                            <constraint firstItem="chT-gr-C6G" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="20" id="Vto-y7-IMk"/>
+                            <constraint firstItem="DM2-dE-foE" firstAttribute="leading" secondItem="mw4-ds-yC3" secondAttribute="leading" id="X6S-Jy-4pj"/>
+                            <constraint firstItem="yFr-ng-mex" firstAttribute="top" secondItem="SjF-kW-lHf" secondAttribute="topMargin" constant="15" id="ZMp-Bk-LLh"/>
+                            <constraint firstItem="WpF-5D-aaY" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="45" id="beE-8t-1ey"/>
+                            <constraint firstItem="3oC-Zl-5zx" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="bx5-dX-NYx"/>
+                            <constraint firstItem="Qoa-hm-80J" firstAttribute="top" secondItem="mw4-ds-yC3" secondAttribute="bottom" constant="73" id="eCS-Px-tJJ"/>
+                            <constraint firstItem="FwU-Gs-iOu" firstAttribute="trailing" secondItem="jpJ-Mw-xLI" secondAttribute="trailing" id="eEk-Wt-d1d"/>
+                            <constraint firstItem="FwU-Gs-iOu" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-1" id="exu-5n-l7K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FwU-Gs-iOu" secondAttribute="trailing" constant="1" id="gZw-Fl-y91"/>
+                            <constraint firstItem="DM2-dE-foE" firstAttribute="trailing" secondItem="mw4-ds-yC3" secondAttribute="trailing" id="gsS-TC-LUg"/>
+                            <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="yFr-ng-mex" secondAttribute="bottom" id="hLB-qo-Dng"/>
+                            <constraint firstItem="v4y-C2-doM" firstAttribute="bottom" secondItem="Qoa-hm-80J" secondAttribute="top" id="mkl-HL-NZg"/>
+                            <constraint firstItem="chT-gr-C6G" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="4" id="qSp-WT-74s"/>
+                            <constraint firstItem="3oC-Zl-5zx" firstAttribute="top" secondItem="WpF-5D-aaY" secondAttribute="bottom" constant="4" id="rcS-DX-EtU"/>
+                            <constraint firstItem="v4y-C2-doM" firstAttribute="top" secondItem="SjF-kW-lHf" secondAttribute="topMargin" constant="-7" id="tkD-WS-pIb"/>
+                            <constraint firstItem="DM2-dE-foE" firstAttribute="top" secondItem="jpJ-Mw-xLI" secondAttribute="bottom" constant="54" id="vTS-fd-loi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vPn-SC-sYM"/>
+                    <connections>
+                        <outlet property="Button1" destination="FwU-Gs-iOu" id="tiF-KE-iT5"/>
+                        <outlet property="Button2" destination="jpJ-Mw-xLI" id="o7y-pw-2xk"/>
+                        <outlet property="Button3" destination="mw4-ds-yC3" id="ZE1-fC-4ol"/>
+                        <outlet property="Button4" destination="DM2-dE-foE" id="lYC-ug-9cK"/>
+                        <outlet property="CountDownLabel" destination="3oC-Zl-5zx" id="elY-FP-jrb"/>
+                        <outlet property="FalloutImage" destination="WpF-5D-aaY" id="2gN-hT-f87"/>
+                        <outlet property="HintButton" destination="yFr-ng-mex" id="T7I-cY-RLU"/>
+                        <outlet property="PlayerScore" destination="hRq-Zt-EIr" id="NRj-FP-wI8"/>
+                        <outlet property="QuestionLabel" destination="chT-gr-C6G" id="xep-TV-YrS"/>
+                        <segue destination="aXF-l5-PT1" kind="modal" identifier="round4ToRound5Segue" modalTransitionStyle="flipHorizontal" id="hwf-EZ-Jci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kl0-M6-Fq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="1079"/>
+        </scene>
+        <!--Round2 View Controller-->
+        <scene sceneID="zKP-KB-lCM">
+            <objects>
+                <viewController storyboardIdentifier="Round_2" id="l35-yK-MFC" customClass="Round2_ViewController" customModule="Wastland_Survival_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="coM-Qu-tVK"/>
+                        <viewControllerLayoutGuide type="bottom" id="uQZ-MD-ZKR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YRQ-q3-Qss">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="9kf-nb-RVV">
+                                <rect key="frame" x="-5" y="0.0" width="330" height="575"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DoO-VC-1RH">
+                                <rect key="frame" x="56" y="85" width="199" height="220"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRb-i9-aVD">
+                                <rect key="frame" x="20" y="44" width="270" height="39"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-W4-d84">
+                                <rect key="frame" x="134" y="313" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ph3-sv-Bnw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70o-Lq-ifz">
+                                <rect key="frame" x="227" y="28" width="80" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="c3v-Io-soR"/>
+                                    <constraint firstAttribute="width" constant="80" id="fHn-10-Us8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.86444489010000003" blue="0.31050683839999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uQZ-MD-ZKR" firstAttribute="top" secondItem="Kvz-W4-d84" secondAttribute="bottom" constant="234" id="1Ta-52-f4L"/>
+                            <constraint firstItem="DoO-VC-1RH" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="40" id="1kO-r7-uo9"/>
+                            <constraint firstItem="9kf-nb-RVV" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="EGe-lG-Ba1"/>
+                            <constraint firstItem="9kf-nb-RVV" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="-21" id="MY4-rK-qfe"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="9kf-nb-RVV" secondAttribute="bottom" constant="-7" id="NOR-Nn-OdW"/>
+                            <constraint firstItem="DoO-VC-1RH" firstAttribute="top" secondItem="70o-Lq-ifz" secondAttribute="bottom" constant="39" id="O6P-Jj-6fG"/>
+                            <constraint firstItem="DoO-VC-1RH" firstAttribute="top" secondItem="gRb-i9-aVD" secondAttribute="bottom" constant="2" id="PpV-ur-yCC"/>
+                            <constraint firstItem="gRb-i9-aVD" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="24" id="dMV-6f-a8u"/>
+                            <constraint firstItem="9kf-nb-RVV" firstAttribute="top" secondItem="YRQ-q3-Qss" secondAttribute="top" id="e4j-BD-M8H"/>
+                            <constraint firstItem="DoO-VC-1RH" firstAttribute="centerX" secondItem="Kvz-W4-d84" secondAttribute="centerX" id="e9o-EJ-Ef8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="70o-Lq-ifz" secondAttribute="trailing" constant="-3" id="f2o-7t-JOl"/>
+                            <constraint firstItem="gRb-i9-aVD" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="4" id="h8d-F1-i6s"/>
+                            <constraint firstItem="gRb-i9-aVD" firstAttribute="centerX" secondItem="DoO-VC-1RH" secondAttribute="centerX" id="k21-Id-NgW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gRb-i9-aVD" secondAttribute="trailing" constant="14" id="nSe-Yf-CBd"/>
+                            <constraint firstItem="Kvz-W4-d84" firstAttribute="top" secondItem="DoO-VC-1RH" secondAttribute="bottom" constant="8" symbolic="YES" id="snm-Fj-yJo"/>
+                            <constraint firstItem="70o-Lq-ifz" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="8" symbolic="YES" id="uMk-Kq-f8X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eOs-7m-xBb"/>
+                    <connections>
+                        <outlet property="CountDownLabel" destination="Kvz-W4-d84" id="1Px-jJ-1zh"/>
+                        <outlet property="FalloutImage" destination="DoO-VC-1RH" id="zYS-mE-jSf"/>
+                        <outlet property="PlayerScore" destination="70o-Lq-ifz" id="Lsf-rw-gvS"/>
+                        <outlet property="QuestionLabel" destination="gRb-i9-aVD" id="hC1-y1-XHz"/>
+                        <segue destination="zyX-bE-kHB" kind="modal" identifier="round2ToRound3Segue" modalPresentationStyle="currentContext" modalTransitionStyle="flipHorizontal" id="3d0-Bk-svN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZR-ZQ-MSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="331"/>
+        </scene>
+        <!--Round3 View Controller-->
+        <scene sceneID="6s9-l3-GdN">
+            <objects>
+                <viewController storyboardIdentifier="Round_3" id="zyX-bE-kHB" customClass="Round3_ViewController" customModule="Wastland_Survival_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KaB-el-WGL"/>
+                        <viewControllerLayoutGuide type="bottom" id="gi2-Pr-d2B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5qn-tJ-laV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead emblem)" translatesAutoresizingMaskIntoConstraints="NO" id="e96-MA-XQJ">
+                                <rect key="frame" x="45" y="49" width="228" height="220"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="pSU-4Y-WV5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QY3-ep-OzM">
+                                <rect key="frame" x="215" y="28" width="61" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="6EA-Ol-kn6"/>
+                                    <constraint firstAttribute="width" constant="61" id="maR-xV-Rgr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtc-92-xK3">
+                                <rect key="frame" x="15" y="315" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="zaC-q3-2AB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button1Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="lbP-rX-ctN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m1-2n-Ili">
+                                <rect key="frame" x="16" y="373" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Hjk-bT-Bc5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button2Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="LWS-Qa-niL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41C-fb-PcA">
+                                <rect key="frame" x="16" y="431" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="YQF-pq-WF3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button3Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="o46-MN-j4w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wh-BH-6lH">
+                                <rect key="frame" x="16" y="488" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ADY-Rx-WCv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button4Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="7hx-Tq-tyR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-jI-Vve">
+                                <rect key="frame" x="83" y="265" width="155" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="5ka-pr-L3Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="cDK-Xi-G0U">
+                                <rect key="frame" x="16" y="89" width="288" height="138"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="-2"/>
+                            </label>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOG-9i-Z9u">
+                                <rect key="frame" x="10" y="15" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="xKL-3n-bYe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hintBtnTapped:" destination="zyX-bE-kHB" eventType="touchUpInside" id="vTT-x0-hyW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84497316919191912" green="0.19940789004662904" blue="0.1256399216849666" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="e96-MA-XQJ" firstAttribute="centerX" secondItem="Vtc-92-xK3" secondAttribute="centerX" id="056-DC-5RR"/>
+                            <constraint firstItem="fOG-9i-Z9u" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-6" id="1ii-ol-qc7"/>
+                            <constraint firstItem="Vtc-92-xK3" firstAttribute="top" secondItem="qYF-jI-Vve" secondAttribute="bottom" constant="1" id="3RV-jy-Yay"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QY3-ep-OzM" secondAttribute="trailing" constant="28" id="3fd-uW-ior"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pSU-4Y-WV5" secondAttribute="bottom" constant="-7" id="5qV-NK-nIl"/>
+                            <constraint firstItem="gi2-Pr-d2B" firstAttribute="top" secondItem="41C-fb-PcA" secondAttribute="bottom" constant="77" id="9rQ-DW-4hT"/>
+                            <constraint firstItem="41C-fb-PcA" firstAttribute="top" secondItem="Vtc-92-xK3" secondAttribute="bottom" constant="56" id="Ba1-5i-Mbu"/>
+                            <constraint firstItem="pSU-4Y-WV5" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leading" id="J1N-r3-eQO"/>
+                            <constraint firstItem="6m1-2n-Ili" firstAttribute="trailing" secondItem="41C-fb-PcA" secondAttribute="trailing" id="Jz2-jN-8vE"/>
+                            <constraint firstItem="cDK-Xi-G0U" firstAttribute="centerY" secondItem="e96-MA-XQJ" secondAttribute="centerY" constant="-1" id="KSy-fY-ft7"/>
+                            <constraint firstAttribute="bottom" secondItem="0Wh-BH-6lH" secondAttribute="bottom" constant="20" symbolic="YES" id="O4C-HV-V18"/>
+                            <constraint firstItem="qYF-jI-Vve" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="67" id="O6L-Xw-G87"/>
+                            <constraint firstItem="41C-fb-PcA" firstAttribute="centerX" secondItem="pSU-4Y-WV5" secondAttribute="centerX" id="OcA-pR-BX6"/>
+                            <constraint firstItem="e96-MA-XQJ" firstAttribute="top" secondItem="QY3-ep-OzM" secondAttribute="bottom" constant="3" id="Qpr-uK-2Lp"/>
+                            <constraint firstItem="6m1-2n-Ili" firstAttribute="trailing" secondItem="5qn-tJ-laV" secondAttribute="trailingMargin" id="Rl0-IK-Jf4"/>
+                            <constraint firstItem="QY3-ep-OzM" firstAttribute="top" secondItem="KaB-el-WGL" secondAttribute="bottom" constant="8" symbolic="YES" id="TR0-dN-Xpl"/>
+                            <constraint firstItem="0Wh-BH-6lH" firstAttribute="trailing" secondItem="41C-fb-PcA" secondAttribute="trailing" id="Xd4-7G-Mq6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vtc-92-xK3" secondAttribute="trailing" constant="1" id="XwP-aE-fQE"/>
+                            <constraint firstItem="e96-MA-XQJ" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="29" id="Zxt-yC-gfH"/>
+                            <constraint firstItem="pSU-4Y-WV5" firstAttribute="top" secondItem="5qn-tJ-laV" secondAttribute="top" id="eSK-nm-h6P"/>
+                            <constraint firstItem="qYF-jI-Vve" firstAttribute="top" secondItem="cDK-Xi-G0U" secondAttribute="bottom" constant="38" id="hGo-kV-d3g"/>
+                            <constraint firstItem="cDK-Xi-G0U" firstAttribute="top" secondItem="fOG-9i-Z9u" secondAttribute="bottom" constant="14" id="iDT-Vy-aw0"/>
+                            <constraint firstItem="qYF-jI-Vve" firstAttribute="centerX" secondItem="6m1-2n-Ili" secondAttribute="centerX" id="jJZ-xd-p0e"/>
+                            <constraint firstItem="0Wh-BH-6lH" firstAttribute="leading" secondItem="41C-fb-PcA" secondAttribute="leading" id="mSU-eU-DfQ"/>
+                            <constraint firstItem="cDK-Xi-G0U" firstAttribute="leading" secondItem="6m1-2n-Ili" secondAttribute="leading" id="pMJ-XK-ou1"/>
+                            <constraint firstItem="0Wh-BH-6lH" firstAttribute="top" secondItem="6m1-2n-Ili" secondAttribute="bottom" constant="55" id="qOv-x5-UXF"/>
+                            <constraint firstItem="41C-fb-PcA" firstAttribute="leading" secondItem="6m1-2n-Ili" secondAttribute="leading" id="sgx-RE-Sh8"/>
+                            <constraint firstItem="Vtc-92-xK3" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-1" id="tdr-jg-Jba"/>
+                            <constraint firstItem="fOG-9i-Z9u" firstAttribute="top" secondItem="5qn-tJ-laV" secondAttribute="topMargin" constant="15" id="ucY-VP-ksU"/>
+                            <constraint firstItem="cDK-Xi-G0U" firstAttribute="top" secondItem="QY3-ep-OzM" secondAttribute="bottom" constant="43" id="uyl-Ss-dZs"/>
+                            <constraint firstItem="cDK-Xi-G0U" firstAttribute="trailing" secondItem="6m1-2n-Ili" secondAttribute="trailing" id="xEP-5F-voL"/>
+                            <constraint firstItem="41C-fb-PcA" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" id="zbQ-iM-bfw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Button1" destination="Vtc-92-xK3" id="1VB-9x-7yU"/>
+                        <outlet property="Button2" destination="6m1-2n-Ili" id="9vk-Sn-Uch"/>
+                        <outlet property="Button3" destination="41C-fb-PcA" id="6ke-aF-rHp"/>
+                        <outlet property="Button4" destination="0Wh-BH-6lH" id="iYi-m3-Va9"/>
+                        <outlet property="CountDownLabel" destination="qYF-jI-Vve" id="I7T-xI-niR"/>
+                        <outlet property="HintButton" destination="fOG-9i-Z9u" id="GVp-P9-SME"/>
+                        <outlet property="PlayerScore" destination="QY3-ep-OzM" id="HCl-5U-Fxz"/>
+                        <outlet property="QuestionLabel" destination="cDK-Xi-G0U" id="dIp-3d-PXn"/>
+                        <outlet property="backgroundImage" destination="e96-MA-XQJ" id="qUc-QV-WpP"/>
+                        <segue destination="8Ls-PY-UIK" kind="modal" identifier="round3ToRound4Segue" modalTransitionStyle="flipHorizontal" id="CX9-oe-G0K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbx-tC-ZDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="331"/>
+        </scene>
+        <!--Round5 View Controller-->
+        <scene sceneID="De2-8H-rZu">
+            <objects>
+                <viewController storyboardIdentifier="Round_5" id="aXF-l5-PT1" customClass="Round5_ViewController" customModule="Wastland_Survival_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Who-iS-AA9"/>
+                        <viewControllerLayoutGuide type="bottom" id="HaU-uZ-0hJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NHv-WJ-Ree">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="A4r-YA-EGf">
+                                <rect key="frame" x="0.0" y="-4" width="320" height="575"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA0-dX-kX6">
+                                <rect key="frame" x="215" y="28" width="67" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="Shy-zd-8ha"/>
+                                    <constraint firstAttribute="height" constant="18" id="xDS-AZ-R4Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OK3-a0-cN0">
+                                <rect key="frame" x="11" y="315" width="296" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Pfn-bb-yGd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="button_green">
+                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button1Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="S6w-c3-XhW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-1x-2IJ">
+                                <rect key="frame" x="11" y="373" width="296" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="IBg-nd-ofc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="button_green">
+                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button2Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="H4A-aU-2PO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmg-rV-ZUE">
+                                <rect key="frame" x="11" y="431" width="296" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="qO0-Ky-ffX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="button_green">
+                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button3Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="ZmS-O3-EXA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-vq-Ste">
+                                <rect key="frame" x="11" y="488" width="296" height="55"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="button_green">
+                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Button4Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="Mp2-hC-gcV"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax emblem)" translatesAutoresizingMaskIntoConstraints="NO" id="qda-g8-Ljw" userLabel="Background Image">
+                                <rect key="frame" x="41" y="49" width="236" height="220"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrH-j2-ah7">
+                                <rect key="frame" x="83" y="265" width="155" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="fwK-qw-Lmr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-ut-ua0">
+                                <rect key="frame" x="10" y="15" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jdU-4W-5Bc"/>
+                                    <constraint firstAttribute="width" constant="60" id="uMI-C3-PLJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hintBtnTapped:" destination="aXF-l5-PT1" eventType="touchUpInside" id="ybk-AS-Iw1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vO-Hm-mD1">
+                                <rect key="frame" x="8" y="114" width="304" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="i6N-8z-NM2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58039215686274515" green="0.4392156862745098" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qda-g8-Ljw" firstAttribute="centerX" secondItem="0vO-Hm-mD1" secondAttribute="centerX" constant="-1" id="3OZ-CH-0Oe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0vO-Hm-mD1" secondAttribute="trailing" constant="-8" id="5hc-K0-ldB"/>
+                            <constraint firstItem="ZjQ-ut-ua0" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-6" id="7uU-sO-Xof"/>
+                            <constraint firstItem="zVb-vq-Ste" firstAttribute="trailing" secondItem="Wmg-rV-ZUE" secondAttribute="trailing" id="8LA-Ex-Won"/>
+                            <constraint firstItem="A4r-YA-EGf" firstAttribute="top" secondItem="NHv-WJ-Ree" secondAttribute="topMargin" constant="-4" id="A1N-5x-G2z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AA0-dX-kX6" secondAttribute="trailing" constant="22" id="Bns-Qr-Uol"/>
+                            <constraint firstItem="OK3-a0-cN0" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-5" id="Da1-To-vDZ"/>
+                            <constraint firstAttribute="bottom" secondItem="zVb-vq-Ste" secondAttribute="bottom" constant="25" id="GSv-5H-ITl"/>
+                            <constraint firstItem="Dsf-1x-2IJ" firstAttribute="leading" secondItem="OK3-a0-cN0" secondAttribute="leading" id="GYq-dD-DK5"/>
+                            <constraint firstItem="0vO-Hm-mD1" firstAttribute="top" secondItem="Who-iS-AA9" secondAttribute="bottom" constant="94" id="Hxb-qG-gRq"/>
+                            <constraint firstItem="0vO-Hm-mD1" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-8" id="I9H-6K-TNQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OK3-a0-cN0" secondAttribute="trailing" constant="-3" id="Iqb-nI-tvw"/>
+                            <constraint firstItem="A4r-YA-EGf" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leading" id="Lnx-Fc-kbP"/>
+                            <constraint firstAttribute="trailing" secondItem="A4r-YA-EGf" secondAttribute="trailing" id="NBi-XN-V7j"/>
+                            <constraint firstItem="Dsf-1x-2IJ" firstAttribute="leading" secondItem="Wmg-rV-ZUE" secondAttribute="leading" id="Qtv-cH-wiW"/>
+                            <constraint firstItem="zVb-vq-Ste" firstAttribute="top" secondItem="Dsf-1x-2IJ" secondAttribute="bottom" constant="60" id="T2V-rs-Qjx"/>
+                            <constraint firstItem="Dsf-1x-2IJ" firstAttribute="trailing" secondItem="Wmg-rV-ZUE" secondAttribute="trailing" id="Tdf-qv-LwM"/>
+                            <constraint firstItem="AA0-dX-kX6" firstAttribute="top" secondItem="Who-iS-AA9" secondAttribute="bottom" constant="8" symbolic="YES" id="U1u-el-SSc"/>
+                            <constraint firstItem="GrH-j2-ah7" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="67" id="X8q-8c-K4f"/>
+                            <constraint firstItem="Dsf-1x-2IJ" firstAttribute="trailing" secondItem="OK3-a0-cN0" secondAttribute="trailing" id="YH1-Ov-H0U"/>
+                            <constraint firstItem="zVb-vq-Ste" firstAttribute="leading" secondItem="Wmg-rV-ZUE" secondAttribute="leading" id="Z4g-fJ-JRV"/>
+                            <constraint firstItem="A4r-YA-EGf" firstAttribute="centerY" secondItem="NHv-WJ-Ree" secondAttribute="centerY" id="ZKF-zv-bjV"/>
+                            <constraint firstItem="GrH-j2-ah7" firstAttribute="centerX" secondItem="A4r-YA-EGf" secondAttribute="centerX" id="aWp-5W-Spo"/>
+                            <constraint firstItem="Dsf-1x-2IJ" firstAttribute="top" secondItem="OK3-a0-cN0" secondAttribute="bottom" constant="3" id="aen-ay-dqE"/>
+                            <constraint firstItem="OK3-a0-cN0" firstAttribute="top" secondItem="qda-g8-Ljw" secondAttribute="bottom" constant="46" id="hkF-n4-C1y"/>
+                            <constraint firstItem="qda-g8-Ljw" firstAttribute="top" secondItem="ZjQ-ut-ua0" secondAttribute="bottom" constant="-26" id="ord-i7-98T"/>
+                            <constraint firstItem="qda-g8-Ljw" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="25" id="svd-TF-0Ll"/>
+                            <constraint firstItem="ZjQ-ut-ua0" firstAttribute="top" secondItem="NHv-WJ-Ree" secondAttribute="topMargin" constant="15" id="vKG-02-HTg"/>
+                            <constraint firstItem="HaU-uZ-0hJ" firstAttribute="top" secondItem="Wmg-rV-ZUE" secondAttribute="bottom" constant="82" id="xMr-Cq-XeV"/>
+                            <constraint firstItem="OK3-a0-cN0" firstAttribute="top" secondItem="GrH-j2-ah7" secondAttribute="bottom" constant="1" id="yLW-sE-6tl"/>
+                            <constraint firstItem="Wmg-rV-ZUE" firstAttribute="top" secondItem="Dsf-1x-2IJ" secondAttribute="bottom" constant="3" id="ygq-dN-XnY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="qda-g8-Ljw" id="Rsc-eg-r6s"/>
+                        <outlet property="Button1" destination="OK3-a0-cN0" id="DvQ-Li-yKx"/>
+                        <outlet property="Button2" destination="Dsf-1x-2IJ" id="Pio-Mn-fKv"/>
+                        <outlet property="Button3" destination="Wmg-rV-ZUE" id="XGh-Un-kbg"/>
+                        <outlet property="Button4" destination="zVb-vq-Ste" id="9nN-hs-veu"/>
+                        <outlet property="CountDownLabel" destination="GrH-j2-ah7" id="qZ2-vo-KfX"/>
+                        <outlet property="HintButton" destination="ZjQ-ut-ua0" id="TLm-dP-pxv"/>
+                        <outlet property="PlayerScore" destination="AA0-dX-kX6" id="zv7-TR-vk2"/>
+                        <outlet property="QuestionLabel" destination="0vO-Hm-mD1" id="uJg-Gf-ly7"/>
+                        <segue destination="Ylf-eO-TZ1" kind="modal" identifier="round5ToRound6Segue" modalTransitionStyle="flipHorizontal" id="e7Y-Fv-fyg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLi-TB-Q4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="1079"/>
+        </scene>
+        <!--Round6 View Controller-->
+        <scene sceneID="plH-2s-GkH">
+            <objects>
+                <viewController storyboardIdentifier="Round_6" id="Ylf-eO-TZ1" customClass="Round6_ViewController" customModule="Wastland_Survival_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M43-NX-0zw"/>
+                        <viewControllerLayoutGuide type="bottom" id="fc9-ML-w3j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qTp-wC-lKo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="2Ef-yS-6iX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWU-g0-ViU">
+                                <rect key="frame" x="134" y="314" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Q8L-lO-Zd6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaV-Oc-04v">
+                                <rect key="frame" x="56" y="85" width="199" height="220"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM5-jM-MdA">
+                                <rect key="frame" x="20" y="44" width="270" height="39"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHZ-pj-tdc">
+                                <rect key="frame" x="227" y="28" width="80" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="GaD-S0-50Z"/>
+                                    <constraint firstAttribute="width" constant="80" id="yD7-u2-M8I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81841856060606055" green="0.48984038149034403" blue="0.26867766737201643" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vM5-jM-MdA" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="4" id="3hD-j4-VC8"/>
+                            <constraint firstItem="kaV-Oc-04v" firstAttribute="top" secondItem="rHZ-pj-tdc" secondAttribute="bottom" constant="39" id="EKI-Xh-lKi"/>
+                            <constraint firstItem="2Ef-yS-6iX" firstAttribute="top" secondItem="qTp-wC-lKo" secondAttribute="top" id="EOq-u4-EC7"/>
+                            <constraint firstItem="ZWU-g0-ViU" firstAttribute="centerX" secondItem="kaV-Oc-04v" secondAttribute="centerX" id="Id1-fQ-XQL"/>
+                            <constraint firstItem="vM5-jM-MdA" firstAttribute="top" secondItem="M43-NX-0zw" secondAttribute="bottom" constant="24" id="JPf-BD-h7N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vM5-jM-MdA" secondAttribute="trailing" constant="14" id="OeM-Ol-CiN"/>
+                            <constraint firstItem="ZWU-g0-ViU" firstAttribute="top" secondItem="kaV-Oc-04v" secondAttribute="bottom" constant="9" id="QUm-qK-YDt"/>
+                            <constraint firstItem="kaV-Oc-04v" firstAttribute="top" secondItem="vM5-jM-MdA" secondAttribute="bottom" constant="2" id="XLf-Ck-HGD"/>
+                            <constraint firstItem="fc9-ML-w3j" firstAttribute="top" secondItem="ZWU-g0-ViU" secondAttribute="bottom" constant="233" id="dBW-Zd-MNW"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ef-yS-6iX" secondAttribute="trailing" id="fuC-cm-tQC"/>
+                            <constraint firstItem="vM5-jM-MdA" firstAttribute="centerX" secondItem="kaV-Oc-04v" secondAttribute="centerX" id="nlI-Dq-i5v"/>
+                            <constraint firstItem="kaV-Oc-04v" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="40" id="s6l-3J-K0O"/>
+                            <constraint firstItem="2Ef-yS-6iX" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leading" id="s9S-YZ-Hfv"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="2Ef-yS-6iX" secondAttribute="bottom" constant="-7" id="teQ-dE-4kA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rHZ-pj-tdc" secondAttribute="trailing" constant="-3" id="voY-6u-Xw4"/>
+                            <constraint firstItem="rHZ-pj-tdc" firstAttribute="top" secondItem="M43-NX-0zw" secondAttribute="bottom" constant="8" symbolic="YES" id="zzf-9H-Tka"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CountDownLabel" destination="ZWU-g0-ViU" id="vGU-C3-R3x"/>
+                        <outlet property="FalloutImage" destination="kaV-Oc-04v" id="pji-gx-Xh8"/>
+                        <outlet property="PlayerScore" destination="rHZ-pj-tdc" id="Rdg-Ah-kKY"/>
+                        <outlet property="QuestionLabel" destination="vM5-jM-MdA" id="QrV-qr-LyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xT8-S3-cM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="1079"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="black-ink-grunge-stamp-circle" width="360" height="360"/>
+        <image name="button_green" width="360" height="116"/>
+        <image name="light_grunge" width="360" height="360"/>
+        <image name="vault boy (fallout emblem)" width="360" height="360"/>
+        <image name="vault boy (madmax emblem)" width="360" height="360"/>
+        <image name="vault boy (walkingdead emblem)" width="360" height="360"/>
+        <image name="yellow_button" width="166" height="53"/>
+    </resources>
+</document>
