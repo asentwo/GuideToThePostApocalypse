@@ -281,7 +281,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: VaultBoy Animation
   
   func vaultboyToFront () {
-    if madVaultBoyViewPresent == true {
+    if madVaultBoyRunning == true {
       self.view.bringSubviewToFront(vaultBoyWrong)
     } else {
       self.view.bringSubviewToFront(vaultBoyRight)
@@ -291,7 +291,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: MadVaultBoy
   
   func MadVaultBoy() {
-    madVaultBoyViewPresent = true
+    madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
     vaultBoyWrong.hidden = false
@@ -329,7 +329,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
             }
           })
           }, completion:{_ in
-            madVaultBoyViewPresent = false})
+            madVaultBoyRunning = false})
     })
   }
   
@@ -436,9 +436,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
-        //      self.bannersAndVaultBoys.totalScoreLabel.text = "Total Score: \(totalScore)"
-        //      self.bannersAndVaultBoys.totalScoreLabel.hidden = false
-    })
+      })
   }
   
   func CongratulationsVaultBoy() {
@@ -449,7 +447,9 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
     UIView.transitionWithView(vaultBoySuccess, duration: 0.7, options: [.TransitionFlipFromTop], animations: {
-      self.ShowCongratulationsBanner(self.scoreBanner, label: self.scoreLabel)
+      self.scoreBanner.hidden = false
+      self.scoreLabel.hidden = false
+      self.scoreLabel.text = "You scored \(totalScore) points!"
       }, completion:{_ in
         let explode = ExplodeView(frame:CGRectMake(self.vaultBoySuccess.center.x - 20, self.vaultBoySuccess.center.y - 60, 100,100))
         self.vaultBoySuccess.superview?.addSubview(explode)
@@ -457,36 +457,13 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         self.delay(3.0, closure: {
           if self.finalAnimation == false { self.nextRound.hidden = false }
           self.vaultBoySuccess.hidden = true
+          self.scoreBanner.hidden = true
+          self.scoreLabel.hidden = true
           self.youEarrnedACoin.hidden = false
           self.audioController.playEffect(SoundPerk)
           let Gif = UIImage.gifWithName("fallout2Resize")
           self.coin.image = Gif
           self.coin.hidden = false
-//                    View.frame = CGRect(x: 40.0, y: 170.0, width: View.frame.size.width, height: View.frame.size.height)
-//                    self.view.addSubview(View)
-//          if self.finalAnimation == true {
-//          } else {
-//            self.scoreBanner.hidden = true
-//            self.scoreLabel.hidden = true
-//          }
-//          if self.finalAnimation == true {
-//            self.delay(5.0, closure: {
-//              //View.removeFromSuperview()
-//              self.coin.hidden = true
-//              self.youEarrnedACoin.hidden = true
-//              self.bannersAndVaultBoys.survivedLabel.hidden = false
-//              UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-//                self.bannersAndVaultBoys.yellowBurst.alpha = 1.0
-//                }, completion: nil)
-//              self.audioController.playEffect(SoundExplosion)
-//              self.audioController.playEffect(SoundWin)
-//              self.scoreBanner.hidden = true
-//              self.scoreLabel.hidden = true
-//              //self.bannersAndVaultBoys.totalScoreLabel.hidden = false
-//              self.tryAgain.hidden = false
-//              self.finalAnimation = false
-//            })
-//          }
         })
     })
   }
@@ -753,14 +730,11 @@ extension Round2_ViewController:TileDragDelegateProtocol {
         (value:Bool) in
         targetView.hidden = true
     })
-    
-    
     //adds explosive view behind tile
     let explode = TileBackgroundExplode(frame:CGRectMake(tileView.center.x, tileView.center.y, 10,10))
     tileView.superview?.addSubview(explode)
     tileView.superview?.sendSubviewToBack(explode)
   }
-  
   //MARK: Check For Success - check if player has completed the word
   
   func checkForSuccess() {
@@ -802,7 +776,5 @@ extension Round2_ViewController:TileDragDelegateProtocol {
       self.ShowRightAnswerBanner(self.bannersAndVaultBoys.rightAnswerBanner, label: self.bannersAndVaultBoys.rightAnswerLabel, message: self.messages.rightAnswerMessage)
       self.ThumbsUpVaultBoy()
     })
-    
   }
-  
 }
