@@ -64,7 +64,7 @@ class CountdownTimer {
     
     func reset() {
       
-      print("reset called! timing = \(timing)")
+      //print("reset called! timing = \(timing)")
       
         pause()
        // timing = true
