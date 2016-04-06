@@ -56,6 +56,7 @@ extension UIViewController {
   func ShowCongratulationsBanner(banner: UIImageView, label: UILabel) {
     UIView.transitionWithView(banner, duration: 0.33, options: [.CurveEaseOut, .TransitionFlipFromLeft], animations: {
       banner.hidden = false
+      label.hidden = false
       label.text = "You scored \(totalScore) points!"
       }, completion:nil)
   }

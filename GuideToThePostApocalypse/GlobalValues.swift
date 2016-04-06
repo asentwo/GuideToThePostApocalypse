@@ -48,6 +48,8 @@ let pointsTimeRunsOut = 50
 var timer: CountdownTimer!
 
 var madVaultBoyRunning = false
+var thumbsUpBoyRunning = false
+var madVaultBoyViewPresent = false
 
 let userDefaults = NSUserDefaults.standardUserDefaults()
 let storyboard : UIStoryboard = UIStoryboard(name: "Survial", bundle: nil)

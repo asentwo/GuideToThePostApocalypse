@@ -533,7 +533,6 @@
 				6E0F75A81C1A579C0051C0D1 /* Frameworks */,
 				6ED9C3C51C1B54E000EE8027 /* Helper Files */,
 			);
-			name = GuideToThePostApocalypse;
 			path = GuideToThePostApocalypse;
 			sourceTree = "<group>";
 		};
@@ -543,7 +542,6 @@
 				6E68575E1C1A55F80005F008 /* GuideToThePostApocalypseTests.swift */,
 				6E6857601C1A55F80005F008 /* Info.plist */,
 			);
-			name = GuideToThePostApocalypseTests;
 			path = GuideToThePostApocalypseTests;
 			sourceTree = "<group>";
 		};
@@ -561,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				6E7350711C443F7000E5E1D7 /* GlobalValues.swift */,
+				6ECA7F1A1C5706C200C21EA9 /* UI */,
 				6ECA7F1C1C57071E00C21EA9 /* Other */,
 				6ECA7F1B1C5706F700C21EA9 /* Views */,
 				6ECA7F191C5706B600C21EA9 /* Functions */,
@@ -863,7 +862,6 @@
 		6ECA7F1C1C57071E00C21EA9 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				6ECA7F1A1C5706C200C21EA9 /* UI */,
 				6ED9C3D91C1B66DA00EE8027 /* PSTimer.swift */,
 				6EAEC6491C4036D70023F4BF /* TileBackgroundExplode.swift */,
 				6E73506F1C443E9C00E5E1D7 /* AudioController.swift */,

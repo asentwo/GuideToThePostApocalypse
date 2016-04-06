@@ -63,7 +63,11 @@ class CountdownTimer {
     }
     
     func reset() {
+      
+      print("reset called! timing = \(timing)")
+      
         pause()
+       // timing = true
         minLeft = startingMin
         secLeft = startingSec
         refreshTimerLabel()
@@ -76,7 +80,10 @@ class CountdownTimer {
         secLeft = timeDiff % 60
         if minLeft <= 0 && secLeft <= 0 {
             reset()
-            delegate.countdownEnded()
+          
+        //  if(timing) {
+          delegate.countdownEnded()
+         // }
   
             return
         }

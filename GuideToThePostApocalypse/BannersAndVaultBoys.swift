@@ -19,7 +19,7 @@ struct BannersAndVaultBoys {
   let congratulationsBanner = UIImageView(image: UIImage(named: "banner"))
   let congratulationsLabel = UILabel()
   
-  var madVaultBoyImage = UIImageView(image: UIImage(named: "vault boy_wrong"))
+//  var madVaultBoyImage = UIImageView(image: UIImage(named: "vault boy_wrong"))
   var thumbsUpVaultBoyImage = UIImageView(image: UIImage(named: "newVaultBoy"))
   var congratulationsVaultBoyImage = UIImageView(image: UIImage(named: "vault boy_pipboy"))
   var zeroScoreVaultBoyImage = UIImageView(image: UIImage(named: "vault boy_gameover"))
@@ -52,8 +52,8 @@ struct BannersAndVaultBoys {
     wrongAnswerLabel.textAlignment = .Center
     
     //add the wrong answer mad vault boy
-    madVaultBoyImage.hidden = true
-    madVaultBoyImage.center = CGPoint(x: 180, y: 460)
+//    madVaultBoyImage.hidden = true
+//    madVaultBoyImage.center = CGPoint(x: 180, y: 460)
     
     // add the right answer banner- it starts off hidden
     rightAnswerBanner.hidden = true
