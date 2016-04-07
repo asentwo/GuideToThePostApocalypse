@@ -44,6 +44,7 @@
 		6E5ACF4A1C8A4EC30023B574 /* vault boy (madmax)_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF471C8A4EC30023B574 /* vault boy (madmax)_wrong.png */; };
 		6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */; };
 		6E5ACF4E1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */; };
+		6E5D6E9B1CB6D13C003B3B6A /* Deathclaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */; };
 		6E68574A1C1A55F80005F008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6857491C1A55F80005F008 /* AppDelegate.swift */; };
 		6E68574F1C1A55F80005F008 /* Survival.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E68574D1C1A55F80005F008 /* Survival.storyboard */; };
 		6E6857511C1A55F80005F008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6857501C1A55F80005F008 /* Assets.xcassets */; };
@@ -74,7 +75,6 @@
 		6E78291E1CAC522A0094E798 /* walkingDeadRresize2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E78290F1CAC522A0094E798 /* walkingDeadRresize2.gif */; };
 		6E7829201CAC54D60094E798 /* walkingDeadResize1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E78291F1CAC54D60094E798 /* walkingDeadResize1.gif */; };
 		6E7829221CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */; };
-		6E7BDF971C851CA900B93822 /* DeathClaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF851C851CA900B93822 /* DeathClaw.png */; };
 		6E7BDF981C851CA900B93822 /* MisterGusty.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF861C851CA900B93822 /* MisterGusty.png */; };
 		6E7BDF991C851CA900B93822 /* MiniGun.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF871C851CA900B93822 /* MiniGun.png */; };
 		6E7BDF9A1C851CA900B93822 /* PowerArmor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF881C851CA900B93822 /* PowerArmor.png */; };
@@ -252,6 +252,7 @@
 		6E5ACF471C8A4EC30023B574 /* vault boy (madmax)_wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (madmax)_wrong.png"; sourceTree = "<group>"; };
 		6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead).png"; sourceTree = "<group>"; };
 		6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walkingdead)_wrong.png"; sourceTree = "<group>"; };
+		6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deathclaw.png; sourceTree = "<group>"; };
 		6E6857461C1A55F80005F008 /* GuideToThePostApocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideToThePostApocalypse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6857491C1A55F80005F008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E68574E1C1A55F80005F008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Survival.storyboard; sourceTree = "<group>"; };
@@ -288,7 +289,6 @@
 		6E78290F1CAC522A0094E798 /* walkingDeadRresize2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = walkingDeadRresize2.gif; sourceTree = "<group>"; };
 		6E78291F1CAC54D60094E798 /* walkingDeadResize1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = walkingDeadResize1.gif; sourceTree = "<group>"; };
 		6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe1.png"; sourceTree = "<group>"; };
-		6E7BDF851C851CA900B93822 /* DeathClaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeathClaw.png; sourceTree = "<group>"; };
 		6E7BDF861C851CA900B93822 /* MisterGusty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MisterGusty.png; sourceTree = "<group>"; };
 		6E7BDF871C851CA900B93822 /* MiniGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiniGun.png; sourceTree = "<group>"; };
 		6E7BDF881C851CA900B93822 /* PowerArmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowerArmor.png; sourceTree = "<group>"; };
@@ -653,7 +653,7 @@
 		6E7BDF841C851CA900B93822 /* Fallout */ = {
 			isa = PBXGroup;
 			children = (
-				6E7BDF851C851CA900B93822 /* DeathClaw.png */,
+				6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */,
 				6E7BDF861C851CA900B93822 /* MisterGusty.png */,
 				6E7BDF871C851CA900B93822 /* MiniGun.png */,
 				6E7BDF881C851CA900B93822 /* PowerArmor.png */,
@@ -1038,7 +1038,6 @@
 				6EAEC5321C4034EB0023F4BF /* torn_banner@3x.png in Resources */,
 				6E7BDF9F1C851CA900B93822 /* MadMax.png in Resources */,
 				6E7BDFA21C851CA900B93822 /* Carl.png in Resources */,
-				6E7BDF971C851CA900B93822 /* DeathClaw.png in Resources */,
 				6E7829111CAC522A0094E798 /* falloutResize.gif in Resources */,
 				6EAEC5501C4034EB0023F4BF /* pleaseStandBy.jpg in Resources */,
 				6E7829101CAC522A0094E798 /* fallout2Resize.gif in Resources */,
@@ -1145,6 +1144,7 @@
 				6E54BF5F1C4862E6003ED24C /* wrong.m4a in Resources */,
 				6EAEC5391C4034EB0023F4BF /* destinyButtonBlack@2x.png in Resources */,
 				6EAEC55D1C4034EB0023F4BF /* red_speech_bubble.png in Resources */,
+				6E5D6E9B1CB6D13C003B3B6A /* Deathclaw.png in Resources */,
 				6E7829171CAC522A0094E798 /* mad max coin.gif in Resources */,
 				6EC5DA2E1CA5E208006F62EA /* ding.wav in Resources */,
 				6EAEC54D1C4034EB0023F4BF /* nulcear.png in Resources */,
@@ -1372,6 +1372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdoo.Wastland-Survival-Guide";
 				PRODUCT_NAME = GuideToThePostApocalypse;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1398,6 +1399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdoo.Wastland-Survival-Guide";
 				PRODUCT_NAME = GuideToThePostApocalypse;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

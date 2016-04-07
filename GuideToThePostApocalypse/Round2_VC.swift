@@ -78,7 +78,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:10)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:3)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     
@@ -204,8 +204,8 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: Buttons
   
   func ButtonActions () {
-    buttons.tryBtn.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
-    buttons.btn.addTarget(self, action: "switchToRoundThree:", forControlEvents: .TouchUpInside)
+    tryAgain.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
+    nextRound.addTarget(self, action: "switchToRoundThree:", forControlEvents: .TouchUpInside)
     buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
     
   }
@@ -272,10 +272,11 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   func restartViewController () ->() {
     self.dismissViewControllerAnimated(true, completion: nil)
-    let storyboard = UIStoryboard(name: "Survial", bundle: nil)
+    let storyboard = UIStoryboard(name: "Survival", bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_2")
     self.presentViewController(vc, animated: true, completion: nil)
-    self.bannersAndVaultBoys.zeroScoreVaultBoyImage.center.y -= self.view.bounds.height
+    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+    self.view.layoutIfNeeded()
   }
   
   //MARK: VaultBoy Animation

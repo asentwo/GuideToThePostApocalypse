@@ -49,7 +49,8 @@ var timer: CountdownTimer!
 
 var madVaultBoyRunning = false
 var thumbsUpBoyRunning = false
-//var madVaultBoyViewPresent = false
+
+var Survival = "Survival"
 
 let userDefaults = NSUserDefaults.standardUserDefaults()
 let storyboard : UIStoryboard = UIStoryboard(name: "Survial", bundle: nil)

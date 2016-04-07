@@ -35,6 +35,31 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet var CountDownLabel: UILabel!
   @IBOutlet var hintLabel: UIButton!
   
+  //VaultBoys
+  @IBOutlet weak var vaultBoyWrong: UIImageView!
+  @IBOutlet weak var vaultBoyRight: UIImageView!
+  @IBOutlet weak var vaultBoyFailed: UIImageView!
+  @IBOutlet weak var vaultBoySuccess: UIImageView!
+  
+  //buttons
+  @IBOutlet weak var playAgainButton: UIButton!
+  @IBOutlet weak var tryAgainButton: UIButton!
+  
+  //labels
+  @IBOutlet weak var youFailedThisRoundLabel: UILabel!
+  @IBOutlet weak var scoreBanner: UIImageView!
+  @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var youEarnedACoinLabel: UILabel!
+  
+  //gif
+  @IBOutlet weak var coin: UIImageView!
+  
+  //constraints
+  @IBOutlet weak var vaultBoyWrongYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var vaultBoyFailedYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
   
   //MARK: ViewDidLoad
   
@@ -56,7 +81,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 31)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 3)
     timer.delegate = self
     finalAnimation = true
     userDefaults.setObject("Round_6", forKey: CURRENT_ROUND_KEY)
@@ -166,8 +191,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: Buttons
   
   func ButtonActions () {
-    buttons.tryBtn.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
-    buttons.btn.addTarget(self, action: "switchToRoundSix:", forControlEvents: .TouchUpInside)
+    tryAgainButton.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
+//    buttons.btn.addTarget(self, action: "switchToRoundSix:", forControlEvents: .TouchUpInside)
     buttons.restartBtn.addTarget(self, action: "restartGame", forControlEvents: .TouchUpInside)
     buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
     
@@ -341,6 +366,105 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.newTile()
   }
   
+  //MARK: ZeroScoreVaultBoy
+  
+  func ZeroScoreVaultBoy () {
+    
+    UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
+      
+      self.buttons.tryAgainButton.hidden = false
+      self.bannersAndVaultBoys.failedLabel.hidden = false
+      self.bannersAndVaultBoys.zeroScoreVaultBoyImage.hidden = false
+      self.bannersAndVaultBoys.zeroScoreVaultBoyImage.center.y += self.view.bounds.height
+      self.audioController.playEffect(SoundWrong)
+      currentScore = totalScore + self.currentRoundScore
+      totalScore = currentScore
+      userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
+      userDefaults.synchronize()
+      
+      self.bannersAndVaultBoys.totalScoreLabel.text = "Total Score: \(totalScore)"
+      self.bannersAndVaultBoys.totalScoreLabel.hidden = false
+      }
+      , completion: nil)
+  }
+  
+  
+  //MARK: CongratulationsVaultBoy
+  
+  func CongratulationsVaultBoy(gifName: String) {
+    
+    UIView.transitionWithView(bannersAndVaultBoys.congratulationsVaultBoyImage, duration: 0.7, options: [.TransitionFlipFromTop], animations: {
+      
+      self.bannersAndVaultBoys.congratulationsVaultBoyImage.hidden = false
+      self.audioController.playEffect(SoundWin)
+      currentScore = totalScore + self.currentRoundScore
+      totalScore = currentScore
+      
+      userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
+      userDefaults.synchronize()
+      
+      self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)
+      }, completion:{_ in
+        
+        //adds explosive view behind image
+        let explode = ExplodeView(frame:CGRectMake(self.bannersAndVaultBoys.congratulationsVaultBoyImage.center.x - 20, self.bannersAndVaultBoys.congratulationsVaultBoyImage.center.y - 60, 100,100))
+        self.bannersAndVaultBoys.congratulationsVaultBoyImage.superview?.addSubview(explode)
+        self.bannersAndVaultBoys.congratulationsVaultBoyImage.superview?.sendSubviewToBack(explode)
+        
+        self.delay(3.0, closure: {
+          
+          if self.finalAnimation == false { self.buttons.btn.hidden = false }
+          self.bannersAndVaultBoys.congratulationsVaultBoyImage.hidden = true
+          self.bannersAndVaultBoys.earnedPerkLabel.hidden = false
+          self.bannersAndVaultBoys.perkLabel.hidden = false
+          self.audioController.playEffect(SoundPerk)
+          //add perk gif
+          let Gif = UIImage.gifWithName(gifName)
+          let View = UIImageView(image: Gif)
+          View.hidden = false
+          View.frame = CGRect(x: 40.0, y: 170.0, width: View.frame.size.width, height: View.frame.size.height)
+          self.view.addSubview(View)
+          
+          if self.finalAnimation == true {
+            
+          } else {
+            self.bannersAndVaultBoys.congratulationsBanner.hidden = true
+            self.bannersAndVaultBoys.congratulationsLabel.hidden = true
+          }
+          
+          
+          if self.finalAnimation == true {
+            self.delay(5.0, closure: {
+              View.removeFromSuperview()
+              self.bannersAndVaultBoys.earnedPerkLabel.hidden = true
+              self.bannersAndVaultBoys.perkLabel.hidden = true
+              self.bannersAndVaultBoys.survivedLabel.hidden = false
+              
+              UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
+                self.bannersAndVaultBoys.yellowBurst.alpha = 1.0
+                }, completion: nil)
+              
+              //add survived gif
+              //            let Gif = UIImage.gifWithName("fallout_dancing")
+              //            let View = UIImageView(image: Gif)
+              //            View.hidden = false
+              //            View.frame = CGRect(x: 30.0, y: 200.0, width: View.frame.size.width*1.2, height: View.frame.size.height*1.2)
+              //            self.view.addSubview(View)
+              self.audioController.playEffect(SoundExplosion)
+              self.audioController.playEffect(SoundWin)
+              self.bannersAndVaultBoys.congratulationsBanner.hidden = true
+              self.bannersAndVaultBoys.congratulationsLabel.hidden = true
+              
+              //            self.bannersAndVaultBoys.totalScoreLabel.hidden = false
+              self.buttons.restartButton.hidden = false
+              self.finalAnimation = false
+            })
+          }
+        })
+    })
+  }
+  
+
   
   //MARK: Timer
   
@@ -444,8 +568,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     bannersAndVaultBoys.congratulationsVaultBoyImage.center = CGPoint(x: 190, y: 345)
     bannersAndVaultBoys.congratulationsVaultBoyImage.hidden = true
     self.view.addSubview(bannersAndVaultBoys.congratulationsVaultBoyImage)
-    bannersAndVaultBoys.zeroScoreVaultBoyImage = UIImageView(image: UIImage(named: "vault boy (madmax)_gameover"))
-    self.view.addSubview(bannersAndVaultBoys.zeroScoreVaultBoyImage)
+   // bannersAndVaultBoys.zeroScoreVaultBoyImage = UIImageView(image: UIImage(named: "vault boy (madmax)_gameover"))
+    //self.view.addSubview(bannersAndVaultBoys.zeroScoreVaultBoyImage)
     self.view.addSubview(bannersAndVaultBoys.earnedPerkLabel)
     self.view.addSubview(bannersAndVaultBoys.perkLabel)
     bannersAndVaultBoys.perkLabel.frame = CGRect(x: 110, y: 380, width: 200, height: 200)
