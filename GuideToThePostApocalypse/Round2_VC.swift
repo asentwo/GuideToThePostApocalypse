@@ -288,8 +288,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     }
   }
   
-  //MARK: MadVaultBoy
-  
   func MadVaultBoy() {
     madVaultBoyRunning = true
     timer.pause()
