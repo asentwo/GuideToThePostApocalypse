@@ -29,6 +29,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // [Optional] Track statistics around application opens.
     PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
     
+    if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
+      
+      let storyboard = UIStoryboard(name: "Survival", bundle: nil)
+      let vc = storyboard.instantiateInitialViewController()
+      //self.presentViewController(vc, animated: true, completion: nil)
+      
+      self.window!.rootViewController = vc
+      self.window?.makeKeyAndVisible()
+      
+    } else {
+      
+      let storyboard = UIStoryboard(name: "Survival_Ipad", bundle: nil)
+      let vc = storyboard.instantiateInitialViewController()
+      //self.presentViewController(vc, animated: true, completion: nil)
+      
+      self.window!.rootViewController = vc
+      self.window?.makeKeyAndVisible()
+      
+    }
+
+    
 //    let storyboard : UIStoryboard = UIStoryboard(name: "Survival", bundle: nil)
 //    
 //    if let lastRound = userDefaults.stringForKey(CURRENT_ROUND_KEY) {

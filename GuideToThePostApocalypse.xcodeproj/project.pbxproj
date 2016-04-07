@@ -168,6 +168,7 @@
 		6EAEC5691C4034EB0023F4BF /* vintage-sunburst-background-banner-design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC52D1C4034EB0023F4BF /* vintage-sunburst-background-banner-design.jpg */; };
 		6EAEC64A1C4036D70023F4BF /* TileBackgroundExplode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEC6491C4036D70023F4BF /* TileBackgroundExplode.swift */; };
 		6EAEC64C1C403B320023F4BF /* StardustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEC64B1C403B320023F4BF /* StardustView.swift */; };
+		6EB28B471CB6FEB200AF59D3 /* Survival_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB28B451CB6FEB200AF59D3 /* Survival_Ipad.storyboard */; };
 		6EBF84241C1C7CBB007AEA22 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBF84211C1C7CBB007AEA22 /* Bolts.framework */; };
 		6EBF84251C1C7CBB007AEA22 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBF84221C1C7CBB007AEA22 /* Parse.framework */; };
 		6EBF84261C1C7CBB007AEA22 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBF84231C1C7CBB007AEA22 /* ParseUI.framework */; };
@@ -374,6 +375,7 @@
 		6EAEC52D1C4034EB0023F4BF /* vintage-sunburst-background-banner-design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "vintage-sunburst-background-banner-design.jpg"; sourceTree = "<group>"; };
 		6EAEC6491C4036D70023F4BF /* TileBackgroundExplode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileBackgroundExplode.swift; sourceTree = "<group>"; };
 		6EAEC64B1C403B320023F4BF /* StardustView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardustView.swift; sourceTree = "<group>"; };
+		6EB28B461CB6FEB200AF59D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Survival_Ipad.storyboard; sourceTree = "<group>"; };
 		6EBF84211C1C7CBB007AEA22 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = GuideToThePostApocalypse/Bolts.framework; sourceTree = "<group>"; };
 		6EBF84221C1C7CBB007AEA22 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = GuideToThePostApocalypse/Parse.framework; sourceTree = "<group>"; };
 		6EBF84231C1C7CBB007AEA22 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = GuideToThePostApocalypse/ParseUI.framework; sourceTree = "<group>"; };
@@ -820,6 +822,15 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		6EB28B481CB6FED700AF59D3 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				6E68574D1C1A55F80005F008 /* Survival.storyboard */,
+				6EB28B451CB6FEB200AF59D3 /* Survival_Ipad.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
 		6EBAB2AB1C1C8C9900E10D4E /* Rounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,7 +895,7 @@
 				6EAEC4EB1C4034EB0023F4BF /* Images */,
 				6EA436831C23622100B445A7 /* Fonts */,
 				6E6857491C1A55F80005F008 /* AppDelegate.swift */,
-				6E68574D1C1A55F80005F008 /* Survival.storyboard */,
+				6EB28B481CB6FED700AF59D3 /* StoryBoards */,
 				6E6857501C1A55F80005F008 /* Assets.xcassets */,
 				6E6857521C1A55F80005F008 /* LaunchScreen.storyboard */,
 				6E6857551C1A55F80005F008 /* Info.plist */,
@@ -1085,6 +1096,7 @@
 				6EAEC54A1C4034EB0023F4BF /* green_red_circle_label@3x.png in Resources */,
 				6EAEC5511C4034EB0023F4BF /* red_green_vintage_label@3x.png in Resources */,
 				6E7829181CAC522A0094E798 /* vault-boy-(fallout-coin).gif in Resources */,
+				6EB28B471CB6FEB200AF59D3 /* Survival_Ipad.storyboard in Resources */,
 				6E7829131CAC522A0094E798 /* madMaxResize.gif in Resources */,
 				6EAEC53C1C4034EB0023F4BF /* whitePaintStrokesOnBlackBackground.png in Resources */,
 				6E76F6411C7BA53200F5A1CE /* vault boy_pipboy.png in Resources */,
@@ -1261,6 +1273,14 @@
 				6E6857531C1A55F80005F008 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6EB28B451CB6FEB200AF59D3 /* Survival_Ipad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EB28B461CB6FEB200AF59D3 /* Base */,
+			);
+			name = Survival_Ipad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
