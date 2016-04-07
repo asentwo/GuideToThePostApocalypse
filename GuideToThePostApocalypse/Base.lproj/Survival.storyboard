@@ -540,6 +540,7 @@
                             <constraint firstItem="PT0-1H-aUK" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leading" constant="5" id="6Ff-vc-xNy"/>
                             <constraint firstItem="oeY-Nc-5KZ" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="-64" id="ALh-FL-lVO"/>
                             <constraint firstItem="9kf-nb-RVV" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="EGe-lG-Ba1"/>
+                            <constraint firstItem="gRb-i9-aVD" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="30" id="EmV-gb-bNo"/>
                             <constraint firstItem="vGS-2r-0jg" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="206.5" id="Flm-NH-RuX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mkF-yy-NJF" secondAttribute="trailing" constant="-14" id="IeB-5R-d2L"/>
                             <constraint firstItem="gpy-LP-ubr" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="-2" id="JNf-z5-dWK"/>
@@ -554,7 +555,7 @@
                             <constraint firstItem="PT0-1H-aUK" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="58.5" id="SXw-IS-Sgw"/>
                             <constraint firstItem="oeY-Nc-5KZ" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="-14" id="Ww3-q7-8jF"/>
                             <constraint firstItem="ND2-Qr-DMk" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="biA-uG-PdP"/>
-                            <constraint firstItem="gRb-i9-aVD" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="30" id="dMV-6f-a8u"/>
+                            <constraint firstItem="70o-Lq-ifz" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="8" symbolic="YES" id="dCK-lp-iWC"/>
                             <constraint firstItem="9kf-nb-RVV" firstAttribute="top" secondItem="YRQ-q3-Qss" secondAttribute="top" id="e4j-BD-M8H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="70o-Lq-ifz" secondAttribute="trailing" constant="-3" id="f2o-7t-JOl"/>
                             <constraint firstItem="n9o-M0-nwy" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="fvD-78-O2v"/>
@@ -575,7 +576,6 @@
                             <constraint firstItem="Kvz-W4-d84" firstAttribute="top" secondItem="DoO-VC-1RH" secondAttribute="bottom" constant="10" id="snm-Fj-yJo"/>
                             <constraint firstItem="n9o-M0-nwy" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="-153.5" id="tgr-7l-vlJ"/>
                             <constraint firstItem="gpy-LP-ubr" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="ts2-d4-zna"/>
-                            <constraint firstItem="70o-Lq-ifz" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="8" symbolic="YES" id="uMk-Kq-f8X"/>
                             <constraint firstItem="K4O-7O-UHG" firstAttribute="top" secondItem="oeY-Nc-5KZ" secondAttribute="bottom" constant="-58" id="wUj-xy-Gx8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gpy-LP-ubr" secondAttribute="trailing" constant="-2" id="x9t-9f-hkq"/>
                         </constraints>
@@ -591,6 +591,7 @@
                         <outlet property="nextRound" destination="vGS-2r-0jg" id="wEi-8O-1w8"/>
                         <outlet property="scoreBanner" destination="K4O-7O-UHG" id="03S-kC-CBi"/>
                         <outlet property="scoreLabel" destination="ND2-Qr-DMk" id="6ce-gZ-i95"/>
+                        <outlet property="superView" destination="YRQ-q3-Qss" id="Urb-4G-2l8"/>
                         <outlet property="tryAgain" destination="w6i-bB-NNr" id="QgL-GW-mOj"/>
                         <outlet property="vaultBoyFailed" destination="mkF-yy-NJF" id="KxZ-Lx-ugV"/>
                         <outlet property="vaultBoyFailedYConstraint" destination="kRs-YF-YpJ" id="hd5-Aa-sFC"/>

@@ -34,6 +34,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet var PlayerScore: UILabel!
   @IBOutlet var CountDownLabel: UILabel!
   @IBOutlet var hintLabel: UIButton!
+  @IBOutlet var superView: UIView!
   
   //VaultBoys
   @IBOutlet weak var vaultBoyWrong: UIImageView!
@@ -78,7 +79,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:3)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:10)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
@@ -289,6 +290,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func MadVaultBoy() {
+    removeTiles()
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -309,7 +311,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           totalScore = currentScore
           userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
           userDefaults.synchronize()
-          self.delay(1, closure: {
+          //self.delay(1, closure: {
             if self.round2_objectIDArray.count == 0 {
               self.DismissQandA()
               if self.currentRoundScore == 0 {
@@ -324,7 +326,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
             } else{
               self.resetAllTimers()
             }
-          })
+          //})
           }, completion:{_ in
             madVaultBoyRunning = false})
     })
@@ -424,10 +426,11 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func timerShakeAndReset () {
+    
+    if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
     self.UpdateScoreRunOutOfTime()
     self.TimerShake()
-    if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
-      MadVaultBoy()
+    self.MadVaultBoy()
     }
   }
   
@@ -440,14 +443,26 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   func checkInitialTimer () {
     if self.round2_objectIDArray.count == 0 {
     } else {
-      if madVaultBoyRunning == true || thumbsUpBoyRunning == true {
-        } else {
-        self.timerShakeAndReset()
-      }
+      self.timerShakeAndReset()
     }
   }
   
-  //MARK: New Tile
+  //MARK: Tiles Other
+  
+  func removeTiles() {
+    
+    switch mainTileTargetView {
+    case tileTargetView1:
+      self.tileTargetView1.removeFromSuperview()
+    case tileTargetView2:
+      self.tileTargetView2.removeFromSuperview()
+    case tileTargetView3:
+      self.tileTargetView3.removeFromSuperview()
+    case tileTargetView4:
+      self.tileTargetView4.removeFromSuperview()
+    default: print("")
+    }
+  }
   
   func newTile () {
     switch mainTileTargetView {

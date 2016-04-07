@@ -78,7 +78,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 3)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 15)
     timer.delegate = self
     finalAnimation = true
     userDefaults.setObject("Round_6", forKey: CURRENT_ROUND_KEY)
@@ -297,6 +297,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func MadVaultBoy() {
+    removeTiles()
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -317,7 +318,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
           totalScore = currentScore
           userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
           userDefaults.synchronize()
-          self.delay(1, closure: {
+          //self.delay(1, closure: {
             if self.round6_objectIDArray.count == 0 {
               self.DismissQandA()
               if self.currentRoundScore == 0 {
@@ -332,7 +333,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
             } else{
               self.resetAllTimers()
             }
-          })
+         // })
           }, completion:{_ in
             madVaultBoyRunning = false})
     })
@@ -475,10 +476,9 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   
   
   func timerShakeAndReset () {
-    self.UpdateScoreRunOutOfTime()
-    self.TimerShake()
-    
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
+      self.UpdateScoreRunOutOfTime()
+      self.TimerShake()
       MadVaultBoy()
     }
   }
@@ -500,8 +500,22 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     }
   }
   
-  //MARK: New Tile
+  //MARK: Tiles Other
   
+  func removeTiles() {
+    
+    switch mainTileTargetView {
+    case tileTargetView1:
+      self.tileTargetView1.removeFromSuperview()
+    case tileTargetView2:
+      self.tileTargetView2.removeFromSuperview()
+    case tileTargetView3:
+      self.tileTargetView3.removeFromSuperview()
+    case tileTargetView4:
+      self.tileTargetView4.removeFromSuperview()
+    default: print("")
+    }
+  }
   func newTile () {
     switch mainTileTargetView {
     case tileTargetView1:
