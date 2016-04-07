@@ -81,7 +81,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:3)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
-    
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     PlayerScore.text = "Score: \(totalScore)"
@@ -272,7 +271,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   func restartViewController () ->() {
     self.dismissViewControllerAnimated(true, completion: nil)
-    let storyboard = UIStoryboard(name: "Survival", bundle: nil)
+    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_2")
     self.presentViewController(vc, animated: true, completion: nil)
     self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
@@ -564,9 +563,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
         self.currentRoundScore = self.data.points
         self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
         //check if word is completed
-        if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
-          self.checkForSuccess()
-        }
+        self.checkForSuccess()
       } else {
         
         //4 called if tile is placed on wrong target
@@ -691,7 +688,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     
     for targetView in targets {
       //no success, bail out
-      if !targetView.isMatched && madVaultBoyRunning == false {
+      if !targetView.isMatched {
         return
       }
     }
