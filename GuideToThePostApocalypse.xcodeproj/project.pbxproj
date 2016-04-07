@@ -53,6 +53,7 @@
 		6E68D6591C542CAB00DC1388 /* 30sec_time-running-out-buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E68D6581C542CAB00DC1388 /* 30sec_time-running-out-buzzer.mp3 */; };
 		6E7350701C443E9C00E5E1D7 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E73506F1C443E9C00E5E1D7 /* AudioController.swift */; };
 		6E7350721C443F7000E5E1D7 /* GlobalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7350711C443F7000E5E1D7 /* GlobalValues.swift */; };
+		6E73DF761CB6F02F00C4D378 /* Survival_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E73DF741CB6F02F00C4D378 /* Survival_Ipad.storyboard */; };
 		6E76F6401C7BA53200F5A1CE /* newVaultBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E76F63C1C7BA53200F5A1CE /* newVaultBoy.png */; };
 		6E76F6411C7BA53200F5A1CE /* vault boy_pipboy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E76F63D1C7BA53200F5A1CE /* vault boy_pipboy.png */; };
 		6E7828E11CAAEDA90094E798 /* MultiChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7828E01CAAEDA90094E798 /* MultiChoiceVC.swift */; };
@@ -267,6 +268,7 @@
 		6E68D6581C542CAB00DC1388 /* 30sec_time-running-out-buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "30sec_time-running-out-buzzer.mp3"; sourceTree = "<group>"; };
 		6E73506F1C443E9C00E5E1D7 /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		6E7350711C443F7000E5E1D7 /* GlobalValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalValues.swift; sourceTree = "<group>"; };
+		6E73DF751CB6F02F00C4D378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Survival_Ipad.storyboard; sourceTree = "<group>"; };
 		6E76F63C1C7BA53200F5A1CE /* newVaultBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newVaultBoy.png; sourceTree = "<group>"; };
 		6E76F63D1C7BA53200F5A1CE /* vault boy_pipboy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy_pipboy.png"; sourceTree = "<group>"; };
 		6E7828E01CAAEDA90094E798 /* MultiChoiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiChoiceVC.swift; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				6EA436831C23622100B445A7 /* Fonts */,
 				6E6857491C1A55F80005F008 /* AppDelegate.swift */,
 				6E68574D1C1A55F80005F008 /* Survival.storyboard */,
+				6E73DF741CB6F02F00C4D378 /* Survival_Ipad.storyboard */,
 				6E6857501C1A55F80005F008 /* Assets.xcassets */,
 				6E6857521C1A55F80005F008 /* LaunchScreen.storyboard */,
 				6E6857551C1A55F80005F008 /* Info.plist */,
@@ -1054,6 +1057,7 @@
 				6EAEC5601C4034EB0023F4BF /* Yellow_Speech_Bubble.png in Resources */,
 				6EAEC5641C4034EB0023F4BF /* tile@2x.png in Resources */,
 				6EAEC55C1C4034EB0023F4BF /* orange_chat_bubble.png in Resources */,
+				6E73DF761CB6F02F00C4D378 /* Survival_Ipad.storyboard in Resources */,
 				6ED986BD1C5975B1007DA17A /* explosion-01.wav in Resources */,
 				6E7829201CAC54D60094E798 /* walkingDeadResize1.gif in Resources */,
 				6E5ACF491C8A4EC30023B574 /* vault boy (madmax)_success.png in Resources */,
@@ -1263,6 +1267,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		6E73DF741CB6F02F00C4D378 /* Survival_Ipad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E73DF751CB6F02F00C4D378 /* Base */,
+			);
+			name = Survival_Ipad.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1372,6 +1384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdoo.Wastland-Survival-Guide";
 				PRODUCT_NAME = GuideToThePostApocalypse;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1398,6 +1411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdoo.Wastland-Survival-Guide";
 				PRODUCT_NAME = GuideToThePostApocalypse;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

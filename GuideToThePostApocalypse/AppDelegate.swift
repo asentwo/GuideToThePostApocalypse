@@ -14,9 +14,7 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
    var window: UIWindow?
-  
 
-  
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
@@ -44,6 +42,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      
 //      self.window?.rootViewController = initialViewController
 //    }
+    
+    
+//    switch UIDevice.currentDevice().userInterfaceIdiom {
+//    case .Phone: break
+//    // It's an iPhone
+//    case .Pad: break
+//    // It's an iPad
+//    case .Unspecified: break
+//      // Uh, oh! What could it be?
+//    }
+    
+    if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
+      print("iPhone!")
+      
+      let storyboard = UIStoryboard(name: "Survival", bundle: nil)
+      let vc = storyboard.instantiateInitialViewController()
+      //self.presentViewController(vc, animated: true, completion: nil)
+      
+      self.window!.rootViewController = vc
+      self.window?.makeKeyAndVisible()
+      
+    } else {
+      print("iPad!")
+      
+      let storyboard = UIStoryboard(name: "Survival_Ipad", bundle: nil)
+      let vc = storyboard.instantiateInitialViewController()
+      //self.presentViewController(vc, animated: true, completion: nil)
+      
+      self.window!.rootViewController = vc
+      self.window?.makeKeyAndVisible()
+      
+    }
+
+  
+    
     
     // ...
     return true
