@@ -34,7 +34,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet var PlayerScore: UILabel!
   @IBOutlet var CountDownLabel: UILabel!
   @IBOutlet var hintLabel: UIButton!
-  @IBOutlet var superView: UIView!
+
   
   //VaultBoys
   @IBOutlet weak var vaultBoyWrong: UIImageView!
@@ -79,7 +79,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:10)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:15)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
@@ -295,38 +295,37 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     timer.pause()
     self.vaultboyToFront()
     vaultBoyWrong.hidden = false
-    self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
+    self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
+        self.RemoveAlreadyUsedQuestion()
+        self.newTile()
+        self.stopAudioTimer()
+        currentScore = totalScore + self.currentRoundScore
+        totalScore = currentScore
+        userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
+        userDefaults.synchronize()
+        
+        if self.round2_objectIDArray.count == 0 {
+          self.DismissQandA()
+          if self.currentRoundScore == 0 {
+            self.mainTileTargetView.removeFromSuperview()
+            self.stopAudioTimer()
+            self.ZeroScoreVaultBoy()
+          }else{
+            self.mainTileTargetView.removeFromSuperview()
+            self.stopAudioTimer()
+            self.CongratulationsVaultBoy()
+            self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)              }
+        } else{
+          self.resetAllTimers()
+        }
+        self.vaultBoyWrongYConstraint.constant += self.view.bounds.height
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
-          self.vaultBoyWrongYConstraint.constant += self.view.bounds.height
           self.view.layoutIfNeeded()
-          self.RemoveAlreadyUsedQuestion()
-          self.newTile()
-          self.stopAudioTimer()
-          currentScore = totalScore + self.currentRoundScore
-          totalScore = currentScore
-          userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
-          userDefaults.synchronize()
-          //self.delay(1, closure: {
-            if self.round2_objectIDArray.count == 0 {
-              self.DismissQandA()
-              if self.currentRoundScore == 0 {
-                self.mainTileTargetView.removeFromSuperview()
-                self.stopAudioTimer()
-                self.ZeroScoreVaultBoy()
-              }else{
-                self.mainTileTargetView.removeFromSuperview()
-                self.stopAudioTimer()
-                self.CongratulationsVaultBoy()
-                self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)              }
-            } else{
-              self.resetAllTimers()
-            }
-          //})
           }, completion:{_ in
             madVaultBoyRunning = false})
     })
@@ -428,9 +427,9 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   func timerShakeAndReset () {
     
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
-    self.UpdateScoreRunOutOfTime()
-    self.TimerShake()
-    self.MadVaultBoy()
+      self.UpdateScoreRunOutOfTime()
+      self.TimerShake()
+      self.MadVaultBoy()
     }
   }
   

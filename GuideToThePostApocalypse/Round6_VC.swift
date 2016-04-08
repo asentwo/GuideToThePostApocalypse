@@ -71,7 +71,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     ButtonActions()
     StoreParseDataLocally_Round6()
     
-
+    
     //add tile view
     let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
     self.view.addSubview(tileView)
@@ -85,7 +85,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     PlayerScore.text = "Score: \(totalScore)"
-   
+    
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -302,38 +302,36 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     timer.pause()
     self.vaultboyToFront()
     self.vaultBoyWrong.hidden = false
-    self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
+     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
+        self.RemoveAlreadyUsedQuestion()
+        self.newTile()
+        self.stopAudioTimer()
+        currentScore = totalScore + self.currentRoundScore
+        totalScore = currentScore
+        userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
+        userDefaults.synchronize()
+        if self.round6_objectIDArray.count == 0 {
+          self.DismissQandA()
+          if self.currentRoundScore == 0 {
+            self.mainTileTargetView.removeFromSuperview()
+            self.stopAudioTimer()
+            self.ZeroScoreVaultBoy()
+          }else{
+            self.mainTileTargetView.removeFromSuperview()
+            self.stopAudioTimer()
+            self.CongratulationsVaultBoy()
+            self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)              }
+        } else{
+          self.resetAllTimers()
+        }
+        self.vaultBoyWrongYConstraint.constant += self.view.bounds.height
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
-          self.vaultBoyWrongYConstraint.constant += self.view.bounds.height
           self.view.layoutIfNeeded()
-          self.RemoveAlreadyUsedQuestion()
-          self.newTile()
-          self.stopAudioTimer()
-          currentScore = totalScore + self.currentRoundScore
-          totalScore = currentScore
-          userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
-          userDefaults.synchronize()
-          //self.delay(1, closure: {
-            if self.round6_objectIDArray.count == 0 {
-              self.DismissQandA()
-              if self.currentRoundScore == 0 {
-                self.mainTileTargetView.removeFromSuperview()
-                self.stopAudioTimer()
-                self.ZeroScoreVaultBoy()
-              }else{
-                self.mainTileTargetView.removeFromSuperview()
-                self.stopAudioTimer()
-                self.CongratulationsVaultBoy()
-                self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)              }
-            } else{
-              self.resetAllTimers()
-            }
-         // })
           }, completion:{_ in
             madVaultBoyRunning = false})
     })
@@ -479,7 +477,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
       self.UpdateScoreRunOutOfTime()
       self.TimerShake()
-      MadVaultBoy()
+      self.MadVaultBoy()
     }
   }
   
@@ -493,11 +491,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   func checkInitialTimer () {
     if self.round6_objectIDArray.count == 0 {
     } else {
-      if madVaultBoyRunning == true || thumbsUpBoyRunning == true {
-      } else {
         self.timerShakeAndReset()
       }
-    }
   }
   
   //MARK: Tiles Other
@@ -575,7 +570,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   func AddAllGraphics() {
     self.view.addSubview(bannersAndVaultBoys.wrongAnswerBanner)
     bannersAndVaultBoys.wrongAnswerBanner.addSubview(bannersAndVaultBoys.wrongAnswerLabel)
-      self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
+    self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
     bannersAndVaultBoys.rightAnswerBanner.addSubview(bannersAndVaultBoys.rightAnswerLabel)
   }
   
@@ -763,6 +758,7 @@ extension Round6_ViewController:TileDragDelegateProtocol {
       }
     }
     self.stopAudioTimer()
+    timer.pause()
     audioController.playEffect(SoundStarDust)
     
     //Points added to score
