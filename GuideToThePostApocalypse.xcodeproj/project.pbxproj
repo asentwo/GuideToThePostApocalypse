@@ -14,6 +14,7 @@
 		6E14431A1C4AB6CB0066B61C /* Round3_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1443191C4AB6CB0066B61C /* Round3_VC.swift */; };
 		6E1443241C4AB7410066B61C /* Round5_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1443231C4AB7410066B61C /* Round5_VC.swift */; };
 		6E14432E1C4AB8280066B61C /* Round6_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14432D1C4AB8280066B61C /* Round6_VC.swift */; };
+		6E1738591CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */; };
 		6E19E4671C1A592A0093F762 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E4661C1A592A0093F762 /* Social.framework */; };
 		6E19E4691C1A59310093F762 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E4681C1A59310093F762 /* Accounts.framework */; };
 		6E19E46B1C1A59370093F762 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E46A1C1A59370093F762 /* CFNetwork.framework */; };
@@ -223,6 +224,7 @@
 		6E1443191C4AB6CB0066B61C /* Round3_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round3_VC.swift; sourceTree = "<group>"; };
 		6E1443231C4AB7410066B61C /* Round5_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round5_VC.swift; sourceTree = "<group>"; };
 		6E14432D1C4AB8280066B61C /* Round6_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round6_VC.swift; sourceTree = "<group>"; };
+		6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe_v3.png"; sourceTree = "<group>"; };
 		6E19E4661C1A592A0093F762 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6E19E4681C1A59310093F762 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6E19E46A1C1A59370093F762 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -572,6 +574,7 @@
 		6E76F63B1C7BA53200F5A1CE /* New PNG */ = {
 			isa = PBXGroup;
 			children = (
+				6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */,
 				6ECF73061CA9EECF00C0ABAB /* vault boy (walking dead)_gameover.png */,
 				6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */,
 				6ECF73041CA9EECA00C0ABAB /* vault boy (walking dead)_success.png */,
@@ -1164,6 +1167,7 @@
 				6EC5DA341CA5E390006F62EA /* ding_bycycle.wav in Resources */,
 				6EAEC54C1C4034EB0023F4BF /* nuclearSymbol@3x.png in Resources */,
 				6ECF73051CA9EECA00C0ABAB /* vault boy (walking dead)_success.png in Resources */,
+				6E1738591CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png in Resources */,
 				6ECF73071CA9EECF00C0ABAB /* vault boy (walking dead)_gameover.png in Resources */,
 				6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */,
 				6EAEC5461C4034EB0023F4BF /* chalkboard_label@3x.png in Resources */,

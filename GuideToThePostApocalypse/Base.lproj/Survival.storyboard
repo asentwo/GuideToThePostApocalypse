@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zyX-bE-kHB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8Ls-PY-UIK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -198,9 +198,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Yl-aM6" userLabel="ZeroVaultBoy">
-                                <rect key="frame" x="2" y="210" width="316" height="208"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7U-b4-2TA">
                                 <rect key="frame" x="40" y="112" width="241" height="35"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
@@ -261,6 +258,9 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_pipboy" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-ha-6JA">
                                 <rect key="frame" x="2" y="54" width="324" height="386"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Yl-aM6" userLabel="ZeroVaultBoy">
+                                <rect key="frame" x="2" y="210" width="316" height="208"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -482,16 +482,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-5D-aaY">
                                 <rect key="frame" x="61" y="75" width="199" height="220"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-4Z-1Eb">
-                                <rect key="frame" x="1" y="192" width="283" height="49"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gV-B8-vEz">
-                                <rect key="frame" x="112" y="199" width="60" height="34"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="30"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-t6-Zwc">
                                 <rect key="frame" x="48" y="296" width="241" height="35"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
@@ -513,8 +503,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="txz-go-ExD" userLabel="ZeroVaultBoy">
                                 <rect key="frame" x="10" y="209" width="316" height="208"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLk-Gf-ln5">
-                                <rect key="frame" x="85" y="287" width="166" height="53"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-zD-7jR">
+                                <rect key="frame" x="0.0" y="103" width="320" height="551"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="dyk-8q-VBE">
+                                <rect key="frame" x="13" y="156" width="294" height="376"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-4Z-1Eb">
+                                <rect key="frame" x="18" y="429" width="283" height="49"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gV-B8-vEz">
+                                <rect key="frame" x="130" y="435" width="60" height="34"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_success" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-97-zbm">
+                                <rect key="frame" x="2" y="-47" width="316" height="534"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkingDeadRresize2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="3RQ-Yv-rq8" userLabel="Coin">
+                                <rect key="frame" x="14" y="134" width="292" height="300"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bb-f0-oFx">
+                                <rect key="frame" x="58" y="71" width="203.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLk-Gf-ln5">
+                                <rect key="frame" x="77" y="463.5" width="166" height="53"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
                                 <size key="titleShadowOffset" width="1" height="2.2250738585072014e-308"/>
@@ -523,33 +543,16 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bb-f0-oFx">
-                                <rect key="frame" x="67" y="296" width="203.5" height="35"/>
-                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
-                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walkingDeadRresize2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="3RQ-Yv-rq8" userLabel="Coin">
-                                <rect key="frame" x="22" y="63" width="292" height="500"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="vault boy (walking dead)_success" translatesAutoresizingMaskIntoConstraints="NO" id="ic9-97-zbm">
-                                <rect key="frame" x="10" y="45" width="316" height="537"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="dyk-8q-VBE">
-                                <rect key="frame" x="21" y="135" width="294" height="356"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-zD-7jR">
-                                <rect key="frame" x="0.0" y="103.5" width="320" height="551"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.084401250141749817" green="0.44475174536767681" blue="0.12018741309255901" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="yFr-ng-mex" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-6" id="0Gp-hX-awW"/>
                             <constraint firstItem="v4y-C2-doM" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-26" id="0tF-V3-aQd"/>
+                            <constraint firstItem="dyk-8q-VBE" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-3" id="0uK-Hr-lXh"/>
                             <constraint firstItem="hRq-Zt-EIr" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="8" symbolic="YES" id="1hr-Me-uHe"/>
+                            <constraint firstItem="kvT-4Z-1Eb" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="2vy-Jw-jsu"/>
                             <constraint firstAttribute="trailing" secondItem="v4y-C2-doM" secondAttribute="trailing" id="3gM-s0-iJD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3RQ-Yv-rq8" secondAttribute="trailing" constant="-2" id="6TW-IT-m3A"/>
                             <constraint firstItem="7E7-zD-7jR" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leading" id="7in-7u-B4p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hRq-Zt-EIr" secondAttribute="trailing" constant="22" id="8vm-bz-eJs"/>
                             <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="hRq-Zt-EIr" secondAttribute="bottom" constant="29" id="AvF-DT-w8t"/>
@@ -557,30 +560,43 @@
                             <constraint firstItem="jpJ-Mw-xLI" firstAttribute="top" secondItem="FwU-Gs-iOu" secondAttribute="bottom" constant="1" id="CY6-MN-eb2"/>
                             <constraint firstItem="7E7-zD-7jR" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="95" id="F3C-jR-Qt0"/>
                             <constraint firstItem="v4y-C2-doM" firstAttribute="centerX" secondItem="chT-gr-C6G" secondAttribute="centerX" id="JB7-Al-gOT"/>
+                            <constraint firstItem="9bb-f0-oFx" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-195" id="Mw1-3V-5lh"/>
+                            <constraint firstItem="9bb-f0-oFx" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="NhH-6r-XWE"/>
                             <constraint firstItem="FwU-Gs-iOu" firstAttribute="top" secondItem="3oC-Zl-5zx" secondAttribute="bottom" constant="8" symbolic="YES" id="QFE-EN-FzN"/>
                             <constraint firstItem="3oC-Zl-5zx" firstAttribute="centerX" secondItem="WpF-5D-aaY" secondAttribute="centerX" id="RjN-Ul-YRq"/>
                             <constraint firstItem="jpJ-Mw-xLI" firstAttribute="leading" secondItem="FwU-Gs-iOu" secondAttribute="leading" id="S5u-cJ-03z"/>
+                            <constraint firstItem="8gV-B8-vEz" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="TxK-hE-qW2"/>
                             <constraint firstItem="mw4-ds-yC3" firstAttribute="leading" secondItem="jpJ-Mw-xLI" secondAttribute="leading" id="U8k-zG-u5W"/>
                             <constraint firstAttribute="bottom" secondItem="DM2-dE-foE" secondAttribute="bottom" constant="20" symbolic="YES" id="UPP-ha-C1g"/>
                             <constraint firstItem="mw4-ds-yC3" firstAttribute="top" secondItem="jpJ-Mw-xLI" secondAttribute="bottom" constant="1" id="VWO-ZG-8x5"/>
                             <constraint firstItem="chT-gr-C6G" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="20" id="Vto-y7-IMk"/>
+                            <constraint firstItem="kLk-Gf-ln5" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="206" id="WaY-jk-3xs"/>
                             <constraint firstItem="DM2-dE-foE" firstAttribute="leading" secondItem="mw4-ds-yC3" secondAttribute="leading" id="X6S-Jy-4pj"/>
                             <constraint firstItem="yFr-ng-mex" firstAttribute="top" secondItem="SjF-kW-lHf" secondAttribute="topMargin" constant="15" id="ZMp-Bk-LLh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dyk-8q-VBE" secondAttribute="trailing" constant="-3" id="Zdo-6y-cob"/>
+                            <constraint firstItem="ic9-97-zbm" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-14" id="abW-0G-IsQ"/>
+                            <constraint firstItem="ic9-97-zbm" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-64" id="bOH-DF-ubt"/>
                             <constraint firstItem="WpF-5D-aaY" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="45" id="beE-8t-1ey"/>
                             <constraint firstItem="3oC-Zl-5zx" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="bx5-dX-NYx"/>
                             <constraint firstItem="Qoa-hm-80J" firstAttribute="top" secondItem="mw4-ds-yC3" secondAttribute="bottom" constant="73" id="eCS-Px-tJJ"/>
                             <constraint firstItem="FwU-Gs-iOu" firstAttribute="trailing" secondItem="jpJ-Mw-xLI" secondAttribute="trailing" id="eEk-Wt-d1d"/>
                             <constraint firstItem="8gV-B8-vEz" firstAttribute="top" secondItem="ic9-97-zbm" secondAttribute="bottom" constant="-52" id="eHq-xv-qA0"/>
                             <constraint firstItem="FwU-Gs-iOu" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-1" id="exu-5n-l7K"/>
+                            <constraint firstItem="kLk-Gf-ln5" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="fF2-xS-h80"/>
                             <constraint firstAttribute="trailing" secondItem="7E7-zD-7jR" secondAttribute="trailing" id="g8J-1z-8yv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FwU-Gs-iOu" secondAttribute="trailing" constant="1" id="gZw-Fl-y91"/>
+                            <constraint firstItem="3RQ-Yv-rq8" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" id="gpf-78-g5S"/>
                             <constraint firstItem="DM2-dE-foE" firstAttribute="trailing" secondItem="mw4-ds-yC3" secondAttribute="trailing" id="gsS-TC-LUg"/>
                             <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="yFr-ng-mex" secondAttribute="bottom" id="hLB-qo-Dng"/>
+                            <constraint firstItem="3RQ-Yv-rq8" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="hn8-qP-Zlb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ic9-97-zbm" secondAttribute="trailing" constant="-14" id="kmL-DR-iOQ"/>
                             <constraint firstItem="kvT-4Z-1Eb" firstAttribute="top" secondItem="ic9-97-zbm" secondAttribute="bottom" constant="-58" id="lhc-vC-VZg"/>
                             <constraint firstItem="v4y-C2-doM" firstAttribute="bottom" secondItem="Qoa-hm-80J" secondAttribute="top" id="mkl-HL-NZg"/>
+                            <constraint firstItem="dyk-8q-VBE" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="60" id="n65-Ed-7Xp"/>
                             <constraint firstItem="chT-gr-C6G" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="4" id="qSp-WT-74s"/>
                             <constraint firstItem="3oC-Zl-5zx" firstAttribute="top" secondItem="WpF-5D-aaY" secondAttribute="bottom" constant="4" id="rcS-DX-EtU"/>
                             <constraint firstItem="v4y-C2-doM" firstAttribute="top" secondItem="SjF-kW-lHf" secondAttribute="topMargin" constant="-7" id="tkD-WS-pIb"/>
+                            <constraint firstItem="3RQ-Yv-rq8" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-2" id="uNC-A1-YnS"/>
                             <constraint firstItem="DM2-dE-foE" firstAttribute="top" secondItem="jpJ-Mw-xLI" secondAttribute="bottom" constant="54" id="vTS-fd-loi"/>
                         </constraints>
                     </view>
@@ -605,7 +621,6 @@
         <!--Round2 View Controller-->
         <scene sceneID="zKP-KB-lCM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yZR-ZQ-MSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Round_2" id="l35-yK-MFC" customClass="Round2_ViewController" customModule="GuideToThePostApocalypse" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="coM-Qu-tVK"/>
@@ -654,18 +669,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-7O-UHG">
-                                <rect key="frame" x="18" y="430" width="283" height="49"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_right" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-4T-Lyu">
+                                <rect key="frame" x="13" y="166" width="294" height="356"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND2-Qr-DMk">
-                                <rect key="frame" x="129" y="436" width="60" height="34"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="30"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_success" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-Nc-5KZ">
-                                <rect key="frame" x="2" y="-49" width="316" height="537"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="mkF-yy-NJF" userLabel="ZeroVaultBoy">
+                                <rect key="frame" x="2" y="210" width="316" height="208"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-M0-nwy">
                                 <rect key="frame" x="40" y="113" width="241" height="35"/>
@@ -685,9 +693,17 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="mkF-yy-NJF" userLabel="ZeroVaultBoy">
-                                <rect key="frame" x="2" y="210" width="316" height="208"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fallout coin 2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-LP-ubr" userLabel="Coin">
+                                <rect key="frame" x="14" y="34" width="292" height="500"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8i9-U2-QtD">
+                                <rect key="frame" x="58" y="71" width="203.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGS-2r-0jg">
                                 <rect key="frame" x="77" y="464" width="166" height="53"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
@@ -698,23 +714,22 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8i9-U2-QtD">
-                                <rect key="frame" x="58" y="61" width="203.5" height="35"/>
-                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
-                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-1H-aUK">
+                                <rect key="frame" x="5" y="91" width="310" height="503"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_success" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-Nc-5KZ">
+                                <rect key="frame" x="2" y="-49" width="316" height="537"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-7O-UHG">
+                                <rect key="frame" x="18" y="430" width="283" height="49"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND2-Qr-DMk">
+                                <rect key="frame" x="130" y="436" width="60" height="34"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fallout coin 2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-LP-ubr" userLabel="Coin">
-                                <rect key="frame" x="14" y="34" width="292" height="500"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-1H-aUK">
-                                <rect key="frame" x="5" y="91" width="310" height="503"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_right" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-4T-Lyu">
-                                <rect key="frame" x="13" y="166" width="294" height="356"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.7251815025252526" green="0.62310166074359907" blue="0.22174188417031318" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -756,7 +771,7 @@
                             <constraint firstItem="gRb-i9-aVD" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="r4T-bT-HQ4"/>
                             <constraint firstItem="8i9-U2-QtD" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="rQN-aj-pao"/>
                             <constraint firstItem="mkF-yy-NJF" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="-14" id="s4Z-7A-D2s"/>
-                            <constraint firstItem="8i9-U2-QtD" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="-205.5" id="sck-eq-n0z"/>
+                            <constraint firstItem="8i9-U2-QtD" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="-195" id="sck-eq-n0z"/>
                             <constraint firstItem="Kvz-W4-d84" firstAttribute="top" secondItem="DoO-VC-1RH" secondAttribute="bottom" constant="10" id="snm-Fj-yJo"/>
                             <constraint firstItem="n9o-M0-nwy" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="-153.5" id="tgr-7l-vlJ"/>
                             <constraint firstItem="gpy-LP-ubr" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="ts2-d4-zna"/>
@@ -789,6 +804,7 @@
                         <segue destination="zyX-bE-kHB" kind="modal" identifier="round2ToRound3Segue" modalPresentationStyle="currentContext" modalTransitionStyle="flipHorizontal" id="3d0-Bk-svN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZR-ZQ-MSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="510" y="331"/>
         </scene>
@@ -914,16 +930,35 @@
                                     <action selector="hintBtnTapped:" destination="zyX-bE-kHB" eventType="touchUpInside" id="vTT-x0-hyW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-dV-Aed">
-                                <rect key="frame" x="40" y="317" width="241" height="35"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
+                                <rect key="frame" x="16" y="447" width="286" height="49"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
+                                <rect key="frame" x="125" y="414" width="70" height="39.5"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_bloodyaxe_v3.png" translatesAutoresizingMaskIntoConstraints="NO" id="POy-uF-zYc">
+                                <rect key="frame" x="0.0" y="82" width="320" height="477"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="OSx-PU-MkM" userLabel="ZeroVaultBoy">
+                                <rect key="frame" x="2" y="210" width="316" height="208"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-dV-Aed">
+                                <rect key="frame" x="40" y="112" width="241" height="35"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
                                 <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKl-CX-JEj">
-                                <rect key="frame" x="78" y="308" width="166" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKl-CX-JEj">
+                                <rect key="frame" x="77" y="447" width="166" height="53"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -932,16 +967,19 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tna-Vb-P2c">
-                                <rect key="frame" x="59" y="317" width="203.5" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tna-Vb-P2c">
+                                <rect key="frame" x="59" y="71.5" width="203.5" height="35"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
                                 <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neM-eU-xLp">
-                                <rect key="frame" x="78" y="308" width="166" height="53"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkingDeadResize1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-po-fxP" userLabel="Coin">
+                                <rect key="frame" x="14" y="134" width="292" height="300"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neM-eU-xLp">
+                                <rect key="frame" x="77" y="463.5" width="166" height="53"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
                                 <size key="titleShadowOffset" width="1" height="2.2250738585072014e-308"/>
@@ -950,73 +988,65 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vault boy (walking dead)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="OSx-PU-MkM" userLabel="ZeroVaultBoy">
-                                <rect key="frame" x="3" y="231" width="316" height="208"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walkingDeadResize1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-po-fxP" userLabel="Coin">
-                                <rect key="frame" x="15" y="85" width="292" height="500"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
                                 <rect key="frame" x="0.0" y="103" width="320" height="551"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-xT-MD7">
                                 <rect key="frame" x="13" y="156" width="294" height="376"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
-                                <rect key="frame" x="16" y="447" width="286" height="49"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
-                                <rect key="frame" x="125" y="409" width="70" height="39.5"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="35"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_bloodyaxe1.png" translatesAutoresizingMaskIntoConstraints="NO" id="POy-uF-zYc">
-                                <rect key="frame" x="0.0" y="82" width="320" height="477"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.84497316919191912" green="0.19940789004662904" blue="0.1256399216849666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="e96-MA-XQJ" firstAttribute="centerX" secondItem="Vtc-92-xK3" secondAttribute="centerX" id="056-DC-5RR"/>
-                            <constraint firstItem="SY4-Yt-dAA" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-155" id="0wc-PQ-x1O"/>
-                            <constraint firstItem="per-PK-mTZ" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-150" id="1Qi-94-rOV"/>
+                            <constraint firstItem="SY4-Yt-dAA" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-150" id="0wc-PQ-x1O"/>
+                            <constraint firstItem="per-PK-mTZ" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-145" id="1Qi-94-rOV"/>
                             <constraint firstItem="fOG-9i-Z9u" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-6" id="1ii-ol-qc7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zGR-xT-MD7" secondAttribute="trailing" constant="-3" id="2Qb-BV-eUP"/>
                             <constraint firstItem="Vtc-92-xK3" firstAttribute="top" secondItem="qYF-jI-Vve" secondAttribute="bottom" constant="1" id="3RV-jy-Yay"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QY3-ep-OzM" secondAttribute="trailing" constant="28" id="3fd-uW-ior"/>
+                            <constraint firstItem="neM-eU-xLp" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="4Az-ng-w50"/>
                             <constraint firstAttribute="bottomMargin" secondItem="pSU-4Y-WV5" secondAttribute="bottom" constant="-7" id="5qV-NK-nIl"/>
                             <constraint firstItem="gi2-Pr-d2B" firstAttribute="top" secondItem="41C-fb-PcA" secondAttribute="bottom" constant="77" id="9rQ-DW-4hT"/>
                             <constraint firstItem="SY4-Yt-dAA" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="9y7-RI-q1q"/>
+                            <constraint firstItem="tna-Vb-P2c" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="AfA-eH-A2I"/>
                             <constraint firstItem="41C-fb-PcA" firstAttribute="top" secondItem="Vtc-92-xK3" secondAttribute="bottom" constant="56" id="Ba1-5i-Mbu"/>
                             <constraint firstItem="zGR-xT-MD7" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-3" id="EPf-ji-frd"/>
                             <constraint firstItem="POy-uF-zYc" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="37" id="F24-aO-3Vi"/>
+                            <constraint firstItem="neM-eU-xLp" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="206" id="FWM-qe-lY5"/>
+                            <constraint firstItem="Q5Q-po-fxP" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" id="GmY-D4-ARI"/>
                             <constraint firstItem="pSU-4Y-WV5" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leading" id="J1N-r3-eQO"/>
                             <constraint firstItem="6m1-2n-Ili" firstAttribute="trailing" secondItem="41C-fb-PcA" secondAttribute="trailing" id="Jz2-jN-8vE"/>
                             <constraint firstItem="cDK-Xi-G0U" firstAttribute="centerY" secondItem="e96-MA-XQJ" secondAttribute="centerY" constant="-1" id="KSy-fY-ft7"/>
                             <constraint firstItem="SY4-Yt-dAA" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="1" id="LGc-bw-Qr6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SY4-Yt-dAA" secondAttribute="trailing" constant="1" id="LgS-qY-qLn"/>
+                            <constraint firstItem="qKl-CX-JEj" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="ME7-m8-bxk"/>
+                            <constraint firstItem="Q5Q-po-fxP" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="MKw-bu-jfX"/>
                             <constraint firstAttribute="bottom" secondItem="0Wh-BH-6lH" secondAttribute="bottom" constant="20" symbolic="YES" id="O4C-HV-V18"/>
                             <constraint firstItem="qYF-jI-Vve" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="67" id="O6L-Xw-G87"/>
                             <constraint firstItem="41C-fb-PcA" firstAttribute="centerX" secondItem="pSU-4Y-WV5" secondAttribute="centerX" id="OcA-pR-BX6"/>
                             <constraint firstItem="zGR-xT-MD7" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="60" id="OdL-Yf-A8Z"/>
                             <constraint firstItem="e96-MA-XQJ" firstAttribute="top" secondItem="QY3-ep-OzM" secondAttribute="bottom" constant="3" id="Qpr-uK-2Lp"/>
                             <constraint firstItem="6m1-2n-Ili" firstAttribute="trailing" secondItem="5qn-tJ-laV" secondAttribute="trailingMargin" id="Rl0-IK-Jf4"/>
+                            <constraint firstItem="Ve9-dV-Aed" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="-154" id="T8S-VS-Bjd"/>
                             <constraint firstItem="QY3-ep-OzM" firstAttribute="top" secondItem="KaB-el-WGL" secondAttribute="bottom" constant="8" symbolic="YES" id="TR0-dN-Xpl"/>
                             <constraint firstAttribute="trailing" secondItem="POy-uF-zYc" secondAttribute="trailing" id="U99-z6-DED"/>
                             <constraint firstItem="0Wh-BH-6lH" firstAttribute="trailing" secondItem="41C-fb-PcA" secondAttribute="trailing" id="Xd4-7G-Mq6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vtc-92-xK3" secondAttribute="trailing" constant="1" id="XwP-aE-fQE"/>
                             <constraint firstItem="e96-MA-XQJ" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="29" id="Zxt-yC-gfH"/>
+                            <constraint firstItem="qKl-CX-JEj" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="190" id="azs-F7-XzZ"/>
+                            <constraint firstItem="Q5Q-po-fxP" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-2" id="cVZ-2T-Arc"/>
                             <constraint firstItem="pSU-4Y-WV5" firstAttribute="top" secondItem="5qn-tJ-laV" secondAttribute="top" id="eSK-nm-h6P"/>
+                            <constraint firstItem="tna-Vb-P2c" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="-195" id="f06-AU-r8c"/>
+                            <constraint firstItem="Ve9-dV-Aed" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="fel-FG-D1x"/>
                             <constraint firstItem="qYF-jI-Vve" firstAttribute="top" secondItem="cDK-Xi-G0U" secondAttribute="bottom" constant="38" id="hGo-kV-d3g"/>
                             <constraint firstAttribute="trailing" secondItem="DEL-SS-DGu" secondAttribute="trailing" id="hjW-Mx-5Mx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q5Q-po-fxP" secondAttribute="trailing" constant="-2" id="hpQ-2G-Edv"/>
                             <constraint firstItem="cDK-Xi-G0U" firstAttribute="top" secondItem="fOG-9i-Z9u" secondAttribute="bottom" constant="14" id="iDT-Vy-aw0"/>
                             <constraint firstItem="qYF-jI-Vve" firstAttribute="centerX" secondItem="6m1-2n-Ili" secondAttribute="centerX" id="jJZ-xd-p0e"/>
                             <constraint firstItem="per-PK-mTZ" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="kXH-AR-SJh"/>
                             <constraint firstItem="0Wh-BH-6lH" firstAttribute="leading" secondItem="41C-fb-PcA" secondAttribute="leading" id="mSU-eU-DfQ"/>
+                            <constraint firstItem="OSx-PU-MkM" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-14" id="oO5-2r-uNj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OSx-PU-MkM" secondAttribute="trailing" constant="-14" id="odt-rU-8T0"/>
                             <constraint firstItem="cDK-Xi-G0U" firstAttribute="leading" secondItem="6m1-2n-Ili" secondAttribute="leading" id="pMJ-XK-ou1"/>
                             <constraint firstItem="0Wh-BH-6lH" firstAttribute="top" secondItem="6m1-2n-Ili" secondAttribute="bottom" constant="55" id="qOv-x5-UXF"/>
                             <constraint firstItem="41C-fb-PcA" firstAttribute="leading" secondItem="6m1-2n-Ili" secondAttribute="leading" id="sgx-RE-Sh8"/>
@@ -1024,6 +1054,7 @@
                             <constraint firstItem="Vtc-92-xK3" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-1" id="tdr-jg-Jba"/>
                             <constraint firstItem="fOG-9i-Z9u" firstAttribute="top" secondItem="5qn-tJ-laV" secondAttribute="topMargin" constant="15" id="ucY-VP-ksU"/>
                             <constraint firstItem="cDK-Xi-G0U" firstAttribute="top" secondItem="QY3-ep-OzM" secondAttribute="bottom" constant="43" id="uyl-Ss-dZs"/>
+                            <constraint firstItem="OSx-PU-MkM" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="30" id="whA-Pt-k0w"/>
                             <constraint firstItem="cDK-Xi-G0U" firstAttribute="trailing" secondItem="6m1-2n-Ili" secondAttribute="trailing" id="xEP-5F-voL"/>
                             <constraint firstItem="DEL-SS-DGu" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="95" id="xGM-BM-KGd"/>
                             <constraint firstItem="DEL-SS-DGu" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leading" id="xut-1D-78O"/>
@@ -1543,7 +1574,7 @@
         <image name="vault boy (madmax)_mad" width="356" height="573"/>
         <image name="vault boy (madmax)_success" width="501" height="545"/>
         <image name="vault boy (walking dead)" width="356" height="376"/>
-        <image name="vault boy (walking dead)_bloodyaxe1.png" width="514" height="589"/>
+        <image name="vault boy (walking dead)_bloodyaxe_v3.png" width="512" height="581"/>
         <image name="vault boy (walking dead)_gameover" width="350" height="208"/>
         <image name="vault boy (walking dead)_success" width="501" height="534"/>
         <image name="vault boy (walkingdead emblem)" width="360" height="360"/>

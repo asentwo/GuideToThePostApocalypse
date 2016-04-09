@@ -459,6 +459,8 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.tileTargetView3.removeFromSuperview()
     case tileTargetView4:
       self.tileTargetView4.removeFromSuperview()
+    case tileTargetView5:
+      self.tileTargetView5.removeFromSuperview()
     default: print("")
     }
   }
