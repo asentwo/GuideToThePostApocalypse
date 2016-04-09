@@ -26,6 +26,7 @@
             <string>Overseer-Bold</string>
             <string>Overseer-Bold</string>
             <string>Overseer-Bold</string>
+            <string>Overseer-Bold</string>
         </mutableArray>
         <mutableArray key="Overseer.otf">
             <string>Overseer</string>
@@ -349,6 +350,22 @@
                         <outlet property="HintButton" destination="X8c-hM-d5l" id="XXh-ZC-Zb6"/>
                         <outlet property="PlayerScore" destination="5Na-E3-SNW" id="6f5-Ky-Mm5"/>
                         <outlet property="QuestionLabel" destination="twk-nO-1hd" id="CXR-Ob-xLF"/>
+                        <outlet property="coin" destination="Uqu-Kl-fde" id="5F7-dk-F7g"/>
+                        <outlet property="coinYConstrant" destination="ed7-jr-asV" id="sHX-4N-esf"/>
+                        <outlet property="nextRoundButton" destination="Kqf-TP-xNa" id="5ZU-Vh-lQ7"/>
+                        <outlet property="scoreBanner" destination="t9u-aL-JK4" id="b9H-ZB-sJC"/>
+                        <outlet property="scoreLabel" destination="KVe-EI-Le5" id="aRf-Cw-0bh"/>
+                        <outlet property="tryAgainButton" destination="2kx-Rl-khf" id="ihg-gw-aqf"/>
+                        <outlet property="vaultBoyFailed" destination="EZL-Yl-aM6" id="IAq-ob-RgU"/>
+                        <outlet property="vaultBoyFailedYConstrant" destination="Pfw-Hg-26f" id="mj3-bc-ukz"/>
+                        <outlet property="vaultBoyRight" destination="Cgw-fj-oPN" id="Qoq-PA-Ppv"/>
+                        <outlet property="vaultBoyRightYConstraint" destination="1N2-Dm-I3e" id="90j-V7-x50"/>
+                        <outlet property="vaultBoySuccess" destination="Jaz-ha-6JA" id="RMC-Tq-cfh"/>
+                        <outlet property="vaultBoySuccessYConstraint" destination="cly-5W-8WG" id="yHJ-d3-TFJ"/>
+                        <outlet property="vaultBoyWrong" destination="Ktt-v7-jX0" id="ZJM-bD-hlM"/>
+                        <outlet property="vaultBoyWrongYConstraint" destination="Dg6-29-ax2" id="sp1-ft-k4m"/>
+                        <outlet property="youEarnedACoinLabel" destination="cW9-Zw-5by" id="L0c-nZ-CAh"/>
+                        <outlet property="youFailedThisRoundLabel" destination="l7U-b4-2TA" id="Dtx-u1-85c"/>
                         <segue destination="l35-yK-MFC" kind="modal" identifier="round1ToRound2Segue" modalTransitionStyle="flipHorizontal" id="yhB-aA-3tK"/>
                     </connections>
                 </viewController>
@@ -482,32 +499,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-5D-aaY">
                                 <rect key="frame" x="61" y="75" width="199" height="220"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-t6-Zwc">
-                                <rect key="frame" x="48" y="296" width="241" height="35"/>
-                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
-                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBg-2w-rYr">
-                                <rect key="frame" x="85" y="287" width="166" height="53"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Try Again" backgroundImage="yellow_button">
-                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="txz-go-ExD" userLabel="ZeroVaultBoy">
-                                <rect key="frame" x="10" y="209" width="316" height="208"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-zD-7jR">
                                 <rect key="frame" x="0.0" y="103" width="320" height="551"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="dyk-8q-VBE">
-                                <rect key="frame" x="13" y="156" width="294" height="376"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-4Z-1Eb">
                                 <rect key="frame" x="18" y="429" width="283" height="49"/>
@@ -534,7 +527,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLk-Gf-ln5">
-                                <rect key="frame" x="77" y="463.5" width="166" height="53"/>
+                                <rect key="frame" x="77" y="463" width="166" height="53"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
                                 <size key="titleShadowOffset" width="1" height="2.2250738585072014e-308"/>
@@ -543,6 +536,30 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="dyk-8q-VBE">
+                                <rect key="frame" x="13" y="156" width="294" height="376"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="txz-go-ExD" userLabel="ZeroVaultBoy">
+                                <rect key="frame" x="2" y="210" width="316" height="208"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBg-2w-rYr">
+                                <rect key="frame" x="77" y="447" width="166" height="53"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Try Again" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-t6-Zwc">
+                                <rect key="frame" x="39.5" y="112.5" width="241" height="35"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.084401250141749817" green="0.44475174536767681" blue="0.12018741309255901" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -550,6 +567,7 @@
                             <constraint firstItem="v4y-C2-doM" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-26" id="0tF-V3-aQd"/>
                             <constraint firstItem="dyk-8q-VBE" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-3" id="0uK-Hr-lXh"/>
                             <constraint firstItem="hRq-Zt-EIr" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="8" symbolic="YES" id="1hr-Me-uHe"/>
+                            <constraint firstItem="RBg-2w-rYr" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="190" id="2Ik-zC-FcF"/>
                             <constraint firstItem="kvT-4Z-1Eb" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="2vy-Jw-jsu"/>
                             <constraint firstAttribute="trailing" secondItem="v4y-C2-doM" secondAttribute="trailing" id="3gM-s0-iJD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3RQ-Yv-rq8" secondAttribute="trailing" constant="-2" id="6TW-IT-m3A"/>
@@ -558,8 +576,10 @@
                             <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="hRq-Zt-EIr" secondAttribute="bottom" constant="29" id="AvF-DT-w8t"/>
                             <constraint firstItem="mw4-ds-yC3" firstAttribute="trailing" secondItem="jpJ-Mw-xLI" secondAttribute="trailing" id="Bey-qT-sVQ"/>
                             <constraint firstItem="jpJ-Mw-xLI" firstAttribute="top" secondItem="FwU-Gs-iOu" secondAttribute="bottom" constant="1" id="CY6-MN-eb2"/>
+                            <constraint firstItem="ePY-t6-Zwc" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="D4L-kZ-exI"/>
                             <constraint firstItem="7E7-zD-7jR" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="95" id="F3C-jR-Qt0"/>
                             <constraint firstItem="v4y-C2-doM" firstAttribute="centerX" secondItem="chT-gr-C6G" secondAttribute="centerX" id="JB7-Al-gOT"/>
+                            <constraint firstItem="ePY-t6-Zwc" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-154" id="JoC-ok-kog"/>
                             <constraint firstItem="9bb-f0-oFx" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-195" id="Mw1-3V-5lh"/>
                             <constraint firstItem="9bb-f0-oFx" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="NhH-6r-XWE"/>
                             <constraint firstItem="FwU-Gs-iOu" firstAttribute="top" secondItem="3oC-Zl-5zx" secondAttribute="bottom" constant="8" symbolic="YES" id="QFE-EN-FzN"/>
@@ -568,6 +588,8 @@
                             <constraint firstItem="8gV-B8-vEz" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="TxK-hE-qW2"/>
                             <constraint firstItem="mw4-ds-yC3" firstAttribute="leading" secondItem="jpJ-Mw-xLI" secondAttribute="leading" id="U8k-zG-u5W"/>
                             <constraint firstAttribute="bottom" secondItem="DM2-dE-foE" secondAttribute="bottom" constant="20" symbolic="YES" id="UPP-ha-C1g"/>
+                            <constraint firstItem="txz-go-ExD" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-14" id="UfA-lD-rG3"/>
+                            <constraint firstItem="RBg-2w-rYr" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="VM2-mI-WoJ"/>
                             <constraint firstItem="mw4-ds-yC3" firstAttribute="top" secondItem="jpJ-Mw-xLI" secondAttribute="bottom" constant="1" id="VWO-ZG-8x5"/>
                             <constraint firstItem="chT-gr-C6G" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="20" id="Vto-y7-IMk"/>
                             <constraint firstItem="kLk-Gf-ln5" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="206" id="WaY-jk-3xs"/>
@@ -578,6 +600,8 @@
                             <constraint firstItem="ic9-97-zbm" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-64" id="bOH-DF-ubt"/>
                             <constraint firstItem="WpF-5D-aaY" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="45" id="beE-8t-1ey"/>
                             <constraint firstItem="3oC-Zl-5zx" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="bx5-dX-NYx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="txz-go-ExD" secondAttribute="trailing" constant="-14" id="duo-Pp-nMN"/>
+                            <constraint firstItem="txz-go-ExD" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="30" id="dvf-Nw-uKv"/>
                             <constraint firstItem="Qoa-hm-80J" firstAttribute="top" secondItem="mw4-ds-yC3" secondAttribute="bottom" constant="73" id="eCS-Px-tJJ"/>
                             <constraint firstItem="FwU-Gs-iOu" firstAttribute="trailing" secondItem="jpJ-Mw-xLI" secondAttribute="trailing" id="eEk-Wt-d1d"/>
                             <constraint firstItem="8gV-B8-vEz" firstAttribute="top" secondItem="ic9-97-zbm" secondAttribute="bottom" constant="-52" id="eHq-xv-qA0"/>
@@ -611,6 +635,22 @@
                         <outlet property="HintButton" destination="yFr-ng-mex" id="T7I-cY-RLU"/>
                         <outlet property="PlayerScore" destination="hRq-Zt-EIr" id="NRj-FP-wI8"/>
                         <outlet property="QuestionLabel" destination="chT-gr-C6G" id="xep-TV-YrS"/>
+                        <outlet property="coin" destination="3RQ-Yv-rq8" id="RW4-r6-H4g"/>
+                        <outlet property="coinYConstraint" destination="gpf-78-g5S" id="Amc-UE-dCj"/>
+                        <outlet property="nextRoundButton" destination="kLk-Gf-ln5" id="KJK-v2-Z77"/>
+                        <outlet property="scoreBanner" destination="kvT-4Z-1Eb" id="6JR-OU-ZTf"/>
+                        <outlet property="scoreLabel" destination="8gV-B8-vEz" id="Lbg-vr-x65"/>
+                        <outlet property="tryAgainButton" destination="RBg-2w-rYr" id="LO4-7i-iPR"/>
+                        <outlet property="vaultBoyFailed" destination="txz-go-ExD" id="Zd2-Nt-1UC"/>
+                        <outlet property="vaultBoyFailedYConstraint" destination="dvf-Nw-uKv" id="QO2-fz-URW"/>
+                        <outlet property="vaultBoyRight" destination="dyk-8q-VBE" id="vbe-TB-Yuh"/>
+                        <outlet property="vaultBoyRightYConstraint" destination="n65-Ed-7Xp" id="pU9-O4-Eye"/>
+                        <outlet property="vaultBoySuccess" destination="ic9-97-zbm" id="crz-yF-eyo"/>
+                        <outlet property="vaultBoySuccessYConstraint" destination="bOH-DF-ubt" id="9N7-yX-LKi"/>
+                        <outlet property="vaultBoyWrong" destination="7E7-zD-7jR" id="Q9w-pY-IQ4"/>
+                        <outlet property="vaultBoyWrongYConstraint" destination="F3C-jR-Qt0" id="edx-1C-zMm"/>
+                        <outlet property="youEarnedACoinLabel" destination="9bb-f0-oFx" id="AbP-ur-p7j"/>
+                        <outlet property="youFailedThisRoundLabel" destination="ePY-t6-Zwc" id="okR-ag-xP3"/>
                         <segue destination="aXF-l5-PT1" kind="modal" identifier="round4ToRound5Segue" modalTransitionStyle="flipHorizontal" id="hwf-EZ-Jci"/>
                     </connections>
                 </viewController>
@@ -672,27 +712,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_right" translatesAutoresizingMaskIntoConstraints="NO" id="enZ-4T-Lyu">
                                 <rect key="frame" x="13" y="166" width="294" height="356"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="mkF-yy-NJF" userLabel="ZeroVaultBoy">
-                                <rect key="frame" x="2" y="210" width="316" height="208"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-M0-nwy">
-                                <rect key="frame" x="40" y="113" width="241" height="35"/>
-                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
-                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6i-bB-NNr">
-                                <rect key="frame" x="77" y="448" width="166" height="53"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Try Again" backgroundImage="yellow_button">
-                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fallout coin 2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-LP-ubr" userLabel="Coin">
                                 <rect key="frame" x="14" y="34" width="292" height="500"/>
                             </imageView>
@@ -730,6 +749,27 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="mkF-yy-NJF" userLabel="ZeroVaultBoy">
+                                <rect key="frame" x="2" y="210" width="316" height="208"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-M0-nwy">
+                                <rect key="frame" x="40" y="113" width="241" height="35"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6i-bB-NNr">
+                                <rect key="frame" x="77" y="448" width="166" height="53"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="9"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Try Again" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7251815025252526" green="0.62310166074359907" blue="0.22174188417031318" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -946,9 +986,6 @@
                                     <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="OSx-PU-MkM" userLabel="ZeroVaultBoy">
-                                <rect key="frame" x="2" y="210" width="316" height="208"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-dV-Aed">
                                 <rect key="frame" x="40" y="112" width="241" height="35"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
@@ -988,11 +1025,14 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
-                                <rect key="frame" x="0.0" y="103" width="320" height="551"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-xT-MD7">
                                 <rect key="frame" x="13" y="156" width="294" height="376"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
+                                <rect key="frame" x="-0.5" y="103" width="320" height="551"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="OSx-PU-MkM" userLabel="ZeroVaultBoy">
+                                <rect key="frame" x="2" y="210" width="316" height="208"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.84497316919191912" green="0.19940789004662904" blue="0.1256399216849666" alpha="1" colorSpace="calibratedRGB"/>
@@ -1071,6 +1111,22 @@
                         <outlet property="PlayerScore" destination="QY3-ep-OzM" id="HCl-5U-Fxz"/>
                         <outlet property="QuestionLabel" destination="cDK-Xi-G0U" id="dIp-3d-PXn"/>
                         <outlet property="backgroundImage" destination="e96-MA-XQJ" id="qUc-QV-WpP"/>
+                        <outlet property="coin" destination="Q5Q-po-fxP" id="Qmi-jl-YNh"/>
+                        <outlet property="coinYConstaint" destination="GmY-D4-ARI" id="uof-Jk-EhD"/>
+                        <outlet property="nextRoundButton" destination="neM-eU-xLp" id="Ofu-Jo-7Rq"/>
+                        <outlet property="scoreBanner" destination="SY4-Yt-dAA" id="hG4-4r-T5L"/>
+                        <outlet property="scoreLabel" destination="per-PK-mTZ" id="Z9M-na-c3Q"/>
+                        <outlet property="tryAgainButton" destination="qKl-CX-JEj" id="oWS-mO-iNT"/>
+                        <outlet property="vaultBoyFailed" destination="OSx-PU-MkM" id="oNa-8b-gWm"/>
+                        <outlet property="vaultBoyFailedYConstraint" destination="whA-Pt-k0w" id="MR3-vb-Keq"/>
+                        <outlet property="vaultBoyRight" destination="zGR-xT-MD7" id="NcP-uJ-8ov"/>
+                        <outlet property="vaultBoyRightYConstraint" destination="OdL-Yf-A8Z" id="J4J-HY-3Ks"/>
+                        <outlet property="vaultBoySuccess" destination="POy-uF-zYc" id="tjU-2D-W6f"/>
+                        <outlet property="vaultBoySuccessYConstraint" destination="F24-aO-3Vi" id="t5a-cQ-6ez"/>
+                        <outlet property="vaultBoyWrong" destination="DEL-SS-DGu" id="tYM-Kx-ZcU"/>
+                        <outlet property="vaultBoyWrongYConstraint" destination="xGM-BM-KGd" id="93T-pr-osn"/>
+                        <outlet property="youEarnedACoinLabel" destination="tna-Vb-P2c" id="wkQ-Nb-hI3"/>
+                        <outlet property="youFailedThisRoundLabel" destination="Ve9-dV-Aed" id="KKb-dH-BqH"/>
                         <segue destination="8Ls-PY-UIK" kind="modal" identifier="round3ToRound4Segue" modalTransitionStyle="flipHorizontal" id="CX9-oe-G0K"/>
                     </connections>
                 </viewController>
@@ -1198,9 +1254,6 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax)" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-yX-UHh">
-                                <rect key="frame" x="13" y="166" width="294" height="356"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-tU-iPb" userLabel="ZeroVaultBoy">
                                 <rect key="frame" x="2" y="210" width="316" height="208"/>
                             </imageView>
@@ -1264,6 +1317,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9g9-pF-GUj" secondAttribute="height" multiplier="310:503" id="ByR-uL-Z1M"/>
                                 </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax)" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-yX-UHh">
+                                <rect key="frame" x="12.5" y="166" width="294" height="356"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.58039215686274515" green="0.4392156862745098" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
@@ -1347,6 +1403,22 @@
                         <outlet property="HintButton" destination="ZjQ-ut-ua0" id="TLm-dP-pxv"/>
                         <outlet property="PlayerScore" destination="AA0-dX-kX6" id="zv7-TR-vk2"/>
                         <outlet property="QuestionLabel" destination="0vO-Hm-mD1" id="uJg-Gf-ly7"/>
+                        <outlet property="coin" destination="ApM-wD-KgA" id="OGk-CN-hC1"/>
+                        <outlet property="coinYConstraint" destination="7BD-4G-CFY" id="olg-JB-PPl"/>
+                        <outlet property="nextRoundButton" destination="AfF-Dj-ihe" id="z7P-nu-2XV"/>
+                        <outlet property="scoreBanner" destination="PBx-wC-ehw" id="CfK-S9-DNJ"/>
+                        <outlet property="scoreLabel" destination="pA1-Y0-TBC" id="tih-Pk-wZu"/>
+                        <outlet property="tryAgainButton" destination="rY6-Po-5q1" id="2VI-8y-lex"/>
+                        <outlet property="vaultBoyFailed" destination="uxE-tU-iPb" id="V43-b6-ULc"/>
+                        <outlet property="vaultBoyFailedYConstraint" destination="0Je-sp-cvt" id="UcP-TX-K4l"/>
+                        <outlet property="vaultBoyRight" destination="Bk9-yX-UHh" id="k8H-HP-OrQ"/>
+                        <outlet property="vaultBoyRightYConstraint" destination="iuK-h7-ism" id="1Vu-ZE-4jg"/>
+                        <outlet property="vaultBoySuccess" destination="6I6-53-YOS" id="ilk-Wu-UIz"/>
+                        <outlet property="vaultBoySuccessYConstraint" destination="pQm-tx-4h1" id="v5P-8t-qJL"/>
+                        <outlet property="vaultBoyWrong" destination="9g9-pF-GUj" id="Eal-mm-uyt"/>
+                        <outlet property="vaultBoyWrongYConstraint" destination="QD0-qe-Lc3" id="04i-7A-WX0"/>
+                        <outlet property="youEarnedACoinLabel" destination="UZU-CU-E4G" id="5Gl-zj-YZC"/>
+                        <outlet property="youFailedThisRoundLabel" destination="Ud5-Jr-lK2" id="fFs-7q-VOC"/>
                         <segue destination="Ylf-eO-TZ1" kind="modal" identifier="round5ToRound6Segue" modalTransitionStyle="flipHorizontal" id="e7Y-Fv-fyg"/>
                     </connections>
                 </viewController>
@@ -1451,7 +1523,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qea-sN-daP">
-                                <rect key="frame" x="72.5" y="446" width="174" height="56"/>
+                                <rect key="frame" x="73" y="446" width="174" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qea-sN-daP" secondAttribute="height" multiplier="166:53" id="lh0-Pr-3kL"/>
                                 </constraints>
@@ -1463,8 +1535,19 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Survived!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj4-45-UxC" userLabel="You Survived!">
+                                <rect key="frame" x="88" y="69" width="143" height="35"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
+                                <color key="textColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="congrats animation.gif" translatesAutoresizingMaskIntoConstraints="NO" id="mg6-79-X1L" userLabel="Congrats">
+                                <rect key="frame" x="-38" y="-216" width="396" height="1000"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL2-2B-t9Z" userLabel="Play Again Button">
-                                <rect key="frame" x="72.5" y="446" width="174" height="56"/>
+                                <rect key="frame" x="65" y="464" width="190" height="60.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LL2-2B-t9Z" secondAttribute="height" multiplier="166:53" id="KGB-q2-bnv"/>
                                 </constraints>
@@ -1479,35 +1562,41 @@
                         </subviews>
                         <color key="backgroundColor" red="0.81841856060606055" green="0.48984038149034403" blue="0.26867766737201643" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="xj4-45-UxC" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="2YH-xW-A1m"/>
                             <constraint firstItem="RdH-yI-AS7" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" id="2YL-YI-qls"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rCp-D1-Kjd" secondAttribute="trailing" constant="-3" id="2Yi-ef-iHg"/>
                             <constraint firstItem="vM5-jM-MdA" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="1" id="3hD-j4-VC8"/>
                             <constraint firstItem="kaV-Oc-04v" firstAttribute="top" secondItem="vM5-jM-MdA" secondAttribute="bottom" constant="10" id="5zh-jg-NeM"/>
                             <constraint firstItem="8lY-vN-5MP" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="7Oj-Vy-S6x"/>
+                            <constraint firstItem="mg6-79-X1L" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="-54" id="7g5-fi-AtA"/>
                             <constraint firstItem="RdH-yI-AS7" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="-2" id="8JO-J1-4uE"/>
                             <constraint firstItem="sob-kv-mAX" firstAttribute="top" secondItem="8eA-CO-pqP" secondAttribute="bottom" constant="-58" id="8Ry-gH-FU5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZWU-g0-ViU" secondAttribute="trailing" constant="100" id="8UJ-4y-mCc"/>
-                            <constraint firstItem="LL2-2B-t9Z" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="190" id="E13-zG-uzW"/>
+                            <constraint firstItem="mg6-79-X1L" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" id="C7R-TG-LUZ"/>
                             <constraint firstItem="2Ef-yS-6iX" firstAttribute="top" secondItem="qTp-wC-lKo" secondAttribute="top" id="EOq-u4-EC7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QHv-yM-LJ3" secondAttribute="trailing" constant="-14" id="EYL-g9-CnM"/>
                             <constraint firstItem="QHv-yM-LJ3" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="30" id="FyC-8x-4zb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8eA-CO-pqP" secondAttribute="trailing" constant="-14" id="Gac-54-0Fs"/>
                             <constraint firstItem="cHU-oL-guV" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="58.5" id="Ghv-Wx-TA8"/>
                             <constraint firstItem="vM5-jM-MdA" firstAttribute="top" secondItem="M43-NX-0zw" secondAttribute="bottom" constant="30" id="JPf-BD-h7N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mg6-79-X1L" secondAttribute="trailing" constant="-54" id="KCa-gB-DDs"/>
                             <constraint firstItem="qea-sN-daP" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="MHT-R1-9Lg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vM5-jM-MdA" secondAttribute="trailing" constant="1" id="OeM-Ol-CiN"/>
+                            <constraint firstItem="mg6-79-X1L" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="Plu-Tx-o2j"/>
                             <constraint firstItem="qea-sN-daP" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="190" id="Quv-Mu-q6e"/>
                             <constraint firstItem="atK-D6-Zr4" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="RMD-2w-oKh"/>
                             <constraint firstItem="EUf-Ib-aLk" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="-154" id="Rw5-Bg-dca"/>
-                            <constraint firstItem="LL2-2B-t9Z" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="57" id="Un1-cc-ENk"/>
+                            <constraint firstItem="LL2-2B-t9Z" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="49" id="Un1-cc-ENk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RdH-yI-AS7" secondAttribute="trailing" constant="-2" id="Vpw-sX-M6N"/>
                             <constraint firstItem="8eA-CO-pqP" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="-14" id="YZ5-cB-duP"/>
                             <constraint firstItem="sob-kv-mAX" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="a1E-VM-2CC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kaV-Oc-04v" secondAttribute="trailing" constant="35" id="bHD-fP-2yC"/>
+                            <constraint firstItem="mg6-79-X1L" firstAttribute="top" secondItem="xj4-45-UxC" secondAttribute="bottom" constant="-320" id="bWt-or-5CJ"/>
                             <constraint firstItem="atK-D6-Zr4" firstAttribute="top" secondItem="8eA-CO-pqP" secondAttribute="bottom" constant="-52" id="bx5-RD-c4M"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LL2-2B-t9Z" secondAttribute="trailing" constant="57" id="d31-D7-06g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LL2-2B-t9Z" secondAttribute="trailing" constant="49" id="d31-D7-06g"/>
                             <constraint firstItem="EUf-Ib-aLk" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="fdv-0J-7jc"/>
                             <constraint firstAttribute="trailing" secondItem="2Ef-yS-6iX" secondAttribute="trailing" id="fuC-cm-tQC"/>
+                            <constraint firstItem="LL2-2B-t9Z" firstAttribute="top" secondItem="mg6-79-X1L" secondAttribute="bottom" constant="-320" id="iZT-x6-qx7"/>
                             <constraint firstItem="ZWU-g0-ViU" firstAttribute="top" secondItem="kaV-Oc-04v" secondAttribute="bottom" constant="10" id="jBd-sV-VkH"/>
                             <constraint firstItem="rCp-D1-Kjd" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="-3" id="jRY-cu-qcd"/>
                             <constraint firstItem="8lY-vN-5MP" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="-206" id="jpv-Ls-n4C"/>
@@ -1561,6 +1650,7 @@
         <image name="banner" width="283" height="49"/>
         <image name="black-ink-grunge-stamp-circle" width="360" height="360"/>
         <image name="button_green" width="360" height="116"/>
+        <image name="congrats animation.gif" width="1000" height="1000"/>
         <image name="fallout coin 2.gif" width="500" height="500"/>
         <image name="fallout coin.gif" width="500" height="500"/>
         <image name="light_grunge" width="360" height="360"/>

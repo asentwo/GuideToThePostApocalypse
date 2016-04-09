@@ -15,6 +15,9 @@
 		6E1443241C4AB7410066B61C /* Round5_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1443231C4AB7410066B61C /* Round5_VC.swift */; };
 		6E14432E1C4AB8280066B61C /* Round6_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14432D1C4AB8280066B61C /* Round6_VC.swift */; };
 		6E1738591CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */; };
+		6E17385C1CB88DCA00D1A591 /* finalResize300.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E17385A1CB88DCA00D1A591 /* finalResize300.gif */; };
+		6E17385D1CB88DCA00D1A591 /* finalResize400.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E17385B1CB88DCA00D1A591 /* finalResize400.gif */; };
+		6E17385F1CB88E6100D1A591 /* congrats animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E17385E1CB88E6100D1A591 /* congrats animation.gif */; };
 		6E19E4671C1A592A0093F762 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E4661C1A592A0093F762 /* Social.framework */; };
 		6E19E4691C1A59310093F762 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E4681C1A59310093F762 /* Accounts.framework */; };
 		6E19E46B1C1A59370093F762 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E46A1C1A59370093F762 /* CFNetwork.framework */; };
@@ -225,6 +228,9 @@
 		6E1443231C4AB7410066B61C /* Round5_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round5_VC.swift; sourceTree = "<group>"; };
 		6E14432D1C4AB8280066B61C /* Round6_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round6_VC.swift; sourceTree = "<group>"; };
 		6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe_v3.png"; sourceTree = "<group>"; };
+		6E17385A1CB88DCA00D1A591 /* finalResize300.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = finalResize300.gif; sourceTree = "<group>"; };
+		6E17385B1CB88DCA00D1A591 /* finalResize400.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = finalResize400.gif; sourceTree = "<group>"; };
+		6E17385E1CB88E6100D1A591 /* congrats animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "congrats animation.gif"; sourceTree = "<group>"; };
 		6E19E4661C1A592A0093F762 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6E19E4681C1A59310093F762 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6E19E46A1C1A59370093F762 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -618,6 +624,9 @@
 		6E7828FF1CAC522A0094E798 /* Coins2 */ = {
 			isa = PBXGroup;
 			children = (
+				6E17385E1CB88E6100D1A591 /* congrats animation.gif */,
+				6E17385A1CB88DCA00D1A591 /* finalResize300.gif */,
+				6E17385B1CB88DCA00D1A591 /* finalResize400.gif */,
 				6E78291F1CAC54D60094E798 /* walkingDeadResize1.gif */,
 				6E7829001CAC522A0094E798 /* fallout2Resize.gif */,
 				6E7829011CAC522A0094E798 /* falloutResize.gif */,
@@ -1090,6 +1099,7 @@
 				6EAEC5331C4034EB0023F4BF /* vintage2_banner@3x.png in Resources */,
 				6E5ACF4E1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png in Resources */,
 				6EAEC5301C4034EB0023F4BF /* red_banner@3x.png in Resources */,
+				6E17385F1CB88E6100D1A591 /* congrats animation.gif in Resources */,
 				6E54BF671C4862FD003ED24C /* jingle-win-00.wav in Resources */,
 				6EAEC5611C4034EB0023F4BF /* Super_mutant_master.png in Resources */,
 				6E54BF691C4862FD003ED24C /* jingle-win-synth-02.wav in Resources */,
@@ -1130,6 +1140,7 @@
 				6EAEC5631C4034EB0023F4BF /* tile.png in Resources */,
 				6E68574F1C1A55F80005F008 /* Survival.storyboard in Resources */,
 				6E7BDFA11C851CA900B93822 /* FireCar.png in Resources */,
+				6E17385C1CB88DCA00D1A591 /* finalResize300.gif in Resources */,
 				6E54BF711C48643B003ED24C /* time-running-out-buzzer.mp3 in Resources */,
 				6EAEC54B1C4034EB0023F4BF /* light_grunge@3x.png in Resources */,
 				6EA4368E1C23623700B445A7 /* Overseer Italic.otf in Resources */,
@@ -1169,6 +1180,7 @@
 				6ECF73051CA9EECA00C0ABAB /* vault boy (walking dead)_success.png in Resources */,
 				6E1738591CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png in Resources */,
 				6ECF73071CA9EECF00C0ABAB /* vault boy (walking dead)_gameover.png in Resources */,
+				6E17385D1CB88DCA00D1A591 /* finalResize400.gif in Resources */,
 				6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */,
 				6EAEC5461C4034EB0023F4BF /* chalkboard_label@3x.png in Resources */,
 				6E9ABA2F1C7BAA8500F7EF77 /* vault boy_wrong.png in Resources */,

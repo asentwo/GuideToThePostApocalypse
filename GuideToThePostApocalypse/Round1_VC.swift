@@ -28,6 +28,34 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   @IBOutlet var HintButton: UIButton!
   @IBOutlet var BackgroundImage: UIImageView!
   
+  //vaultBoys
+  @IBOutlet weak var vaultBoyRight: UIImageView!
+  @IBOutlet weak var vaultBoyWrong: UIImageView!
+  @IBOutlet weak var vaultBoySuccess: UIImageView!
+  @IBOutlet weak var vaultBoyFailed: UIImageView!
+  
+  //buttons
+  @IBOutlet weak var tryAgainButton: UIButton!
+  @IBOutlet weak var nextRoundButton: UIButton!
+  
+  //labels
+  @IBOutlet weak var youFailedThisRoundLabel: UILabel!
+  @IBOutlet weak var scoreBanner: UIImageView!
+  @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var youEarnedACoinLabel: UILabel!
+  
+  //gif
+  @IBOutlet weak var coin: UIImageView!
+  
+  //constraints
+  
+  @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var vaultBoyWrongYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var vaultBoyFailedYConstrant: NSLayoutConstraint!
+  @IBOutlet weak var coinYConstrant: NSLayoutConstraint!
+  
+  
   //MARK: ViewDidLoad
   
   override func viewDidLoad() {
