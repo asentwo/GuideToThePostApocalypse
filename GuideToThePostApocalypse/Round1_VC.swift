@@ -61,6 +61,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    labelSizeAdjustment()
     hideAllGraphics()
     addAllGraphics()
     ButtonActions()
@@ -215,6 +216,12 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     coin.hidden = true
   }
   
+  func labelSizeAdjustment () {
+    QuestionLabel.adjustsFontSizeToFitWidth = true
+    youEarnedACoinLabel.adjustsFontSizeToFitWidth = true
+    scoreLabel.adjustsFontSizeToFitWidth = true
+    youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
+  }
   
   //MARK: Buttons
   
@@ -243,7 +250,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     }
   }
   
-  
+  //MARK: Redo wrong answer banner
   //Button Bounce
   func BounceButton (button: UIButton) {
     let b = button.bounds
@@ -257,7 +264,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
         self.view.bringSubviewToFront(self.bannersAndVaultBoys.wrongAnswerLabel)
     })
   }
-  
+  //MARK: Redo right answer banner
   //RightButtonSelected
   
   func RightButtonSelected () {
@@ -299,7 +306,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   
   
-  //Hint Button
+  //MARK: Hint Button features
+  
   func setUpWrongAnswers(rightAnswer: Int) {
     var answers = ["answer1","answer2","answer3","answer4"]
     btnsArray = [Button1, Button2, Button3, Button4]
@@ -338,10 +346,10 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   func timerShakeAndReset () {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
-    self.DisableButtons()
-    self.UpdateScoreRunOutOfTime()
-    self.TimerShake()
-    self.madVaultBoy()
+      self.DisableButtons()
+      self.UpdateScoreRunOutOfTime()
+      self.TimerShake()
+      self.madVaultBoy()
     }
   }
   
@@ -394,7 +402,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     self.RemoveAlreadyUsedQuestion()
     self.stopAudioTimer()
     self.DisableButtons()
-    self.hintButtonTapped = false
     self.UpdateScoreNegative()
     currentScore = totalScore + self.currentRoundScore
     totalScore = currentScore
@@ -404,8 +411,9 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   }
   
   func hideMadVaultBoyButtons(round:[String]) {
-    if self.hintButtonTapped == true {self.unHideBtns()}
-    print("\(hintButtonTapped)")
+    if self.hintButtonTapped == true {self.unHideBtns()
+      self.hintButtonTapped = false
+    }
     if round.count == 0 {
       self.DismissQandA()
       if self.currentRoundScore == 0 {
@@ -426,7 +434,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     self.vaultboyToFront()
     self.stopAudioTimer()
     timer.pause()
-    self.hintButtonTapped = false
     self.RemoveAlreadyUsedQuestion()
     self.audioController.playEffect(SoundDing)
     self.DisableButtons()
@@ -444,6 +451,9 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
           }, completion: {_ in
             self.hideThumbsUpVaultBoyButtons(self.round1_objectIDArray)
             thumbsUpBoyRunning = false
+            if self.hintButtonTapped == true {self.unHideBtns()
+              self.hintButtonTapped = false
+            }
         })
     })
   }
@@ -451,7 +461,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   func hideThumbsUpVaultBoyButtons(round:[String] ) {
     if round.count == 0 {
-      
       self.DismissQandA()
       self.congratulationsVaultBoy("falloutResize")
     } else {
@@ -515,67 +524,48 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     })
   }
   
-  
-  
-  
   //MARK: IBActions
   
   @IBAction func Button1Action(sender: AnyObject) {
     self.DisableButtons()
-//    if self.hintButtonTapped == true {
-//      delay(1.5, closure: {self.unHideBtns()})
-//    }
     if (self.answer == "0") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
       audioController.playEffect(SoundButtonPressed)
-     // madVaultBoyRunning = true
       WrongButtonSelected(Button1)
     }
   }
   
   @IBAction func Button2Action(sender: AnyObject) {
     self.DisableButtons()
-//    if self.hintButtonTapped == true {
-//      delay(1.5, closure: {self.unHideBtns()})
-//    }
     if (self.answer == "1") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
       audioController.playEffect(SoundButtonPressed)
-     // madVaultBoyRunning = true
       WrongButtonSelected(Button2)
     }
   }
   
   @IBAction func Button3Action(sender: AnyObject) {
     self.DisableButtons()
-//    if self.hintButtonTapped == true {
-//      delay(1.5, closure: {self.unHideBtns()})
-//    }
     if (self.answer == "2") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
       audioController.playEffect(SoundButtonPressed)
-    //  madVaultBoyRunning = true
       WrongButtonSelected(Button3)
     }
   }
   
   @IBAction func Button4Action(sender: AnyObject) {
     self.DisableButtons()
-//    if self.hintButtonTapped == true {
-//      delay(1.5, closure: {self.unHideBtns()})
-//    }
     if (self.answer == "3") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
       audioController.playEffect(SoundButtonPressed)
-   //   madVaultBoyRunning = true
       WrongButtonSelected(Button4)
     }
   }
@@ -587,16 +577,15 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
+    self.data.points -= pointsPerMultiHint
+    self.currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
     let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
       self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)
       //gives button bouncy effect
       }, completion: {_ in
         self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width, height: b.size.height)
-        self.data.points -= pointsPerMultiHint
-        self.currentRoundScore = self.data.points
-        self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
-        self.delay(4.0, closure: {self.HintButton.enabled = true})
     })
   }
 }
