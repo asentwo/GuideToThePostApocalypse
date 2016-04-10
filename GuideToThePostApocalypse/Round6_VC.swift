@@ -50,9 +50,11 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet weak var scoreBanner: UIImageView!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var youEarnedACoinLabel: UILabel!
+  @IBOutlet weak var youSurvivedLabel: UILabel!
   
   //gif
   @IBOutlet weak var coin: UIImageView!
+  @IBOutlet weak var congrats: UIImageView!
   
   //constraints
   @IBOutlet weak var vaultBoyWrongYConstraint: NSLayoutConstraint!
@@ -80,7 +82,6 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.view.addSubview(buttons.hintBtn)
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 15)
     timer.delegate = self
-    finalAnimation = true
     userDefaults.setObject("Round_6", forKey: CURRENT_ROUND_KEY)
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
@@ -304,7 +305,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.vaultBoyWrong.hidden = false
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
-     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
+    self.RemoveAlreadyUsedQuestion()
+    self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
@@ -324,8 +326,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
           }else{
             self.mainTileTargetView.removeFromSuperview()
             self.stopAudioTimer()
-            self.CongratulationsVaultBoy()
-            self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)              }
+            self.CongratulationsVaultBoy()        }
         } else{
           self.resetAllTimers()
         }
@@ -341,15 +342,15 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     timer.pause()
+    self.stopAudioTimer()
+    self.audioController.playEffect(SoundDing)
+    self.RemoveAlreadyUsedQuestion()
     UIView.transitionWithView(vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
       self.newTile()
       }, completion: {_ in
-        self.stopAudioTimer()
-        self.audioController.playEffect(SoundDing)
         self.UpdateScorePositive()
         self.mainTileTargetView.hidden = true
-        self.RemoveAlreadyUsedQuestion()
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -363,7 +364,6 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
               self.stopAudioTimer()
               self.DismissQandA()
               self.CongratulationsVaultBoy()
-              self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)
               self.mainTileTargetView.removeFromSuperview()
             } else {
               
@@ -417,49 +417,27 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
         
         self.delay(3.0, closure: {
           
-          //  if self.finalAnimation == false { self.buttons.btn.hidden = false }
           self.vaultBoySuccess.hidden = true
-          self.scoreBanner.hidden = true
-          self.scoreLabel.hidden = true
           self.youEarnedACoinLabel.hidden = false
           self.audioController.playEffect(SoundPerk)
           //add perk gif
           let Gif = UIImage.gifWithName("madMax2Resize")
           self.coin.image = Gif
-          //          if self.finalAnimation == true {}
-          //            else {
-          //            self.bannersAndVaultBoys.congratulationsBanner.hidden = true
-          //            self.bannersAndVaultBoys.congratulationsLabel.hidden = true
-          //          }
-          
-          
-          if self.finalAnimation == true {
             self.delay(5.0, closure: {
               self.coin.hidden = true
-              //              self.bannersAndVaultBoys.earnedPerkLabel.hidden = true
-              //              self.bannersAndVaultBoys.perkLabel.hidden = true
-              self.bannersAndVaultBoys.survivedLabel.hidden = false
-              
+              self.scoreBanner.hidden = true
+              self.scoreLabel.hidden = true
+              self.youSurvivedLabel.hidden = false
               UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
                 self.bannersAndVaultBoys.yellowBurst.alpha = 1.0
                 }, completion: nil)
-              
-              //add survived gif
-              //            let Gif = UIImage.gifWithName("fallout_dancing")
-              //            let View = UIImageView(image: Gif)
-              //            View.hidden = false
-              //            View.frame = CGRect(x: 30.0, y: 200.0, width: View.frame.size.width*1.2, height: View.frame.size.height*1.2)
-              //            self.view.addSubview(View)
+              self.congrats.hidden = false
+              let Gif = UIImage.gifWithName("congrats animation")
+              self.congrats.image = Gif
               self.audioController.playEffect(SoundExplosion)
               self.audioController.playEffect(SoundWin)
-              self.scoreBanner.hidden = true
-              self.scoreLabel.hidden = true
-              
-              //            self.bannersAndVaultBoys.totalScoreLabel.hidden = false
               self.playAgainButton.hidden = false
-              self.finalAnimation = false
             })
-          }
         })
     })
   }
@@ -491,8 +469,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   func checkInitialTimer () {
     if self.round6_objectIDArray.count == 0 {
     } else {
-        self.timerShakeAndReset()
-      }
+      self.timerShakeAndReset()
+    }
   }
   
   //MARK: Tiles Other
@@ -567,6 +545,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     scoreLabel.hidden = true
     youEarnedACoinLabel.hidden = true
     coin.hidden = true
+    congrats.hidden = true
+    youSurvivedLabel.hidden = true
   }
   
   func AddAllGraphics() {

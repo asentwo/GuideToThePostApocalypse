@@ -24,16 +24,12 @@ class DragTileVC: UIViewController {
   var fireworks: String!
   var currentRoundScore = 0
   
-
-  
   var data = GameScore()
   var audioController: AudioController!
   
   var targets = [TargetView]()
   var tiles = [TileView]()
   let TileMargin: CGFloat = 10.0
-  
-  var finalAnimation = false
   
   //MARK: UIConstants
   var bannersAndVaultBoys = BannersAndVaultBoys()

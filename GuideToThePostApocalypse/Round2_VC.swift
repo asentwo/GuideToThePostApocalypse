@@ -34,7 +34,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet var PlayerScore: UILabel!
   @IBOutlet var CountDownLabel: UILabel!
   @IBOutlet var hintLabel: UIButton!
-
+  
   
   //VaultBoys
   @IBOutlet weak var vaultBoyWrong: UIImageView!
@@ -297,11 +297,11 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     vaultBoyWrong.hidden = false
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
+    self.RemoveAlreadyUsedQuestion()
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
-        self.RemoveAlreadyUsedQuestion()
         self.newTile()
         self.stopAudioTimer()
         currentScore = totalScore + self.currentRoundScore
@@ -319,7 +319,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
             self.mainTileTargetView.removeFromSuperview()
             self.stopAudioTimer()
             self.CongratulationsVaultBoy()
-            self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)              }
+          }
         } else{
           self.resetAllTimers()
         }
@@ -335,16 +335,16 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   func ThumbsUpVaultBoy () {
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
+    self.stopAudioTimer()
     timer.pause()
+    self.RemoveAlreadyUsedQuestion()
+    self.audioController.playEffect(SoundDing)
     UIView.transitionWithView(vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
       self.newTile()
       }, completion: {_ in
-        self.stopAudioTimer()
-        self.audioController.playEffect(SoundDing)
         self.UpdateScorePositive()
         self.mainTileTargetView.hidden = true
-        self.RemoveAlreadyUsedQuestion()
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -357,7 +357,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
               self.stopAudioTimer()
               self.DismissQandA()
               self.CongratulationsVaultBoy()
-              self.ShowCongratulationsBanner(self.bannersAndVaultBoys.congratulationsBanner, label: self.bannersAndVaultBoys.congratulationsLabel)
               self.mainTileTargetView.removeFromSuperview()
             } else {
               self.vaultBoyRightYConstraint.constant -= self.view.bounds.height
@@ -405,7 +404,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         self.vaultBoySuccess.superview?.addSubview(explode)
         self.vaultBoySuccess.superview?.sendSubviewToBack(explode)
         self.delay(3.0, closure: {
-          if self.finalAnimation == false { self.nextRound.hidden = false }
+          self.nextRound.hidden = false 
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true
@@ -425,7 +424,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func timerShakeAndReset () {
-    
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
       self.UpdateScoreRunOutOfTime()
       self.TimerShake()

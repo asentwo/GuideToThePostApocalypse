@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8Ls-PY-UIK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -101,7 +101,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="twk-nO-1hd">
                                 <rect key="frame" x="12" y="153" width="296" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="27"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -181,7 +181,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-hM-d5l">
-                                <rect key="frame" x="6" y="15" width="60" height="60"/>
+                                <rect key="frame" x="6" y="15" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X8c-hM-d5l" secondAttribute="height" multiplier="1:1" id="4Nz-bR-HvD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
                                 <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +193,7 @@
                                     <action selector="hintBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Dn-Xh-6lW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Na-E3-SNW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Na-E3-SNW">
                                 <rect key="frame" x="243" y="28" width="61" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Na-E3-SNW" secondAttribute="height" multiplier="61:18" id="YUd-Dx-mH2"/>
@@ -255,7 +258,7 @@
                                 <rect key="frame" x="13" y="166" width="294" height="356"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="Ktt-v7-jX0">
-                                <rect key="frame" x="5" y="91.5" width="310" height="503"/>
+                                <rect key="frame" x="5" y="91" width="310" height="503"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_pipboy" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-ha-6JA">
                                 <rect key="frame" x="2" y="54" width="324" height="386"/>
@@ -267,7 +270,6 @@
                         <color key="backgroundColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ktt-v7-jX0" secondAttribute="trailing" constant="5" id="0bS-f7-vl4"/>
-                            <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="X8c-hM-d5l" secondAttribute="bottom" constant="-34" id="0dG-kE-aqt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jiy-ho-cBk" secondAttribute="trailing" constant="60" id="1HT-ys-PT8"/>
                             <constraint firstItem="Cgw-fj-oPN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="1N2-Dm-I3e"/>
                             <constraint firstItem="twk-nO-1hd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="2wN-vb-vhO"/>
@@ -278,6 +280,7 @@
                             <constraint firstItem="2kx-Rl-khf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="190" id="55c-UT-S78"/>
                             <constraint firstItem="KVe-EI-Le5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ay-ET-1cB"/>
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="top" secondItem="uM2-Tn-vu3" secondAttribute="bottom" constant="-3" id="5bJ-yY-TOh"/>
+                            <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="X8c-hM-d5l" secondAttribute="bottom" constant="-38" id="5hP-EZ-eAf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Na-E3-SNW" secondAttribute="trailing" id="7cn-dD-cfq"/>
                             <constraint firstItem="hfe-pA-Zb0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="89j-kU-3nt"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="9s9-n8-8NT"/>
@@ -289,22 +292,22 @@
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Et0-cz-qsh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EZL-Yl-aM6" secondAttribute="trailing" constant="-14" id="Fte-Hi-kXj"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="GfQ-jV-xoI"/>
+                            <constraint firstItem="EZL-Yl-aM6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="H07-ML-iuL"/>
                             <constraint firstItem="l7U-b4-2TA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKk-UL-jN4"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="centerX" secondItem="hfe-pA-Zb0" secondAttribute="centerX" id="IQE-zf-eKs"/>
                             <constraint firstItem="Uqu-Kl-fde" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JM1-MX-RBJ"/>
-                            <constraint firstItem="X8c-hM-d5l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-5" id="L7r-ea-n0W"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="5Na-E3-SNW" secondAttribute="bottom" constant="-5" id="M9Q-Xu-Xdb"/>
                             <constraint firstItem="Uqu-Kl-fde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-2" id="MXx-sV-hqC"/>
                             <constraint firstItem="hfe-pA-Zb0" firstAttribute="top" secondItem="Nir-IO-mlh" secondAttribute="bottom" constant="51" id="McM-Rf-jn4"/>
                             <constraint firstItem="uM2-Tn-vu3" firstAttribute="width" secondItem="hfe-pA-Zb0" secondAttribute="width" id="Mlt-jx-HQI"/>
-                            <constraint firstItem="X8c-hM-d5l" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="15:142" id="NPw-9R-cKs"/>
-                            <constraint firstItem="EZL-Yl-aM6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="Pfw-Hg-26f"/>
                             <constraint firstAttribute="trailing" secondItem="5aI-qC-i5Z" secondAttribute="trailing" constant="16" id="Q8A-44-f4W"/>
+                            <constraint firstItem="X8c-hM-d5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="TtD-7o-Xkr"/>
                             <constraint firstItem="K2Z-fO-12b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-10" id="UIJ-xg-0Vn"/>
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="height" secondItem="hfe-pA-Zb0" secondAttribute="height" id="UP1-iQ-UEx"/>
                             <constraint firstItem="cW9-Zw-5by" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VB5-wA-6i3"/>
                             <constraint firstItem="RjP-vD-1Rt" firstAttribute="height" secondItem="hfe-pA-Zb0" secondAttribute="height" id="Wke-du-igQ"/>
                             <constraint firstItem="5Na-E3-SNW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XcT-F7-TCI"/>
+                            <constraint firstItem="X8c-hM-d5l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="YM6-vO-qxt"/>
                             <constraint firstItem="K2Z-fO-12b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-27" id="YyD-jZ-1x3"/>
                             <constraint firstItem="RjP-vD-1Rt" firstAttribute="width" secondItem="hfe-pA-Zb0" secondAttribute="width" id="ZF2-gQ-Tip"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jaz-ha-6JA" secondAttribute="trailing" constant="-22" id="ZWw-TE-fEB"/>
@@ -315,7 +318,6 @@
                             <constraint firstItem="t9u-aL-JK4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="cLO-rl-9qV"/>
                             <constraint firstItem="Jaz-ha-6JA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-37" id="cly-5W-8WG"/>
                             <constraint firstItem="Kqf-TP-xNa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="206" id="d8F-Rd-qdA"/>
-                            <constraint firstItem="X8c-hM-d5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="eO2-Vr-1eX"/>
                             <constraint firstItem="Uqu-Kl-fde" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ed7-jr-asV"/>
                             <constraint firstItem="Jiy-ho-cBk" firstAttribute="top" secondItem="Nir-IO-mlh" secondAttribute="bottom" constant="-9" id="edH-y9-bVF"/>
                             <constraint firstItem="Jaz-ha-6JA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-14" id="efZ-lY-LVL"/>
@@ -351,13 +353,13 @@
                         <outlet property="PlayerScore" destination="5Na-E3-SNW" id="6f5-Ky-Mm5"/>
                         <outlet property="QuestionLabel" destination="twk-nO-1hd" id="CXR-Ob-xLF"/>
                         <outlet property="coin" destination="Uqu-Kl-fde" id="5F7-dk-F7g"/>
-                        <outlet property="coinYConstrant" destination="ed7-jr-asV" id="sHX-4N-esf"/>
+                        <outlet property="coinYConstraint" destination="ed7-jr-asV" id="WZA-t1-PAq"/>
                         <outlet property="nextRoundButton" destination="Kqf-TP-xNa" id="5ZU-Vh-lQ7"/>
                         <outlet property="scoreBanner" destination="t9u-aL-JK4" id="b9H-ZB-sJC"/>
                         <outlet property="scoreLabel" destination="KVe-EI-Le5" id="aRf-Cw-0bh"/>
                         <outlet property="tryAgainButton" destination="2kx-Rl-khf" id="ihg-gw-aqf"/>
                         <outlet property="vaultBoyFailed" destination="EZL-Yl-aM6" id="IAq-ob-RgU"/>
-                        <outlet property="vaultBoyFailedYConstrant" destination="Pfw-Hg-26f" id="mj3-bc-ukz"/>
+                        <outlet property="vaultBoyFailedYConstraint" destination="H07-ML-iuL" id="2Ed-Rb-LjF"/>
                         <outlet property="vaultBoyRight" destination="Cgw-fj-oPN" id="Qoq-PA-Ppv"/>
                         <outlet property="vaultBoyRightYConstraint" destination="1N2-Dm-I3e" id="90j-V7-x50"/>
                         <outlet property="vaultBoySuccess" destination="Jaz-ha-6JA" id="RMC-Tq-cfh"/>
@@ -1625,6 +1627,7 @@
                         <outlet property="QuestionLabel" destination="vM5-jM-MdA" id="QrV-qr-LyT"/>
                         <outlet property="coin" destination="RdH-yI-AS7" id="2xL-hJ-ImY"/>
                         <outlet property="coinYConstraint" destination="2YL-YI-qls" id="LyK-dV-n9b"/>
+                        <outlet property="congrats" destination="mg6-79-X1L" id="yPN-gY-oLm"/>
                         <outlet property="playAgainButton" destination="LL2-2B-t9Z" id="UjI-GZ-hKx"/>
                         <outlet property="scoreBanner" destination="sob-kv-mAX" id="njY-bo-pFq"/>
                         <outlet property="scoreLabel" destination="atK-D6-Zr4" id="GXG-vM-mOQ"/>
@@ -1639,6 +1642,7 @@
                         <outlet property="vaultBoyWrongYConstraint" destination="Ghv-Wx-TA8" id="w1v-9a-eMY"/>
                         <outlet property="youEarnedACoinLabel" destination="8lY-vN-5MP" id="rWV-O2-N6p"/>
                         <outlet property="youFailedThisRoundLabel" destination="EUf-Ib-aLk" id="K9O-eQ-2ph"/>
+                        <outlet property="youSurvivedLabel" destination="xj4-45-UxC" id="KhE-Jb-wpL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xT8-S3-cM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
