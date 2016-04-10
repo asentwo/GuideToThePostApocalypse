@@ -49,6 +49,7 @@
 		6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */; };
 		6E5ACF4E1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */; };
 		6E5D6E9B1CB6D13C003B3B6A /* Deathclaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */; };
+		6E6742171CBAFD430098E905 /* torn_banner2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E6742161CBAFD430098E905 /* torn_banner2@3x.png */; };
 		6E68574A1C1A55F80005F008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6857491C1A55F80005F008 /* AppDelegate.swift */; };
 		6E68574F1C1A55F80005F008 /* Survival.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E68574D1C1A55F80005F008 /* Survival.storyboard */; };
 		6E6857511C1A55F80005F008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6857501C1A55F80005F008 /* Assets.xcassets */; };
@@ -115,7 +116,6 @@
 		6EAEC52F1C4034EB0023F4BF /* green_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4EE1C4034EB0023F4BF /* green_banner@3x.png */; };
 		6EAEC5301C4034EB0023F4BF /* red_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4EF1C4034EB0023F4BF /* red_banner@3x.png */; };
 		6EAEC5311C4034EB0023F4BF /* tan_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F01C4034EB0023F4BF /* tan_banner@3x.png */; };
-		6EAEC5321C4034EB0023F4BF /* torn_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F11C4034EB0023F4BF /* torn_banner@3x.png */; };
 		6EAEC5331C4034EB0023F4BF /* vintage2_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F21C4034EB0023F4BF /* vintage2_banner@3x.png */; };
 		6EAEC5341C4034EB0023F4BF /* vintage_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F31C4034EB0023F4BF /* vintage_banner@3x.png */; };
 		6EAEC5351C4034EB0023F4BF /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F41C4034EB0023F4BF /* btn.png */; };
@@ -262,6 +262,7 @@
 		6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead).png"; sourceTree = "<group>"; };
 		6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walkingdead)_wrong.png"; sourceTree = "<group>"; };
 		6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deathclaw.png; sourceTree = "<group>"; };
+		6E6742161CBAFD430098E905 /* torn_banner2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "torn_banner2@3x.png"; path = "Banners@3x/torn_banner2@3x.png"; sourceTree = "<group>"; };
 		6E6857461C1A55F80005F008 /* GuideToThePostApocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideToThePostApocalypse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6857491C1A55F80005F008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E68574E1C1A55F80005F008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Survival.storyboard; sourceTree = "<group>"; };
@@ -326,7 +327,6 @@
 		6EAEC4EE1C4034EB0023F4BF /* green_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4EF1C4034EB0023F4BF /* red_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F01C4034EB0023F4BF /* tan_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tan_banner@3x.png"; sourceTree = "<group>"; };
-		6EAEC4F11C4034EB0023F4BF /* torn_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torn_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F21C4034EB0023F4BF /* vintage2_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vintage2_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F31C4034EB0023F4BF /* vintage_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vintage_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F41C4034EB0023F4BF /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
@@ -716,6 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				6EAEC4EC1C4034EB0023F4BF /* banner@2x.png */,
+				6E6742161CBAFD430098E905 /* torn_banner2@3x.png */,
 				6EAEC4ED1C4034EB0023F4BF /* Banners@3x */,
 				6EAEC4F41C4034EB0023F4BF /* btn.png */,
 				6EAEC4F51C4034EB0023F4BF /* btn@2x.png */,
@@ -755,7 +756,6 @@
 				6EAEC4EE1C4034EB0023F4BF /* green_banner@3x.png */,
 				6EAEC4EF1C4034EB0023F4BF /* red_banner@3x.png */,
 				6EAEC4F01C4034EB0023F4BF /* tan_banner@3x.png */,
-				6EAEC4F11C4034EB0023F4BF /* torn_banner@3x.png */,
 				6EAEC4F21C4034EB0023F4BF /* vintage2_banner@3x.png */,
 				6EAEC4F31C4034EB0023F4BF /* vintage_banner@3x.png */,
 			);
@@ -1058,7 +1058,6 @@
 				6EAEC5521C4034EB0023F4BF /* retro-sunbeam_background.jpg in Resources */,
 				6EAEC5571C4034EB0023F4BF /* red_speech_bubble@3x.png in Resources */,
 				6E7829151CAC522A0094E798 /* fallout coin.gif in Resources */,
-				6EAEC5321C4034EB0023F4BF /* torn_banner@3x.png in Resources */,
 				6E7BDF9F1C851CA900B93822 /* MadMax.png in Resources */,
 				6E7BDFA21C851CA900B93822 /* Carl.png in Resources */,
 				6E7829111CAC522A0094E798 /* falloutResize.gif in Resources */,
@@ -1155,6 +1154,7 @@
 				6EAEC5451C4034EB0023F4BF /* yellow_button.png in Resources */,
 				6EAEC54E1C4034EB0023F4BF /* nulcear@3x.png in Resources */,
 				6EAEC5591C4034EB0023F4BF /* spikey_spreech_bubble@3x.png in Resources */,
+				6E6742171CBAFD430098E905 /* torn_banner2@3x.png in Resources */,
 				6EAEC55B1C4034EB0023F4BF /* exclamation_marks.png in Resources */,
 				6EA436881C23623700B445A7 /* Overseer Bold Italic.otf in Resources */,
 				6E7BDF9B1C851CA900B93822 /* Radroach.png in Resources */,

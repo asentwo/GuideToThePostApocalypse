@@ -237,6 +237,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     youEarnedACoinLabel.adjustsFontSizeToFitWidth = true
     scoreLabel.adjustsFontSizeToFitWidth = true
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
+    rightAnswerLabel.adjustsFontSizeToFitWidth = true
+    wrongAnswerLabel.adjustsFontSizeToFitWidth = true
   }
   
   
@@ -268,7 +270,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     }
   }
   
-  //MARK: Redo wrong answer banner
   //Button Bounce
   func BounceButton (button: UIButton) {
     let b = button.bounds
@@ -280,8 +281,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
         self.showWrongAnswerBanner()
     })
   }
-  
-  //MARK: Redo right answer banner
+
   //RightButtonSelected
   
   func RightButtonSelected () {
