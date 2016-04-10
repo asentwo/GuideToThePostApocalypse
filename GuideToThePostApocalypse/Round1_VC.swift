@@ -47,6 +47,15 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   //gif
   @IBOutlet weak var coin: UIImageView!
   
+  //wrong/right banners
+  @IBOutlet weak var wrongAnswerBanner: UIImageView!
+  @IBOutlet weak var wrongAnswerLabel: UILabel!
+  @IBOutlet weak var rightAnswerBanner: UIImageView!
+  @IBOutlet weak var rightAnswerLabel: UILabel!
+  
+  //fireworks
+  @IBOutlet weak var fireworksImage: UIImageView!
+  
   //constraints
   
   @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
@@ -54,6 +63,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoyFailedYConstraint: NSLayoutConstraint!
   @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
+  @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
+  @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
   
   
   //MARK: ViewDidLoad
@@ -63,7 +74,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     
     labelSizeAdjustment()
     hideAllGraphics()
-    addAllGraphics()
+    //  addAllGraphics()
     ButtonActions()
     StoreParseDataLocally_Round1()
     
@@ -194,13 +205,13 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   //MARK: Graphics
   
-  func addAllGraphics() {
-    self.view.addSubview(bannersAndVaultBoys.wrongAnswerBanner)
-    bannersAndVaultBoys.wrongAnswerBanner.addSubview(bannersAndVaultBoys.wrongAnswerLabel)
-    self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
-    bannersAndVaultBoys.rightAnswerBanner.addSubview(bannersAndVaultBoys.rightAnswerLabel)
-    self.view.addSubview(bannersAndVaultBoys.fireworks_2_gold)
-  }
+  //  func addAllGraphics() {
+  //    self.view.addSubview(bannersAndVaultBoys.wrongAnswerBanner)
+  //    bannersAndVaultBoys.wrongAnswerBanner.addSubview(bannersAndVaultBoys.wrongAnswerLabel)
+  //    self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
+  //    bannersAndVaultBoys.rightAnswerBanner.addSubview(bannersAndVaultBoys.rightAnswerLabel)
+  //    self.view.addSubview(bannersAndVaultBoys.fireworks_2_gold)
+  //  }
   
   func hideAllGraphics () {
     vaultBoyWrong.hidden = true
@@ -214,6 +225,11 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     scoreLabel.hidden = true
     youEarnedACoinLabel.hidden = true
     coin.hidden = true
+    wrongAnswerBanner.hidden = true
+    wrongAnswerLabel.hidden = true
+    rightAnswerBanner.hidden = true
+    rightAnswerLabel.hidden = true
+    fireworksImage.hidden = true
   }
   
   func labelSizeAdjustment () {
@@ -222,6 +238,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     scoreLabel.adjustsFontSizeToFitWidth = true
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
   }
+  
+  
   
   //MARK: Buttons
   
@@ -259,20 +277,18 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
       //gives button bouncy effect
       }, completion: {_ in
         self.madVaultBoy()
-        self.ShowWrongAnswerBanner(self.bannersAndVaultBoys.wrongAnswerBanner, label: self.bannersAndVaultBoys.wrongAnswerLabel, message: self.messages.wrongAnswerMessage)
-        self.view.bringSubviewToFront(self.bannersAndVaultBoys.wrongAnswerBanner)
-        self.view.bringSubviewToFront(self.bannersAndVaultBoys.wrongAnswerLabel)
+        self.showWrongAnswerBanner()
     })
   }
+  
   //MARK: Redo right answer banner
   //RightButtonSelected
   
   func RightButtonSelected () {
-    self.ShowRightAnswerBanner(bannersAndVaultBoys.rightAnswerBanner, label: bannersAndVaultBoys.rightAnswerLabel, message: messages.rightAnswerMessage)
-    thumbsUpVaultBoy()
     timer.pause()
     stopAudioTimer()
-    
+    thumbsUpVaultBoy()
+    self.showRightAnswerBanner()
   }
   
   
@@ -323,7 +339,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   func UpdateScoreNegative () {
     self.data.points - pointsPerWrongAnswer
     self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
   }
   
   func UpdateScorePositive () {
@@ -507,10 +522,10 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
       }, completion:{_ in
         //gives effect like fireworks are increasing then decreasing in size
         UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 1.0
+          self.fireworksImage.alpha = 1.0
           }, completion: nil)
         self.delay(3.0, closure: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 0.0
+          self.fireworksImage.alpha = 0.0
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true
@@ -523,6 +538,52 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
         })
     })
   }
+  
+  //MARK: Banner Animations
+  
+  func showWrongAnswerBanner() {
+    UIView.transitionWithView(wrongAnswerBanner, duration: 0.20, options: [.CurveEaseOut, .TransitionFlipFromLeft], animations: {
+      self.wrongAnswerBanner.hidden = false
+      self.view.bringSubviewToFront(self.wrongAnswerBanner)
+      }, completion: {_ in
+        self.wrongAnswerLabel.hidden = false
+        self.view.bringSubviewToFront(self.wrongAnswerLabel)
+        self.wrongAnswerBannerXConstraint.constant += self.view.frame.size.width
+        UIView.animateWithDuration(0.33, delay: 0.7, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+          self.view.layoutIfNeeded()
+          //makes banner fly off screen at end of animation
+          }, completion: {_ in
+            self.wrongAnswerBanner.hidden = true
+            self.wrongAnswerLabel.hidden = true
+            self.wrongAnswerBannerXConstraint.constant -= self.view.frame.size.width
+            self.view.layoutIfNeeded()
+            // changes position of banner from off screen back onto screen & invisible so can be used again
+          }
+        )}
+    )}
+  
+  func showRightAnswerBanner() {
+    UIView.transitionWithView(rightAnswerBanner, duration: 0.20, options: [.CurveEaseOut, .TransitionFlipFromLeft], animations: {
+      self.rightAnswerBanner.hidden = false
+      self.view.bringSubviewToFront(self.rightAnswerBanner)
+      }, completion: {_ in
+        self.rightAnswerLabel.hidden = false
+        self.view.bringSubviewToFront(self.rightAnswerLabel)
+        self.rightAnswerBannerXConstraint.constant += self.view.frame.size.width
+        UIView.animateWithDuration(0.33, delay: 0.7, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+          self.view.layoutIfNeeded()
+          //makes banner fly off screen at end of animation
+          }, completion: {_ in
+            self.rightAnswerBanner.hidden = true
+            self.rightAnswerLabel.hidden = true
+            self.rightAnswerBannerXConstraint.constant -= self.view.frame.size.width
+            // changes position of banner from off screen back onto screen & invisible so can be used again
+            self.view.layoutIfNeeded()
+          }
+        )}
+    )}
+  
+  
   
   //MARK: IBActions
   

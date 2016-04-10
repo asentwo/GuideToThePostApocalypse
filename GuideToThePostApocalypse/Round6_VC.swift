@@ -767,7 +767,7 @@ extension Round6_ViewController:TileDragDelegateProtocol {
         stars.removeFromSuperview()
     })
     delay(2, closure: {
-      self.ShowRightAnswerBanner(self.bannersAndVaultBoys.rightAnswerBanner, label: self.bannersAndVaultBoys.rightAnswerLabel, message: self.messages.rightAnswerMessage)
+    //  self.ShowRightAnswerBanner(self.bannersAndVaultBoys.rightAnswerBanner, label: self.bannersAndVaultBoys.rightAnswerLabel, message: self.messages.rightAnswerMessage)
       self.ThumbsUpVaultBoy()
     })
     
