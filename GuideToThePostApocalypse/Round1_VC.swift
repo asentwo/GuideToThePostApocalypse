@@ -376,7 +376,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
           self.view.layoutIfNeeded()
           }, completion: {_ in
             self.hideMadVaultBoyButtons(self.round1_objectIDArray)
-            self.stopAudioTimer()
             madVaultBoyRunning = false
         })
     })
@@ -390,7 +389,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
     self.RemoveAlreadyUsedQuestion()
-    self.stopAudioTimer()
     self.DisableButtons()
     self.UpdateScoreNegative()
     currentScore = totalScore + self.currentRoundScore
@@ -462,6 +460,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   
   func zeroScoreVaultBoy () {
+    self.stopAudioTimer()
     self.audioController.playEffect(SoundWrong)
     self.tryAgainButton.hidden = false
     self.youFailedThisRoundLabel.hidden = false
@@ -480,6 +479,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   
   func congratulationsVaultBoy (gifString: String) {
+    self.stopAudioTimer()
     self.DismissQandA()
     self.view.addSubview(self.bannersAndVaultBoys.fireworks_2_gold)
     self.view.bringSubviewToFront(vaultBoySuccess)
@@ -607,10 +607,12 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     switchToRoundTwo()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     restartViewController()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   

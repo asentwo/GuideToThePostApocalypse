@@ -388,7 +388,6 @@ func showMadVaultBoyButtons () {
   self.audioController.playEffect(SoundWrong)
   self.UpdateScoreNegative()
   self.RemoveAlreadyUsedQuestion()
-  self.stopAudioTimer()
   self.DisableButtons()
   self.UpdateScoreNegative()
   currentScore = totalScore + self.currentRoundScore
@@ -462,6 +461,7 @@ func hideThumbsUpVaultBoyButtons(round:[String] ) {
 
 
 func zeroScoreVaultBoy () {
+  self.stopAudioTimer()
   self.audioController.playEffect(SoundWrong)
   self.tryAgainButton.hidden = false
   self.youFailedThisRoundLabel.hidden = false
@@ -609,10 +609,12 @@ func congratulationsVaultBoy () {
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     switchToRoundFour()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     restartViewController()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   

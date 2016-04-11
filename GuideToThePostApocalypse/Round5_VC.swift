@@ -61,6 +61,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var vaultBoyFailedYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
   @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
+
   @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
   @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
   
@@ -133,7 +134,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.Button2.setTitle(self.answers[1], forState: UIControlState.Normal)
             self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
             self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
-            
+            self.HintButton.enabled = true
             timer.start()
             self.startAudioTimer()
           }
@@ -226,6 +227,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
     rightAnswerLabel.adjustsFontSizeToFitWidth = true
     wrongAnswerLabel.adjustsFontSizeToFitWidth = true
+    HintButton.titleLabel?.adjustsFontSizeToFitWidth = true
   }
 
   
@@ -299,11 +301,11 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   
-  //Hint Button
+  //MARK: Hint Button
   
-  func setUpWrongAnswers(rightAnswer: Int){
+  func setUpWrongAnswers(rightAnswer: Int) {
     var answers = ["answer1","answer2","answer3","answer4"]
-    btnsArray = [Button1,Button2,Button3,Button4]
+    btnsArray = [Button1, Button2, Button3, Button4]
     wrongBtnsArray = btnsArray
     wrongBtnsArray.removeAtIndex(rightAnswer)
     answers.removeAtIndex(rightAnswer)
@@ -391,7 +393,6 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
     self.RemoveAlreadyUsedQuestion()
-    self.stopAudioTimer()
     self.DisableButtons()
     self.UpdateScoreNegative()
     currentScore = totalScore + self.currentRoundScore
@@ -406,13 +407,14 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.hintButtonTapped = false
     }
     if round.count == 0 {
+      self.stopAudioTimer()
       self.DismissQandA()
       if self.currentRoundScore == 0 {
         self.stopAudioTimer()
-        self.zeroScoreVaultBoy()
+      self.zeroScoreVaultBoy()
       }else{
         self.stopAudioTimer()
-        self.congratulationsVaultBoy("falloutResize")
+        self.congratulationsVaultBoy("madMaxResize")
       }
     } else {
       self.EnableButtons()
@@ -453,7 +455,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   func hideThumbsUpVaultBoyButtons(round:[String] ) {
     if round.count == 0 {
       self.DismissQandA()
-      self.congratulationsVaultBoy("falloutResize")
+      self.congratulationsVaultBoy("madMaxResize")
     } else {
       self.vaultBoyRightYConstraint.constant -= self.view.bounds.height
       self.view.layoutIfNeeded()
@@ -465,6 +467,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   func zeroScoreVaultBoy () {
+    self.stopAudioTimer()
     self.audioController.playEffect(SoundWrong)
     self.tryAgainButton.hidden = false
     self.youFailedThisRoundLabel.hidden = false
@@ -509,7 +512,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           self.nextRoundButton.hidden = false
           self.youEarnedACoinLabel.hidden = false
           self.audioController.playEffect(SoundPerk)
-          let Gif = UIImage.gifWithName("falloutResize")
+          let Gif = UIImage.gifWithName("madMaxResize")
           self.coin.image = Gif
           self.coin.hidden = false
         })
@@ -611,10 +614,12 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     switchToRoundSix()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     restartViewController()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func hintBtnTapped(sender: UIButton) {

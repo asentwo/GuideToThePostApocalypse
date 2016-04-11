@@ -61,7 +61,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet weak var wrongAnswerLabel: UILabel!
   @IBOutlet weak var rightAnswerBanner: UIImageView!
   @IBOutlet weak var rightAnswerLabel: UILabel!
- 
+  
   //constraints
   @IBOutlet weak var vaultBoyWrongYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
@@ -274,9 +274,9 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.dismissViewControllerAnimated(true, completion: nil)
     let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_6")
-    self.presentViewController(vc, animated: true, completion: nil)
     self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
-    self.view.layoutIfNeeded()
+    delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)})
+    
   }
   
   //Restart Game
@@ -285,9 +285,8 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.dismissViewControllerAnimated(true, completion: nil)
     let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_1")
-    self.presentViewController(vc, animated: true, completion: nil)
     self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
-    self.view.layoutIfNeeded()
+    delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)})
   }
   
   //MARK: VaultBoy Animation
@@ -315,7 +314,6 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
       }, completion: {_ in
         self.RemoveAlreadyUsedQuestion()
         self.newTile()
-        self.stopAudioTimer()
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -353,7 +351,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
       self.newTile()
       }, completion: {_ in
         self.UpdateScorePositive()
-        self.mainTileTargetView.hidden = true
+        // self.mainTileTargetView.hidden = true
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -411,36 +409,29 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
       self.scoreBanner.hidden = false
       self.scoreLabel.hidden = false
       self.scoreLabel.text = "You score \(totalScore) points!"
-      
       }, completion:{_ in
-        
         let explode = ExplodeView(frame:CGRectMake(self.vaultBoySuccess.center.x - 20, self.vaultBoySuccess.center.y - 60, 100,100))
         self.vaultBoySuccess.superview?.addSubview(explode)
         self.vaultBoySuccess.superview?.sendSubviewToBack(explode)
-        
         self.delay(3.0, closure: {
-          
           self.vaultBoySuccess.hidden = true
           self.youEarnedACoinLabel.hidden = false
           self.audioController.playEffect(SoundPerk)
-          //add perk gif
           let Gif = UIImage.gifWithName("madMax2Resize")
           self.coin.image = Gif
-            self.delay(5.0, closure: {
-              self.coin.hidden = true
-              self.scoreBanner.hidden = true
-              self.scoreLabel.hidden = true
-              self.youSurvivedLabel.hidden = false
-              UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-                self.bannersAndVaultBoys.yellowBurst.alpha = 1.0
-                }, completion: nil)
-              self.congrats.hidden = false
-              let Gif = UIImage.gifWithName("congrats animation")
-              self.congrats.image = Gif
-              self.audioController.playEffect(SoundExplosion)
-              self.audioController.playEffect(SoundWin)
-              self.playAgainButton.hidden = false
-            })
+          self.coin.hidden = false
+          self.delay(5.0, closure: {
+            self.coin.hidden = true
+            self.scoreBanner.hidden = true
+            self.scoreLabel.hidden = true
+            self.youSurvivedLabel.hidden = false
+            self.youEarnedACoinLabel.hidden = true
+            self.congrats.hidden = false
+            let Gif = UIImage.gifWithName("congrats animation")
+            self.congrats.image = Gif
+            self.audioController.playEffect(SoundWin)
+            self.playAgainButton.hidden = false
+          })
         })
     })
   }
@@ -488,7 +479,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
           }
         )}
     )}
-
+  
   
   
   //MARK: Timer
@@ -594,8 +585,22 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     coin.hidden = true
     congrats.hidden = true
     youSurvivedLabel.hidden = true
+    wrongAnswerBanner.hidden = true
+    wrongAnswerLabel.hidden = true
+    rightAnswerBanner.hidden = true
+    rightAnswerLabel.hidden = true
   }
-
+  
+  func labelSizeAdjustment () {
+    QuestionLabel.adjustsFontSizeToFitWidth = true
+    youEarnedACoinLabel.adjustsFontSizeToFitWidth = true
+    scoreLabel.adjustsFontSizeToFitWidth = true
+    youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
+    rightAnswerLabel.adjustsFontSizeToFitWidth = true
+    wrongAnswerLabel.adjustsFontSizeToFitWidth = true
+    tryAgainButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    playAgainButton.titleLabel?.adjustsFontSizeToFitWidth = true
+  }
   
   //MARK: Update Score
   
@@ -617,6 +622,16 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
   }
   
+  @IBAction func playGameAgainButton(sender: AnyObject) {
+    self.restartGame()
+    audioController.playEffect(SoundButtonPressedCorrect)
+  }
+  
+  
+  @IBAction func tryRoundAgainButton(sender: AnyObject) {
+    self.restartViewController()
+    audioController.playEffect(SoundButtonPressedCorrect)
+  }
 }
 
 /*declares that the viewController conforms to TileDragDelegateProtocol, and also defines tileView(tileView:didDragToPoint:) which is the initial implementation of the delegate method.

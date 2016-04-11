@@ -85,7 +85,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:15)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:31)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
@@ -208,10 +208,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: Buttons
   
   func ButtonActions () {
-//    tryAgain.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
-//    nextRound.addTarget(self, action: "switchToRoundThree:", forControlEvents: .TouchUpInside)
     buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
-//
   }
   
   //Next Round
@@ -306,7 +303,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       }, completion: {_ in
         self.RemoveAlreadyUsedQuestion()
         self.newTile()
-        self.stopAudioTimer()
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -348,7 +344,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.newTile()
       }, completion: {_ in
         self.UpdateScorePositive()
-        self.mainTileTargetView.hidden = true
+        //self.mainTileTargetView.hidden = true
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -597,10 +593,12 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     self.switchToRoundThree()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
 
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     self.restartViewController()
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
 }
