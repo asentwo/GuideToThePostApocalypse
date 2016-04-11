@@ -69,7 +69,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     super.viewDidLoad()
     
     hideAllGraphics()
-    AddAllGraphics()
     ButtonActions()
     StoreParseDataLocally_Round2()
     
@@ -191,8 +190,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   func DismissQandA () {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.bannersAndVaultBoys.rightAnswerBanner.hidden = true
-      self.bannersAndVaultBoys.rightAnswerLabel.hidden = true
       self.buttons.hintButton.hidden = true
       self.FalloutImage.hidden = true
       self.QuestionLabel.hidden = true
@@ -517,14 +514,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     scoreLabel.hidden = true
     youEarrnedACoin.hidden = true
     coin.hidden = true
-  }
-  
-  
-  func AddAllGraphics() {
-    self.view.addSubview(bannersAndVaultBoys.wrongAnswerBanner)
-    bannersAndVaultBoys.wrongAnswerBanner.addSubview(bannersAndVaultBoys.wrongAnswerLabel)
-    self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
-    bannersAndVaultBoys.rightAnswerBanner.addSubview(bannersAndVaultBoys.rightAnswerLabel)
   }
   
   //MARK: Update Score

@@ -74,8 +74,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     
     labelSizeAdjustment()
     hideAllGraphics()
-    //  addAllGraphics()
-    ButtonActions()
     StoreParseDataLocally_Round1()
     
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
@@ -188,9 +186,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   func DismissQandA () {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.bannersAndVaultBoys.rightAnswerBanner.hidden = true
-      self.bannersAndVaultBoys.rightAnswerLabel.hidden = true
-      self.buttons.hintButton.hidden = true
       self.Button1.hidden = true
       self.Button2.hidden = true
       self.Button3.hidden = true
@@ -204,15 +199,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   }
   
   //MARK: Graphics
-  
-  //  func addAllGraphics() {
-  //    self.view.addSubview(bannersAndVaultBoys.wrongAnswerBanner)
-  //    bannersAndVaultBoys.wrongAnswerBanner.addSubview(bannersAndVaultBoys.wrongAnswerLabel)
-  //    self.view.addSubview(bannersAndVaultBoys.rightAnswerBanner)
-  //    bannersAndVaultBoys.rightAnswerBanner.addSubview(bannersAndVaultBoys.rightAnswerLabel)
-  //    self.view.addSubview(bannersAndVaultBoys.fireworks_2_gold)
-  //  }
-  
+
   func hideAllGraphics () {
     vaultBoyWrong.hidden = true
     vaultBoyRight.hidden = true
@@ -245,12 +232,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   //MARK: Buttons
   
-  func ButtonActions () {
-    tryAgainButton.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
-    nextRoundButton.addTarget(self, action: "switchToRoundTwo:", forControlEvents: .TouchUpInside)
-  }
-  
-  
   //Restart
   func restartViewController () ->() {
     self.dismissViewControllerAnimated(true, completion: nil)
@@ -262,12 +243,10 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   }
   
   //Next Round
-  func switchToRoundTwo (sender:UIButton) {
-    if(sender.tag == 1){
+  func switchToRoundTwo () {
       UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
         self.performSegueWithIdentifier("round1ToRound2Segue", sender: self)
         }, completion: nil)
-    }
   }
   
   //Button Bounce
@@ -508,6 +487,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   func congratulationsVaultBoy (gifString: String) {
     self.DismissQandA()
+    self.view.addSubview(self.bannersAndVaultBoys.fireworks_2_gold)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
@@ -522,10 +502,10 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
       }, completion:{_ in
         //gives effect like fireworks are increasing then decreasing in size
         UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-          self.fireworksImage.alpha = 1.0
+          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 1.0
           }, completion: nil)
         self.delay(3.0, closure: {
-          self.fireworksImage.alpha = 0.0
+          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 0.0
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true
@@ -630,6 +610,15 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
       WrongButtonSelected(Button4)
     }
   }
+  
+  @IBAction func nextRoundButton(sender: AnyObject) {
+    switchToRoundTwo()
+  }
+  
+  @IBAction func tryRoundAgainButton(sender: AnyObject) {
+    restartViewController()
+  }
+  
   
   @IBAction func hintBtnTapped(sender: UIButton) {
     audioController.playEffect(SoundHintButtonPressed)

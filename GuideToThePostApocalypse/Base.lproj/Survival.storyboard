@@ -215,6 +215,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryRoundAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3I6-aR-Zwa"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW9-Zw-5by">
                                 <rect key="frame" x="58" y="60" width="204" height="35"/>
@@ -236,6 +239,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ygm-rg-386"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_right" translatesAutoresizingMaskIntoConstraints="NO" id="Cgw-fj-oPN">
                                 <rect key="frame" x="13" y="166" width="294" height="356"/>
@@ -281,34 +287,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_pipboy" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-ha-6JA">
                                 <rect key="frame" x="-8" y="54" width="344" height="386"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gold_Fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-gd-zSi">
-                                <rect key="frame" x="-143" y="-19" width="606" height="606"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="3Cz-gd-zSi" secondAttribute="height" multiplier="1:1" id="73s-PE-3o7"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="torn_banner2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rGu-c2-GCR" userLabel="Right Answer Banner">
-                                <rect key="frame" x="-8" y="56" width="336" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rGu-c2-GCR" secondAttribute="height" multiplier="328:55" id="Jd0-pj-gvB"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="v1E-zB-psD" userLabel="Right Answer!">
-                                <rect key="frame" x="-8" y="71" width="336" height="30"/>
-                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="26"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="torn_banner2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8yf-ZA-m8Z" userLabel="Wrong Answer Banner">
-                                <rect key="frame" x="60" y="48" width="200" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="torn_banner2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8yf-ZA-m8Z" userLabel="Wrong Answer Banner">
+                                <rect key="frame" x="60" y="49" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Jy7-Cv-UWa"/>
                                     <constraint firstAttribute="width" secondItem="8yf-ZA-m8Z" secondAttribute="height" multiplier="4:1" id="px3-XI-f39"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="zYw-Y3-gjo"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wrong Answer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Qvl-Dj-gEO">
-                                <rect key="frame" x="60" y="58" width="200" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Answer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Qvl-Dj-gEO">
+                                <rect key="frame" x="60" y="59" width="200" height="30"/>
+                                <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="26"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="torn_banner2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rGu-c2-GCR" userLabel="Right Answer Banner">
+                                <rect key="frame" x="-8" y="46" width="336" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ICO-PT-kAy"/>
+                                    <constraint firstAttribute="width" secondItem="rGu-c2-GCR" secondAttribute="height" multiplier="4:1" id="Jd0-pj-gvB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Vix-jy-hVj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="v1E-zB-psD" userLabel="Right Answer!">
+                                <rect key="frame" x="60" y="59" width="200" height="30"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
@@ -319,7 +321,7 @@
                             <constraint firstAttribute="trailing" secondItem="Ktt-v7-jX0" secondAttribute="trailing" constant="5" id="0bS-f7-vl4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jiy-ho-cBk" secondAttribute="trailing" constant="60" id="1HT-ys-PT8"/>
                             <constraint firstItem="Cgw-fj-oPN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="1N2-Dm-I3e"/>
-                            <constraint firstItem="rGu-c2-GCR" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="2j5-3k-GcF"/>
+                            <constraint firstItem="rGu-c2-GCR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-210" id="2j5-3k-GcF"/>
                             <constraint firstItem="twk-nO-1hd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="2wN-vb-vhO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uqu-Kl-fde" secondAttribute="trailing" constant="-2" id="3ms-ZP-UrM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nir-IO-mlh" secondAttribute="trailing" constant="5" id="4Cb-L3-WCZ"/>
@@ -339,6 +341,7 @@
                             <constraint firstItem="Ktt-v7-jX0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="59" id="Dg6-29-ax2"/>
                             <constraint firstItem="Ktt-v7-jX0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="DoP-fl-ib6"/>
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Et0-cz-qsh"/>
+                            <constraint firstItem="v1E-zB-psD" firstAttribute="centerY" secondItem="rGu-c2-GCR" secondAttribute="centerY" id="F4S-wF-Y5G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EZL-Yl-aM6" secondAttribute="trailing" constant="-14" id="Fte-Hi-kXj"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="GfQ-jV-xoI"/>
                             <constraint firstItem="EZL-Yl-aM6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="H07-ML-iuL"/>
@@ -349,19 +352,15 @@
                             <constraint firstItem="Uqu-Kl-fde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-2" id="MXx-sV-hqC"/>
                             <constraint firstItem="hfe-pA-Zb0" firstAttribute="top" secondItem="Nir-IO-mlh" secondAttribute="bottom" constant="51" id="McM-Rf-jn4"/>
                             <constraint firstItem="uM2-Tn-vu3" firstAttribute="width" secondItem="hfe-pA-Zb0" secondAttribute="width" id="Mlt-jx-HQI"/>
-                            <constraint firstItem="3Cz-gd-zSi" firstAttribute="top" relation="lessThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-39" id="PNC-ua-yae"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="lessThanOrEqual" secondItem="3Cz-gd-zSi" secondAttribute="bottom" constant="-13" id="PtY-wF-Wcb"/>
                             <constraint firstItem="v1E-zB-psD" firstAttribute="centerX" secondItem="rGu-c2-GCR" secondAttribute="centerX" id="Q0F-bK-2Ze"/>
                             <constraint firstAttribute="trailing" secondItem="5aI-qC-i5Z" secondAttribute="trailing" constant="16" id="Q8A-44-f4W"/>
                             <constraint firstItem="v1E-zB-psD" firstAttribute="trailing" secondItem="rGu-c2-GCR" secondAttribute="trailing" id="ScM-li-yxR"/>
                             <constraint firstItem="X8c-hM-d5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="TtD-7o-Xkr"/>
                             <constraint firstItem="K2Z-fO-12b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-10" id="UIJ-xg-0Vn"/>
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="height" secondItem="hfe-pA-Zb0" secondAttribute="height" id="UP1-iQ-UEx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rGu-c2-GCR" secondAttribute="trailing" constant="-24" id="V9W-0y-SN8"/>
                             <constraint firstItem="cW9-Zw-5by" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VB5-wA-6i3"/>
                             <constraint firstItem="RjP-vD-1Rt" firstAttribute="height" secondItem="hfe-pA-Zb0" secondAttribute="height" id="Wke-du-igQ"/>
                             <constraint firstItem="5Na-E3-SNW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XcT-F7-TCI"/>
-                            <constraint firstItem="rGu-c2-GCR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="Xxr-1O-B6i"/>
                             <constraint firstItem="X8c-hM-d5l" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="YM6-vO-qxt"/>
                             <constraint firstItem="Qvl-Dj-gEO" firstAttribute="centerY" secondItem="8yf-ZA-m8Z" secondAttribute="centerY" id="YMH-My-SkM"/>
                             <constraint firstItem="K2Z-fO-12b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-27" id="YyD-jZ-1x3"/>
@@ -387,11 +386,9 @@
                             <constraint firstItem="Qvl-Dj-gEO" firstAttribute="leading" secondItem="8yf-ZA-m8Z" secondAttribute="leading" id="gjl-A1-YVh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2Z-fO-12b" secondAttribute="bottom" id="h4F-I8-98l"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5aI-qC-i5Z" secondAttribute="bottom" constant="20" id="hAq-KM-oaZ"/>
-                            <constraint firstItem="3Cz-gd-zSi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iix-pq-eql"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t9u-aL-JK4" secondAttribute="trailing" constant="1" id="j4l-8k-tiU"/>
                             <constraint firstItem="Cgw-fj-oPN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-3" id="jG2-ya-PCw"/>
                             <constraint firstAttribute="trailing" secondItem="uM2-Tn-vu3" secondAttribute="trailing" constant="16" id="jyO-HY-FF3"/>
-                            <constraint firstItem="3Cz-gd-zSi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lnW-jT-jNe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cgw-fj-oPN" secondAttribute="trailing" constant="-3" id="m1T-Q8-chu"/>
                             <constraint firstItem="2kx-Rl-khf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nNz-ut-u4C"/>
                             <constraint firstItem="RjP-vD-1Rt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="nfq-87-pyJ"/>
@@ -403,7 +400,6 @@
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="width" secondItem="hfe-pA-Zb0" secondAttribute="width" id="sMn-fc-nNl"/>
                             <constraint firstItem="twk-nO-1hd" firstAttribute="centerY" secondItem="Nir-IO-mlh" secondAttribute="centerY" id="sb9-Ef-sBR"/>
                             <constraint firstItem="l7U-b4-2TA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-154" id="xi9-Db-1TS"/>
-                            <constraint firstItem="rGu-c2-GCR" firstAttribute="top" secondItem="v1E-zB-psD" secondAttribute="bottom" constant="-45" id="zPI-pl-sSy"/>
                             <constraint firstItem="cW9-Zw-5by" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-206" id="zQC-XH-JJO"/>
                         </constraints>
                     </view>
@@ -419,7 +415,6 @@
                         <outlet property="QuestionLabel" destination="twk-nO-1hd" id="CXR-Ob-xLF"/>
                         <outlet property="coin" destination="Uqu-Kl-fde" id="5F7-dk-F7g"/>
                         <outlet property="coinYConstraint" destination="ed7-jr-asV" id="WZA-t1-PAq"/>
-                        <outlet property="fireworksImage" destination="3Cz-gd-zSi" id="wCR-oz-UVw"/>
                         <outlet property="nextRoundButton" destination="Kqf-TP-xNa" id="5ZU-Vh-lQ7"/>
                         <outlet property="rightAnswerBanner" destination="rGu-c2-GCR" id="5ed-hG-EaL"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="dCz-PZ-gtB" id="103-rr-5tS"/>
@@ -1859,7 +1854,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Gold_Fireworks" width="360" height="343"/>
         <image name="banner" width="283" height="49"/>
         <image name="black-ink-grunge-stamp-circle" width="360" height="360"/>
         <image name="button_green" width="360" height="116"/>
