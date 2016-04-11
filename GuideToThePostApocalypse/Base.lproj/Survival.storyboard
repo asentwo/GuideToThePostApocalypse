@@ -505,7 +505,7 @@
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRq-Zt-EIr">
-                                <rect key="frame" x="215" y="28" width="67" height="18"/>
+                                <rect key="frame" x="237" y="28" width="67" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="71d-Gl-obX"/>
                                     <constraint firstAttribute="height" constant="18" id="zG0-U9-MDT"/>
@@ -544,19 +544,6 @@
                                 </state>
                                 <connections>
                                     <action selector="Button2Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="CpD-hu-BBc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFr-ng-mex">
-                                <rect key="frame" x="10" y="15" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="7XS-eo-umQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
-                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="hintBntTapped:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="X0i-4p-qbN"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-5D-aaY" userLabel="Silo Image">
@@ -637,7 +624,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Answer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="gog-Bj-bTr">
-                                <rect key="frame" x="60" y="59.5" width="200" height="30"/>
+                                <rect key="frame" x="60" y="59" width="200" height="30"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
@@ -650,15 +637,28 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="vlJ-GO-jKH" userLabel="Right Answer!">
-                                <rect key="frame" x="60" y="59.5" width="200" height="30"/>
+                                <rect key="frame" x="60" y="59" width="200" height="30"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="26"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFr-ng-mex">
+                                <rect key="frame" x="-4" y="12" width="57" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yFr-ng-mex" secondAttribute="height" multiplier="1:1" id="1Ib-7b-gSm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hintBntTapped:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="X0i-4p-qbN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.084401250141749817" green="0.44475174536767681" blue="0.12018741309255901" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yFr-ng-mex" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-6" id="0Gp-hX-awW"/>
+                            <constraint firstItem="yFr-ng-mex" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-20" id="0Gp-hX-awW"/>
                             <constraint firstItem="v4y-C2-doM" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-26" id="0tF-V3-aQd"/>
                             <constraint firstItem="dyk-8q-VBE" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leadingMargin" constant="-3" id="0uK-Hr-lXh"/>
                             <constraint firstItem="hRq-Zt-EIr" firstAttribute="top" secondItem="JGs-7y-a1H" secondAttribute="bottom" constant="8" symbolic="YES" id="1hr-Me-uHe"/>
@@ -669,7 +669,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3RQ-Yv-rq8" secondAttribute="trailing" constant="-2" id="6TW-IT-m3A"/>
                             <constraint firstItem="vlJ-GO-jKH" firstAttribute="centerY" secondItem="Y5v-Xw-5HD" secondAttribute="centerY" id="71m-aA-AeG"/>
                             <constraint firstItem="7E7-zD-7jR" firstAttribute="leading" secondItem="SjF-kW-lHf" secondAttribute="leading" id="7in-7u-B4p"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hRq-Zt-EIr" secondAttribute="trailing" constant="22" id="8vm-bz-eJs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hRq-Zt-EIr" secondAttribute="trailing" id="8vm-bz-eJs"/>
                             <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="hRq-Zt-EIr" secondAttribute="bottom" constant="29" id="AvF-DT-w8t"/>
                             <constraint firstItem="mw4-ds-yC3" firstAttribute="trailing" secondItem="jpJ-Mw-xLI" secondAttribute="trailing" id="Bey-qT-sVQ"/>
                             <constraint firstItem="jpJ-Mw-xLI" firstAttribute="top" secondItem="FwU-Gs-iOu" secondAttribute="bottom" constant="1" id="CY6-MN-eb2"/>
@@ -697,7 +697,7 @@
                             <constraint firstItem="kLk-Gf-ln5" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="206" id="WaY-jk-3xs"/>
                             <constraint firstItem="aEH-KE-g2e" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-210" id="X6G-Bd-6kv"/>
                             <constraint firstItem="DM2-dE-foE" firstAttribute="leading" secondItem="mw4-ds-yC3" secondAttribute="leading" id="X6S-Jy-4pj"/>
-                            <constraint firstItem="yFr-ng-mex" firstAttribute="top" secondItem="SjF-kW-lHf" secondAttribute="topMargin" constant="15" id="ZMp-Bk-LLh"/>
+                            <constraint firstItem="yFr-ng-mex" firstAttribute="top" secondItem="SjF-kW-lHf" secondAttribute="topMargin" constant="12" id="ZMp-Bk-LLh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dyk-8q-VBE" secondAttribute="trailing" constant="-3" id="Zdo-6y-cob"/>
                             <constraint firstItem="aEH-KE-g2e" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="Zxj-gk-vEU"/>
                             <constraint firstItem="Y5v-Xw-5HD" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" constant="-210" id="aaW-Hg-Six"/>
@@ -718,7 +718,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="FwU-Gs-iOu" secondAttribute="trailing" constant="1" id="gZw-Fl-y91"/>
                             <constraint firstItem="3RQ-Yv-rq8" firstAttribute="centerY" secondItem="SjF-kW-lHf" secondAttribute="centerY" id="gpf-78-g5S"/>
                             <constraint firstItem="DM2-dE-foE" firstAttribute="trailing" secondItem="mw4-ds-yC3" secondAttribute="trailing" id="gsS-TC-LUg"/>
-                            <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="yFr-ng-mex" secondAttribute="bottom" id="hLB-qo-Dng"/>
+                            <constraint firstItem="WpF-5D-aaY" firstAttribute="top" secondItem="yFr-ng-mex" secondAttribute="bottom" constant="6" id="hLB-qo-Dng"/>
                             <constraint firstItem="3RQ-Yv-rq8" firstAttribute="centerX" secondItem="SjF-kW-lHf" secondAttribute="centerX" id="hn8-qP-Zlb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ic9-97-zbm" secondAttribute="trailing" constant="-14" id="kmL-DR-iOQ"/>
                             <constraint firstItem="kvT-4Z-1Eb" firstAttribute="top" secondItem="ic9-97-zbm" secondAttribute="bottom" constant="-58" id="lhc-vC-VZg"/>

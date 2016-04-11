@@ -133,7 +133,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.Button2.setTitle(self.answers[1], forState: UIControlState.Normal)
             self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
             self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
-            self.buttons.hintBtn.enabled = true
+            self.HintButton.enabled = true
             
             timer.start()
             self.startAudioTimer()
@@ -228,6 +228,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
     rightAnswerLabel.adjustsFontSizeToFitWidth = true
     wrongAnswerLabel.adjustsFontSizeToFitWidth = true
+    HintButton.titleLabel?.adjustsFontSizeToFitWidth = true
   }
   
   //MARK: Buttons
