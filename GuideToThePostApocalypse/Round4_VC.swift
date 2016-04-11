@@ -27,7 +27,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet var Button4: UIButton!
   @IBOutlet var PlayerScore: UILabel!
   @IBOutlet var HintButton: UIButton!
-  @IBOutlet var FalloutImage: UIImageView!
+  @IBOutlet var SiloImage: UIImageView!
   
   //vaultBoys
   @IBOutlet weak var vaultBoyRight: UIImageView!
@@ -126,7 +126,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           
           if (self.answers.count > 0) {
             
-            self.FalloutImage.image = UIImage(named: self.image)
+            self.SiloImage.image = UIImage(named: self.image)
             self.QuestionLabel.text = self.question
             
             self.Button1.setTitle(self.answers[0], forState: UIControlState.Normal)
@@ -196,7 +196,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.QuestionLabel.hidden = true
       self.PlayerScore.hidden = true
       self.CountDownLabel.hidden = true
-      self.FalloutImage.hidden = true
+      self.SiloImage.hidden = true
       self.HintButton.hidden = true
       }, completion: nil)
   }
@@ -231,7 +231,6 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   //MARK: Buttons
-  
   
   //Restart
   func restartViewController () ->() {
@@ -497,12 +496,10 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.scoreLabel.hidden = false
       self.scoreLabel.text = "You scored \(totalScore) points!"
       }, completion:{_ in
-        //gives effect like fireworks are increasing then decreasing in size
-        UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 1.0
-          }, completion: nil)
+        let explode = ExplodeView(frame:CGRectMake(self.vaultBoySuccess.center.x - 20, self.vaultBoySuccess.center.y - 60, 100,100))
+        self.vaultBoySuccess.superview?.addSubview(explode)
+        self.vaultBoySuccess.superview?.sendSubviewToBack(explode)
         self.delay(3.0, closure: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 0.0
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true

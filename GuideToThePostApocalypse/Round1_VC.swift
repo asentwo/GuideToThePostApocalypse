@@ -376,6 +376,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
           self.view.layoutIfNeeded()
           }, completion: {_ in
             self.hideMadVaultBoyButtons(self.round1_objectIDArray)
+            self.stopAudioTimer()
             madVaultBoyRunning = false
         })
     })
@@ -406,10 +407,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     if round.count == 0 {
       self.DismissQandA()
       if self.currentRoundScore == 0 {
-        self.stopAudioTimer()
         self.zeroScoreVaultBoy()
       }else{
-        self.stopAudioTimer()
         self.congratulationsVaultBoy("falloutResize")
       }
     } else {

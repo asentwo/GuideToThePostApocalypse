@@ -304,6 +304,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
+        self.RemoveAlreadyUsedQuestion()
         self.newTile()
         self.stopAudioTimer()
         currentScore = totalScore + self.currentRoundScore
@@ -329,7 +330,8 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion:{_ in
-            madVaultBoyRunning = false})
+            madVaultBoyRunning = false
+         })
     })
   }
   
@@ -565,6 +567,10 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     scoreLabel.hidden = true
     youEarrnedACoin.hidden = true
     coin.hidden = true
+    wrongAnswerBanner.hidden = true
+    wrongAnswerLabel.hidden = true
+    rightAnswerBanner.hidden = true
+    rightAnswerLabel.hidden = true
   }
   
   //MARK: Update Score
