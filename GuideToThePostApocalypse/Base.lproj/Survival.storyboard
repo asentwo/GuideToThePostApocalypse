@@ -1165,6 +1165,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryRoundAgainButton:" destination="zyX-bE-kHB" eventType="touchUpInside" id="HQE-RF-MqK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tna-Vb-P2c">
                                 <rect key="frame" x="59" y="71" width="203.5" height="35"/>
@@ -1186,6 +1189,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="zyX-bE-kHB" eventType="touchUpInside" id="dAL-jm-Ihh"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-xT-MD7">
                                 <rect key="frame" x="13" y="156" width="294" height="376"/>
@@ -1312,7 +1318,7 @@
                         <outlet property="QuestionLabel" destination="cDK-Xi-G0U" id="dIp-3d-PXn"/>
                         <outlet property="backgroundImage" destination="e96-MA-XQJ" id="qUc-QV-WpP"/>
                         <outlet property="coin" destination="Q5Q-po-fxP" id="Qmi-jl-YNh"/>
-                        <outlet property="coinYConstaint" destination="GmY-D4-ARI" id="uof-Jk-EhD"/>
+                        <outlet property="coinYConstraint" destination="GmY-D4-ARI" id="SF3-Hn-dDQ"/>
                         <outlet property="nextRoundButton" destination="neM-eU-xLp" id="Ofu-Jo-7Rq"/>
                         <outlet property="rightAnswerBanner" destination="bd2-cH-rUO" id="pC7-dY-DAW"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="LLi-cu-rKE" id="aIJ-BM-6lh"/>
@@ -1472,6 +1478,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryRoundAgainButton:" destination="aXF-l5-PT1" eventType="touchUpInside" id="DMi-tB-vdE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud5-Jr-lK2">
                                 <rect key="frame" x="39" y="112" width="241" height="35"/>
@@ -1509,6 +1518,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="aXF-l5-PT1" eventType="touchUpInside" id="Yac-HQ-Jlm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Earned A Coin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZU-CU-E4G">
                                 <rect key="frame" x="58" y="60" width="203.5" height="35"/>
@@ -1912,7 +1924,7 @@
                         <outlet property="PlayerScore" destination="rHZ-pj-tdc" id="Rdg-Ah-kKY"/>
                         <outlet property="QuestionLabel" destination="vM5-jM-MdA" id="QrV-qr-LyT"/>
                         <outlet property="coin" destination="RdH-yI-AS7" id="2xL-hJ-ImY"/>
-                        <outlet property="coinYConstraint" destination="2YL-YI-qls" id="LyK-dV-n9b"/>
+                        <outlet property="coinYConstraint" destination="2YL-YI-qls" id="3EU-0T-0vC"/>
                         <outlet property="congrats" destination="mg6-79-X1L" id="yPN-gY-oLm"/>
                         <outlet property="playAgainButton" destination="LL2-2B-t9Z" id="UjI-GZ-hKx"/>
                         <outlet property="rightAnswerBanner" destination="njc-4c-d3v" id="dCe-Sw-9Sc"/>

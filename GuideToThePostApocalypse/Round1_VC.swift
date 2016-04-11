@@ -14,7 +14,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   //MARK:Constants
   
   var round1_objectIDArray = [String]()
-  let messages = Messages(next: "Round 2", restart: "")
   
   //MARK: IBOutlets
   
@@ -297,7 +296,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   
   
-  //MARK: Hint Button features
+  //MARK: Hint Button
   
   func setUpWrongAnswers(rightAnswer: Int) {
     var answers = ["answer1","answer2","answer3","answer4"]
