@@ -53,9 +53,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   @IBOutlet weak var rightAnswerBanner: UIImageView!
   @IBOutlet weak var rightAnswerLabel: UILabel!
   
-  //fireworks
-  @IBOutlet weak var fireworksImage: UIImageView!
-  
   //constraints
   
   @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
@@ -216,7 +213,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     wrongAnswerLabel.hidden = true
     rightAnswerBanner.hidden = true
     rightAnswerLabel.hidden = true
-    fireworksImage.hidden = true
   }
   
   func labelSizeAdjustment () {
@@ -335,7 +331,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   //MARK: Timer
   
   func countdownEnded() -> Void {
-    self.checkInitialTimer(round1_objectIDArray)
+    self.checkInitialTimer()
   }
   
   func timerShakeAndReset () {
@@ -353,8 +349,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     startAudioTimer()
   }
   
-  func checkInitialTimer (round:[String]) {
-    if round.count == 0 {
+  func checkInitialTimer () {
+    if self.round1_objectIDArray.count == 0 {
     } else {
       self.timerShakeAndReset()
     }

@@ -598,6 +598,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="EVV-E8-Oph"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="dyk-8q-VBE">
                                 <rect key="frame" x="13" y="156" width="294" height="376"/>
@@ -614,6 +617,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryRoundAgainButton:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="7A5-VI-srJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-t6-Zwc">
                                 <rect key="frame" x="39" y="112" width="241" height="35"/>
@@ -739,6 +745,9 @@
                         <outlet property="coin" destination="3RQ-Yv-rq8" id="RW4-r6-H4g"/>
                         <outlet property="coinYConstraint" destination="gpf-78-g5S" id="Amc-UE-dCj"/>
                         <outlet property="nextRoundButton" destination="kLk-Gf-ln5" id="KJK-v2-Z77"/>
+                        <outlet property="rightAnswerBanner" destination="Y5v-Xw-5HD" id="LjN-cE-sON"/>
+                        <outlet property="rightAnswerBannerXConstraint" destination="MaH-VG-FGW" id="0pi-7x-vS7"/>
+                        <outlet property="rightAnswerLabel" destination="vlJ-GO-jKH" id="oz2-e9-OvO"/>
                         <outlet property="scoreBanner" destination="kvT-4Z-1Eb" id="6JR-OU-ZTf"/>
                         <outlet property="scoreLabel" destination="8gV-B8-vEz" id="Lbg-vr-x65"/>
                         <outlet property="tryAgainButton" destination="RBg-2w-rYr" id="LO4-7i-iPR"/>
@@ -750,6 +759,9 @@
                         <outlet property="vaultBoySuccessYConstraint" destination="bOH-DF-ubt" id="9N7-yX-LKi"/>
                         <outlet property="vaultBoyWrong" destination="7E7-zD-7jR" id="Q9w-pY-IQ4"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="F3C-jR-Qt0" id="edx-1C-zMm"/>
+                        <outlet property="wrongAnswerBanner" destination="aEH-KE-g2e" id="94F-Pt-6bU"/>
+                        <outlet property="wrongAnswerBannerXConstraint" destination="Zxj-gk-vEU" id="hGx-QK-Slr"/>
+                        <outlet property="wrongAnswerLabel" destination="gog-Bj-bTr" id="ol9-W4-xFO"/>
                         <outlet property="youEarnedACoinLabel" destination="9bb-f0-oFx" id="AbP-ur-p7j"/>
                         <outlet property="youFailedThisRoundLabel" destination="ePY-t6-Zwc" id="okR-ag-xP3"/>
                         <segue destination="aXF-l5-PT1" kind="modal" identifier="round4ToRound5Segue" modalTransitionStyle="flipHorizontal" id="hwf-EZ-Jci"/>
@@ -833,6 +845,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="l35-yK-MFC" eventType="touchUpInside" id="5nU-dv-akP"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-1H-aUK">
                                 <rect key="frame" x="5" y="91" width="310" height="503"/>
@@ -870,6 +885,9 @@
                                     <color key="titleColor" red="0.97474367770000003" green="0.98205676399999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tryRoundAgainButton:" destination="l35-yK-MFC" eventType="touchUpInside" id="lPp-XZ-jge"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="torn_banner" translatesAutoresizingMaskIntoConstraints="NO" id="tce-bH-gin" userLabel="Wrong Answer Banner">
                                 <rect key="frame" x="60" y="59" width="200" height="30"/>
@@ -966,7 +984,9 @@
                         <outlet property="QuestionLabel" destination="gRb-i9-aVD" id="hC1-y1-XHz"/>
                         <outlet property="coin" destination="gpy-LP-ubr" id="v7O-iS-q7F"/>
                         <outlet property="coinYConstraint" destination="NlM-b2-Zgn" id="IES-Mn-H0E"/>
-                        <outlet property="nextRound" destination="vGS-2r-0jg" id="wEi-8O-1w8"/>
+                        <outlet property="rightAnswerBanner" destination="Nhz-Pa-3IR" id="vYC-9X-fjy"/>
+                        <outlet property="rightAnswerBannerXConstraint" destination="6mq-2f-ULB" id="uhc-kU-IJ7"/>
+                        <outlet property="rightAnswerLabel" destination="3AN-wY-HAX" id="nL9-S6-xyY"/>
                         <outlet property="scoreBanner" destination="K4O-7O-UHG" id="03S-kC-CBi"/>
                         <outlet property="scoreLabel" destination="ND2-Qr-DMk" id="6ce-gZ-i95"/>
                         <outlet property="tryAgain" destination="w6i-bB-NNr" id="QgL-GW-mOj"/>
@@ -978,6 +998,9 @@
                         <outlet property="vaultBoySuccessYConstraint" destination="ALh-FL-lVO" id="whe-au-54k"/>
                         <outlet property="vaultBoyWrong" destination="PT0-1H-aUK" id="zaK-n3-ip0"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="SXw-IS-Sgw" id="Ugj-RF-XT0"/>
+                        <outlet property="wrongAnswerBanner" destination="tce-bH-gin" id="o8W-P0-SHf"/>
+                        <outlet property="wrongAnswerBannerXConstraint" destination="nGD-02-GXV" id="P3y-DF-pH5"/>
+                        <outlet property="wrongAnswerLabel" destination="xmb-4W-enz" id="BU8-hN-JBu"/>
                         <outlet property="youEarrnedACoin" destination="8i9-U2-QtD" id="HD0-1X-gm9"/>
                         <outlet property="youFailedThisRound" destination="n9o-M0-nwy" id="vwl-NI-T0w"/>
                         <segue destination="zyX-bE-kHB" kind="modal" identifier="round2ToRound3Segue" modalPresentationStyle="currentContext" modalTransitionStyle="flipHorizontal" id="3d0-Bk-svN"/>
@@ -1291,6 +1314,9 @@
                         <outlet property="coin" destination="Q5Q-po-fxP" id="Qmi-jl-YNh"/>
                         <outlet property="coinYConstaint" destination="GmY-D4-ARI" id="uof-Jk-EhD"/>
                         <outlet property="nextRoundButton" destination="neM-eU-xLp" id="Ofu-Jo-7Rq"/>
+                        <outlet property="rightAnswerBanner" destination="bd2-cH-rUO" id="pC7-dY-DAW"/>
+                        <outlet property="rightAnswerBannerXConstraint" destination="LLi-cu-rKE" id="aIJ-BM-6lh"/>
+                        <outlet property="rightAnswerLabel" destination="6v9-2P-eKw" id="7na-1T-eDu"/>
                         <outlet property="scoreBanner" destination="SY4-Yt-dAA" id="hG4-4r-T5L"/>
                         <outlet property="scoreLabel" destination="per-PK-mTZ" id="Z9M-na-c3Q"/>
                         <outlet property="tryAgainButton" destination="qKl-CX-JEj" id="oWS-mO-iNT"/>
@@ -1302,6 +1328,9 @@
                         <outlet property="vaultBoySuccessYConstraint" destination="F24-aO-3Vi" id="t5a-cQ-6ez"/>
                         <outlet property="vaultBoyWrong" destination="DEL-SS-DGu" id="tYM-Kx-ZcU"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="xGM-BM-KGd" id="93T-pr-osn"/>
+                        <outlet property="wrongAnswerBanner" destination="zJ8-9u-Qmd" id="0eQ-qc-NBZ"/>
+                        <outlet property="wrongAnswerBannerXConstraint" destination="oJo-jv-2yC" id="vst-xY-EJN"/>
+                        <outlet property="wrongAnswerLabel" destination="DXR-4I-pTw" id="4Ix-0A-cWA"/>
                         <outlet property="youEarnedACoinLabel" destination="tna-Vb-P2c" id="wkQ-Nb-hI3"/>
                         <outlet property="youFailedThisRoundLabel" destination="Ve9-dV-Aed" id="KKb-dH-BqH"/>
                         <segue destination="8Ls-PY-UIK" kind="modal" identifier="round3ToRound4Segue" modalTransitionStyle="flipHorizontal" id="CX9-oe-G0K"/>
@@ -1621,6 +1650,9 @@
                         <outlet property="coin" destination="ApM-wD-KgA" id="OGk-CN-hC1"/>
                         <outlet property="coinYConstraint" destination="7BD-4G-CFY" id="olg-JB-PPl"/>
                         <outlet property="nextRoundButton" destination="AfF-Dj-ihe" id="z7P-nu-2XV"/>
+                        <outlet property="rightAnswerBanner" destination="WaY-Wg-irr" id="ne3-4q-Z7d"/>
+                        <outlet property="rightAnswerBannerXConstraint" destination="hdq-5p-xaI" id="FZ0-r3-va2"/>
+                        <outlet property="rightAnswerLabel" destination="o8q-yK-H6f" id="Ana-aY-IhO"/>
                         <outlet property="scoreBanner" destination="PBx-wC-ehw" id="CfK-S9-DNJ"/>
                         <outlet property="scoreLabel" destination="pA1-Y0-TBC" id="tih-Pk-wZu"/>
                         <outlet property="tryAgainButton" destination="rY6-Po-5q1" id="2VI-8y-lex"/>
@@ -1632,6 +1664,9 @@
                         <outlet property="vaultBoySuccessYConstraint" destination="pQm-tx-4h1" id="v5P-8t-qJL"/>
                         <outlet property="vaultBoyWrong" destination="9g9-pF-GUj" id="Eal-mm-uyt"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="QD0-qe-Lc3" id="04i-7A-WX0"/>
+                        <outlet property="wrongAnswerBanner" destination="HXY-S9-iOq" id="fgv-t0-bUM"/>
+                        <outlet property="wrongAnswerBannerXConstraint" destination="UsA-8i-Rmz" id="aMh-hQ-eJm"/>
+                        <outlet property="wrongAnswerLabel" destination="Kth-Oq-5zp" id="fy1-GV-VGs"/>
                         <outlet property="youEarnedACoinLabel" destination="UZU-CU-E4G" id="5Gl-zj-YZC"/>
                         <outlet property="youFailedThisRoundLabel" destination="Ud5-Jr-lK2" id="fFs-7q-VOC"/>
                         <segue destination="Ylf-eO-TZ1" kind="modal" identifier="round5ToRound6Segue" modalTransitionStyle="flipHorizontal" id="e7Y-Fv-fyg"/>
@@ -1880,6 +1915,9 @@
                         <outlet property="coinYConstraint" destination="2YL-YI-qls" id="LyK-dV-n9b"/>
                         <outlet property="congrats" destination="mg6-79-X1L" id="yPN-gY-oLm"/>
                         <outlet property="playAgainButton" destination="LL2-2B-t9Z" id="UjI-GZ-hKx"/>
+                        <outlet property="rightAnswerBanner" destination="njc-4c-d3v" id="dCe-Sw-9Sc"/>
+                        <outlet property="rightAnswerBannerXConstraint" destination="kk4-Io-sKp" id="ms9-GF-Pko"/>
+                        <outlet property="rightAnswerLabel" destination="x0K-Yj-6Tw" id="czi-YK-0V2"/>
                         <outlet property="scoreBanner" destination="sob-kv-mAX" id="njY-bo-pFq"/>
                         <outlet property="scoreLabel" destination="atK-D6-Zr4" id="GXG-vM-mOQ"/>
                         <outlet property="tryAgainButton" destination="qea-sN-daP" id="urI-IL-eHu"/>
@@ -1891,6 +1929,9 @@
                         <outlet property="vaultBoySuccessYConstraint" destination="kal-vd-C9A" id="cNU-0j-0Mz"/>
                         <outlet property="vaultBoyWrong" destination="cHU-oL-guV" id="jHR-6w-DPG"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="Ghv-Wx-TA8" id="w1v-9a-eMY"/>
+                        <outlet property="wrongAnswerBanner" destination="czE-iq-atI" id="156-Xd-88u"/>
+                        <outlet property="wrongAnswerBannerXConstraint" destination="FBs-pn-4AG" id="6Sr-Hn-bSz"/>
+                        <outlet property="wrongAnswerLabel" destination="B57-t1-NCv" id="63B-hG-qlP"/>
                         <outlet property="youEarnedACoinLabel" destination="8lY-vN-5MP" id="rWV-O2-N6p"/>
                         <outlet property="youFailedThisRoundLabel" destination="EUf-Ib-aLk" id="K9O-eQ-2ph"/>
                         <outlet property="youSurvivedLabel" destination="xj4-45-UxC" id="KhE-Jb-wpL"/>

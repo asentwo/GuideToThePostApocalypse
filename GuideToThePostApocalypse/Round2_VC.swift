@@ -55,14 +55,21 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //gif
   @IBOutlet weak var coin: UIImageView!
   
-  //constraints
+  //wrong/right banners
+  @IBOutlet weak var wrongAnswerBanner: UIImageView!
+  @IBOutlet weak var wrongAnswerLabel: UILabel!
+  @IBOutlet weak var rightAnswerBanner: UIImageView!
+  @IBOutlet weak var rightAnswerLabel: UILabel!
   
+  //constraints
   @IBOutlet weak var vaultBoyWrongYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoyFailedYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
   @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
-  
+  @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
+  @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
+ 
   //MARK: ViewDidLoad
   
   override func viewDidLoad() {
@@ -201,19 +208,17 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: Buttons
   
   func ButtonActions () {
-    tryAgain.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
-    nextRound.addTarget(self, action: "switchToRoundThree:", forControlEvents: .TouchUpInside)
+//    tryAgain.addTarget(self, action: "restartViewController", forControlEvents: .TouchUpInside)
+//    nextRound.addTarget(self, action: "switchToRoundThree:", forControlEvents: .TouchUpInside)
     buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
-    
+//
   }
   
   //Next Round
-  func switchToRoundThree (sender:UIButton) {
-    if(sender.tag == 1){
+  func switchToRoundThree () {
       UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
         self.performSegueWithIdentifier("round2ToRound3Segue", sender: self)
         }, completion: nil)
-    }
   }
   
   //Give Hint
@@ -414,6 +419,52 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     })
   }
   
+  //MARK: Banner Animations
+  
+  func showWrongAnswerBanner() {
+    UIView.transitionWithView(wrongAnswerBanner, duration: 0.20, options: [.CurveEaseOut, .TransitionFlipFromLeft], animations: {
+      self.wrongAnswerBanner.hidden = false
+      self.view.bringSubviewToFront(self.wrongAnswerBanner)
+      }, completion: {_ in
+        self.wrongAnswerLabel.hidden = false
+        self.view.bringSubviewToFront(self.wrongAnswerLabel)
+        self.wrongAnswerBannerXConstraint.constant += self.view.frame.size.width
+        UIView.animateWithDuration(0.33, delay: 0.7, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+          self.view.layoutIfNeeded()
+          //makes banner fly off screen at end of animation
+          }, completion: {_ in
+            self.wrongAnswerBanner.hidden = true
+            self.wrongAnswerLabel.hidden = true
+            self.wrongAnswerBannerXConstraint.constant -= self.view.frame.size.width
+            self.view.layoutIfNeeded()
+            // changes position of banner from off screen back onto screen & invisible so can be used again
+          }
+        )}
+    )}
+  
+  func showRightAnswerBanner() {
+    UIView.transitionWithView(rightAnswerBanner, duration: 0.20, options: [.CurveEaseOut, .TransitionFlipFromLeft], animations: {
+      self.rightAnswerBanner.hidden = false
+      self.view.bringSubviewToFront(self.rightAnswerBanner)
+      }, completion: {_ in
+        self.rightAnswerLabel.hidden = false
+        self.view.bringSubviewToFront(self.rightAnswerLabel)
+        self.rightAnswerBannerXConstraint.constant += self.view.frame.size.width
+        UIView.animateWithDuration(0.33, delay: 0.7, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
+          self.view.layoutIfNeeded()
+          //makes banner fly off screen at end of animation
+          }, completion: {_ in
+            self.rightAnswerBanner.hidden = true
+            self.rightAnswerLabel.hidden = true
+            self.rightAnswerBannerXConstraint.constant -= self.view.frame.size.width
+            // changes position of banner from off screen back onto screen & invisible so can be used again
+            self.view.layoutIfNeeded()
+          }
+        )}
+    )}
+  
+
+  
   //MARK: Timer
   
   func countdownEnded() -> Void {
@@ -535,6 +586,17 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.currentRoundScore = self.data.points
     self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
   }
+  
+  //MARK: Buttons
+  
+  @IBAction func nextRoundButton(sender: AnyObject) {
+    self.switchToRoundThree()
+  }
+
+  @IBAction func tryRoundAgainButton(sender: AnyObject) {
+    self.restartViewController()
+  }
+  
 }
 
 /*declares that the viewController conforms to TileDragDelegateProtocol, and also defines tileView(tileView:didDragToPoint:) which is the initial implementation of the delegate method.
@@ -723,7 +785,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
         stars.removeFromSuperview()
     })
     delay(2, closure: {
-   //   self.ShowRightAnswerBanner(self.bannersAndVaultBoys.rightAnswerBanner, label: self.bannersAndVaultBoys.rightAnswerLabel, message: self.messages.rightAnswerMessage)
+      self.showRightAnswerBanner()
       self.ThumbsUpVaultBoy()
     })
   }
