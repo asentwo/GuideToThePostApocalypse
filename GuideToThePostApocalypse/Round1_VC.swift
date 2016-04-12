@@ -53,7 +53,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   @IBOutlet weak var rightAnswerLabel: UILabel!
   
   //constraints
-  
   @IBOutlet weak var vaultBoyRightYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoyWrongYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
@@ -61,6 +60,9 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
   @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
   @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
+  
+  //fireworks
+  @IBOutlet weak var fireworksImage: UIImageView!
   
   
   //MARK: ViewDidLoad
@@ -78,8 +80,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
     timer.delegate = self
-    
     userDefaults.setObject("Round_1", forKey: CURRENT_ROUND_KEY)
+    fireworksImage.alpha = 0
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -482,7 +484,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   func congratulationsVaultBoy (gifString: String) {
     self.stopAudioTimer()
     self.DismissQandA()
-    self.view.addSubview(self.bannersAndVaultBoys.fireworks_2_gold)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
@@ -497,10 +498,10 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
       }, completion:{_ in
         //gives effect like fireworks are increasing then decreasing in size
         UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 1.0
+          self.fireworksImage.alpha = 1.0
           }, completion: nil)
         self.delay(3.0, closure: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 0.0
+          self.fireworksImage.alpha = 0.0
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true

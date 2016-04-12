@@ -484,7 +484,6 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func congratulationsVaultBoy (gifString: String) {
     self.DismissQandA()
-    self.view.addSubview(self.bannersAndVaultBoys.fireworks_2_gold)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)

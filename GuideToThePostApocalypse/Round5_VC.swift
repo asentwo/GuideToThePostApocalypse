@@ -65,6 +65,9 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
   @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
   
+  //fireworks
+  @IBOutlet weak var fireworksImage: UIImageView!
+  
   //MARK: ViewDidLoad
   
   override func viewDidLoad() {
@@ -82,13 +85,14 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
     timer.delegate = self
     userDefaults.setObject("Round_5", forKey: CURRENT_ROUND_KEY)
+    fireworksImage.alpha = 0
   }
   
   override func viewWillAppear(animated: Bool) {
     
     vaultBoyRightYConstraint.constant = 60
     vaultBoyWrongYConstraint.constant = 58.5
-   // vaultBoySuccessYConstraint.constant = -64
+    vaultBoySuccessYConstraint.constant = -64
     vaultBoyFailedYConstraint.constant = 30
     coinYConstraint.constant = 0
     vaultBoyWrongYConstraint.constant += view.bounds.height
@@ -206,12 +210,12 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     vaultBoyWrong.hidden = true
     vaultBoyRight.hidden = true
     vaultBoyFailed.hidden = true
-   // vaultBoySuccess.hidden = true
+    vaultBoySuccess.hidden = true
     tryAgainButton.hidden = true
     nextRoundButton.hidden = true
     youFailedThisRoundLabel.hidden = true
-   // scoreBanner.hidden = true
-  //  scoreLabel.hidden = true
+    scoreBanner.hidden = true
+    scoreLabel.hidden = true
     youEarnedACoinLabel.hidden = true
     coin.hidden = true
     wrongAnswerBanner.hidden = true
@@ -487,7 +491,6 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func congratulationsVaultBoy (gifString: String) {
     self.DismissQandA()
-    self.view.addSubview(self.bannersAndVaultBoys.fireworks_2_gold)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
@@ -502,10 +505,10 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       }, completion:{_ in
         //gives effect like fireworks are increasing then decreasing in size
         UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 1.0
+          self.fireworksImage.alpha = 1.0
           }, completion: nil)
         self.delay(3.0, closure: {
-          self.bannersAndVaultBoys.fireworks_2_gold.alpha = 0.0
+          self.fireworksImage.alpha = 0.0
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true

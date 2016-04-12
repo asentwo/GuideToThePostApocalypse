@@ -30,7 +30,6 @@ class MultiChoiceVC: UIViewController{
   var image: String!
 
   //MARK: UIConstants
-  var bannersAndVaultBoys = BannersAndVaultBoys()
     let buttons = Buttons()
   
   //MARK: ViewDidload

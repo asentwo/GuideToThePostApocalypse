@@ -481,7 +481,6 @@ func zeroScoreVaultBoy () {
 
 func congratulationsVaultBoy () {
   self.DismissQandA()
-  self.view.addSubview(self.bannersAndVaultBoys.fireworks_2_gold)
   self.view.bringSubviewToFront(vaultBoySuccess)
   self.vaultBoySuccess.hidden = false
   self.audioController.playEffect(SoundWin)
@@ -494,12 +493,7 @@ func congratulationsVaultBoy () {
     self.scoreLabel.hidden = false
     self.scoreLabel.text = "You scored \(totalScore) points!"
     }, completion:{_ in
-      //gives effect like fireworks are increasing then decreasing in size
-      UIView.animateWithDuration(0.5, delay:0, options: [.Repeat, .Autoreverse], animations: {
-        self.bannersAndVaultBoys.fireworks_2_gold.alpha = 1.0
-        }, completion: nil)
-      self.delay(3.0, closure: {
-        self.bannersAndVaultBoys.fireworks_2_gold.alpha = 0.0
+          self.delay(3.0, closure: {
         self.vaultBoySuccess.hidden = true
         self.scoreBanner.hidden = true
         self.scoreLabel.hidden = true

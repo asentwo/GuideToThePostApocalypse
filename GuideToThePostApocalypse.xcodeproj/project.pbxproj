@@ -182,7 +182,6 @@
 		6EC5DA2E1CA5E208006F62EA /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5DA2D1CA5E208006F62EA /* ding.wav */; };
 		6EC5DA301CA5E389006F62EA /* ding2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5DA2F1CA5E389006F62EA /* ding2.wav */; };
 		6EC5DA341CA5E390006F62EA /* ding_bycycle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5DA321CA5E390006F62EA /* ding_bycycle.wav */; };
-		6ECA7F121C5705A000C21EA9 /* BannersAndVaultBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F111C5705A000C21EA9 /* BannersAndVaultBoys.swift */; };
 		6ECA7F141C5705B900C21EA9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F131C5705B900C21EA9 /* Buttons.swift */; };
 		6ECA7F161C5705F100C21EA9 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F151C5705F100C21EA9 /* Messages.swift */; };
 		6ECA7F1E1C57125B00C21EA9 /* BannerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F1D1C57125B00C21EA9 /* BannerFunctions.swift */; };
@@ -393,7 +392,6 @@
 		6EC5DA2D1CA5E208006F62EA /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		6EC5DA2F1CA5E389006F62EA /* ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding2.wav; sourceTree = "<group>"; };
 		6EC5DA321CA5E390006F62EA /* ding_bycycle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding_bycycle.wav; sourceTree = "<group>"; };
-		6ECA7F111C5705A000C21EA9 /* BannersAndVaultBoys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannersAndVaultBoys.swift; sourceTree = "<group>"; };
 		6ECA7F131C5705B900C21EA9 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		6ECA7F151C5705F100C21EA9 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		6ECA7F1D1C57125B00C21EA9 /* BannerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerFunctions.swift; sourceTree = "<group>"; };
@@ -864,7 +862,6 @@
 		6ECA7F1A1C5706C200C21EA9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6ECA7F111C5705A000C21EA9 /* BannersAndVaultBoys.swift */,
 				6ECA7F131C5705B900C21EA9 /* Buttons.swift */,
 				6ECA7F151C5705F100C21EA9 /* Messages.swift */,
 			);
@@ -1221,7 +1218,6 @@
 				6EAEC4E41C3DE9470023F4BF /* TargetView.swift in Sources */,
 				6ECA7F1E1C57125B00C21EA9 /* BannerFunctions.swift in Sources */,
 				6E68574A1C1A55F80005F008 /* AppDelegate.swift in Sources */,
-				6ECA7F121C5705A000C21EA9 /* BannersAndVaultBoys.swift in Sources */,
 				6E13323E1C51882000064FB7 /* GameScore.swift in Sources */,
 				6E4295451C35EC9000720BEF /* TileView.swift in Sources */,
 				6E14431A1C4AB6CB0066B61C /* Round3_VC.swift in Sources */,
