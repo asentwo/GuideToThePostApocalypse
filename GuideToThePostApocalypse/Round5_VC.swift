@@ -88,7 +88,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     
     vaultBoyRightYConstraint.constant = 60
     vaultBoyWrongYConstraint.constant = 58.5
-    vaultBoySuccessYConstraint.constant = -64
+   // vaultBoySuccessYConstraint.constant = -64
     vaultBoyFailedYConstraint.constant = 30
     coinYConstraint.constant = 0
     vaultBoyWrongYConstraint.constant += view.bounds.height
@@ -206,12 +206,12 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     vaultBoyWrong.hidden = true
     vaultBoyRight.hidden = true
     vaultBoyFailed.hidden = true
-    vaultBoySuccess.hidden = true
+   // vaultBoySuccess.hidden = true
     tryAgainButton.hidden = true
     nextRoundButton.hidden = true
     youFailedThisRoundLabel.hidden = true
-    scoreBanner.hidden = true
-    scoreLabel.hidden = true
+   // scoreBanner.hidden = true
+  //  scoreLabel.hidden = true
     youEarnedACoinLabel.hidden = true
     coin.hidden = true
     wrongAnswerBanner.hidden = true

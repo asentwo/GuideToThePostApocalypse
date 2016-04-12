@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zyX-bE-kHB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aXF-l5-PT1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1493,22 +1493,6 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="PBx-wC-ehw">
-                                <rect key="frame" x="17" y="410" width="286" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PBx-wC-ehw" secondAttribute="height" multiplier="58:11" id="bCR-cD-Vw6"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-Y0-TBC">
-                                <rect key="frame" x="120" y="416" width="80" height="44.5"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="40"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax)_knife" translatesAutoresizingMaskIntoConstraints="NO" id="6I6-53-YOS">
-                                <rect key="frame" x="2" y="55" width="324" height="384"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madMaxResize.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ApM-wD-KgA" userLabel="Coin">
                                 <rect key="frame" x="14" y="134" width="292" height="300"/>
                             </imageView>
@@ -1568,6 +1552,22 @@
                                     <action selector="nextRoundButton:" destination="aXF-l5-PT1" eventType="touchUpInside" id="Yac-HQ-Jlm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="PBx-wC-ehw">
+                                <rect key="frame" x="17" y="410" width="286" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PBx-wC-ehw" secondAttribute="height" multiplier="58:11" id="bCR-cD-Vw6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-Y0-TBC">
+                                <rect key="frame" x="120" y="416.5" width="80" height="44.5"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax)_knife" translatesAutoresizingMaskIntoConstraints="NO" id="6I6-53-YOS">
+                                <rect key="frame" x="-4" y="55" width="328" height="384"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.58039215686274515" green="0.4392156862745098" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1586,12 +1586,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="PBx-wC-ehw" secondAttribute="trailing" constant="1" id="9Id-Ap-jCf"/>
                             <constraint firstItem="AfF-Dj-ihe" firstAttribute="centerY" secondItem="NHv-WJ-Ree" secondAttribute="centerY" constant="190" id="9KP-lz-7TA"/>
                             <constraint firstItem="A4r-YA-EGf" firstAttribute="top" secondItem="NHv-WJ-Ree" secondAttribute="topMargin" constant="-4" id="A1N-5x-G2z"/>
-                            <constraint firstItem="6I6-53-YOS" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-14" id="BQr-K1-Dgl"/>
+                            <constraint firstItem="6I6-53-YOS" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-20" id="BQr-K1-Dgl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AA0-dX-kX6" secondAttribute="trailing" constant="22" id="Bns-Qr-Uol"/>
                             <constraint firstItem="Kth-Oq-5zp" firstAttribute="centerY" secondItem="HXY-S9-iOq" secondAttribute="centerY" id="Bvq-1U-gZE"/>
                             <constraint firstItem="HXY-S9-iOq" firstAttribute="centerX" secondItem="NHv-WJ-Ree" secondAttribute="centerX" id="CHI-IL-fCH"/>
                             <constraint firstItem="AfF-Dj-ihe" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="57" id="Cur-l3-ze7"/>
                             <constraint firstItem="OK3-a0-cN0" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-5" id="Da1-To-vDZ"/>
+                            <constraint firstItem="6I6-53-YOS" firstAttribute="top" secondItem="Who-iS-AA9" secondAttribute="bottom" constant="35" id="FWZ-Fg-tj9"/>
                             <constraint firstItem="AfF-Dj-ihe" firstAttribute="centerX" secondItem="NHv-WJ-Ree" secondAttribute="centerX" id="Fty-ED-4hr"/>
                             <constraint firstAttribute="bottom" secondItem="zVb-vq-Ste" secondAttribute="bottom" constant="25" id="GSv-5H-ITl"/>
                             <constraint firstItem="Dsf-1x-2IJ" firstAttribute="leading" secondItem="OK3-a0-cN0" secondAttribute="leading" id="GYq-dD-DK5"/>
@@ -1602,7 +1603,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="AfF-Dj-ihe" secondAttribute="trailing" constant="57" id="LSQ-8w-cZ7"/>
                             <constraint firstItem="A4r-YA-EGf" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leading" id="Lnx-Fc-kbP"/>
                             <constraint firstAttribute="trailing" secondItem="A4r-YA-EGf" secondAttribute="trailing" id="NBi-XN-V7j"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6I6-53-YOS" secondAttribute="trailing" constant="-22" id="Nkk-E1-PTB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6I6-53-YOS" secondAttribute="trailing" constant="-20" id="Nkk-E1-PTB"/>
                             <constraint firstItem="uxE-tU-iPb" firstAttribute="leading" secondItem="NHv-WJ-Ree" secondAttribute="leadingMargin" constant="-14" id="NrQ-WY-Vs4"/>
                             <constraint firstItem="rY6-Po-5q1" firstAttribute="centerX" secondItem="NHv-WJ-Ree" secondAttribute="centerX" id="ONS-9F-59d"/>
                             <constraint firstItem="9g9-pF-GUj" firstAttribute="centerY" secondItem="NHv-WJ-Ree" secondAttribute="centerY" constant="59" id="QD0-qe-Lc3"/>
