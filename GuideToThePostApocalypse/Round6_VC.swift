@@ -274,9 +274,9 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.dismissViewControllerAnimated(true, completion: nil)
     let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_6")
-    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
-    delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)})
-    
+    delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)
+      self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+    })
   }
   
   //Restart Game
@@ -285,8 +285,9 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.dismissViewControllerAnimated(true, completion: nil)
     let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_1")
-    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
-    delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)})
+    delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)
+      self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+    })
   }
   
   //MARK: VaultBoy Animation
@@ -318,18 +319,18 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
-        if self.round6_objectIDArray.count == 0 {
-          self.DismissQandA()
-          if self.currentRoundScore == 0 {
-            self.mainTileTargetView.removeFromSuperview()
-            self.stopAudioTimer()
-            self.ZeroScoreVaultBoy()
-          }else{
-            self.mainTileTargetView.removeFromSuperview()
-            self.stopAudioTimer()
-            self.CongratulationsVaultBoy()        }
-        } else{
-          self.resetAllTimers()
+          if self.round6_objectIDArray.count == 0 {
+            self.DismissQandA()
+            if self.currentRoundScore == 0 {
+              self.mainTileTargetView.removeFromSuperview()
+              self.stopAudioTimer()
+              self.ZeroScoreVaultBoy()
+            }else{
+              self.mainTileTargetView.removeFromSuperview()
+              self.stopAudioTimer()
+              self.CongratulationsVaultBoy()        }
+          } else{
+            self.resetAllTimers()
         }
         self.vaultBoyWrongYConstraint.constant += self.view.bounds.height
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
@@ -387,7 +388,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     self.youFailedThisRoundLabel.hidden = false
     self.vaultBoyFailed.hidden = false
     self.vaultBoyFailedYConstraint.constant += self.view.bounds.height
-    UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
+    UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }
       , completion:{_ in
@@ -399,6 +400,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func CongratulationsVaultBoy() {
+    self.stopAudioTimer()
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
     currentScore = totalScore + self.currentRoundScore

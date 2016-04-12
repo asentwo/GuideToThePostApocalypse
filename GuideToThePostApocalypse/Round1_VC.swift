@@ -195,7 +195,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   }
   
   //MARK: Graphics
-
+  
   func hideAllGraphics () {
     vaultBoyWrong.hidden = true
     vaultBoyRight.hidden = true
@@ -239,9 +239,9 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   //Next Round
   func switchToRoundTwo () {
-      UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
-        self.performSegueWithIdentifier("round1ToRound2Segue", sender: self)
-        }, completion: nil)
+    UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
+      self.performSegueWithIdentifier("round1ToRound2Segue", sender: self)
+      }, completion: nil)
   }
   
   //Button Bounce
@@ -255,7 +255,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
         self.showWrongAnswerBanner()
     })
   }
-
+  
   //RightButtonSelected
   
   func RightButtonSelected () {
@@ -375,6 +375,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
         UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion: {_ in
+            self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round1_objectIDArray)
             madVaultBoyRunning = false
         })
@@ -466,7 +467,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     self.youFailedThisRoundLabel.hidden = false
     self.vaultBoyFailed.hidden = false
     self.vaultBoyFailedYConstraint.constant += self.view.bounds.height
-    UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
+    UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }
       , completion: {_ in

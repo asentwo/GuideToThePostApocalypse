@@ -470,7 +470,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.youFailedThisRoundLabel.hidden = false
     self.vaultBoyFailed.hidden = false
     self.vaultBoyFailedYConstraint.constant += self.view.bounds.height
-    UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
+    UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }
       , completion: {_ in
