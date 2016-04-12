@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zyX-bE-kHB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -246,19 +246,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_right" translatesAutoresizingMaskIntoConstraints="NO" id="Cgw-fj-oPN">
                                 <rect key="frame" x="13" y="166" width="294" height="356"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="t9u-aL-JK4">
-                                <rect key="frame" x="17" y="405" width="286" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="t9u-aL-JK4" secondAttribute="height" multiplier="58:11" id="WYU-cC-Hea"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-EI-Le5">
-                                <rect key="frame" x="120" y="415" width="80" height="45"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="40"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-Yl-aM6" userLabel="ZeroVaultBoy">
                                 <rect key="frame" x="2" y="210" width="316" height="208"/>
                             </imageView>
@@ -283,9 +270,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="Ktt-v7-jX0">
                                 <rect key="frame" x="5" y="92" width="310" height="503"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_pipboy" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-ha-6JA">
-                                <rect key="frame" x="-8" y="54" width="344" height="386"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="torn_banner2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8yf-ZA-m8Z" userLabel="Wrong Answer Banner">
                                 <rect key="frame" x="60" y="59" width="200" height="30"/>
@@ -313,6 +297,22 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="t9u-aL-JK4">
+                                <rect key="frame" x="17" y="405" width="286" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t9u-aL-JK4" secondAttribute="height" multiplier="58:11" id="WYU-cC-Hea"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-EI-Le5">
+                                <rect key="frame" x="13" y="404" width="294" height="45"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_pipboy" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-ha-6JA">
+                                <rect key="frame" x="-8" y="54" width="344" height="386"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.17826353040000001" green="0.44401220029999999" blue="0.88126531860000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -324,9 +324,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Uqu-Kl-fde" secondAttribute="trailing" constant="-2" id="3ms-ZP-UrM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nir-IO-mlh" secondAttribute="trailing" constant="5" id="4Cb-L3-WCZ"/>
                             <constraint firstItem="RjP-vD-1Rt" firstAttribute="top" secondItem="hfe-pA-Zb0" secondAttribute="bottom" constant="-3" id="4vS-AJ-eue"/>
-                            <constraint firstItem="KVe-EI-Le5" firstAttribute="top" secondItem="Jaz-ha-6JA" secondAttribute="bottom" constant="-25" id="55D-mU-K1C"/>
                             <constraint firstItem="2kx-Rl-khf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="190" id="55c-UT-S78"/>
-                            <constraint firstItem="KVe-EI-Le5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ay-ET-1cB"/>
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="top" secondItem="uM2-Tn-vu3" secondAttribute="bottom" constant="-3" id="5bJ-yY-TOh"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="top" secondItem="X8c-hM-d5l" secondAttribute="bottom" constant="-38" id="5hP-EZ-eAf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Na-E3-SNW" secondAttribute="trailing" id="7cn-dD-cfq"/>
@@ -373,6 +371,7 @@
                             <constraint firstItem="Jaz-ha-6JA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-37" id="cly-5W-8WG"/>
                             <constraint firstItem="Kqf-TP-xNa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="206" id="d8F-Rd-qdA"/>
                             <constraint firstItem="rGu-c2-GCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dCz-PZ-gtB"/>
+                            <constraint firstItem="Jaz-ha-6JA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="dN5-RY-T2m"/>
                             <constraint firstItem="Uqu-Kl-fde" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ed7-jr-asV"/>
                             <constraint firstItem="Jiy-ho-cBk" firstAttribute="top" secondItem="Nir-IO-mlh" secondAttribute="bottom" constant="-9" id="edH-y9-bVF"/>
                             <constraint firstItem="Jaz-ha-6JA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="efZ-lY-LVL"/>
@@ -381,6 +380,7 @@
                             <constraint firstItem="uM2-Tn-vu3" firstAttribute="top" secondItem="RjP-vD-1Rt" secondAttribute="bottom" constant="-3" id="fA5-aO-TvU"/>
                             <constraint firstItem="uM2-Tn-vu3" firstAttribute="height" secondItem="hfe-pA-Zb0" secondAttribute="height" id="fmb-4C-b1o"/>
                             <constraint firstItem="Nir-IO-mlh" firstAttribute="centerX" secondItem="twk-nO-1hd" secondAttribute="centerX" id="gIs-cx-028"/>
+                            <constraint firstItem="KVe-EI-Le5" firstAttribute="top" secondItem="t9u-aL-JK4" secondAttribute="bottom" constant="-55" id="gZY-Nv-ROR"/>
                             <constraint firstItem="Qvl-Dj-gEO" firstAttribute="leading" secondItem="8yf-ZA-m8Z" secondAttribute="leading" id="gjl-A1-YVh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2Z-fO-12b" secondAttribute="bottom" id="h4F-I8-98l"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5aI-qC-i5Z" secondAttribute="bottom" constant="20" id="hAq-KM-oaZ"/>
@@ -390,6 +390,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Cgw-fj-oPN" secondAttribute="trailing" constant="-3" id="m1T-Q8-chu"/>
                             <constraint firstItem="2kx-Rl-khf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nNz-ut-u4C"/>
                             <constraint firstItem="RjP-vD-1Rt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="nfq-87-pyJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KVe-EI-Le5" secondAttribute="trailing" constant="-3" id="o3N-VV-B9Y"/>
                             <constraint firstItem="8yf-ZA-m8Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-210" id="o5e-pA-8pM"/>
                             <constraint firstItem="t9u-aL-JK4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o8G-Fj-n5s"/>
                             <constraint firstItem="K2Z-fO-12b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pRb-CQ-h6c"/>
@@ -398,6 +399,7 @@
                             <constraint firstItem="5aI-qC-i5Z" firstAttribute="width" secondItem="hfe-pA-Zb0" secondAttribute="width" id="sMn-fc-nNl"/>
                             <constraint firstItem="twk-nO-1hd" firstAttribute="centerY" secondItem="Nir-IO-mlh" secondAttribute="centerY" id="sb9-Ef-sBR"/>
                             <constraint firstItem="l7U-b4-2TA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-154" id="xi9-Db-1TS"/>
+                            <constraint firstItem="KVe-EI-Le5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-3" id="ycd-7v-L6b"/>
                             <constraint firstItem="cW9-Zw-5by" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-206" id="zQC-XH-JJO"/>
                         </constraints>
                     </view>
@@ -1030,7 +1032,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="QY3-ep-OzM">
-                                <rect key="frame" x="243" y="28" width="60.5" height="18"/>
+                                <rect key="frame" x="243.5" y="28" width="60.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QY3-ep-OzM" secondAttribute="height" multiplier="61:18" id="6ZF-zC-EXh"/>
                                 </constraints>
@@ -1132,13 +1134,6 @@
                                     <action selector="hintBtnTapped:" destination="zyX-bE-kHB" eventType="touchUpInside" id="vTT-x0-hyW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
-                                <rect key="frame" x="125" y="414" width="70" height="39.5"/>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="35"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-dV-Aed">
                                 <rect key="frame" x="40" y="112" width="241" height="35"/>
                                 <fontDescription key="fontDescription" name="Overseer-Bold" family="Overseer" pointSize="30"/>
@@ -1219,20 +1214,27 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
+                                <rect key="frame" x="17" y="420" width="286" height="49"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
+                                <rect key="frame" x="125" y="425" width="70" height="39.5"/>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_bloodyaxe_v3.png" translatesAutoresizingMaskIntoConstraints="NO" id="POy-uF-zYc">
-                                <rect key="frame" x="0.0" y="82" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="83" width="320" height="477"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
-                                <rect key="frame" x="17" y="409" width="286" height="49"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.84497316919191912" green="0.19940789004662904" blue="0.1256399216849666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SY4-Yt-dAA" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-150" id="0wc-PQ-x1O"/>
-                            <constraint firstItem="per-PK-mTZ" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-145" id="1Qi-94-rOV"/>
+                            <constraint firstItem="SY4-Yt-dAA" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-140" id="0wc-PQ-x1O"/>
+                            <constraint firstItem="per-PK-mTZ" firstAttribute="top" secondItem="POy-uF-zYc" secondAttribute="bottom" constant="-135" id="1Qi-94-rOV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zGR-xT-MD7" secondAttribute="trailing" constant="-3" id="2Qb-BV-eUP"/>
                             <constraint firstItem="neM-eU-xLp" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="4Az-ng-w50"/>
                             <constraint firstAttribute="bottomMargin" secondItem="pSU-4Y-WV5" secondAttribute="bottom" constant="-7" id="5qV-NK-nIl"/>
@@ -1245,9 +1247,9 @@
                             <constraint firstItem="Vtc-92-xK3" firstAttribute="top" secondItem="e96-MA-XQJ" secondAttribute="bottom" constant="51" id="AER-oa-ufi"/>
                             <constraint firstItem="tna-Vb-P2c" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="AfA-eH-A2I"/>
                             <constraint firstItem="41C-fb-PcA" firstAttribute="top" secondItem="Vtc-92-xK3" secondAttribute="bottom" constant="56" id="Ba1-5i-Mbu"/>
+                            <constraint firstItem="POy-uF-zYc" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="37.5" id="Dgu-bd-ATq"/>
                             <constraint firstItem="zGR-xT-MD7" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-3" id="EPf-ji-frd"/>
                             <constraint firstItem="zJ8-9u-Qmd" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="-210" id="F0o-DZ-v9p"/>
-                            <constraint firstItem="POy-uF-zYc" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="37" id="F24-aO-3Vi"/>
                             <constraint firstItem="neM-eU-xLp" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="206" id="FWM-qe-lY5"/>
                             <constraint firstItem="Q5Q-po-fxP" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" id="GmY-D4-ARI"/>
                             <constraint firstItem="6v9-2P-eKw" firstAttribute="centerY" secondItem="bd2-cH-rUO" secondAttribute="centerY" id="Hlb-TQ-hez"/>
@@ -1333,7 +1335,6 @@
                         <outlet property="vaultBoyRight" destination="zGR-xT-MD7" id="NcP-uJ-8ov"/>
                         <outlet property="vaultBoyRightYConstraint" destination="OdL-Yf-A8Z" id="J4J-HY-3Ks"/>
                         <outlet property="vaultBoySuccess" destination="POy-uF-zYc" id="tjU-2D-W6f"/>
-                        <outlet property="vaultBoySuccessYConstraint" destination="F24-aO-3Vi" id="t5a-cQ-6ez"/>
                         <outlet property="vaultBoyWrong" destination="DEL-SS-DGu" id="tYM-Kx-ZcU"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="xGM-BM-KGd" id="93T-pr-osn"/>
                         <outlet property="wrongAnswerBanner" destination="zJ8-9u-Qmd" id="0eQ-qc-NBZ"/>
