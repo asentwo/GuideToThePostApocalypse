@@ -85,7 +85,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     
     vaultBoyRightYConstraint.constant = 60
     vaultBoyWrongYConstraint.constant = 58.5
-    vaultBoySuccessYConstraint.constant = -64
+    //vaultBoySuccessYConstraint.constant = -64
     vaultBoyFailedYConstraint.constant = 30
     coinYConstraint.constant = 0
     vaultBoyWrongYConstraint.constant += view.bounds.height

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zyX-bE-kHB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1225,17 +1225,17 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
-                                <rect key="frame" x="17" y="420" width="286" height="49"/>
+                                <rect key="frame" x="17" y="420.5" width="286" height="49"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
-                                <rect key="frame" x="125" y="425" width="70" height="39.5"/>
+                                <rect key="frame" x="125" y="425.5" width="70" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_bloodyaxe_v3.png" translatesAutoresizingMaskIntoConstraints="NO" id="POy-uF-zYc">
-                                <rect key="frame" x="0.0" y="83" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="83.5" width="320" height="477"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
                                 </constraints>
@@ -1257,7 +1257,6 @@
                             <constraint firstItem="Vtc-92-xK3" firstAttribute="top" secondItem="e96-MA-XQJ" secondAttribute="bottom" constant="51" id="AER-oa-ufi"/>
                             <constraint firstItem="tna-Vb-P2c" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="AfA-eH-A2I"/>
                             <constraint firstItem="41C-fb-PcA" firstAttribute="top" secondItem="Vtc-92-xK3" secondAttribute="bottom" constant="56" id="Ba1-5i-Mbu"/>
-                            <constraint firstItem="POy-uF-zYc" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="37.5" id="Dgu-bd-ATq"/>
                             <constraint firstItem="zGR-xT-MD7" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-3" id="EPf-ji-frd"/>
                             <constraint firstItem="zJ8-9u-Qmd" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="-210" id="F0o-DZ-v9p"/>
                             <constraint firstItem="neM-eU-xLp" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="206" id="FWM-qe-lY5"/>
@@ -1292,6 +1291,7 @@
                             <constraint firstItem="6v9-2P-eKw" firstAttribute="leading" secondItem="bd2-cH-rUO" secondAttribute="leading" id="cxW-aa-omK"/>
                             <constraint firstItem="pSU-4Y-WV5" firstAttribute="top" secondItem="5qn-tJ-laV" secondAttribute="top" id="eSK-nm-h6P"/>
                             <constraint firstItem="tna-Vb-P2c" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="-195" id="f06-AU-r8c"/>
+                            <constraint firstItem="POy-uF-zYc" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="38" id="fPK-Mc-6fh"/>
                             <constraint firstItem="DXR-4I-pTw" firstAttribute="trailing" secondItem="zJ8-9u-Qmd" secondAttribute="trailing" id="fPM-1i-r5o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e96-MA-XQJ" secondAttribute="trailing" constant="5" id="fTU-C9-430"/>
                             <constraint firstItem="Ve9-dV-Aed" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="fel-FG-D1x"/>
@@ -1322,6 +1322,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BackgroundImage" destination="e96-MA-XQJ" id="4wZ-RH-1Fl"/>
                         <outlet property="Button1" destination="Vtc-92-xK3" id="1VB-9x-7yU"/>
                         <outlet property="Button2" destination="6m1-2n-Ili" id="9vk-Sn-Uch"/>
                         <outlet property="Button3" destination="41C-fb-PcA" id="6ke-aF-rHp"/>
@@ -1345,6 +1346,7 @@
                         <outlet property="vaultBoyRight" destination="zGR-xT-MD7" id="NcP-uJ-8ov"/>
                         <outlet property="vaultBoyRightYConstraint" destination="OdL-Yf-A8Z" id="J4J-HY-3Ks"/>
                         <outlet property="vaultBoySuccess" destination="POy-uF-zYc" id="tjU-2D-W6f"/>
+                        <outlet property="vaultBoySuccessYConstraint" destination="fPK-Mc-6fh" id="ilU-YZ-5Jv"/>
                         <outlet property="vaultBoyWrong" destination="DEL-SS-DGu" id="tYM-Kx-ZcU"/>
                         <outlet property="vaultBoyWrongYConstraint" destination="xGM-BM-KGd" id="93T-pr-osn"/>
                         <outlet property="wrongAnswerBanner" destination="zJ8-9u-Qmd" id="0eQ-qc-NBZ"/>
