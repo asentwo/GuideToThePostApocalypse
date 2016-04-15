@@ -222,6 +222,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
     rightAnswerLabel.adjustsFontSizeToFitWidth = true
     wrongAnswerLabel.adjustsFontSizeToFitWidth = true
+    HintButton.titleLabel?.adjustsFontSizeToFitWidth = true
   }
   
   

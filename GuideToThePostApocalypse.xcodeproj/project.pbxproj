@@ -33,6 +33,7 @@
 		6E1AD1271C49B7160084033D /* 15sec_time-running-out-buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E1AD1261C49B7160084033D /* 15sec_time-running-out-buzzer.mp3 */; };
 		6E1AD12B1C49D7BA0084033D /* 17sec_time-running-out-buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E1AD12A1C49D7BA0084033D /* 17sec_time-running-out-buzzer.mp3 */; };
 		6E4295451C35EC9000720BEF /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4295441C35EC9000720BEF /* TileView.swift */; };
+		6E4809311CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4809301CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png */; };
 		6E54BF5D1C4862E6003ED24C /* life-lost-game-over.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E54BF5A1C4862E6003ED24C /* life-lost-game-over.wav */; };
 		6E54BF5E1C4862E6003ED24C /* powerdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E54BF5B1C4862E6003ED24C /* powerdown.wav */; };
 		6E54BF5F1C4862E6003ED24C /* wrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6E54BF5C1C4862E6003ED24C /* wrong.m4a */; };
@@ -245,6 +246,7 @@
 		6E1AD1261C49B7160084033D /* 15sec_time-running-out-buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "15sec_time-running-out-buzzer.mp3"; sourceTree = "<group>"; };
 		6E1AD12A1C49D7BA0084033D /* 17sec_time-running-out-buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "17sec_time-running-out-buzzer.mp3"; sourceTree = "<group>"; };
 		6E4295441C35EC9000720BEF /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		6E4809301CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe_modified@3x.png"; sourceTree = "<group>"; };
 		6E54BF5A1C4862E6003ED24C /* life-lost-game-over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "life-lost-game-over.wav"; sourceTree = "<group>"; };
 		6E54BF5B1C4862E6003ED24C /* powerdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = powerdown.wav; sourceTree = "<group>"; };
 		6E54BF5C1C4862E6003ED24C /* wrong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.m4a; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 		6E76F63B1C7BA53200F5A1CE /* New PNG */ = {
 			isa = PBXGroup;
 			children = (
+				6E4809301CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png */,
 				6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */,
 				6ECF73061CA9EECF00C0ABAB /* vault boy (walking dead)_gameover.png */,
 				6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */,
@@ -1152,6 +1155,7 @@
 				6EAEC54E1C4034EB0023F4BF /* nulcear@3x.png in Resources */,
 				6EAEC5591C4034EB0023F4BF /* spikey_spreech_bubble@3x.png in Resources */,
 				6E6742171CBAFD430098E905 /* torn_banner2@3x.png in Resources */,
+				6E4809311CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png in Resources */,
 				6EAEC55B1C4034EB0023F4BF /* exclamation_marks.png in Resources */,
 				6EA436881C23623700B445A7 /* Overseer Bold Italic.otf in Resources */,
 				6E7BDF9B1C851CA900B93822 /* Radroach.png in Resources */,
