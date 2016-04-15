@@ -344,7 +344,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.newTile()
       }, completion: {_ in
         self.UpdateScorePositive()
-        //self.mainTileTargetView.hidden = true
+        self.mainTileTargetView.hidden = true
         currentScore = totalScore + self.currentRoundScore
         totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
