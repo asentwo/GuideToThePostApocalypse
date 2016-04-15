@@ -377,6 +377,7 @@ func madVaultBoy() {
       UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
         self.view.layoutIfNeeded()
         }, completion: {_ in
+          self.stopAudioTimer()
           self.hideMadVaultBoyButtons(self.round3_objectIDArray)
           madVaultBoyRunning = false
       })
@@ -405,10 +406,8 @@ func hideMadVaultBoyButtons(round:[String]) {
   if round.count == 0 {
     self.DismissQandA()
     if self.currentRoundScore == 0 {
-      self.stopAudioTimer()
       self.zeroScoreVaultBoy()
     }else{
-      self.stopAudioTimer()
       self.congratulationsVaultBoy()
     }
   } else {
@@ -477,6 +476,7 @@ func zeroScoreVaultBoy () {
 
 
 func congratulationsVaultBoy () {
+  self.stopAudioTimer()
   self.DismissQandA()
   self.view.bringSubviewToFront(vaultBoySuccess)
   self.vaultBoySuccess.hidden = false

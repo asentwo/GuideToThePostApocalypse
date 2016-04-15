@@ -24,10 +24,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   var tileTargetView4: UIView!
   var tileTargetView5: UIView!
   
-  let messages = Messages(next: "Round 3", restart: "")
-  
-  
-  
   //MARK: IBOutlets
   @IBOutlet var FalloutImage: UIImageView!
   @IBOutlet var QuestionLabel: UILabel!
@@ -69,13 +65,14 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
   @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
   @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
- 
+  
   //MARK: ViewDidLoad
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     hideAllGraphics()
+    labelSizeAdjustment()
     ButtonActions()
     StoreParseDataLocally_Round2()
     
@@ -91,6 +88,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     PlayerScore.text = "Score: \(totalScore)"
+    currentRoundScore = 0
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -213,9 +211,9 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   //Next Round
   func switchToRoundThree () {
-      UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
-        self.performSegueWithIdentifier("round2ToRound3Segue", sender: self)
-        }, completion: nil)
+    UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
+      self.performSegueWithIdentifier("round2ToRound3Segue", sender: self)
+      }, completion: nil)
   }
   
   //Give Hint
@@ -224,8 +222,8 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     
     self.buttons.hintBtn.enabled = false
     self.data.points -= pointsPerTile/2
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(self.currentRoundScore)"
+    totalScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
     
     //3 find the first unmatched target and matching tile
     var foundTarget:TargetView? = nil
@@ -303,20 +301,16 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       }, completion: {_ in
         self.RemoveAlreadyUsedQuestion()
         self.newTile()
-        currentScore = totalScore + self.currentRoundScore
-        totalScore = currentScore
+        self.stopAudioTimer()
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
-        
         if self.round2_objectIDArray.count == 0 {
           self.DismissQandA()
           if self.currentRoundScore == 0 {
             self.mainTileTargetView.removeFromSuperview()
-            self.stopAudioTimer()
             self.ZeroScoreVaultBoy()
           }else{
             self.mainTileTargetView.removeFromSuperview()
-            self.stopAudioTimer()
             self.CongratulationsVaultBoy()
           }
         } else{
@@ -327,7 +321,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           self.view.layoutIfNeeded()
           }, completion:{_ in
             madVaultBoyRunning = false
-         })
+        })
     })
   }
   
@@ -345,8 +339,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       }, completion: {_ in
         self.UpdateScorePositive()
         self.mainTileTargetView.hidden = true
-        currentScore = totalScore + self.currentRoundScore
-        totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         self.vaultBoyRightYConstraint.constant += self.view.bounds.height
@@ -354,7 +346,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           self.view.layoutIfNeeded()
           self.delay(1, closure: {
             if self.round2_objectIDArray.count == 0 {
-              self.stopAudioTimer()
               self.DismissQandA()
               self.CongratulationsVaultBoy()
               self.mainTileTargetView.removeFromSuperview()
@@ -364,9 +355,10 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
               self.vaultBoyRight.hidden = true
               self.mainTileTargetView.hidden = false
               self.resetAllTimers()
-            }} )
+            }
+          })
           }, completion:{_ in
-            thumbsUpBoyRunning = false
+             thumbsUpBoyRunning = false
         })
     })
   }
@@ -381,18 +373,15 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.view.layoutIfNeeded()
       }
       , completion: {_ in
-        currentScore = totalScore + self.currentRoundScore
-        totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
     })
   }
   
   func CongratulationsVaultBoy() {
+    self.stopAudioTimer()
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
-    currentScore = totalScore + self.currentRoundScore
-    totalScore = currentScore
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
     UIView.transitionWithView(vaultBoySuccess, duration: 0.7, options: [.TransitionFlipFromTop], animations: {
@@ -404,7 +393,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         self.vaultBoySuccess.superview?.addSubview(explode)
         self.vaultBoySuccess.superview?.sendSubviewToBack(explode)
         self.delay(3.0, closure: {
-          self.nextRound.hidden = false 
+          self.nextRound.hidden = false
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true
@@ -461,7 +450,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         )}
     )}
   
-
+  
   
   //MARK: Timer
   
@@ -569,24 +558,38 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     rightAnswerLabel.hidden = true
   }
   
+  func labelSizeAdjustment () {
+    QuestionLabel.adjustsFontSizeToFitWidth = true
+    youEarrnedACoin.adjustsFontSizeToFitWidth = true
+    scoreLabel.adjustsFontSizeToFitWidth = true
+    youFailedThisRound.adjustsFontSizeToFitWidth = true
+    rightAnswerLabel.adjustsFontSizeToFitWidth = true
+    wrongAnswerLabel.adjustsFontSizeToFitWidth = true
+    tryAgain.titleLabel?.adjustsFontSizeToFitWidth = true
+    nextRound.titleLabel?.adjustsFontSizeToFitWidth = true
+  }
+  
   //MARK: Update Score
   
   func UpdateScoreNegative () {
     self.data.points -= pointsPerQuestion/2
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScorePositive () {
     self.data.points += pointsPerQuestion/2
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScoreRunOutOfTime () {
     self.data.points -= pointsTimeRunsOut
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   //MARK: Buttons
@@ -595,7 +598,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.switchToRoundThree()
     audioController.playEffect(SoundButtonPressedCorrect)
   }
-
+  
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     self.restartViewController()
     audioController.playEffect(SoundButtonPressedCorrect)
@@ -629,8 +632,8 @@ extension Round2_ViewController:TileDragDelegateProtocol {
         //give points
         data.points += pointsPerTile
         //check if word is completed
-        self.currentRoundScore = self.data.points
-        self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+        totalScore = self.data.points
+        self.PlayerScore.text = "Score: \(totalScore)"
         //check if word is completed
         self.checkForSuccess()
       } else {
@@ -648,8 +651,8 @@ extension Round2_ViewController:TileDragDelegateProtocol {
         audioController.playEffect(SoundWrong)
         //take out points
         data.points -= pointsPerTile/2
-        self.currentRoundScore = self.data.points
-        self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+        totalScore = self.data.points
+        self.PlayerScore.text = "Score: \(totalScore)"
       }
     }
   }
@@ -767,8 +770,8 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     
     //Points added to score
     self.data.points += pointsPerQuestion
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
     
     // win animation
     let firstTarget = targets[0]

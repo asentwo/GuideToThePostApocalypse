@@ -15,7 +15,6 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   //MARK:Constants
   
   var round4_objectIDArray = [String]()
-  let messages = Messages(next: "Round 5", restart:"")
   
   //MARK: IBOutlets
   
@@ -76,7 +75,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     PlayerScore.text = "Score: \(totalScore)"
-
+    currentRoundScore = 0
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
     timer.delegate = self
     userDefaults.setObject("Round_4", forKey: CURRENT_ROUND_KEY)
@@ -312,20 +311,23 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func UpdateScoreNegative () {
     self.data.points - pointsPerWrongAnswer
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScorePositive () {
     self.data.points += pointsPerQuestion/2
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScoreRunOutOfTime () {
     self.data.points -= pointsTimeRunsOut
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    currentRoundScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   
@@ -377,6 +379,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
         UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion: {_ in
+            self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round4_objectIDArray)
             madVaultBoyRunning = false
         })
@@ -393,8 +396,6 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.RemoveAlreadyUsedQuestion()
     self.DisableButtons()
     self.UpdateScoreNegative()
-    currentScore = totalScore + self.currentRoundScore
-    totalScore = currentScore
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
@@ -407,10 +408,8 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     if round.count == 0 {
       self.DismissQandA()
       if self.currentRoundScore == 0 {
-        self.stopAudioTimer()
-        self.zeroScoreVaultBoy()
+      self.zeroScoreVaultBoy()
       }else{
-        self.stopAudioTimer()
         self.congratulationsVaultBoy("falloutResize")
       }
     } else {
@@ -431,8 +430,6 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.vaultBoyRight.hidden = false
       }, completion: {_ in
         self.UpdateScorePositive()
-        currentScore = totalScore + self.currentRoundScore
-        totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         self.vaultBoyRightYConstraint.constant += self.view.bounds.height
@@ -474,8 +471,6 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.view.layoutIfNeeded()
       }
       , completion: {_ in
-        currentScore = totalScore + self.currentRoundScore
-        totalScore = currentScore
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
     })
@@ -483,12 +478,12 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   func congratulationsVaultBoy (gifString: String) {
+    self.stopAudioTimer()
     self.DismissQandA()
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
     self.hintButtonTapped = false
-    totalScore = self.currentRoundScore
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
     UIView.transitionWithView(vaultBoySuccess, duration: 0.7, options: [.TransitionFlipFromTop], animations: {
@@ -626,8 +621,8 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
     self.data.points -= pointsPerMultiHint
-    self.currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore + self.currentRoundScore)"
+    totalScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
     let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
       self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)
