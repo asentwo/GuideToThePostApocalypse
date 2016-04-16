@@ -289,19 +289,16 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   func MadVaultBoy() {
     removeTiles()
     madVaultBoyRunning = true
-    timer.pause()
     self.vaultboyToFront()
     vaultBoyWrong.hidden = false
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
-    self.RemoveAlreadyUsedQuestion()
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
         self.RemoveAlreadyUsedQuestion()
         self.newTile()
-        self.stopAudioTimer()
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         if self.round2_objectIDArray.count == 0 {
@@ -327,6 +324,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   
   func ThumbsUpVaultBoy () {
+    self.mainTileTargetView.hidden = true
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     self.stopAudioTimer()
@@ -338,7 +336,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.newTile()
       }, completion: {_ in
         self.UpdateScorePositive()
-        self.mainTileTargetView.hidden = true
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         self.vaultBoyRightYConstraint.constant += self.view.bounds.height

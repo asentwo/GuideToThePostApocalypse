@@ -96,7 +96,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     
     vaultBoyRightYConstraint.constant = 60
     vaultBoyWrongYConstraint.constant = 58.5
-    vaultBoySuccessYConstraint.constant = -64
+   // vaultBoySuccessYConstraint.constant = -64
     vaultBoyFailedYConstraint.constant = 30
     coinYConstraint.constant = 0
     vaultBoyWrongYConstraint.constant += view.bounds.height
@@ -282,7 +282,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
     let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_1")
     delay(1, closure: {self.presentViewController(vc, animated: true, completion: nil)
-      self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+     // self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
     })
   }
   
@@ -299,19 +299,16 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   func MadVaultBoy() {
     removeTiles()
     madVaultBoyRunning = true
-    timer.pause()
     self.vaultboyToFront()
     self.vaultBoyWrong.hidden = false
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
-    self.RemoveAlreadyUsedQuestion()
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
       self.view.layoutIfNeeded()
       }, completion: {_ in
         self.RemoveAlreadyUsedQuestion()
         self.newTile()
-        self.stopAudioTimer()
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
           if self.round6_objectIDArray.count == 0 {
@@ -330,11 +327,13 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion:{_ in
-            madVaultBoyRunning = false})
+            madVaultBoyRunning = false
+        })
     })
   }
   
   func ThumbsUpVaultBoy () {
+    self.mainTileTargetView.hidden = true
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     timer.pause()
@@ -346,7 +345,6 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
       self.newTile()
       }, completion: {_ in
         self.UpdateScorePositive()
-        self.mainTileTargetView.hidden = true
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         self.vaultBoyRightYConstraint.constant += self.view.bounds.height
@@ -358,7 +356,6 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
               self.CongratulationsVaultBoy()
               self.mainTileTargetView.removeFromSuperview()
             } else {
-              
               self.vaultBoyRightYConstraint.constant -= self.view.bounds.height
               self.view.layoutIfNeeded()
               self.vaultBoyRight.hidden = true
@@ -405,7 +402,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
           self.vaultBoySuccess.hidden = true
           self.youEarnedACoinLabel.hidden = false
           self.audioController.playEffect(SoundPerk)
-          let Gif = UIImage.gifWithName("madMax2Resize")
+          let Gif = UIImage.gifWithName("madmax2resize2")
           self.coin.image = Gif
           self.coin.hidden = false
           self.delay(5.0, closure: {

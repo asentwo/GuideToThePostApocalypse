@@ -50,6 +50,7 @@
 		6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */; };
 		6E5ACF4E1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */; };
 		6E5D6E9B1CB6D13C003B3B6A /* Deathclaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */; };
+		6E5FB8951CC2ADC900805FDE /* madmax2resize2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E5FB8941CC2ADC900805FDE /* madmax2resize2.gif */; };
 		6E6742171CBAFD430098E905 /* torn_banner2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E6742161CBAFD430098E905 /* torn_banner2@3x.png */; };
 		6E68574A1C1A55F80005F008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6857491C1A55F80005F008 /* AppDelegate.swift */; };
 		6E68574F1C1A55F80005F008 /* Survival.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E68574D1C1A55F80005F008 /* Survival.storyboard */; };
@@ -263,6 +264,7 @@
 		6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead).png"; sourceTree = "<group>"; };
 		6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walkingdead)_wrong.png"; sourceTree = "<group>"; };
 		6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deathclaw.png; sourceTree = "<group>"; };
+		6E5FB8941CC2ADC900805FDE /* madmax2resize2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = madmax2resize2.gif; sourceTree = "<group>"; };
 		6E6742161CBAFD430098E905 /* torn_banner2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "torn_banner2@3x.png"; path = "Banners@3x/torn_banner2@3x.png"; sourceTree = "<group>"; };
 		6E6857461C1A55F80005F008 /* GuideToThePostApocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideToThePostApocalypse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6857491C1A55F80005F008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 		6E7828FF1CAC522A0094E798 /* Coins2 */ = {
 			isa = PBXGroup;
 			children = (
+				6E5FB8941CC2ADC900805FDE /* madmax2resize2.gif */,
 				6E17385E1CB88E6100D1A591 /* congrats animation.gif */,
 				6E17385A1CB88DCA00D1A591 /* finalResize300.gif */,
 				6E17385B1CB88DCA00D1A591 /* finalResize400.gif */,
@@ -1112,6 +1115,7 @@
 				6E7829131CAC522A0094E798 /* madMaxResize.gif in Resources */,
 				6EAEC53C1C4034EB0023F4BF /* whitePaintStrokesOnBlackBackground.png in Resources */,
 				6E76F6411C7BA53200F5A1CE /* vault boy_pipboy.png in Resources */,
+				6E5FB8951CC2ADC900805FDE /* madmax2resize2.gif in Resources */,
 				6EAEC53B1C4034EB0023F4BF /* red-button@3x.png in Resources */,
 				6EAEC53F1C4034EB0023F4BF /* whiteWithBlackStroke.png in Resources */,
 				6E9ABA331C7BAD6200F7EF77 /* vault boy_success.png in Resources */,
