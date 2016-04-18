@@ -559,6 +559,7 @@ class Round6_ViewController: DragTileVC, CountdownTimerDelegate {
   //IBActions
   
   @IBAction func hintButtonTapped(sender: AnyObject) {
+    audioController.playEffect(SoundHintButtonPressed)
     self.hintButton.enabled = false
     
     if madVaultBoyRunning == false {
