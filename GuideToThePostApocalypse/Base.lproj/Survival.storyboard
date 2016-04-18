@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ylf-eO-TZ1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -41,6 +41,8 @@
             <string>Overseer-Bold</string>
         </mutableArray>
         <mutableArray key="Overseer.otf">
+            <string>Overseer</string>
+            <string>Overseer</string>
             <string>Overseer</string>
             <string>Overseer</string>
             <string>Overseer</string>
@@ -927,6 +929,16 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uS3-dj-nVX">
+                                <rect key="frame" x="16" y="20" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uS3-dj-nVX" secondAttribute="height" multiplier="1:1" id="ltK-l7-VeQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7251815025252526" green="0.62310166074359907" blue="0.22174188417031318" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -939,10 +951,12 @@
                             <constraint firstItem="Nhz-Pa-3IR" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="6tG-eq-ngf"/>
                             <constraint firstItem="K4O-7O-UHG" firstAttribute="top" secondItem="oeY-Nc-5KZ" secondAttribute="bottom" constant="-58" id="8Ml-Qa-D6A"/>
                             <constraint firstItem="oeY-Nc-5KZ" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="-64" id="ALh-FL-lVO"/>
+                            <constraint firstItem="uS3-dj-nVX" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" id="BRn-dk-v9M"/>
                             <constraint firstItem="ND2-Qr-DMk" firstAttribute="top" secondItem="oeY-Nc-5KZ" secondAttribute="bottom" constant="-52" id="D2r-XF-2rG"/>
                             <constraint firstItem="9kf-nb-RVV" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="EGe-lG-Ba1"/>
                             <constraint firstItem="gRb-i9-aVD" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="30" id="EmV-gb-bNo"/>
                             <constraint firstItem="vGS-2r-0jg" firstAttribute="centerY" secondItem="YRQ-q3-Qss" secondAttribute="centerY" constant="206.5" id="Flm-NH-RuX"/>
+                            <constraint firstItem="DoO-VC-1RH" firstAttribute="top" secondItem="uS3-dj-nVX" secondAttribute="bottom" constant="5" id="GGM-Hh-FSI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mkF-yy-NJF" secondAttribute="trailing" constant="-14" id="IeB-5R-d2L"/>
                             <constraint firstItem="gpy-LP-ubr" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="-2" id="JNf-z5-dWK"/>
                             <constraint firstItem="Kvz-W4-d84" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="100" id="Ka3-SJ-dpC"/>
@@ -959,6 +973,7 @@
                             <constraint firstItem="xmb-4W-enz" firstAttribute="centerX" secondItem="tce-bH-gin" secondAttribute="centerX" id="Wf5-HD-iKf"/>
                             <constraint firstItem="oeY-Nc-5KZ" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" constant="-14" id="Ww3-q7-8jF"/>
                             <constraint firstItem="ND2-Qr-DMk" firstAttribute="centerX" secondItem="YRQ-q3-Qss" secondAttribute="centerX" id="biA-uG-PdP"/>
+                            <constraint firstItem="uS3-dj-nVX" firstAttribute="leading" secondItem="YRQ-q3-Qss" secondAttribute="leadingMargin" id="cne-bk-nQs"/>
                             <constraint firstItem="70o-Lq-ifz" firstAttribute="top" secondItem="coM-Qu-tVK" secondAttribute="bottom" constant="8" symbolic="YES" id="dCK-lp-iWC"/>
                             <constraint firstItem="9kf-nb-RVV" firstAttribute="top" secondItem="YRQ-q3-Qss" secondAttribute="top" id="e4j-BD-M8H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="70o-Lq-ifz" secondAttribute="trailing" constant="-3" id="f2o-7t-JOl"/>
@@ -996,6 +1011,7 @@
                         <outlet property="QuestionLabel" destination="gRb-i9-aVD" id="hC1-y1-XHz"/>
                         <outlet property="coin" destination="gpy-LP-ubr" id="v7O-iS-q7F"/>
                         <outlet property="coinYConstraint" destination="NlM-b2-Zgn" id="IES-Mn-H0E"/>
+                        <outlet property="hintButton" destination="uS3-dj-nVX" id="1bc-d9-uaK"/>
                         <outlet property="nextRound" destination="vGS-2r-0jg" id="1Wf-9K-jBn"/>
                         <outlet property="rightAnswerBanner" destination="Nhz-Pa-3IR" id="vYC-9X-fjy"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="6tG-eq-ngf" id="5CX-W1-QOE"/>
@@ -1881,6 +1897,19 @@
                                     <action selector="playGameAgainButton:" destination="Ylf-eO-TZ1" eventType="touchUpInside" id="TDY-AY-IXD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFU-lc-tzu">
+                                <rect key="frame" x="16" y="20" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OFU-lc-tzu" secondAttribute="height" multiplier="1:1" id="7f7-I7-MAT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <state key="normal" title="Hint" backgroundImage="black-ink-grunge-stamp-circle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hintButtonTapped:" destination="Ylf-eO-TZ1" eventType="touchUpInside" id="PJ2-2h-6R8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81841856060606055" green="0.48984038149034403" blue="0.26867766737201643" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1931,7 +1960,9 @@
                             <constraint firstItem="LL2-2B-t9Z" firstAttribute="top" secondItem="mg6-79-X1L" secondAttribute="bottom" constant="-297" id="iZT-x6-qx7"/>
                             <constraint firstItem="ZWU-g0-ViU" firstAttribute="top" secondItem="kaV-Oc-04v" secondAttribute="bottom" constant="10" id="jBd-sV-VkH"/>
                             <constraint firstItem="rCp-D1-Kjd" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="-3" id="jRY-cu-qcd"/>
+                            <constraint firstItem="OFU-lc-tzu" firstAttribute="top" secondItem="M43-NX-0zw" secondAttribute="bottom" id="jb1-5O-0QJ"/>
                             <constraint firstItem="8lY-vN-5MP" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="-206" id="jpv-Ls-n4C"/>
+                            <constraint firstItem="OFU-lc-tzu" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" id="kYo-fj-J7D"/>
                             <constraint firstItem="8eA-CO-pqP" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="-64" id="kal-vd-C9A"/>
                             <constraint firstItem="njc-4c-d3v" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="kk4-Io-sKp"/>
                             <constraint firstItem="czE-iq-atI" firstAttribute="centerY" secondItem="qTp-wC-lKo" secondAttribute="centerY" constant="-210" id="l2c-VF-IXb"/>
@@ -1949,6 +1980,7 @@
                             <constraint firstItem="qea-sN-daP" firstAttribute="leading" secondItem="qTp-wC-lKo" secondAttribute="leadingMargin" constant="57" id="tiM-cX-cr5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rHZ-pj-tdc" secondAttribute="trailing" constant="-3" id="voY-6u-Xw4"/>
                             <constraint firstItem="vM5-jM-MdA" firstAttribute="centerX" secondItem="qTp-wC-lKo" secondAttribute="centerX" id="wM7-xq-O4t"/>
+                            <constraint firstItem="kaV-Oc-04v" firstAttribute="top" secondItem="OFU-lc-tzu" secondAttribute="bottom" constant="3" id="xFx-rX-47p"/>
                             <constraint firstItem="rHZ-pj-tdc" firstAttribute="top" secondItem="M43-NX-0zw" secondAttribute="bottom" constant="8" symbolic="YES" id="zzf-9H-Tka"/>
                         </constraints>
                     </view>
@@ -1960,6 +1992,7 @@
                         <outlet property="coin" destination="RdH-yI-AS7" id="2xL-hJ-ImY"/>
                         <outlet property="coinYConstraint" destination="2YL-YI-qls" id="3EU-0T-0vC"/>
                         <outlet property="congrats" destination="mg6-79-X1L" id="yPN-gY-oLm"/>
+                        <outlet property="hintButton" destination="OFU-lc-tzu" id="9LF-vv-P7V"/>
                         <outlet property="playAgainButton" destination="LL2-2B-t9Z" id="UjI-GZ-hKx"/>
                         <outlet property="rightAnswerBanner" destination="njc-4c-d3v" id="dCe-Sw-9Sc"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="kk4-Io-sKp" id="ms9-GF-Pko"/>

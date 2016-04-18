@@ -28,9 +28,6 @@ class MultiChoiceVC: UIViewController{
   var data = GameScore()
   var audioController: AudioController!
   var image: String!
-
-  //MARK: UIConstants
-    let buttons = Buttons()
   
   //MARK: ViewDidload
   

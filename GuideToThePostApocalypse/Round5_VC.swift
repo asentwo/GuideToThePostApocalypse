@@ -76,8 +76,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     labelSizeAdjustment()
     hideAllGraphics()
     StoreParseDataLocally_Round5()
-    self.buttons.hintButton.hidden = false
-    
+       
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     PlayerScore.text = "Score: \(totalScore)"

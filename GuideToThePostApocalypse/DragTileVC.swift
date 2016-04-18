@@ -31,9 +31,6 @@ class DragTileVC: UIViewController {
   var tiles = [TileView]()
   let TileMargin: CGFloat = 10.0
   
-  //MARK: UIConstants  
-   let buttons = Buttons()
-  
   //MARK: ViewDidload
   
   override func viewDidLoad() {
