@@ -203,78 +203,6 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       }, completion: nil)
   }
   
-  //MARK: Buttons
-  
-  func ButtonActions () {
-    buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
-  }
-  
-  //Next Round
-  func switchToRoundThree () {
-    UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
-      self.performSegueWithIdentifier("round2ToRound3Segue", sender: self)
-      }, completion: nil)
-  }
-  
-  //Give Hint
-  
-  func giveHint (sender: UIButton) {
-    
-    self.buttons.hintBtn.enabled = false
-    self.data.points -= pointsPerTile/2
-    totalScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore)"
-    
-    //3 find the first unmatched target and matching tile
-    var foundTarget:TargetView? = nil
-    for target in targets {
-      if !target.isMatched {
-        foundTarget = target
-        break
-      }
-    }
-    //4 find the first tile matching the target
-    var foundTile:TileView? = nil
-    for tile in tiles {
-      if !tile.isMatched && tile.letter == foundTarget?.letter {
-        foundTile = tile
-        break
-      }
-    }
-    //ensure there is a matching tile and target
-    if let target = foundTarget, tile = foundTile {
-      //5 don't want the tile sliding under other tiles
-      self.mainTileTargetView.bringSubviewToFront(tile)
-      //6 show the animation to the user
-      UIView.animateWithDuration(1.5,
-                                 delay:0.0,
-                                 options:UIViewAnimationOptions.CurveEaseOut,
-                                 animations:{
-                                  tile.center = target.center
-        }, completion: {
-          (value:Bool) in
-          //7 adjust view on spot
-          self.placeTile(tile, targetView: target)
-          self.audioController.playEffect(SoundTileCorrect)
-          //8 re-enable the button
-          self.buttons.hintButton.enabled = true
-          //9 check for finished game
-          self.checkForSuccess()
-          
-      })
-    }
-  }
-  
-  //Refresh viewController
-  
-  func restartViewController () ->() {
-    self.dismissViewControllerAnimated(true, completion: nil)
-    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
-    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_2")
-    self.presentViewController(vc, animated: true, completion: nil)
-    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
-    self.view.layoutIfNeeded()
-  }
   
   //MARK: VaultBoy Animation
   
@@ -588,6 +516,84 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     currentRoundScore = self.data.points
     self.PlayerScore.text = "Score: \(totalScore)"
   }
+  
+  //MARK: Buttons Functions
+  
+  func ButtonActions () {
+    buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
+  }
+  
+  //Next Round
+  func switchToRoundThree () {
+    UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
+      self.performSegueWithIdentifier("round2ToRound3Segue", sender: self)
+      }, completion: nil)
+  }
+  
+  //Give Hint
+  
+  func giveHint (sender: UIButton) {
+    
+    self.buttons.hintBtn.enabled = false
+    self.data.points -= pointsPerTile/2
+    totalScore = self.data.points
+    self.PlayerScore.text = "Score: \(totalScore)"
+    
+    //3 find the first unmatched target and matching tile
+    var foundTarget:TargetView? = nil
+    for target in targets {
+      if !target.isMatched {
+        foundTarget = target
+        break
+      }
+    }
+    //4 find the first tile matching the target
+    var foundTile:TileView? = nil
+    for tile in tiles {
+      if !tile.isMatched && tile.letter == foundTarget?.letter {
+        foundTile = tile
+        break
+      }
+    }
+    //ensure there is a matching tile and target
+    if let target = foundTarget, tile = foundTile {
+      //5 don't want the tile sliding under other tiles
+      self.mainTileTargetView.bringSubviewToFront(tile)
+      //6 show the animation to the user
+      UIView.animateWithDuration(1.5,
+                                 delay:0.0,
+                                 options:UIViewAnimationOptions.CurveEaseOut,
+                                 animations:{
+                                  tile.center = target.center
+        }, completion: {
+          (value:Bool) in
+          //7 adjust view on spot
+          if madVaultBoyRunning == false {
+          self.placeTile(tile, targetView: target)
+          self.audioController.playEffect(SoundTileCorrect)
+          //8 re-enable the button
+          self.buttons.hintButton.enabled = true
+          //9 check for finished game
+          self.checkForSuccess()
+          } else {
+            self.buttons.hintButton.enabled = false
+          }
+          
+      })
+    }
+  }
+  
+  //Refresh viewController
+  
+  func restartViewController () ->() {
+    self.dismissViewControllerAnimated(true, completion: nil)
+    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
+    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_2")
+    self.presentViewController(vc, animated: true, completion: nil)
+    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+    self.view.layoutIfNeeded()
+  }
+
   
   //MARK: Buttons
   

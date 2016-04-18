@@ -308,14 +308,14 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   //MARK: Update Score
   
   func UpdateScoreNegative () {
-    self.data.points - pointsPerWrongAnswer
+    self.data.points -= pointsPerWrongAnswer/2
     totalScore = self.data.points
     currentRoundScore = self.data.points
     self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScorePositive () {
-    self.data.points += pointsPerQuestion/2
+    self.data.points += pointsPerQuestion
     totalScore = self.data.points
     currentRoundScore = self.data.points
     self.PlayerScore.text = "Score: \(totalScore)"
