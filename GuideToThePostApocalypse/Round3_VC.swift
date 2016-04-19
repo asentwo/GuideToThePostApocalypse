@@ -34,6 +34,9 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var vaultBoySuccess: UIImageView!
   @IBOutlet weak var vaultBoyFailed: UIImageView!
   
+  //fireworks
+  @IBOutlet weak var fireworkImage: UIImageView!
+ 
   //buttons
   @IBOutlet weak var nextRoundButton: UIButton!
   @IBOutlet weak var tryAgainButton: UIButton!
@@ -71,6 +74,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     labelSizeAdjustment()
     hideAllGraphics()
     StoreParseDataLocally_Round3()
+    fireworkImage.alpha = 0
     
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
@@ -227,11 +231,14 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //Restart
   func restartViewController () ->() {
+    
     self.dismissViewControllerAnimated(true, completion: nil)
+    
     let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("Round_3")
     self.presentViewController(vc, animated: true, completion: nil)
     self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+
   }
   
   //Next Round
@@ -492,7 +499,12 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.scoreLabel.hidden = false
       self.scoreLabel.text = "You scored \(totalScore) points!"
       }, completion:{_ in
+        
+        UIView.animateWithDuration(0.5, delay: 0, options: [.Repeat, .Autoreverse], animations: {
+          self.fireworkImage.alpha = 1
+          }, completion: nil)
         self.delay(3.0, closure: {
+          self.fireworkImage.alpha = 0
           self.vaultBoySuccess.hidden = true
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true
@@ -505,6 +517,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
         })
     })
   }
+  
   
   //MARK: Banner Animations
   

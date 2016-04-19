@@ -1042,7 +1042,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="575"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="QY3-ep-OzM">
-                                <rect key="frame" x="243.5" y="28" width="60.5" height="18"/>
+                                <rect key="frame" x="243" y="28" width="60.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QY3-ep-OzM" secondAttribute="height" multiplier="61:18" id="6ZF-zC-EXh"/>
                                 </constraints>
@@ -1221,24 +1221,27 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
-                                <rect key="frame" x="17" y="420.5" width="286" height="49"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="SY4-Yt-dAA">
+                                <rect key="frame" x="17" y="420" width="286" height="49"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
-                                <rect key="frame" x="125" y="425.5" width="70" height="39.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="per-PK-mTZ">
+                                <rect key="frame" x="125" y="425" width="70" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
+                                <rect key="frame" x="0.0" y="103" width="320" height="551"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gold_Fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="oR6-rr-n8k">
+                                <rect key="frame" x="-65" y="71" width="312" height="304"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_bloodyaxe_v3.png" translatesAutoresizingMaskIntoConstraints="NO" id="POy-uF-zYc">
-                                <rect key="frame" x="0.0" y="83.5" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="477"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
-                                <rect key="frame" x="0.0" y="103" width="320" height="551"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.84497316919191912" green="0.19940789004662904" blue="0.1256399216849666" alpha="1" colorSpace="calibratedRGB"/>
@@ -1257,9 +1260,11 @@
                             <constraint firstItem="Vtc-92-xK3" firstAttribute="top" secondItem="e96-MA-XQJ" secondAttribute="bottom" constant="51" id="AER-oa-ufi"/>
                             <constraint firstItem="tna-Vb-P2c" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="AfA-eH-A2I"/>
                             <constraint firstItem="41C-fb-PcA" firstAttribute="top" secondItem="Vtc-92-xK3" secondAttribute="bottom" constant="56" id="Ba1-5i-Mbu"/>
+                            <constraint firstItem="oR6-rr-n8k" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-81" id="D9C-bF-m7C"/>
                             <constraint firstItem="zGR-xT-MD7" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-3" id="EPf-ji-frd"/>
                             <constraint firstItem="zJ8-9u-Qmd" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="-210" id="F0o-DZ-v9p"/>
                             <constraint firstItem="neM-eU-xLp" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="206" id="FWM-qe-lY5"/>
+                            <constraint firstItem="oR6-rr-n8k" firstAttribute="top" secondItem="KaB-el-WGL" secondAttribute="bottom" constant="51" id="Fij-G6-QWc"/>
                             <constraint firstItem="Q5Q-po-fxP" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" id="GmY-D4-ARI"/>
                             <constraint firstItem="6v9-2P-eKw" firstAttribute="centerY" secondItem="bd2-cH-rUO" secondAttribute="centerY" id="Hlb-TQ-hez"/>
                             <constraint firstItem="pSU-4Y-WV5" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leading" id="J1N-r3-eQO"/>
@@ -1299,6 +1304,7 @@
                             <constraint firstAttribute="trailing" secondItem="DEL-SS-DGu" secondAttribute="trailing" id="hjW-Mx-5Mx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q5Q-po-fxP" secondAttribute="trailing" constant="-2" id="hpQ-2G-Edv"/>
                             <constraint firstItem="qYF-jI-Vve" firstAttribute="centerX" secondItem="6m1-2n-Ili" secondAttribute="centerX" id="jJZ-xd-p0e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oR6-rr-n8k" secondAttribute="trailing" constant="57" id="jLq-yJ-PpI"/>
                             <constraint firstItem="DXR-4I-pTw" firstAttribute="centerX" secondItem="zJ8-9u-Qmd" secondAttribute="centerX" id="jlT-yL-sMO"/>
                             <constraint firstItem="per-PK-mTZ" firstAttribute="centerX" secondItem="5qn-tJ-laV" secondAttribute="centerX" id="kXH-AR-SJh"/>
                             <constraint firstItem="e96-MA-XQJ" firstAttribute="top" secondItem="fOG-9i-Z9u" secondAttribute="bottom" constant="-38" id="mOL-zK-mMa"/>
@@ -1315,6 +1321,7 @@
                             <constraint firstItem="Vtc-92-xK3" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leadingMargin" constant="-1" id="tdr-jg-Jba"/>
                             <constraint firstItem="OSx-PU-MkM" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="30" id="whA-Pt-k0w"/>
                             <constraint firstItem="cDK-Xi-G0U" firstAttribute="trailing" secondItem="6m1-2n-Ili" secondAttribute="trailing" id="xEP-5F-voL"/>
+                            <constraint firstItem="gi2-Pr-d2B" firstAttribute="top" secondItem="oR6-rr-n8k" secondAttribute="bottom" constant="193" id="xFp-wX-VfX"/>
                             <constraint firstItem="DEL-SS-DGu" firstAttribute="centerY" secondItem="5qn-tJ-laV" secondAttribute="centerY" constant="95" id="xGM-BM-KGd"/>
                             <constraint firstItem="6v9-2P-eKw" firstAttribute="centerX" secondItem="bd2-cH-rUO" secondAttribute="centerX" id="xs8-Qu-fnD"/>
                             <constraint firstItem="DEL-SS-DGu" firstAttribute="leading" secondItem="5qn-tJ-laV" secondAttribute="leading" id="xut-1D-78O"/>
@@ -1334,6 +1341,7 @@
                         <outlet property="backgroundImage" destination="e96-MA-XQJ" id="qUc-QV-WpP"/>
                         <outlet property="coin" destination="Q5Q-po-fxP" id="Qmi-jl-YNh"/>
                         <outlet property="coinYConstraint" destination="GmY-D4-ARI" id="SF3-Hn-dDQ"/>
+                        <outlet property="fireworkImage" destination="oR6-rr-n8k" id="LSl-Tk-SgC"/>
                         <outlet property="nextRoundButton" destination="neM-eU-xLp" id="Ofu-Jo-7Rq"/>
                         <outlet property="rightAnswerBanner" destination="bd2-cH-rUO" id="pC7-dY-DAW"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="LLi-cu-rKE" id="aIJ-BM-6lh"/>
