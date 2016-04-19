@@ -70,7 +70,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     labelSizeAdjustment()
     hideAllGraphics()
     StoreParseDataLocally_Round3()
@@ -84,7 +84,8 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
     timer.delegate = self
     userDefaults.setObject("Round_3", forKey: CURRENT_ROUND_KEY)
-  }
+    
+   }
   
   override func viewWillAppear(animated: Bool) {
     
@@ -96,6 +97,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     vaultBoyFailedYConstraint.constant -= view.bounds.height
     self.view.layoutIfNeeded()
   }
+  
   
   //MARK: Parse
   
@@ -197,6 +199,24 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       }, completion: nil)
   }
   
+  func QandAReAppear () {
+    UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
+      self.Button1.hidden = false
+      self.Button1.enabled = true
+      self.Button2.hidden = false
+      self.Button2.enabled = true
+      self.Button3.hidden = false
+      self.Button3.enabled = true
+      self.Button4.hidden = false
+      self.Button4.enabled = true
+      self.QuestionLabel.hidden = false
+      self.PlayerScore.hidden = false
+      self.CountDownLabel.hidden = false
+      self.BackgroundImage.hidden = false
+      self.HintButton.hidden = false
+      }, completion: nil)
+  }
+  
   //MARK: Graphics
   
   func hideAllGraphics () {
@@ -231,12 +251,18 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //Restart
   func restartViewController () ->() {
+    //self.viewDidLoadFunctions()
     
-    self.dismissViewControllerAnimated(true, completion: nil)
+    viewDidLoad()
+    QandAReAppear()
+    viewWillAppear(false)
+   
     
-    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
-    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_3")
-    self.presentViewController(vc, animated: true, completion: nil)
+//    self.dismissViewControllerAnimated(true, completion: nil)
+//    
+//    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
+//    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_3")
+//    self.presentViewController(vc, animated: true, completion: nil)
     self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
 
   }
@@ -298,6 +324,12 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     Button4.enabled = false
   }
   
+  func enabledButtons(enabled: Bool) {
+    Button1.enabled = enabled
+    Button2.enabled = enabled
+    Button3.enabled = enabled
+    Button4.enabled = enabled
+  }
   
   
   //MARK: Hint Button features
