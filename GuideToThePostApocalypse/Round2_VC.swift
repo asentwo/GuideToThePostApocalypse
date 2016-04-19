@@ -13,7 +13,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   
   //MARK:Constants
-  
+  var buttons = Buttons()
   var round2_objectIDArray = [String]()
   
   //tiles and targets
@@ -29,7 +29,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   @IBOutlet var QuestionLabel: UILabel!
   @IBOutlet var PlayerScore: UILabel!
   @IBOutlet var CountDownLabel: UILabel!
-  @IBOutlet var hintButton: UIButton!
+  @IBOutlet var hintLabel: UIButton!
   
   
   //VaultBoys
@@ -73,13 +73,15 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     
     hideAllGraphics()
     labelSizeAdjustment()
-    StoreParseDataLocally_Round2()
     ButtonActions()
+    StoreParseDataLocally_Round2()
+    
     //add tile view
     let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
     self.view.addSubview(tileView)
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
+    self.view.addSubview(buttons.hintBtn)
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:31)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
@@ -138,7 +140,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           self.QuestionLabel.text = self.question
           
           self.setTiles()
-          self.hintButton.enabled = true
+          self.buttons.hintBtn.enabled = true
           
           timer.start()
           self.startAudioTimer()
@@ -193,7 +195,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   func DismissQandA () {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.hintButton.hidden = true
+      self.buttons.hintButton.hidden = true
       self.FalloutImage.hidden = true
       self.QuestionLabel.hidden = true
       self.PlayerScore.hidden = true
@@ -281,7 +283,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
             }
           })
           }, completion:{_ in
-             thumbsUpBoyRunning = false
+            thumbsUpBoyRunning = false
         })
     })
   }
@@ -430,6 +432,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.tileTargetView2 = tileView
       self.view.addSubview(tileTargetView2)
       self.mainTileTargetView = self.tileTargetView2
+      self.view.addSubview(buttons.hintBtn)
     case tileTargetView2:
       self.tileTargetView2.removeFromSuperview()
       let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
@@ -437,6 +440,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.tileTargetView3 = tileView
       self.view.addSubview(tileTargetView3)
       self.mainTileTargetView = self.tileTargetView3
+      self.view.addSubview(buttons.hintBtn)
     case tileTargetView3:
       self.tileTargetView3.removeFromSuperview()
       let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
@@ -444,6 +448,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.tileTargetView4 = tileView
       self.view.addSubview(tileTargetView4)
       self.mainTileTargetView = self.tileTargetView4
+      self.view.addSubview(buttons.hintBtn)
     case tileTargetView4:
       self.tileTargetView4.removeFromSuperview()
       let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
@@ -451,6 +456,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.tileTargetView5 = tileView
       self.view.addSubview(tileTargetView5)
       self.mainTileTargetView = self.tileTargetView5
+      self.view.addSubview(buttons.hintBtn)
     default: print("")
     }
     self.vaultboyToFront()
@@ -514,10 +520,8 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: Buttons Functions
   
   func ButtonActions () {
-    hintButton.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
+    buttons.hintBtn.addTarget(self, action: "giveHint:", forControlEvents: .TouchUpInside)
   }
-  
-  
   
   //Next Round
   func switchToRoundThree () {
@@ -529,9 +533,8 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //Give Hint
   
   func giveHint (sender: UIButton) {
-    
-    if madVaultBoyRunning == false {
-    self.hintButton.enabled = false
+    audioController.playEffect(SoundHintButtonPressed)
+    self.buttons.hintBtn.enabled = false
     self.data.points -= pointsPerTile/2
     totalScore = self.data.points
     self.PlayerScore.text = "Score: \(totalScore)"
@@ -565,16 +568,18 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         }, completion: {
           (value:Bool) in
           //7 adjust view on spot
-          self.placeTile(tile, targetView: target)
-          self.audioController.playEffect(SoundTileCorrect)
-          //8 re-enable the button
-          self.hintButton.enabled = true
-          //9 check for finished game
-          self.checkForSuccess()
-      }
-      )}
-    } else {
-      hintButton.enabled = false
+          if madVaultBoyRunning == false {
+            self.placeTile(tile, targetView: target)
+            self.audioController.playEffect(SoundTileCorrect)
+            //8 re-enable the button
+            self.buttons.hintButton.enabled = true
+            //9 check for finished game
+            self.checkForSuccess()
+          } else {
+            self.buttons.hintButton.enabled = false
+          }
+          
+      })
     }
   }
   
@@ -588,7 +593,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
     self.view.layoutIfNeeded()
   }
-
+  
   
   //MARK: Buttons
   
