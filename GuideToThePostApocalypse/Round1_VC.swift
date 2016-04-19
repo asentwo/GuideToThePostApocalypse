@@ -384,11 +384,13 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
             self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round1_objectIDArray)
             madVaultBoyRunning = false
+            self.HintButton.enabled = true
         })
     })
   }
   
   func showMadVaultBoyButtons () {
+    self.HintButton.enabled = false
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -421,6 +423,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   }
   
   func thumbsUpVaultBoy () {
+    self.HintButton.enabled = false
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     self.stopAudioTimer()
@@ -443,6 +446,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
             if self.hintButtonTapped == true {self.unHideBtns()
               self.hintButtonTapped = false
             }
+            self.HintButton.enabled = true
         })
     })
   }

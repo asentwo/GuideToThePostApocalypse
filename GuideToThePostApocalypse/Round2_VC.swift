@@ -87,6 +87,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
+    self.data.points = totalScore
     PlayerScore.text = "Score: \(totalScore)"
     currentRoundScore = 0
   }
@@ -215,6 +216,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func MadVaultBoy() {
+    self.buttons.hintBtn.enabled = false
     removeTiles()
     madVaultBoyRunning = true
     self.vaultboyToFront()
@@ -245,6 +247,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion:{_ in
+            self.buttons.hintBtn.enabled = true
             madVaultBoyRunning = false
         })
     })
@@ -252,6 +255,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   
   func ThumbsUpVaultBoy () {
+    self.buttons.hintBtn.enabled = false
     self.mainTileTargetView.hidden = true
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
@@ -284,6 +288,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           })
           }, completion:{_ in
             thumbsUpBoyRunning = false
+            self.buttons.hintBtn.enabled = true
         })
     })
   }

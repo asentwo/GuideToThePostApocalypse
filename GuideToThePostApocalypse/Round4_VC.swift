@@ -33,7 +33,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var vaultBoyWrong: UIImageView!
   @IBOutlet weak var vaultBoySuccess: UIImageView!
   @IBOutlet weak var vaultBoyFailed: UIImageView!
- 
+  
   //buttons
   @IBOutlet weak var nextRoundButton: UIButton!
   @IBOutlet weak var tryAgainButton: UIButton!
@@ -43,7 +43,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var scoreBanner: UIImageView!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var youEarnedACoinLabel: UILabel!
- 
+  
   //gif
   @IBOutlet weak var coin: UIImageView!
   
@@ -74,6 +74,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
+    self.data.points = totalScore
     PlayerScore.text = "Score: \(totalScore)"
     currentRoundScore = 0
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
@@ -84,7 +85,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   override func viewWillAppear(animated: Bool) {
     
     vaultBoyRightYConstraint.constant = 60
-    vaultBoyWrongYConstraint.constant = 58.5
+    vaultBoyWrongYConstraint.constant = 108.5
     vaultBoySuccessYConstraint.constant = -64
     vaultBoyFailedYConstraint.constant = 30
     coinYConstraint.constant = 0
@@ -243,9 +244,9 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //Next Round
   func switchToRoundFive () {
-      UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
-        self.performSegueWithIdentifier("round4ToRound5Segue", sender: self)
-        }, completion: nil)
+    UIView.animateWithDuration(0.35, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: [.CurveEaseInOut, .AllowAnimatedContent], animations: {
+      self.performSegueWithIdentifier("round4ToRound5Segue", sender: self)
+      }, completion: nil)
   }
   
   //Button Bounce
@@ -360,7 +361,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   
- // MARK: Vaultboy Animations
+  // MARK: Vaultboy Animations
   
   func vaultboyToFront () {
     if madVaultBoyRunning == true {
@@ -382,11 +383,13 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round4_objectIDArray)
             madVaultBoyRunning = false
+            self.HintButton.enabled = true
         })
     })
   }
   
   func showMadVaultBoyButtons () {
+    self.HintButton.enabled = false
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -408,7 +411,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     if round.count == 0 {
       self.DismissQandA()
       if self.currentRoundScore == 0 {
-      self.zeroScoreVaultBoy()
+        self.zeroScoreVaultBoy()
       }else{
         self.congratulationsVaultBoy("falloutResize")
       }
@@ -419,6 +422,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func thumbsUpVaultBoy () {
+    self.HintButton.enabled = false
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     self.stopAudioTimer()
@@ -438,6 +442,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           }, completion: {_ in
             self.hideThumbsUpVaultBoyButtons(self.round4_objectIDArray)
             thumbsUpBoyRunning = false
+            self.HintButton.enabled = true
             if self.hintButtonTapped == true {self.unHideBtns()
               self.hintButtonTapped = false
             }
@@ -551,7 +556,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           }
         )}
     )}
-
+  
   
   
   //MARK: IBActions
@@ -620,8 +625,10 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
+    print("\(totalScore)")
     self.data.points -= pointsPerMultiHint
     totalScore = self.data.points
+    print("\(totalScore)")
     self.PlayerScore.text = "Score: \(totalScore)"
     let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {

@@ -79,6 +79,8 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
        
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
+    self.data.points = totalScore
+    self.data.points = totalScore
     PlayerScore.text = "Score: \(totalScore)"
     currentRoundScore = 0
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
@@ -389,11 +391,13 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round5_objectIDArray)
             madVaultBoyRunning = false
+            self.HintButton.enabled = true
         })
     })
   }
   
   func showMadVaultBoyButtons () {
+    self.HintButton.enabled = false
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -426,6 +430,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func thumbsUpVaultBoy () {
+    self.HintButton.enabled = false
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     self.stopAudioTimer()
@@ -445,6 +450,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           }, completion: {_ in
             self.hideThumbsUpVaultBoyButtons(self.round5_objectIDArray)
             thumbsUpBoyRunning = false
+            self.HintButton.enabled = true
             if self.hintButtonTapped == true {self.unHideBtns()
               self.hintButtonTapped = false
             }
@@ -627,8 +633,11 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
+       print("\(totalScore)")
+    print("\(self.data.points)")
     self.data.points -= pointsPerMultiHint
     totalScore = self.data.points
+       print("\(totalScore)")
     self.PlayerScore.text = "Score: \(totalScore)"
     let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {

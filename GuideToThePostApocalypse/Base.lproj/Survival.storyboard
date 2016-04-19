@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ylf-eO-TZ1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zyX-bE-kHB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -864,9 +864,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-1H-aUK">
                                 <rect key="frame" x="5" y="91" width="310" height="503"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_success" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-Nc-5KZ">
-                                <rect key="frame" x="2" y="-49" width="316" height="537"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-7O-UHG">
                                 <rect key="frame" x="18" y="430" width="283" height="49"/>
                             </imageView>
@@ -927,6 +924,9 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy_success" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-Nc-5KZ">
+                                <rect key="frame" x="2" y="-49" width="316" height="537"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.7251815025252526" green="0.62310166074359907" blue="0.22174188417031318" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1192,9 +1192,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)" translatesAutoresizingMaskIntoConstraints="NO" id="zGR-xT-MD7">
                                 <rect key="frame" x="13" y="156" width="294" height="376"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
-                                <rect key="frame" x="0.0" y="103" width="320" height="551"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walking dead)_gameover" translatesAutoresizingMaskIntoConstraints="NO" id="OSx-PU-MkM" userLabel="ZeroVaultBoy">
                                 <rect key="frame" x="2" y="210" width="316" height="208"/>
                             </imageView>
@@ -1239,6 +1236,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="POy-uF-zYc" secondAttribute="height" multiplier="320:477" id="dcT-E1-ous"/>
                                 </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (walkingdead)_wrong" translatesAutoresizingMaskIntoConstraints="NO" id="DEL-SS-DGu">
+                                <rect key="frame" x="0.0" y="103" width="320" height="551"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.84497316919191912" green="0.19940789004662904" blue="0.1256399216849666" alpha="1" colorSpace="calibratedRGB"/>
