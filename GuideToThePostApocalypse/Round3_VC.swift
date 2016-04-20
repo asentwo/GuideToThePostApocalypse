@@ -36,7 +36,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //fireworks
   @IBOutlet weak var fireworkImage: UIImageView!
- 
+  
   //buttons
   @IBOutlet weak var nextRoundButton: UIButton!
   @IBOutlet weak var tryAgainButton: UIButton!
@@ -70,12 +70,12 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     labelSizeAdjustment()
     hideAllGraphics()
     StoreParseDataLocally_Round3()
     fireworkImage.alpha = 0
-  
+    
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     self.data.points = totalScore
@@ -85,7 +85,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     timer.delegate = self
     userDefaults.setObject("Round_3", forKey: CURRENT_ROUND_KEY)
     
-   }
+  }
   
   override func viewWillAppear(animated: Bool) {
     
@@ -135,7 +135,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
             self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
             self.HintButton.enabled = true
-     
+            
             timer.start()
             self.startAudioTimer()
           }
@@ -196,41 +196,9 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.CountDownLabel.hidden = buttons
       self.BackgroundImage.hidden = buttons
       self.HintButton.hidden = buttons
-     }, completion: nil)
+      }, completion: nil)
   }
-  
-//  func DismissQandA () {
-//    UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-//      self.Button1.hidden = true
-//      self.Button2.hidden = true
-//      self.Button3.hidden = true
-//      self.Button4.hidden = true
-//      self.QuestionLabel.hidden = true
-//      self.PlayerScore.hidden = true
-//      self.CountDownLabel.hidden = true
-//      self.BackgroundImage.hidden = true
-//      self.HintButton.hidden = true
-//      }, completion: nil)
-//  }
-//  
-//  func QandAReAppear () {
-//    UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-//      self.Button1.hidden = false
-//      self.Button1.enabled = true
-//      self.Button2.hidden = false
-//      self.Button2.enabled = true
-//      self.Button3.hidden = false
-//      self.Button3.enabled = true
-//      self.Button4.hidden = false
-//      self.Button4.enabled = true
-//      self.QuestionLabel.hidden = false
-//      self.PlayerScore.hidden = false
-//      self.CountDownLabel.hidden = false
-//      self.BackgroundImage.hidden = false
-//      self.HintButton.hidden = false
-//      }, completion: nil)
-//  }
-//  
+
   //MARK: Graphics
   
   func hideAllGraphics () {
@@ -313,22 +281,6 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     default: print("Wrong Button Selected Error")
     }
   }
-  
-//  //Enable All Buttons
-//  func EnableButtons () {
-//    Button1.enabled = true
-//    Button2.enabled = true
-//    Button3.enabled = true
-//    Button4.enabled = true
-//  }
-//  
-//  //Disable All Buttons
-//  func DisableButtons () {
-//    Button1.enabled = false
-//    Button2.enabled = false
-//    Button3.enabled = false
-//    Button4.enabled = false
-//  }
   
   func areButtonsEnabledButtons(enabled: Bool) {
     Button1.enabled = enabled
@@ -657,8 +609,8 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
+    audioController.playEffect(SoundButtonPressed)
     restartViewController()
-    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   
@@ -669,11 +621,9 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
-    print("\(totalScore)")
     self.data.points -= pointsPerMultiHint
     totalScore = self.data.points
     self.PlayerScore.text = "Score: \(totalScore)"
-    print("\(totalScore)")
     let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
       self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)

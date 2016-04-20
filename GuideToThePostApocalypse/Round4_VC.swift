@@ -186,20 +186,20 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //MARK: Dismiss Q&A Buttons & Labels
   
-  func DismissQandA () {
-    
+  func areBaseGraphicsHidden(buttons: Bool) {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.Button1.hidden = true
-      self.Button2.hidden = true
-      self.Button3.hidden = true
-      self.Button4.hidden = true
-      self.QuestionLabel.hidden = true
-      self.PlayerScore.hidden = true
-      self.CountDownLabel.hidden = true
-      self.SiloImage.hidden = true
-      self.HintButton.hidden = true
+      self.Button1.hidden = buttons
+      self.Button2.hidden = buttons
+      self.Button3.hidden = buttons
+      self.Button4.hidden = buttons
+      self.QuestionLabel.hidden = buttons
+      self.PlayerScore.hidden = buttons
+      self.CountDownLabel.hidden = buttons
+      self.SiloImage.hidden = buttons
+      self.HintButton.hidden = buttons
       }, completion: nil)
   }
+  
   
   //MARK: Graphics
   
@@ -235,11 +235,12 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //Restart
   func restartViewController () ->() {
-    self.dismissViewControllerAnimated(true, completion: nil)
-    let storyboard = UIStoryboard(name:SURVIVAL_KEY, bundle: nil)
-    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_4")
-    self.presentViewController(vc, animated: true, completion: nil)
-    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+    self.vaultBoyFailedYConstraint.constant += self.view.bounds.height
+    viewDidLoad()
+    areBaseGraphicsHidden(false)
+    viewWillAppear(false)
+    areButtonsEnabledButtons(true)
+    
   }
   
   //Next Round
@@ -282,20 +283,12 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     }
   }
   
-  //Enable All Buttons
-  func EnableButtons () {
-    Button1.enabled = true
-    Button2.enabled = true
-    Button3.enabled = true
-    Button4.enabled = true
-  }
-  
-  //Disable All Buttons
-  func DisableButtons () {
-    Button1.enabled = false
-    Button2.enabled = false
-    Button3.enabled = false
-    Button4.enabled = false
+  func areButtonsEnabledButtons(enabled: Bool) {
+    Button1.enabled = enabled
+    Button2.enabled = enabled
+    Button3.enabled = enabled
+    Button4.enabled = enabled
+    HintButton.enabled = enabled
   }
   
   //Hint Button
@@ -340,7 +333,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func timerShakeAndReset () {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
-      self.DisableButtons()
+     self.areButtonsEnabledButtons(false)
       self.UpdateScoreRunOutOfTime()
       self.TimerShake()
       self.madVaultBoy()
@@ -383,13 +376,12 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round4_objectIDArray)
             madVaultBoyRunning = false
-            self.HintButton.enabled = true
+          //  self.HintButton.enabled = true
         })
     })
   }
   
   func showMadVaultBoyButtons () {
-    self.HintButton.enabled = false
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -397,7 +389,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
     self.RemoveAlreadyUsedQuestion()
-    self.DisableButtons()
+    self.areButtonsEnabledButtons(false)
     self.UpdateScoreNegative()
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
@@ -409,27 +401,26 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       self.hintButtonTapped = false
     }
     if round.count == 0 {
-      self.DismissQandA()
+      self.areBaseGraphicsHidden(true)
       if self.currentRoundScore == 0 {
         self.zeroScoreVaultBoy()
       }else{
         self.congratulationsVaultBoy("falloutResize")
       }
     } else {
-      self.EnableButtons()
+      self.areButtonsEnabledButtons(true)
       self.resetAllTimers()
     }
   }
   
   func thumbsUpVaultBoy () {
-    self.HintButton.enabled = false
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     self.stopAudioTimer()
     timer.pause()
     self.RemoveAlreadyUsedQuestion()
     self.audioController.playEffect(SoundDing)
-    self.DisableButtons()
+    self.areButtonsEnabledButtons(false)
     UIView.transitionWithView(self.vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
       }, completion: {_ in
@@ -453,19 +444,20 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func hideThumbsUpVaultBoyButtons(round:[String] ) {
     if round.count == 0 {
-      self.DismissQandA()
+      self.areBaseGraphicsHidden(true)
       self.congratulationsVaultBoy("falloutResize")
     } else {
       self.vaultBoyRightYConstraint.constant -= self.view.bounds.height
       self.view.layoutIfNeeded()
       self.vaultBoyRight.hidden = true
-      self.EnableButtons()
+      self.areButtonsEnabledButtons(true)
       self.resetAllTimers()
     }
   }
   
   
   func zeroScoreVaultBoy () {
+     self.areBaseGraphicsHidden(true)
     self.stopAudioTimer()
     self.audioController.playEffect(SoundWrong)
     self.tryAgainButton.hidden = false
@@ -484,7 +476,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func congratulationsVaultBoy (gifString: String) {
     self.stopAudioTimer()
-    self.DismissQandA()
+    self.areBaseGraphicsHidden(true)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
     self.audioController.playEffect(SoundWin)
@@ -562,7 +554,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   //MARK: IBActions
   
   @IBAction func Button1Action(sender: AnyObject) {
-    self.DisableButtons()
+    self.areButtonsEnabledButtons(false)
     if (self.answer == "0") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
@@ -574,7 +566,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   @IBAction func Button2Action(sender: AnyObject) {
-    self.DisableButtons()
+    self.areButtonsEnabledButtons(false)
     if (self.answer == "1") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
@@ -586,7 +578,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   @IBAction func Button3Action(sender: AnyObject) {
-    self.DisableButtons()
+    self.areButtonsEnabledButtons(false)
     if (self.answer == "2") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
@@ -598,7 +590,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   @IBAction func Button4Action(sender: AnyObject) {
-    self.DisableButtons()
+    self.areButtonsEnabledButtons(false)
     if (self.answer == "3") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
@@ -609,13 +601,13 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   @IBAction func nextRoundButton(sender: AnyObject) {
-    switchToRoundFive()
     audioController.playEffect(SoundButtonPressedCorrect)
+    switchToRoundFive()
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
+    audioController.playEffect(SoundButtonPressed)
     restartViewController()
-    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func hintBntTapped(sender: UIButton) {
