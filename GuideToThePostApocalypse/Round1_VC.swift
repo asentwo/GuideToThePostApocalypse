@@ -231,11 +231,13 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   //Restart
   func restartViewController () ->() {
-    self.dismissViewControllerAnimated(true, completion: nil)
-    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
-    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_1")
-    self.presentViewController(vc, animated: true, completion: nil)
-    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
+    func restartViewController () ->() {
+      self.vaultBoyFailedYConstraint.constant += self.view.bounds.height
+      viewDidLoad()
+      //are
+      viewWillAppear(false)
+      
+    }
     
   }
   
