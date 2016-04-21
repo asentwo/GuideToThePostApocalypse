@@ -33,7 +33,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var vaultBoyWrong: UIImageView!
   @IBOutlet weak var vaultBoySuccess: UIImageView!
   @IBOutlet weak var vaultBoyFailed: UIImageView!
- 
+  
   //buttons
   @IBOutlet weak var nextRoundButton: UIButton!
   @IBOutlet weak var tryAgainButton: UIButton!
@@ -60,7 +60,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBOutlet weak var vaultBoyFailedYConstraint: NSLayoutConstraint!
   @IBOutlet weak var vaultBoySuccessYConstraint: NSLayoutConstraint!
   @IBOutlet weak var coinYConstraint: NSLayoutConstraint!
-
+  
   @IBOutlet weak var wrongAnswerBannerXConstraint: NSLayoutConstraint!
   @IBOutlet weak var rightAnswerBannerXConstraint: NSLayoutConstraint!
   
@@ -75,7 +75,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     labelSizeAdjustment()
     hideAllGraphics()
     StoreParseDataLocally_Round5()
-       
+    
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     self.data.points = totalScore
@@ -233,7 +233,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     wrongAnswerLabel.adjustsFontSizeToFitWidth = true
     HintButton.titleLabel?.adjustsFontSizeToFitWidth = true
   }
-
+  
   
   //MARK: Buttons
   
@@ -389,7 +389,6 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func showMadVaultBoyButtons () {
-    self.HintButton.enabled = false
     madVaultBoyRunning = true
     timer.pause()
     self.vaultboyToFront()
@@ -411,7 +410,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     if round.count == 0 {
       self.areButtonsEnabledButtons(false)
       if self.currentRoundScore == 0 {
-      self.zeroScoreVaultBoy()
+        self.zeroScoreVaultBoy()
       }else{
         self.congratulationsVaultBoy("madMaxResize")
       }
@@ -422,7 +421,6 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func thumbsUpVaultBoy () {
-    self.HintButton.enabled = false
     thumbsUpBoyRunning = true
     self.vaultboyToFront()
     self.stopAudioTimer()
@@ -466,6 +464,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   func zeroScoreVaultBoy () {
+    self.areBaseGraphicsHidden(true)
     self.stopAudioTimer()
     self.audioController.playEffect(SoundWrong)
     self.tryAgainButton.hidden = false
@@ -615,7 +614,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     audioController.playEffect(SoundButtonPressed)
-     restartViewController()
+    restartViewController()
   }
   
   @IBAction func hintBtnTapped(sender: UIButton) {
@@ -625,11 +624,8 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
-       print("\(totalScore)")
-    print("\(self.data.points)")
     self.data.points -= pointsPerMultiHint
     totalScore = self.data.points
-       print("\(totalScore)")
     self.PlayerScore.text = "Score: \(totalScore)"
     let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {

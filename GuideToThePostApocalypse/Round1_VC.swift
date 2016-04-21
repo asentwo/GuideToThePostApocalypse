@@ -601,14 +601,13 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   }
   
   @IBAction func nextRoundButton(sender: AnyObject) {
+     audioController.playEffect(SoundButtonPressedCorrect)
     switchToRoundTwo()
-    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
      audioController.playEffect(SoundButtonPressed)
     restartViewController()
-   
   }
   
   

@@ -82,7 +82,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.tileTargetView1 = tileView
     self.mainTileTargetView = self.tileTargetView1
     self.view.addSubview(buttons.hintBtn)
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:31)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:5)
     timer.delegate = self
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
@@ -194,13 +194,13 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   //MARK: Dismiss Q&A
   
-  func DismissQandA () {
+  func areBaseGraphicsHidden(hidden: Bool) {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.buttons.hintButton.hidden = true
-      self.FalloutImage.hidden = true
-      self.QuestionLabel.hidden = true
-      self.PlayerScore.hidden = true
-      self.CountDownLabel.hidden = true
+      self.buttons.hintButton.hidden = hidden
+      self.FalloutImage.hidden = hidden
+      self.QuestionLabel.hidden = hidden
+      self.PlayerScore.hidden = hidden
+      self.CountDownLabel.hidden = hidden
       }, completion: nil)
   }
   
@@ -232,7 +232,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         if self.round2_objectIDArray.count == 0 {
-          self.DismissQandA()
+          self.areBaseGraphicsHidden(true)
           if self.currentRoundScore == 0 {
             self.mainTileTargetView.removeFromSuperview()
             self.ZeroScoreVaultBoy()
@@ -275,7 +275,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           self.view.layoutIfNeeded()
           self.delay(1, closure: {
             if self.round2_objectIDArray.count == 0 {
-              self.DismissQandA()
+              self.areBaseGraphicsHidden(true)
               self.CongratulationsVaultBoy()
               self.mainTileTargetView.removeFromSuperview()
             } else {
@@ -287,7 +287,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
             }
           })
           }, completion:{_ in
-            thumbsUpBoyRunning = false
+             thumbsUpBoyRunning = false
             self.buttons.hintBtn.enabled = true
         })
     })
@@ -429,6 +429,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func newTile () {
+    print("\(round2_objectIDArray.count)")
     switch mainTileTargetView {
     case tileTargetView1:
       self.tileTargetView1.removeFromSuperview()
@@ -535,6 +536,16 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       }, completion: nil)
   }
   
+  //Restart viewController
+  
+  func restartViewController () ->() {
+    self.vaultBoyFailedYConstraint.constant += self.view.bounds.height
+    self.view.layoutIfNeeded()
+    viewDidLoad()
+    viewWillAppear(false)
+    areBaseGraphicsHidden(false)
+  }
+  
   //Give Hint
   
   func giveHint (sender: UIButton) {
@@ -588,16 +599,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     }
   }
   
-  //Refresh viewController
-  
-  func restartViewController () ->() {
-    self.dismissViewControllerAnimated(true, completion: nil)
-    let storyboard = UIStoryboard(name: SURVIVAL_KEY, bundle: nil)
-    let vc = storyboard.instantiateViewControllerWithIdentifier("Round_2")
-    self.presentViewController(vc, animated: true, completion: nil)
-    self.vaultBoyFailedYConstraint.constant -= self.view.bounds.height
-    self.view.layoutIfNeeded()
-  }
+
   
   
   //MARK: Buttons
