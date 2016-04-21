@@ -14,6 +14,10 @@
 		6E14431A1C4AB6CB0066B61C /* Round3_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1443191C4AB6CB0066B61C /* Round3_VC.swift */; };
 		6E1443241C4AB7410066B61C /* Round5_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1443231C4AB7410066B61C /* Round5_VC.swift */; };
 		6E14432E1C4AB8280066B61C /* Round6_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14432D1C4AB8280066B61C /* Round6_VC.swift */; };
+		6E1738591CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */; };
+		6E17385C1CB88DCA00D1A591 /* finalResize300.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E17385A1CB88DCA00D1A591 /* finalResize300.gif */; };
+		6E17385D1CB88DCA00D1A591 /* finalResize400.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E17385B1CB88DCA00D1A591 /* finalResize400.gif */; };
+		6E17385F1CB88E6100D1A591 /* congrats animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E17385E1CB88E6100D1A591 /* congrats animation.gif */; };
 		6E19E4671C1A592A0093F762 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E4661C1A592A0093F762 /* Social.framework */; };
 		6E19E4691C1A59310093F762 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E4681C1A59310093F762 /* Accounts.framework */; };
 		6E19E46B1C1A59370093F762 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19E46A1C1A59370093F762 /* CFNetwork.framework */; };
@@ -29,6 +33,7 @@
 		6E1AD1271C49B7160084033D /* 15sec_time-running-out-buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E1AD1261C49B7160084033D /* 15sec_time-running-out-buzzer.mp3 */; };
 		6E1AD12B1C49D7BA0084033D /* 17sec_time-running-out-buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E1AD12A1C49D7BA0084033D /* 17sec_time-running-out-buzzer.mp3 */; };
 		6E4295451C35EC9000720BEF /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4295441C35EC9000720BEF /* TileView.swift */; };
+		6E4809311CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4809301CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png */; };
 		6E54BF5D1C4862E6003ED24C /* life-lost-game-over.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E54BF5A1C4862E6003ED24C /* life-lost-game-over.wav */; };
 		6E54BF5E1C4862E6003ED24C /* powerdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6E54BF5B1C4862E6003ED24C /* powerdown.wav */; };
 		6E54BF5F1C4862E6003ED24C /* wrong.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6E54BF5C1C4862E6003ED24C /* wrong.m4a */; };
@@ -44,6 +49,9 @@
 		6E5ACF4A1C8A4EC30023B574 /* vault boy (madmax)_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF471C8A4EC30023B574 /* vault boy (madmax)_wrong.png */; };
 		6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */; };
 		6E5ACF4E1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */; };
+		6E5D6E9B1CB6D13C003B3B6A /* Deathclaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */; };
+		6E5FB8951CC2ADC900805FDE /* madmax2resize2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E5FB8941CC2ADC900805FDE /* madmax2resize2.gif */; };
+		6E6742171CBAFD430098E905 /* torn_banner2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E6742161CBAFD430098E905 /* torn_banner2@3x.png */; };
 		6E68574A1C1A55F80005F008 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6857491C1A55F80005F008 /* AppDelegate.swift */; };
 		6E68574F1C1A55F80005F008 /* Survival.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E68574D1C1A55F80005F008 /* Survival.storyboard */; };
 		6E6857511C1A55F80005F008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6857501C1A55F80005F008 /* Assets.xcassets */; };
@@ -74,7 +82,6 @@
 		6E78291E1CAC522A0094E798 /* walkingDeadRresize2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E78290F1CAC522A0094E798 /* walkingDeadRresize2.gif */; };
 		6E7829201CAC54D60094E798 /* walkingDeadResize1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E78291F1CAC54D60094E798 /* walkingDeadResize1.gif */; };
 		6E7829221CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */; };
-		6E7BDF971C851CA900B93822 /* DeathClaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF851C851CA900B93822 /* DeathClaw.png */; };
 		6E7BDF981C851CA900B93822 /* MisterGusty.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF861C851CA900B93822 /* MisterGusty.png */; };
 		6E7BDF991C851CA900B93822 /* MiniGun.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF871C851CA900B93822 /* MiniGun.png */; };
 		6E7BDF9A1C851CA900B93822 /* PowerArmor.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BDF881C851CA900B93822 /* PowerArmor.png */; };
@@ -111,7 +118,6 @@
 		6EAEC52F1C4034EB0023F4BF /* green_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4EE1C4034EB0023F4BF /* green_banner@3x.png */; };
 		6EAEC5301C4034EB0023F4BF /* red_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4EF1C4034EB0023F4BF /* red_banner@3x.png */; };
 		6EAEC5311C4034EB0023F4BF /* tan_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F01C4034EB0023F4BF /* tan_banner@3x.png */; };
-		6EAEC5321C4034EB0023F4BF /* torn_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F11C4034EB0023F4BF /* torn_banner@3x.png */; };
 		6EAEC5331C4034EB0023F4BF /* vintage2_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F21C4034EB0023F4BF /* vintage2_banner@3x.png */; };
 		6EAEC5341C4034EB0023F4BF /* vintage_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F31C4034EB0023F4BF /* vintage_banner@3x.png */; };
 		6EAEC5351C4034EB0023F4BF /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC4F41C4034EB0023F4BF /* btn.png */; };
@@ -168,6 +174,7 @@
 		6EAEC5691C4034EB0023F4BF /* vintage-sunburst-background-banner-design.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EAEC52D1C4034EB0023F4BF /* vintage-sunburst-background-banner-design.jpg */; };
 		6EAEC64A1C4036D70023F4BF /* TileBackgroundExplode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEC6491C4036D70023F4BF /* TileBackgroundExplode.swift */; };
 		6EAEC64C1C403B320023F4BF /* StardustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAEC64B1C403B320023F4BF /* StardustView.swift */; };
+		6EB28B471CB6FEB200AF59D3 /* Survival_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB28B451CB6FEB200AF59D3 /* Survival_Ipad.storyboard */; };
 		6EBF84241C1C7CBB007AEA22 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBF84211C1C7CBB007AEA22 /* Bolts.framework */; };
 		6EBF84251C1C7CBB007AEA22 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBF84221C1C7CBB007AEA22 /* Parse.framework */; };
 		6EBF84261C1C7CBB007AEA22 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBF84231C1C7CBB007AEA22 /* ParseUI.framework */; };
@@ -177,7 +184,6 @@
 		6EC5DA2E1CA5E208006F62EA /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5DA2D1CA5E208006F62EA /* ding.wav */; };
 		6EC5DA301CA5E389006F62EA /* ding2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5DA2F1CA5E389006F62EA /* ding2.wav */; };
 		6EC5DA341CA5E390006F62EA /* ding_bycycle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6EC5DA321CA5E390006F62EA /* ding_bycycle.wav */; };
-		6ECA7F121C5705A000C21EA9 /* BannersAndVaultBoys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F111C5705A000C21EA9 /* BannersAndVaultBoys.swift */; };
 		6ECA7F141C5705B900C21EA9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F131C5705B900C21EA9 /* Buttons.swift */; };
 		6ECA7F161C5705F100C21EA9 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F151C5705F100C21EA9 /* Messages.swift */; };
 		6ECA7F1E1C57125B00C21EA9 /* BannerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA7F1D1C57125B00C21EA9 /* BannerFunctions.swift */; };
@@ -222,6 +228,10 @@
 		6E1443191C4AB6CB0066B61C /* Round3_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round3_VC.swift; sourceTree = "<group>"; };
 		6E1443231C4AB7410066B61C /* Round5_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round5_VC.swift; sourceTree = "<group>"; };
 		6E14432D1C4AB8280066B61C /* Round6_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round6_VC.swift; sourceTree = "<group>"; };
+		6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe_v3.png"; sourceTree = "<group>"; };
+		6E17385A1CB88DCA00D1A591 /* finalResize300.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = finalResize300.gif; sourceTree = "<group>"; };
+		6E17385B1CB88DCA00D1A591 /* finalResize400.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = finalResize400.gif; sourceTree = "<group>"; };
+		6E17385E1CB88E6100D1A591 /* congrats animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "congrats animation.gif"; sourceTree = "<group>"; };
 		6E19E4661C1A592A0093F762 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6E19E4681C1A59310093F762 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6E19E46A1C1A59370093F762 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -237,6 +247,7 @@
 		6E1AD1261C49B7160084033D /* 15sec_time-running-out-buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "15sec_time-running-out-buzzer.mp3"; sourceTree = "<group>"; };
 		6E1AD12A1C49D7BA0084033D /* 17sec_time-running-out-buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "17sec_time-running-out-buzzer.mp3"; sourceTree = "<group>"; };
 		6E4295441C35EC9000720BEF /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		6E4809301CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe_modified@3x.png"; sourceTree = "<group>"; };
 		6E54BF5A1C4862E6003ED24C /* life-lost-game-over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "life-lost-game-over.wav"; sourceTree = "<group>"; };
 		6E54BF5B1C4862E6003ED24C /* powerdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = powerdown.wav; sourceTree = "<group>"; };
 		6E54BF5C1C4862E6003ED24C /* wrong.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.m4a; sourceTree = "<group>"; };
@@ -252,6 +263,9 @@
 		6E5ACF471C8A4EC30023B574 /* vault boy (madmax)_wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (madmax)_wrong.png"; sourceTree = "<group>"; };
 		6E5ACF4B1C8A4ED30023B574 /* vault boy (walking dead).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead).png"; sourceTree = "<group>"; };
 		6E5ACF4C1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walkingdead)_wrong.png"; sourceTree = "<group>"; };
+		6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deathclaw.png; sourceTree = "<group>"; };
+		6E5FB8941CC2ADC900805FDE /* madmax2resize2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = madmax2resize2.gif; sourceTree = "<group>"; };
+		6E6742161CBAFD430098E905 /* torn_banner2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "torn_banner2@3x.png"; path = "Banners@3x/torn_banner2@3x.png"; sourceTree = "<group>"; };
 		6E6857461C1A55F80005F008 /* GuideToThePostApocalypse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideToThePostApocalypse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6857491C1A55F80005F008 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E68574E1C1A55F80005F008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Survival.storyboard; sourceTree = "<group>"; };
@@ -288,7 +302,6 @@
 		6E78290F1CAC522A0094E798 /* walkingDeadRresize2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = walkingDeadRresize2.gif; sourceTree = "<group>"; };
 		6E78291F1CAC54D60094E798 /* walkingDeadResize1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = walkingDeadResize1.gif; sourceTree = "<group>"; };
 		6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vault boy (walking dead)_bloodyaxe1.png"; sourceTree = "<group>"; };
-		6E7BDF851C851CA900B93822 /* DeathClaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeathClaw.png; sourceTree = "<group>"; };
 		6E7BDF861C851CA900B93822 /* MisterGusty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MisterGusty.png; sourceTree = "<group>"; };
 		6E7BDF871C851CA900B93822 /* MiniGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiniGun.png; sourceTree = "<group>"; };
 		6E7BDF881C851CA900B93822 /* PowerArmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowerArmor.png; sourceTree = "<group>"; };
@@ -317,7 +330,6 @@
 		6EAEC4EE1C4034EB0023F4BF /* green_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4EF1C4034EB0023F4BF /* red_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F01C4034EB0023F4BF /* tan_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tan_banner@3x.png"; sourceTree = "<group>"; };
-		6EAEC4F11C4034EB0023F4BF /* torn_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torn_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F21C4034EB0023F4BF /* vintage2_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vintage2_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F31C4034EB0023F4BF /* vintage_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vintage_banner@3x.png"; sourceTree = "<group>"; };
 		6EAEC4F41C4034EB0023F4BF /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
@@ -374,6 +386,7 @@
 		6EAEC52D1C4034EB0023F4BF /* vintage-sunburst-background-banner-design.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "vintage-sunburst-background-banner-design.jpg"; sourceTree = "<group>"; };
 		6EAEC6491C4036D70023F4BF /* TileBackgroundExplode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileBackgroundExplode.swift; sourceTree = "<group>"; };
 		6EAEC64B1C403B320023F4BF /* StardustView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardustView.swift; sourceTree = "<group>"; };
+		6EB28B461CB6FEB200AF59D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Survival_Ipad.storyboard; sourceTree = "<group>"; };
 		6EBF84211C1C7CBB007AEA22 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = GuideToThePostApocalypse/Bolts.framework; sourceTree = "<group>"; };
 		6EBF84221C1C7CBB007AEA22 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = GuideToThePostApocalypse/Parse.framework; sourceTree = "<group>"; };
 		6EBF84231C1C7CBB007AEA22 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = GuideToThePostApocalypse/ParseUI.framework; sourceTree = "<group>"; };
@@ -383,7 +396,6 @@
 		6EC5DA2D1CA5E208006F62EA /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		6EC5DA2F1CA5E389006F62EA /* ding2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding2.wav; sourceTree = "<group>"; };
 		6EC5DA321CA5E390006F62EA /* ding_bycycle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding_bycycle.wav; sourceTree = "<group>"; };
-		6ECA7F111C5705A000C21EA9 /* BannersAndVaultBoys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannersAndVaultBoys.swift; sourceTree = "<group>"; };
 		6ECA7F131C5705B900C21EA9 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		6ECA7F151C5705F100C21EA9 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		6ECA7F1D1C57125B00C21EA9 /* BannerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerFunctions.swift; sourceTree = "<group>"; };
@@ -533,7 +545,6 @@
 				6E0F75A81C1A579C0051C0D1 /* Frameworks */,
 				6ED9C3C51C1B54E000EE8027 /* Helper Files */,
 			);
-			name = GuideToThePostApocalypse;
 			path = GuideToThePostApocalypse;
 			sourceTree = "<group>";
 		};
@@ -543,7 +554,6 @@
 				6E68575E1C1A55F80005F008 /* GuideToThePostApocalypseTests.swift */,
 				6E6857601C1A55F80005F008 /* Info.plist */,
 			);
-			name = GuideToThePostApocalypseTests;
 			path = GuideToThePostApocalypseTests;
 			sourceTree = "<group>";
 		};
@@ -561,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				6E7350711C443F7000E5E1D7 /* GlobalValues.swift */,
+				6ECA7F1A1C5706C200C21EA9 /* UI */,
 				6ECA7F1C1C57071E00C21EA9 /* Other */,
 				6ECA7F1B1C5706F700C21EA9 /* Views */,
 				6ECA7F191C5706B600C21EA9 /* Functions */,
@@ -571,6 +582,8 @@
 		6E76F63B1C7BA53200F5A1CE /* New PNG */ = {
 			isa = PBXGroup;
 			children = (
+				6E4809301CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png */,
+				6E1738581CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png */,
 				6ECF73061CA9EECF00C0ABAB /* vault boy (walking dead)_gameover.png */,
 				6E7829211CAC54EC0094E798 /* vault boy (walking dead)_bloodyaxe1.png */,
 				6ECF73041CA9EECA00C0ABAB /* vault boy (walking dead)_success.png */,
@@ -614,6 +627,10 @@
 		6E7828FF1CAC522A0094E798 /* Coins2 */ = {
 			isa = PBXGroup;
 			children = (
+				6E5FB8941CC2ADC900805FDE /* madmax2resize2.gif */,
+				6E17385E1CB88E6100D1A591 /* congrats animation.gif */,
+				6E17385A1CB88DCA00D1A591 /* finalResize300.gif */,
+				6E17385B1CB88DCA00D1A591 /* finalResize400.gif */,
 				6E78291F1CAC54D60094E798 /* walkingDeadResize1.gif */,
 				6E7829001CAC522A0094E798 /* fallout2Resize.gif */,
 				6E7829011CAC522A0094E798 /* falloutResize.gif */,
@@ -654,7 +671,7 @@
 		6E7BDF841C851CA900B93822 /* Fallout */ = {
 			isa = PBXGroup;
 			children = (
-				6E7BDF851C851CA900B93822 /* DeathClaw.png */,
+				6E5D6E9A1CB6D13C003B3B6A /* Deathclaw.png */,
 				6E7BDF861C851CA900B93822 /* MisterGusty.png */,
 				6E7BDF871C851CA900B93822 /* MiniGun.png */,
 				6E7BDF881C851CA900B93822 /* PowerArmor.png */,
@@ -703,6 +720,7 @@
 			isa = PBXGroup;
 			children = (
 				6EAEC4EC1C4034EB0023F4BF /* banner@2x.png */,
+				6E6742161CBAFD430098E905 /* torn_banner2@3x.png */,
 				6EAEC4ED1C4034EB0023F4BF /* Banners@3x */,
 				6EAEC4F41C4034EB0023F4BF /* btn.png */,
 				6EAEC4F51C4034EB0023F4BF /* btn@2x.png */,
@@ -742,7 +760,6 @@
 				6EAEC4EE1C4034EB0023F4BF /* green_banner@3x.png */,
 				6EAEC4EF1C4034EB0023F4BF /* red_banner@3x.png */,
 				6EAEC4F01C4034EB0023F4BF /* tan_banner@3x.png */,
-				6EAEC4F11C4034EB0023F4BF /* torn_banner@3x.png */,
 				6EAEC4F21C4034EB0023F4BF /* vintage2_banner@3x.png */,
 				6EAEC4F31C4034EB0023F4BF /* vintage_banner@3x.png */,
 			);
@@ -821,6 +838,15 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		6EB28B481CB6FED700AF59D3 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				6E68574D1C1A55F80005F008 /* Survival.storyboard */,
+				6EB28B451CB6FEB200AF59D3 /* Survival_Ipad.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
 		6EBAB2AB1C1C8C9900E10D4E /* Rounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,7 +868,6 @@
 		6ECA7F1A1C5706C200C21EA9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6ECA7F111C5705A000C21EA9 /* BannersAndVaultBoys.swift */,
 				6ECA7F131C5705B900C21EA9 /* Buttons.swift */,
 				6ECA7F151C5705F100C21EA9 /* Messages.swift */,
 			);
@@ -863,7 +888,6 @@
 		6ECA7F1C1C57071E00C21EA9 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				6ECA7F1A1C5706C200C21EA9 /* UI */,
 				6ED9C3D91C1B66DA00EE8027 /* PSTimer.swift */,
 				6EAEC6491C4036D70023F4BF /* TileBackgroundExplode.swift */,
 				6E73506F1C443E9C00E5E1D7 /* AudioController.swift */,
@@ -885,8 +909,8 @@
 				6EAEC64F1C4053CC0023F4BF /* Gifs */,
 				6EAEC4EB1C4034EB0023F4BF /* Images */,
 				6EA436831C23622100B445A7 /* Fonts */,
+				6EB28B481CB6FED700AF59D3 /* StoryBoards */,
 				6E6857491C1A55F80005F008 /* AppDelegate.swift */,
-				6E68574D1C1A55F80005F008 /* Survival.storyboard */,
 				6E6857501C1A55F80005F008 /* Assets.xcassets */,
 				6E6857521C1A55F80005F008 /* LaunchScreen.storyboard */,
 				6E6857551C1A55F80005F008 /* Info.plist */,
@@ -1037,10 +1061,8 @@
 				6EAEC5521C4034EB0023F4BF /* retro-sunbeam_background.jpg in Resources */,
 				6EAEC5571C4034EB0023F4BF /* red_speech_bubble@3x.png in Resources */,
 				6E7829151CAC522A0094E798 /* fallout coin.gif in Resources */,
-				6EAEC5321C4034EB0023F4BF /* torn_banner@3x.png in Resources */,
 				6E7BDF9F1C851CA900B93822 /* MadMax.png in Resources */,
 				6E7BDFA21C851CA900B93822 /* Carl.png in Resources */,
-				6E7BDF971C851CA900B93822 /* DeathClaw.png in Resources */,
 				6E7829111CAC522A0094E798 /* falloutResize.gif in Resources */,
 				6EAEC5501C4034EB0023F4BF /* pleaseStandBy.jpg in Resources */,
 				6E7829101CAC522A0094E798 /* fallout2Resize.gif in Resources */,
@@ -1079,6 +1101,7 @@
 				6EAEC5331C4034EB0023F4BF /* vintage2_banner@3x.png in Resources */,
 				6E5ACF4E1C8A4ED30023B574 /* vault boy (walkingdead)_wrong.png in Resources */,
 				6EAEC5301C4034EB0023F4BF /* red_banner@3x.png in Resources */,
+				6E17385F1CB88E6100D1A591 /* congrats animation.gif in Resources */,
 				6E54BF671C4862FD003ED24C /* jingle-win-00.wav in Resources */,
 				6EAEC5611C4034EB0023F4BF /* Super_mutant_master.png in Resources */,
 				6E54BF691C4862FD003ED24C /* jingle-win-synth-02.wav in Resources */,
@@ -1088,9 +1111,11 @@
 				6EAEC54A1C4034EB0023F4BF /* green_red_circle_label@3x.png in Resources */,
 				6EAEC5511C4034EB0023F4BF /* red_green_vintage_label@3x.png in Resources */,
 				6E7829181CAC522A0094E798 /* vault-boy-(fallout-coin).gif in Resources */,
+				6EB28B471CB6FEB200AF59D3 /* Survival_Ipad.storyboard in Resources */,
 				6E7829131CAC522A0094E798 /* madMaxResize.gif in Resources */,
 				6EAEC53C1C4034EB0023F4BF /* whitePaintStrokesOnBlackBackground.png in Resources */,
 				6E76F6411C7BA53200F5A1CE /* vault boy_pipboy.png in Resources */,
+				6E5FB8951CC2ADC900805FDE /* madmax2resize2.gif in Resources */,
 				6EAEC53B1C4034EB0023F4BF /* red-button@3x.png in Resources */,
 				6EAEC53F1C4034EB0023F4BF /* whiteWithBlackStroke.png in Resources */,
 				6E9ABA331C7BAD6200F7EF77 /* vault boy_success.png in Resources */,
@@ -1118,6 +1143,7 @@
 				6EAEC5631C4034EB0023F4BF /* tile.png in Resources */,
 				6E68574F1C1A55F80005F008 /* Survival.storyboard in Resources */,
 				6E7BDFA11C851CA900B93822 /* FireCar.png in Resources */,
+				6E17385C1CB88DCA00D1A591 /* finalResize300.gif in Resources */,
 				6E54BF711C48643B003ED24C /* time-running-out-buzzer.mp3 in Resources */,
 				6EAEC54B1C4034EB0023F4BF /* light_grunge@3x.png in Resources */,
 				6EA4368E1C23623700B445A7 /* Overseer Italic.otf in Resources */,
@@ -1132,6 +1158,8 @@
 				6EAEC5451C4034EB0023F4BF /* yellow_button.png in Resources */,
 				6EAEC54E1C4034EB0023F4BF /* nulcear@3x.png in Resources */,
 				6EAEC5591C4034EB0023F4BF /* spikey_spreech_bubble@3x.png in Resources */,
+				6E6742171CBAFD430098E905 /* torn_banner2@3x.png in Resources */,
+				6E4809311CC17F0400B477E7 /* vault boy (walking dead)_bloodyaxe_modified@3x.png in Resources */,
 				6EAEC55B1C4034EB0023F4BF /* exclamation_marks.png in Resources */,
 				6EA436881C23623700B445A7 /* Overseer Bold Italic.otf in Resources */,
 				6E7BDF9B1C851CA900B93822 /* Radroach.png in Resources */,
@@ -1147,6 +1175,7 @@
 				6E54BF5F1C4862E6003ED24C /* wrong.m4a in Resources */,
 				6EAEC5391C4034EB0023F4BF /* destinyButtonBlack@2x.png in Resources */,
 				6EAEC55D1C4034EB0023F4BF /* red_speech_bubble.png in Resources */,
+				6E5D6E9B1CB6D13C003B3B6A /* Deathclaw.png in Resources */,
 				6E7829171CAC522A0094E798 /* mad max coin.gif in Resources */,
 				6EC5DA2E1CA5E208006F62EA /* ding.wav in Resources */,
 				6EAEC54D1C4034EB0023F4BF /* nulcear.png in Resources */,
@@ -1154,7 +1183,9 @@
 				6EC5DA341CA5E390006F62EA /* ding_bycycle.wav in Resources */,
 				6EAEC54C1C4034EB0023F4BF /* nuclearSymbol@3x.png in Resources */,
 				6ECF73051CA9EECA00C0ABAB /* vault boy (walking dead)_success.png in Resources */,
+				6E1738591CB87B0600D1A591 /* vault boy (walking dead)_bloodyaxe_v3.png in Resources */,
 				6ECF73071CA9EECF00C0ABAB /* vault boy (walking dead)_gameover.png in Resources */,
+				6E17385D1CB88DCA00D1A591 /* finalResize400.gif in Resources */,
 				6E5ACF4D1C8A4ED30023B574 /* vault boy (walking dead).png in Resources */,
 				6EAEC5461C4034EB0023F4BF /* chalkboard_label@3x.png in Resources */,
 				6E9ABA2F1C7BAA8500F7EF77 /* vault boy_wrong.png in Resources */,
@@ -1195,7 +1226,6 @@
 				6EAEC4E41C3DE9470023F4BF /* TargetView.swift in Sources */,
 				6ECA7F1E1C57125B00C21EA9 /* BannerFunctions.swift in Sources */,
 				6E68574A1C1A55F80005F008 /* AppDelegate.swift in Sources */,
-				6ECA7F121C5705A000C21EA9 /* BannersAndVaultBoys.swift in Sources */,
 				6E13323E1C51882000064FB7 /* GameScore.swift in Sources */,
 				6E4295451C35EC9000720BEF /* TileView.swift in Sources */,
 				6E14431A1C4AB6CB0066B61C /* Round3_VC.swift in Sources */,
@@ -1263,6 +1293,14 @@
 				6E6857531C1A55F80005F008 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6EB28B451CB6FEB200AF59D3 /* Survival_Ipad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EB28B461CB6FEB200AF59D3 /* Base */,
+			);
+			name = Survival_Ipad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1374,6 +1412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdoo.Wastland-Survival-Guide";
 				PRODUCT_NAME = GuideToThePostApocalypse;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1400,6 +1439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jdoo.Wastland-Survival-Guide";
 				PRODUCT_NAME = GuideToThePostApocalypse;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
