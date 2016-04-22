@@ -27,7 +27,7 @@ extension UIViewController {
   
   //MARK: Timer Ends Shake
   
-  func TimerShake () {
+  func timerShake () {
     let imageView = self.view
     let shakeAnimation = CABasicAnimation(keyPath: "position")
     shakeAnimation.duration = 0.07
@@ -49,7 +49,7 @@ extension UIViewController {
   
   //MARK: GifMaker
   
-  func GifMaker (gif: String) {
+  func gifMaker (gif: String) {
     let Gif = UIImage.gifWithName("\(gif)")
     let View = UIImageView(image: Gif)
     View.hidden = false

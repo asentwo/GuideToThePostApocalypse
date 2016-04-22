@@ -37,17 +37,17 @@ class DragTileVC: UIViewController {
     super.viewDidLoad()
     
     self.audioController = AudioController()
-    self.audioController.preloadAudioEffects(AudioEffectFiles)
+    self.audioController.preloadAudioEffects(audioEffectFiles)
   }
 
   //MARK: Audio Timer
   
   func startAudioTimer () {
-    self.audioController.playEffect(SoundTimer30)
+    self.audioController.playEffect(soundTimer30)
   }
   
   func stopAudioTimer () {
-    self.audioController.stopPlayingEffect(SoundTimer30)
+    self.audioController.stopPlayingEffect(soundTimer30)
   }
 }
 

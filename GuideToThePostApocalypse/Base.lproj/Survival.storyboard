@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ylf-eO-TZ1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8Ls-PY-UIK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -133,7 +133,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button1Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHe-h9-41f"/>
+                                    <action selector="button1Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbH-gf-y9V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjP-vD-1Rt">
@@ -149,7 +149,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHR-j5-DLT"/>
+                                    <action selector="button2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpT-f5-kG5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM2-Tn-vu3">
@@ -165,7 +165,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SXR-OI-NeO"/>
+                                    <action selector="button3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WFS-h3-k8U"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aI-qC-i5Z">
@@ -181,7 +181,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvp-s9-qvZ"/>
+                                    <action selector="button4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G5E-BM-bTo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-hM-d5l">
@@ -194,7 +194,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hintBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Dn-Xh-6lW"/>
+                                    <action selector="hintBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R10-gU-1In"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Na-E3-SNW">
@@ -413,19 +413,20 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="BackgroundImage" destination="Nir-IO-mlh" id="ywD-5f-7GM"/>
-                        <outlet property="Button1" destination="hfe-pA-Zb0" id="FUR-mw-fgg"/>
-                        <outlet property="Button2" destination="RjP-vD-1Rt" id="jI0-0D-LbJ"/>
-                        <outlet property="Button3" destination="uM2-Tn-vu3" id="Aic-D0-QZ3"/>
-                        <outlet property="Button4" destination="5aI-qC-i5Z" id="ISK-9N-jc7"/>
-                        <outlet property="CountDownLabel" destination="Jiy-ho-cBk" id="FKK-PU-8de"/>
-                        <outlet property="HintButton" destination="X8c-hM-d5l" id="XXh-ZC-Zb6"/>
                         <outlet property="PlayerScore" destination="5Na-E3-SNW" id="6f5-Ky-Mm5"/>
-                        <outlet property="QuestionLabel" destination="twk-nO-1hd" id="CXR-Ob-xLF"/>
+                        <outlet property="backgroundImage" destination="Nir-IO-mlh" id="3sv-cq-djs"/>
+                        <outlet property="button1" destination="hfe-pA-Zb0" id="ynB-87-w9v"/>
+                        <outlet property="button2" destination="RjP-vD-1Rt" id="0YM-Xc-KYY"/>
+                        <outlet property="button3" destination="uM2-Tn-vu3" id="GF0-Y3-1O5"/>
+                        <outlet property="button4" destination="5aI-qC-i5Z" id="EpZ-of-bWA"/>
                         <outlet property="coin" destination="Uqu-Kl-fde" id="5F7-dk-F7g"/>
                         <outlet property="coinYConstraint" destination="ed7-jr-asV" id="WZA-t1-PAq"/>
+                        <outlet property="countDownLabel" destination="Jiy-ho-cBk" id="5ob-xn-ASO"/>
                         <outlet property="fireworksImage" destination="rb7-c9-kbU" id="bm3-pR-Vq0"/>
+                        <outlet property="hintButton" destination="X8c-hM-d5l" id="OHR-Dm-wr5"/>
                         <outlet property="nextRoundButton" destination="Kqf-TP-xNa" id="5ZU-Vh-lQ7"/>
+                        <outlet property="playerScore" destination="5Na-E3-SNW" id="0UZ-29-KBb"/>
+                        <outlet property="questionLabel" destination="twk-nO-1hd" id="9MQ-b5-JmT"/>
                         <outlet property="rightAnswerBanner" destination="rGu-c2-GCR" id="5ed-hG-EaL"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="dCz-PZ-gtB" id="103-rr-5tS"/>
                         <outlet property="rightAnswerLabel" destination="v1E-zB-psD" id="qh7-hQ-mpA"/>
@@ -467,6 +468,38 @@
                             <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light_grunge" translatesAutoresizingMaskIntoConstraints="NO" id="v4y-C2-doM">
                                 <rect key="frame" x="-10" y="-7" width="330" height="575"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwU-Gs-iOu">
+                                <rect key="frame" x="15" y="328" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="bz4-ox-kJc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button1Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="0Iw-pB-gp2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpJ-Mw-xLI">
+                                <rect key="frame" x="15" y="384" width="288" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="SbA-xX-QTL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" backgroundImage="yellow_button">
+                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button2Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="YFM-6V-7Tf"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oC-Zl-5zx">
                                 <rect key="frame" x="139" y="299" width="42" height="21"/>
                                 <constraints>
@@ -489,7 +522,7 @@
                                     <color key="titleShadowColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button3Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="0BE-ZQ-tWF"/>
+                                    <action selector="button3Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="w9L-YL-ph9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DM2-dE-foE">
@@ -502,7 +535,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button4Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="TJd-sF-JUH"/>
+                                    <action selector="button4Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="scB-wR-muS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chT-gr-C6G">
@@ -526,38 +559,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwU-Gs-iOu">
-                                <rect key="frame" x="15" y="328" width="288" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="bz4-ox-kJc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
-                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="1"/>
-                                <state key="normal" backgroundImage="yellow_button">
-                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Button1Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="Xyt-dQ-vaJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpJ-Mw-xLI">
-                                <rect key="frame" x="15" y="384" width="288" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="SbA-xX-QTL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Overseer" family="Overseer" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
-                                <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" backgroundImage="yellow_button">
-                                    <color key="titleColor" red="0.084401250139999995" green="0.44475174540000001" blue="0.1201874131" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Button2Action:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="CpD-hu-BBc"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpF-5D-aaY" userLabel="Silo Image">
                                 <rect key="frame" x="61" y="75" width="199" height="220"/>
                             </imageView>
@@ -664,7 +665,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hintBntTapped:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="X0i-4p-qbN"/>
+                                    <action selector="hintBntTapped:" destination="8Ls-PY-UIK" eventType="touchUpInside" id="N23-ms-jFO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -745,17 +746,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="vPn-SC-sYM"/>
                     <connections>
-                        <outlet property="Button1" destination="FwU-Gs-iOu" id="tiF-KE-iT5"/>
-                        <outlet property="Button2" destination="jpJ-Mw-xLI" id="o7y-pw-2xk"/>
-                        <outlet property="Button3" destination="mw4-ds-yC3" id="ZE1-fC-4ol"/>
-                        <outlet property="Button4" destination="DM2-dE-foE" id="lYC-ug-9cK"/>
                         <outlet property="CountDownLabel" destination="3oC-Zl-5zx" id="elY-FP-jrb"/>
-                        <outlet property="HintButton" destination="yFr-ng-mex" id="T7I-cY-RLU"/>
                         <outlet property="PlayerScore" destination="hRq-Zt-EIr" id="NRj-FP-wI8"/>
                         <outlet property="QuestionLabel" destination="chT-gr-C6G" id="xep-TV-YrS"/>
                         <outlet property="SiloImage" destination="WpF-5D-aaY" id="eJj-kA-ERA"/>
+                        <outlet property="button1" destination="FwU-Gs-iOu" id="RLd-KM-sSL"/>
+                        <outlet property="button2" destination="jpJ-Mw-xLI" id="KPj-w2-vrb"/>
+                        <outlet property="button3" destination="mw4-ds-yC3" id="4Kv-lM-DJO"/>
+                        <outlet property="button4" destination="DM2-dE-foE" id="GqO-zM-ngb"/>
                         <outlet property="coin" destination="3RQ-Yv-rq8" id="RW4-r6-H4g"/>
                         <outlet property="coinYConstraint" destination="gpf-78-g5S" id="Amc-UE-dCj"/>
+                        <outlet property="hintButton" destination="yFr-ng-mex" id="3pv-mi-WmP"/>
                         <outlet property="nextRoundButton" destination="kLk-Gf-ln5" id="KJK-v2-Z77"/>
                         <outlet property="rightAnswerBanner" destination="Y5v-Xw-5HD" id="LjN-cE-sON"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="MaH-VG-FGW" id="0pi-7x-vS7"/>
@@ -1063,7 +1064,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button1Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="lbP-rX-ctN"/>
+                                    <action selector="button1Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="7Aj-Z0-cXm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m1-2n-Ili">
@@ -1079,7 +1080,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button2Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="LWS-Qa-niL"/>
+                                    <action selector="button2Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="0qY-C7-a6u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41C-fb-PcA">
@@ -1095,7 +1096,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button3Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="o46-MN-j4w"/>
+                                    <action selector="button3Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="3IM-JZ-paF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wh-BH-6lH">
@@ -1111,7 +1112,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button4Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="7hx-Tq-tyR"/>
+                                    <action selector="button4Action:" destination="zyX-bE-kHB" eventType="touchUpInside" id="Rme-z1-s3U"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-jI-Vve">
@@ -1141,7 +1142,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hintBtnTapped:" destination="zyX-bE-kHB" eventType="touchUpInside" id="vTT-x0-hyW"/>
+                                    <action selector="hintBtnTapped:" destination="zyX-bE-kHB" eventType="touchUpInside" id="P7r-by-Gbs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Failed This Round!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve9-dV-Aed">
@@ -1330,18 +1331,18 @@
                     </view>
                     <connections>
                         <outlet property="BackgroundImage" destination="e96-MA-XQJ" id="4wZ-RH-1Fl"/>
-                        <outlet property="Button1" destination="Vtc-92-xK3" id="1VB-9x-7yU"/>
-                        <outlet property="Button2" destination="6m1-2n-Ili" id="9vk-Sn-Uch"/>
-                        <outlet property="Button3" destination="41C-fb-PcA" id="6ke-aF-rHp"/>
-                        <outlet property="Button4" destination="0Wh-BH-6lH" id="iYi-m3-Va9"/>
                         <outlet property="CountDownLabel" destination="qYF-jI-Vve" id="I7T-xI-niR"/>
-                        <outlet property="HintButton" destination="fOG-9i-Z9u" id="GVp-P9-SME"/>
                         <outlet property="PlayerScore" destination="QY3-ep-OzM" id="HCl-5U-Fxz"/>
                         <outlet property="QuestionLabel" destination="cDK-Xi-G0U" id="dIp-3d-PXn"/>
                         <outlet property="backgroundImage" destination="e96-MA-XQJ" id="qUc-QV-WpP"/>
+                        <outlet property="button1" destination="Vtc-92-xK3" id="E14-Fa-bz1"/>
+                        <outlet property="button2" destination="6m1-2n-Ili" id="xaq-Tf-wt3"/>
+                        <outlet property="button3" destination="41C-fb-PcA" id="VUH-bC-7Ep"/>
+                        <outlet property="button4" destination="0Wh-BH-6lH" id="AfQ-wa-urJ"/>
                         <outlet property="coin" destination="Q5Q-po-fxP" id="Qmi-jl-YNh"/>
                         <outlet property="coinYConstraint" destination="GmY-D4-ARI" id="SF3-Hn-dDQ"/>
                         <outlet property="fireworkImage" destination="oR6-rr-n8k" id="LSl-Tk-SgC"/>
+                        <outlet property="hintButton" destination="fOG-9i-Z9u" id="vh7-2j-Xwi"/>
                         <outlet property="nextRoundButton" destination="neM-eU-xLp" id="Ofu-Jo-7Rq"/>
                         <outlet property="rightAnswerBanner" destination="bd2-cH-rUO" id="pC7-dY-DAW"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="LLi-cu-rKE" id="aIJ-BM-6lh"/>
@@ -1407,7 +1408,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button1Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="S6w-c3-XhW"/>
+                                    <action selector="button1Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="A2B-Ss-K3O"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-1x-2IJ">
@@ -1423,7 +1424,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button2Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="H4A-aU-2PO"/>
+                                    <action selector="button2Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="jLa-c7-Wbd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmg-rV-ZUE">
@@ -1439,7 +1440,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button3Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="ZmS-O3-EXA"/>
+                                    <action selector="button3Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="nmu-X5-J6D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-vq-Ste">
@@ -1452,7 +1453,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Button4Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="Mp2-hC-gcV"/>
+                                    <action selector="button4Action:" destination="aXF-l5-PT1" eventType="touchUpInside" id="MNW-yM-OR0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vault boy (madmax emblem)" translatesAutoresizingMaskIntoConstraints="NO" id="qda-g8-Ljw" userLabel="Background Image">
@@ -1478,7 +1479,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hintBtnTapped:" destination="aXF-l5-PT1" eventType="touchUpInside" id="ybk-AS-Iw1"/>
+                                    <action selector="hintBtnTapped:" destination="aXF-l5-PT1" eventType="touchUpInside" id="pHY-Zw-XSN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="0vO-Hm-mD1">
@@ -1686,17 +1687,17 @@
                     </view>
                     <connections>
                         <outlet property="BackgroundImage" destination="qda-g8-Ljw" id="Rsc-eg-r6s"/>
-                        <outlet property="Button1" destination="OK3-a0-cN0" id="DvQ-Li-yKx"/>
-                        <outlet property="Button2" destination="Dsf-1x-2IJ" id="Pio-Mn-fKv"/>
-                        <outlet property="Button3" destination="Wmg-rV-ZUE" id="XGh-Un-kbg"/>
-                        <outlet property="Button4" destination="zVb-vq-Ste" id="9nN-hs-veu"/>
                         <outlet property="CountDownLabel" destination="GrH-j2-ah7" id="qZ2-vo-KfX"/>
-                        <outlet property="HintButton" destination="ZjQ-ut-ua0" id="TLm-dP-pxv"/>
                         <outlet property="PlayerScore" destination="AA0-dX-kX6" id="zv7-TR-vk2"/>
                         <outlet property="QuestionLabel" destination="0vO-Hm-mD1" id="uJg-Gf-ly7"/>
+                        <outlet property="button1" destination="OK3-a0-cN0" id="Lnz-Gv-tS6"/>
+                        <outlet property="button2" destination="Dsf-1x-2IJ" id="UwR-qM-VIE"/>
+                        <outlet property="button3" destination="Wmg-rV-ZUE" id="pue-vV-kxk"/>
+                        <outlet property="button4" destination="zVb-vq-Ste" id="aJ5-Ch-gth"/>
                         <outlet property="coin" destination="ApM-wD-KgA" id="OGk-CN-hC1"/>
                         <outlet property="coinYConstraint" destination="7BD-4G-CFY" id="olg-JB-PPl"/>
                         <outlet property="fireworksImage" destination="ajo-27-0En" id="9xh-uC-HhC"/>
+                        <outlet property="hintButton" destination="ZjQ-ut-ua0" id="R9x-eX-eW5"/>
                         <outlet property="nextRoundButton" destination="AfF-Dj-ihe" id="z7P-nu-2XV"/>
                         <outlet property="rightAnswerBanner" destination="WaY-Wg-irr" id="ne3-4q-Z7d"/>
                         <outlet property="rightAnswerBannerXConstraint" destination="hdq-5p-xaI" id="FZ0-r3-va2"/>

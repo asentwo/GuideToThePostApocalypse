@@ -35,7 +35,7 @@ class MultiChoiceVC: UIViewController{
     super.viewDidLoad()
    
     self.audioController = AudioController()
-    self.audioController.preloadAudioEffects(AudioEffectFiles)
+    self.audioController.preloadAudioEffects(audioEffectFiles)
   }
   
 
@@ -65,10 +65,10 @@ class MultiChoiceVC: UIViewController{
   // Audio Timer
   
   func startAudioTimer () {
-    self.audioController.playEffect(SoundTimer)
+    self.audioController.playEffect(soundTimer)
   }
   
   func stopAudioTimer () {
-    self.audioController.stopPlayingEffect(SoundTimer)
+    self.audioController.stopPlayingEffect(soundTimer)
   }
 }

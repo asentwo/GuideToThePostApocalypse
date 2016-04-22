@@ -18,15 +18,15 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //MARK: IBOutlets
   
-  @IBOutlet var CountDownLabel: UILabel!
-  @IBOutlet var QuestionLabel: UILabel!
-  @IBOutlet var Button1: UIButton!
-  @IBOutlet var Button2: UIButton!
-  @IBOutlet var Button3: UIButton!
-  @IBOutlet var Button4: UIButton!
-  @IBOutlet var PlayerScore: UILabel!
-  @IBOutlet var BackgroundImage: UIImageView!
-  @IBOutlet var HintButton: UIButton!
+  @IBOutlet var countDownLabel: UILabel!
+  @IBOutlet var questionLabel: UILabel!
+  @IBOutlet var button1: UIButton!
+  @IBOutlet var button2: UIButton!
+  @IBOutlet var button3: UIButton!
+  @IBOutlet var button4: UIButton!
+  @IBOutlet var playerScore: UILabel!
+  @IBOutlet var backgroundImage: UIImageView!
+  @IBOutlet var hintButton: UIButton!
   
   //vaultBoys
   @IBOutlet weak var vaultBoyRight: UIImageView!
@@ -74,15 +74,15 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     
     labelSizeAdjustment()
     hideAllGraphics()
-    StoreParseDataLocally_Round5()
+    storeParseDataLocally_Round5()
     
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     self.data.points = totalScore
     self.data.points = totalScore
-    PlayerScore.text = "Score: \(totalScore)"
+    playerScore.text = "Score: \(totalScore)"
     currentRoundScore = 0
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
+    timer = CountdownTimer(timerLabel: self.countDownLabel, startingMin: 0, startingSec: 16)
     timer.delegate = self
     userDefaults.setObject("Round_5", forKey: CURRENT_ROUND_KEY)
     fireworksImage.alpha = 0
@@ -104,7 +104,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //Random Object
   
-  func GetRandomObjectID_Round5 () {
+  func getRandomObjectID_Round5 () {
     
     randomID = Int(arc4random_uniform(UInt32(round5_objectIDArray.count)))
     //creating random 32 bit interger from the objectIDs
@@ -113,9 +113,9 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //Call Parse
   
-  func CallData_Round5 () {
+  func callData_Round5 () {
     
-    GetRandomObjectID_Round5 ()
+    getRandomObjectID_Round5 ()
     
     if (round5_objectIDArray.count > 0) {
       
@@ -132,13 +132,13 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           
           if (self.answers.count > 0) {
             
-            self.QuestionLabel.text = self.question
+            self.questionLabel.text = self.question
             
-            self.Button1.setTitle(self.answers[0], forState: UIControlState.Normal)
-            self.Button2.setTitle(self.answers[1], forState: UIControlState.Normal)
-            self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
-            self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
-            self.HintButton.enabled = true
+            self.button1.setTitle(self.answers[0], forState: UIControlState.Normal)
+            self.button2.setTitle(self.answers[1], forState: UIControlState.Normal)
+            self.button3.setTitle(self.answers[2], forState: UIControlState.Normal)
+            self.button4.setTitle(self.answers[3], forState: UIControlState.Normal)
+            self.hintButton.enabled = true
             timer.start()
             self.startAudioTimer()
           }
@@ -153,7 +153,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   //Store Parse Data Locally
   
   
-  func StoreParseDataLocally_Round5 () {
+  func storeParseDataLocally_Round5 () {
     
     let objectIDQuery = PFQuery(className: "Round_5")
     
@@ -172,18 +172,18 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       dispatch_async(dispatch_get_main_queue()){
         objectIDQuery.cachePolicy = PFCachePolicy.NetworkElseCache
       }
-      self.CallData_Round5()
+      self.callData_Round5()
     })
   }
   
   //MARK: Remove Used Questions
   
-  func RemoveAlreadyUsedQuestion() {
+  func removeAlreadyUsedQuestion() {
     //adds 1 to the score
     if (round5_objectIDArray.count > 0){
       round5_objectIDArray.removeAtIndex(randomID)
       //randomID = currently asked question
-      CallData_Round5()
+      callData_Round5()
     }
   }
   
@@ -192,15 +192,15 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func areBaseGraphicsHidden(buttons: Bool) {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.Button1.hidden = buttons
-      self.Button2.hidden = buttons
-      self.Button3.hidden = buttons
-      self.Button4.hidden = buttons
-      self.QuestionLabel.hidden = buttons
-      self.PlayerScore.hidden = buttons
-      self.CountDownLabel.hidden = buttons
-      self.BackgroundImage.hidden = buttons
-      self.HintButton.hidden = buttons
+      self.button1.hidden = buttons
+      self.button2.hidden = buttons
+      self.button3.hidden = buttons
+      self.button4.hidden = buttons
+      self.questionLabel.hidden = buttons
+      self.playerScore.hidden = buttons
+      self.countDownLabel.hidden = buttons
+      self.backgroundImage.hidden = buttons
+      self.hintButton.hidden = buttons
       }, completion: nil)
   }
   
@@ -225,13 +225,13 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func labelSizeAdjustment () {
-    QuestionLabel.adjustsFontSizeToFitWidth = true
+    questionLabel.adjustsFontSizeToFitWidth = true
     youEarnedACoinLabel.adjustsFontSizeToFitWidth = true
     scoreLabel.adjustsFontSizeToFitWidth = true
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
     rightAnswerLabel.adjustsFontSizeToFitWidth = true
     wrongAnswerLabel.adjustsFontSizeToFitWidth = true
-    HintButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    hintButton.titleLabel?.adjustsFontSizeToFitWidth = true
   }
   
   
@@ -255,7 +255,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   //Button Bounce
-  func BounceButton (button: UIButton) {
+  func bounceButton (button: UIButton) {
     let b = button.bounds
     UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
       button.bounds = CGRect(x: b.origin.x - 20, y: b.origin.y, width: b.size.width + 20, height: b.size.height)
@@ -268,7 +268,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //RightButtonSelected
   
-  func RightButtonSelected () {
+  func rightButtonSelected () {
     timer.pause()
     stopAudioTimer()
     thumbsUpVaultBoy()
@@ -277,23 +277,23 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   //WrongButtonSelected
-  func WrongButtonSelected(sender: AnyObject)
+  func wrongButtonSelected(sender: AnyObject)
   {
     switch sender.tag {
-    case 0: BounceButton(Button1)
-    case 1: BounceButton(Button2)
-    case 2: BounceButton(Button3)
-    case 3: BounceButton(Button4)
+    case 0: bounceButton(button1)
+    case 1: bounceButton(button2)
+    case 2: bounceButton(button3)
+    case 3: bounceButton(button4)
     default: print("Wrong Button Selected Error")
     }
   }
   
   func areButtonsEnabledButtons(enabled: Bool) {
-    Button1.enabled = enabled
-    Button2.enabled = enabled
-    Button3.enabled = enabled
-    Button4.enabled = enabled
-    HintButton.enabled = enabled
+    button1.enabled = enabled
+    button2.enabled = enabled
+    button3.enabled = enabled
+    button4.enabled = enabled
+    hintButton.enabled = enabled
   }
   
   
@@ -302,7 +302,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func setUpWrongAnswers(rightAnswer: Int) {
     var answers = ["answer1","answer2","answer3","answer4"]
-    btnsArray = [Button1, Button2, Button3, Button4]
+    btnsArray = [button1, button2, button3, button4]
     wrongBtnsArray = btnsArray
     wrongBtnsArray.removeAtIndex(rightAnswer)
     answers.removeAtIndex(rightAnswer)
@@ -311,24 +311,24 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //MARK: Update Score
   
-  func UpdateScoreNegative () {
+  func updateScoreNegative () {
     self.data.points -= pointsPerWrongAnswer/2
     totalScore = self.data.points
     currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore)"
+    self.playerScore.text = "Score: \(totalScore)"
   }
   
-  func UpdateScorePositive () {
+  func updateScorePositive () {
     self.data.points += pointsPerQuestion
     totalScore = self.data.points
     currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore)"
+    self.playerScore.text = "Score: \(totalScore)"
   }
-  func UpdateScoreRunOutOfTime () {
+  func updateScoreRunOutOfTime () {
     self.data.points -= pointsTimeRunsOut
     totalScore = self.data.points
     currentRoundScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore)"
+    self.playerScore.text = "Score: \(totalScore)"
   }
   
   
@@ -341,8 +341,8 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   func timerShakeAndReset () {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
       self.areButtonsEnabledButtons(false)
-      self.UpdateScoreRunOutOfTime()
-      self.TimerShake()
+      self.updateScoreRunOutOfTime()
+      self.timerShake()
       self.madVaultBoy()
     }
   }
@@ -383,7 +383,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
             self.stopAudioTimer()
             self.hideMadVaultBoyButtons(self.round5_objectIDArray)
             madVaultBoyRunning = false
-            self.HintButton.enabled = true
+            self.hintButton.enabled = true
         })
     })
   }
@@ -393,11 +393,11 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     timer.pause()
     self.vaultboyToFront()
     self.vaultBoyWrong.hidden = false
-    self.audioController.playEffect(SoundWrong)
-    self.UpdateScoreNegative()
-    self.RemoveAlreadyUsedQuestion()
+    self.audioController.playEffect(soundWrong)
+    self.updateScoreNegative()
+    self.removeAlreadyUsedQuestion()
     self.areButtonsEnabledButtons(false)
-    self.UpdateScoreNegative()
+    self.updateScoreNegative()
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
@@ -425,13 +425,13 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.vaultboyToFront()
     self.stopAudioTimer()
     timer.pause()
-    self.RemoveAlreadyUsedQuestion()
-    self.audioController.playEffect(SoundDing)
+    self.removeAlreadyUsedQuestion()
+    self.audioController.playEffect(soundDing)
     self.areButtonsEnabledButtons(false)
     UIView.transitionWithView(self.vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
       }, completion: {_ in
-        self.UpdateScorePositive()
+        self.updateScorePositive()
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
         self.vaultBoyRightYConstraint.constant += self.view.bounds.height
@@ -440,7 +440,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           }, completion: {_ in
             self.hideThumbsUpVaultBoyButtons(self.round5_objectIDArray)
             thumbsUpBoyRunning = false
-            self.HintButton.enabled = true
+            self.hintButton.enabled = true
             if self.hintButtonTapped == true {self.unHideBtns()
               self.hintButtonTapped = false
             }
@@ -466,7 +466,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   func zeroScoreVaultBoy () {
     self.areBaseGraphicsHidden(true)
     self.stopAudioTimer()
-    self.audioController.playEffect(SoundWrong)
+    self.audioController.playEffect(soundWrong)
     self.tryAgainButton.hidden = false
     self.youFailedThisRoundLabel.hidden = false
     self.vaultBoyFailed.hidden = false
@@ -486,7 +486,7 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.areBaseGraphicsHidden(true)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
-    self.audioController.playEffect(SoundWin)
+    self.audioController.playEffect(soundWin)
     self.hintButtonTapped = false
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
@@ -506,9 +506,9 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           self.scoreLabel.hidden = true
           self.nextRoundButton.hidden = false
           self.youEarnedACoinLabel.hidden = false
-          self.audioController.playEffect(SoundPerk)
-          let Gif = UIImage.gifWithName("madMaxResize")
-          self.coin.image = Gif
+          self.audioController.playEffect(soundPerk)
+          let gif = UIImage.gifWithName("madMaxResize")
+          self.coin.image = gif
           self.coin.hidden = false
         })
     })
@@ -561,78 +561,78 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //MARK: IBActions
   
-  @IBAction func Button1Action(sender: AnyObject) {
+  @IBAction func button1Action(sender: AnyObject) {
     self.areButtonsEnabledButtons(false)
     if (self.answer == "0") {
-      audioController.playEffect(SoundButtonPressedCorrect)
-      RightButtonSelected()
+      audioController.playEffect(soundButtonPressedCorrect)
+      rightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
-      WrongButtonSelected(Button1)
+      audioController.playEffect(soundButtonPressed)
+      wrongButtonSelected(button1)
     }
   }
   
   
-  @IBAction func Button2Action(sender: AnyObject) {
+  @IBAction func button2Action(sender: AnyObject) {
     self.areButtonsEnabledButtons(false)
     if (self.answer == "1") {
-      audioController.playEffect(SoundButtonPressedCorrect)
-      RightButtonSelected()
+      audioController.playEffect(soundButtonPressedCorrect)
+      rightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
-      WrongButtonSelected(Button2)
+      audioController.playEffect(soundButtonPressed)
+      wrongButtonSelected(button2)
     }
   }
   
   
-  @IBAction func Button3Action(sender: AnyObject) {
+  @IBAction func button3Action(sender: AnyObject) {
     self.areButtonsEnabledButtons(false)
     if (self.answer == "2") {
-      audioController.playEffect(SoundButtonPressedCorrect)
-      RightButtonSelected()
+      audioController.playEffect(soundButtonPressedCorrect)
+      rightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
-      WrongButtonSelected(Button3)
+      audioController.playEffect(soundButtonPressed)
+      wrongButtonSelected(button3)
     }
   }
   
-  @IBAction func Button4Action(sender: AnyObject) {
+  @IBAction func button4Action(sender: AnyObject) {
     self.areButtonsEnabledButtons(false)
     if (self.answer == "3") {
-      audioController.playEffect(SoundButtonPressedCorrect)
-      RightButtonSelected()
+      audioController.playEffect(soundButtonPressedCorrect)
+      rightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
-      WrongButtonSelected(Button4)
+      audioController.playEffect(soundButtonPressed)
+      wrongButtonSelected(button4)
     }
   }
   
   @IBAction func nextRoundButton(sender: AnyObject) {
-    audioController.playEffect(SoundButtonPressedCorrect)
+    audioController.playEffect(soundButtonPressedCorrect)
     switchToRoundSix()
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
-    audioController.playEffect(SoundButtonPressed)
+    audioController.playEffect(soundButtonPressed)
     restartViewController()
   }
   
   @IBAction func hintBtnTapped(sender: UIButton) {
-    audioController.playEffect(SoundHintButtonPressed)
-    self.HintButton.enabled = false
+    audioController.playEffect(soundHintButtonPressed)
+    self.hintButton.enabled = false
     self.hintButtonTapped = true
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
     self.data.points -= pointsPerMultiHint
     totalScore = self.data.points
-    self.PlayerScore.text = "Score: \(totalScore)"
-    let b = HintButton.bounds
+    self.playerScore.text = "Score: \(totalScore)"
+    let b = hintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
-      self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)
+      self.hintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)
       //gives button bouncy effect
       }, completion: {_ in
-        self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width, height: b.size.height)
+        self.hintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width, height: b.size.height)
     })
   }
 }

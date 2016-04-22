@@ -11,27 +11,27 @@ import UIKit
 
 
 // Sound effects
-let SoundDing = "ding.mp3"
-let SoundWrong = "wrong.m4a"
-let SoundWin = "win.mp3"
-let SoundTimer = "17sec_time-running-out-buzzer.mp3"
-let SoundTimer30 = "30sec_time-running-out-buzzer.mp3"
-let SoundPerk = "jingle-win-01.wav"
-let SoundTileCorrect = "jingle-win-synth-02.wav"
-let SoundStarDust = "synth_win.wav"
-let SoundExplosion = "explosion-01.wav"
-let SoundButtonPressed = "ding.wav"
-let SoundHintButtonPressed = "button-press2.wav"
-let SoundButtonPressedCorrect = "ding2.wav"
+let soundDing = "ding.mp3"
+let soundWrong = "wrong.m4a"
+let soundWin = "win.mp3"
+let soundTimer = "17sec_time-running-out-buzzer.mp3"
+let soundTimer30 = "30sec_time-running-out-buzzer.mp3"
+let soundPerk = "jingle-win-01.wav"
+let soundTileCorrect = "jingle-win-synth-02.wav"
+let soundStarDust = "synth_win.wav"
+let soundExplosion = "explosion-01.wav"
+let soundButtonPressed = "ding.wav"
+let soundHintButtonPressed = "button-press2.wav"
+let soundButtonPressedCorrect = "ding2.wav"
 
-let AudioEffectFiles = [SoundDing, SoundWrong, SoundWin, SoundTimer, SoundTimer30, SoundPerk, SoundTileCorrect, SoundStarDust, SoundExplosion, SoundButtonPressed, SoundHintButtonPressed, SoundButtonPressedCorrect]
+let audioEffectFiles = [soundDing, soundWrong, soundWin, soundTimer, soundTimer30, soundPerk, soundTileCorrect, soundStarDust, soundExplosion, soundButtonPressed, soundHintButtonPressed, soundButtonPressedCorrect]
 
 
 // Font
 let font = UIFont(name: "Overseer", size: 30)
 
-let ScreenWidth = UIScreen.mainScreen().bounds.size.width
-let ScreenHeight = UIScreen.mainScreen().bounds.size.height
+let screenWidth = UIScreen.mainScreen().bounds.size.width
+let screenHeight = UIScreen.mainScreen().bounds.size.height
 
 var currentScore = 0
 var totalScore = 0

@@ -16,7 +16,7 @@ class AudioController {
   var audio = [String:AVAudioPlayer]()
   
   func preloadAudioEffects(effectFileNames:[String]) {
-    for effect in AudioEffectFiles {
+    for effect in audioEffectFiles {
       //1 get the file path URL
       let soundPath = (NSBundle.mainBundle().resourcePath! as NSString).stringByAppendingPathComponent(effect)
       let soundURL = NSURL.fileURLWithPath(soundPath)
