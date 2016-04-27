@@ -71,7 +71,27 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     hideAllGraphics()
     
     if self.questions == nil {
-      getDataFromBackendless()
+      BackendlessUserFunctions.sharedInstance.getDataFromBackendless(1, rep: { ( questions : BackendlessCollection!) -> () in
+        print("Comments have been fetched:")
+        
+        self.questions = []
+        
+        for question in questions.data {
+          
+          let currentQuestion = question as! BackendlessUserFunctions.Questions
+          
+          self.questions.append(currentQuestion)
+        }
+        
+        dispatch_async(dispatch_get_main_queue()) {
+          
+          self.populateViewWithData()
+        }
+        }
+        , err: { ( fault : Fault!) -> () in
+          print("Questions were not fetched: \(fault)")
+        }
+      )
     } else {
       populateViewWithData()
     }
@@ -111,39 +131,39 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   //Store Data Locally
   
   
-  func getDataFromBackendless () {
-    
-    let backendless = Backendless.sharedInstance()
-    let dataStore = backendless.data.of(BackendlessUserFunctions.Questions.ofClass())
-    
-    let dataQuery = BackendlessDataQuery()
-    dataQuery.whereClause = "round = 1"
-    
-    dataStore.find( dataQuery, response: { ( questions : BackendlessCollection!) -> () in
-      print("Comments have been fetched:")
-        
-        self.questions = []
-        
-        for question in questions.data {
-          
-          let currentQuestion = question as! BackendlessUserFunctions.Questions
-          
-          self.questions.append(currentQuestion)
-        }
-      
-      dispatch_async(dispatch_get_main_queue()) {
-        
-        self.populateViewWithData()
-      }
-      
-      },
-                    
-        error: { ( fault : Fault!) -> () in
-          print("Questions were not fetched: \(fault)")
-      }
-    )
-    
-  }
+//  func getDataFromBackendless () {
+//    
+//    let backendless = Backendless.sharedInstance()
+//    let dataStore = backendless.data.of(BackendlessUserFunctions.Questions.ofClass())
+//    
+//    let dataQuery = BackendlessDataQuery()
+//    dataQuery.whereClause = "round = 1"
+//    
+//    dataStore.find( dataQuery, response: { ( questions : BackendlessCollection!) -> () in
+//      print("Comments have been fetched:")
+//        
+//        self.questions = []
+//        
+//        for question in questions.data {
+//          
+//          let currentQuestion = question as! BackendlessUserFunctions.Questions
+//          
+//          self.questions.append(currentQuestion)
+//        }
+//      
+//      dispatch_async(dispatch_get_main_queue()) {
+//        
+//        self.populateViewWithData()
+//      }
+//      
+//      },
+//                    
+//        error: { ( fault : Fault!) -> () in
+//          print("Questions were not fetched: \(fault)")
+//      }
+//    )
+//    
+//  }
   
   
   func populateViewWithData() {
@@ -179,9 +199,6 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
           timer.start()
           self.startAudioTimer()
         }
-   // self.questions.removeAtIndex(randomQuestion)
-   //   print("\(randomQuestion)")
-     // self.questions.removeFirst()
   }
 
   }
@@ -192,9 +209,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     if (questions.count > 0){
       questions.removeAtIndex(randomQuestion)
       print("\(randomQuestion)")
-      //randomID = currently asked question
       populateViewWithData()
-      //getDataFromBackendless()
     }
   }
   

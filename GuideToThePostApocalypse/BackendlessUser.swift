@@ -12,6 +12,16 @@ class BackendlessUserFunctions {
   
   static let sharedInstance = BackendlessUserFunctions()
   
+  var randomID = 0//Used to represent question being displayed
+  var randomQuestion = 0
+  
+  var questions:[BackendlessUserFunctions.Questions]!
+  
+  var question: String!
+  var answers: [String]!
+  var answer: String!
+  
+  
   private init() {
   
     let backendless = Backendless.sharedInstance()
@@ -41,42 +51,43 @@ class  Questions: NSObject {
   var image: String?
 }
   
-  func getDataFromBackendless () {
+  func getDataFromBackendless (roundNumber: Int, rep: ((BackendlessCollection!) -> Void), err: ((Fault!) -> Void) ) {
     
     let backendless = Backendless.sharedInstance()
-    let dataStore = backendless.data.of(BackendlessUserFunctions.Questions.ofClass())
+    let dataStore = backendless.data.of(Questions.ofClass())
     
     let dataQuery = BackendlessDataQuery()
-    dataQuery.whereClause = "round = 1"
+    dataQuery.whereClause = "round = \(roundNumber)"
     
-    dataStore.find( dataQuery, response: { ( questions : BackendlessCollection!) -> () in
-      print("Comments have been fetched:")
-      
-     questions = []
-      
-      for question in questions.data {
-        
-        let currentQuestion = question as! BackendlessUserFunctions.Questions
-        
-      questions.append(currentQuestion)
-      }
-      
-      dispatch_async(dispatch_get_main_queue()) {
-        
-      populateViewWithData()
-      }
-      
-      },
-                    
-                    error: { ( fault : Fault!) -> () in
-                      print("Questions were not fetched: \(fault)")
-      }
-    )
+    dataStore.find( dataQuery, response: rep,  error: err)
     
   }
-  
-
-  
-
 }
+
+      
+//      response: { ( questions : BackendlessCollection!) -> () in
+//      print("Comments have been fetched:")
+//      
+//     self.questions = []
+//      
+//      for question in questions.data {
+//        
+//        let currentQuestion = question as! Questions
+//        
+//        self.questions.append(currentQuestion)
+//      }
+//      
+//      dispatch_async(dispatch_get_main_queue()) {
+//        
+//      //self.populateViewWithData()
+//      }
+//      }
+
+      
+                    
+      
+//      error: { ( fault : Fault!) -> () in
+//        print("Questions were not fetched: \(fault)")
+//      }
+
 
