@@ -13,11 +13,15 @@ import UIKit
 class MultiChoiceVC: UIViewController{
  
   //MARK: Parse Constants
-  var randomID = 0 //Used to represent question being displayed
+  var randomID = 0//Used to represent question being displayed
+  var randomQuestion = 0
+  
+  var questions:[BackendlessUserFunctions.Questions]!
   
   var question: String!
   var answers: [String]!
   var answer: String!
+  
   var wrongAnswers: [String]!
   var btnsArray: [UIButton]!
   var wrongBtnsArray: [UIButton]!

@@ -8,7 +8,6 @@
 
 import Foundation
 
-//Must Customize Based on Project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class BackendlessUserFunctions {
   
   static let sharedInstance = BackendlessUserFunctions()
@@ -29,78 +28,7 @@ class BackendlessUserFunctions {
   var USER_NAME: String?
   var PASSWORD: String?
   let backendless = Backendless.sharedInstance()
-  
-//  // register user
-//  func backendlessUserRegister() {
-//  let user: BackendlessUser = BackendlessUser()
-//  user.email = USER_NAME
-//  user.password = PASSWORD
-//  
-//  backendless.userService.registering( user,
-//
-//  response: { ( registeredUser : BackendlessUser!) -> () in
-//  print("User was registered: \(registeredUser.objectId)")
-//    },
-//
-//  error: { ( fault : Fault!) -> () in
-//  print("User failed to register: \(fault)")
-//    }
-//    )
-//  }
-//  
-//  //user login
-//  func backendlessUserLogin() {
-//    // First, check if the user is already logged in. If they are, we don't need to
-//    // ask them to login again.
-//    let isValidUser = backendless.userService.isValidUserToken()
-//    
-//    if(isValidUser != nil && isValidUser != 0) {
-//      
-//      // The user has a valid user token so we know for sure the user is already logged!
-//      print("User is already logged: \(isValidUser.boolValue)");
-//      
-//    } else {
-//      
-//      // If we were unable to find a valid user token, the user is not logged and they'll
-//      // need to login. In a real app, this where we would send the user to a login screen to
-//      // collect their user name and password for the login attempt.
-//      backendless.userService.login( USER_NAME, password:PASSWORD,
-//                                     
-//        response: { ( user : BackendlessUser!) -> () in
-//        print("User logged in: \(user.objectId)")
-//        },
-//                                     
-//        error: { ( fault : Fault!) -> () in
-//        print("User failed to login: \(fault)")
-//        }
-//      )
-//    }
-//  }
-//
-//  //save data
-//  func saveDataToBackendless(sender: UIButton, custom: NSObject) {
-//    
-//    print( "onTouchUpInsideCreateCommentBtn called!" )
-//    
-//    let comment = custom()// custom class from above
-//    comment.message = "Hello, from iOS user!"// custom class instances
-//    comment.authorEmail = USER_NAME// custom class instances
-//
-//    backendless.data.save( comment,
-//                           
-//     response: { ( entity : AnyObject!) -> () in
-//      
-//      let comment = entity as! custom
-//      
-//      print("Data was saved: \(comment.objectId!), message: \(comment.message!)")
-//  },
-//     
-//     error: { ( fault : Fault!) -> () in
-//      print("Data failed to save: \(fault)")
-//      
-//      }
-//    )
- // }
+
 
 //example custom class
 class  Questions: NSObject {
@@ -112,51 +40,43 @@ class  Questions: NSObject {
   var letters: String?
   var image: String?
 }
-
-//  //retrieve data
-//  func FetchDataFromBackendless(sender: UIButton, custom: NSObject//custom class from above
-//    ) {
-//    
-//    print( "Data is being fetched!" )
-//    
-//    let dataStore = backendless.persistenceService.of(Questions.ofClass())
-//    
-//    dataStore.find(
-//      
-//      { ( comments : BackendlessCollection!) -> () in
-//        print("Data has been fetched:")
-//        
-//        for comment in comments.data {
-//          
-//          let comment = comment as! custom //custom class from above
-//          
-//         // print("Comment: \(comment.objectId!), message: \(comment.message!)")
-//        }
-//      },
-//      
-//      error: { ( fault : Fault!) -> () in
-//        print("Data was not fetched: \(fault)")
-//      }
-//    )
-//  }
-
-  //retrieve data based on a specific parameter(column) - example age used
-  func findDataByParameter(roundNumber:String) {
-
-    let whereClause = "round = \(roundNumber)"
-    let dataQuery = BackendlessDataQuery()
-    dataQuery.whereClause = whereClause
+  
+  func getDataFromBackendless () {
     
-    var error: Fault?                               //Contact is custom class
-    let bc = Backendless.sharedInstance().data.of(Questions.ofClass()).find(dataQuery, fault: &error)
-    if error == nil {
-    //  return Questions
+    let backendless = Backendless.sharedInstance()
+    let dataStore = backendless.data.of(BackendlessUserFunctions.Questions.ofClass())
+    
+    let dataQuery = BackendlessDataQuery()
+    dataQuery.whereClause = "round = 1"
+    
+    dataStore.find( dataQuery, response: { ( questions : BackendlessCollection!) -> () in
+      print("Comments have been fetched:")
       
-    }
-    else {
-      print("Server reported an error: \(error)")
-    }
+     questions = []
+      
+      for question in questions.data {
+        
+        let currentQuestion = question as! BackendlessUserFunctions.Questions
+        
+      questions.append(currentQuestion)
+      }
+      
+      dispatch_async(dispatch_get_main_queue()) {
+        
+      populateViewWithData()
+      }
+      
+      },
+                    
+                    error: { ( fault : Fault!) -> () in
+                      print("Questions were not fetched: \(fault)")
+      }
+    )
+    
   }
+  
+
+  
 
 }
-//}
+
