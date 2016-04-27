@@ -14,13 +14,22 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
    var window: UIWindow?
-  
+  let VERSION_NUM = "v1"
+  let APP_ID = "8D2FD354-3D1D-CE63-FF2C-2188F2712800"
+  let SECRET_KEY = "FECE275E-BC7E-9618-FFC0-21A4EDC16F00"
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios/guide#local-datastore
     //Parse.enableLocalDatastore()
+    
+    let backendless = Backendless.sharedInstance()
+    backendless.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
+    // This asks that the user should stay logged in by storing or caching the user's login
+    // information so future logins can be skipped next time the user launches the app.
+    backendless.userService.setStayLoggedIn(true)
+
     
     // Initialize Parse.
     Parse.setApplicationId("87A5spPzh2c4TyjG8cZBmpiLCCaruWVfXV567yR7",

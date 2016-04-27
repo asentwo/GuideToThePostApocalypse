@@ -72,7 +72,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     
     labelSizeAdjustment()
     hideAllGraphics()
-    StoreParseDataLocally_Round1()
+    getDataFromBackendless()
     
     currentRoundScore = 0
     PlayerScore.text = "Score: \(totalScore)"
@@ -107,23 +107,88 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   //Call Data
   
-  func CallData_Round1() {
-    //used to call class from parse.com
+//  func CallData_Round1() {
+//    //used to call class from parse.com
+//    
+//    GetRandomObjectID_Round1 ()
+//    
+//    if (round1_objectIDArray.count > 0) {
+//      
+//      let query: PFQuery = PFQuery(className: "Round_1")
+//      query.getObjectInBackgroundWithId(round1_objectIDArray[randomID], block:{
+//        
+//        (objectHolder : PFObject?, error : NSError?) -> Void in
+//        //holds all the objects (ie. questions & answers) created in parse.com
+//        
+//        if (error == nil) {
+//          self.question = objectHolder!["Questions"] as! String!
+//          self.answers = objectHolder!["Answers"] as! Array!
+//          self.answer = objectHolder!["Answer"] as! String!
+//          if (self.answers.count > 0) {
+//            self.QuestionLabel.text = self.question
+//            
+//            self.Button1.setTitle(self.answers[0], forState: UIControlState.Normal)
+//            self.Button2.setTitle(self.answers[1], forState: UIControlState.Normal)
+//            self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
+//            self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
+//            self.HintButton.enabled = true
+//            timer.start()
+//            self.startAudioTimer()
+//          }
+//        } else {
+//          NSLog("There is an error")
+//        }
+//      })
+//    }
+//  }
+  
+  
+  //Store Parse Data Locally
+  
+  
+  func getDataFromBackendless () {
     
-    GetRandomObjectID_Round1 ()
+    GetRandomObjectID_Round1() //used to randomize
     
-    if (round1_objectIDArray.count > 0) {
+    let backendless = Backendless.sharedInstance()
+    let dataStore = backendless.data.of(BackendlessUserFunctions.Questions.ofClass())
+    
+    let dataQuery = BackendlessDataQuery()
+    dataQuery.whereClause = "round = 1"
+    
+    dataStore.find( dataQuery, response: { ( questions : BackendlessCollection!) -> () in
+                      print("Comments have been fetched:")
       
-      let query: PFQuery = PFQuery(className: "Round_1")
-      query.getObjectInBackgroundWithId(round1_objectIDArray[randomID], block:{
-        
-        (objectHolder : PFObject?, error : NSError?) -> Void in
-        //holds all the objects (ie. questions & answers) created in parse.com
-        
-        if (error == nil) {
-          self.question = objectHolder!["Questions"] as! String!
-          self.answers = objectHolder!["Answers"] as! Array!
-          self.answer = objectHolder!["Answer"] as! String!
+      dispatch_async(dispatch_get_main_queue()) {
+        for question in questions.data {
+          
+          let currentQuestion = question as! BackendlessUserFunctions.Questions
+      
+          self.question = currentQuestion.question as String!
+            //  print("\(self.question)")
+          
+          let answersJson = currentQuestion.answers as String!
+            //  print("\(answersJson)")
+          
+          
+          let jsonData: NSData = answersJson.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+
+          let answersArray = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions(rawValue: 0)) as! NSArray
+          
+          self.answers = answersArray as! [String]
+          print("\(answersArray)")
+          
+//          for answer in answersArray {
+//            
+//            let answer = answer as! String
+//            
+//            self.answers.append(answer)
+//            
+//            print("\(answer)")
+//            
+//          }
+
+          self.answer = currentQuestion.answer as String!
           if (self.answers.count > 0) {
             self.QuestionLabel.text = self.question
             
@@ -135,38 +200,39 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
             timer.start()
             self.startAudioTimer()
           }
-        } else {
-          NSLog("There is an error")
+          
         }
-      })
+        
+      }
+  
+      },
+                    
+                    error: { ( fault : Fault!) -> () in
+                      print("Questions were not fetched: \(fault)")
+      }
+    )
     }
-  }
+//
+//    let objectIDQuery = PFQuery(className: "Round_1")
+//    // calls "Round_1" class on Parse.com
+//    objectIDQuery.findObjectsInBackgroundWithBlock({
+//      (objectsArray : [PFObject]?, error : NSError?) -> Void in
+//      // takes objects from "QandA" Parse.com class and puts objects in an array, PFObject refers to the objects created in Parse.com
+//      if error == nil {
+//        var objectIDs = objectsArray
+//        for i in 0..<objectIDs!.count{
+//          self.round1_objectIDArray.append(objectIDs![i].objectId!)
+//          //appending objects downloaded from Parse.com to local array (objectIDPublicArray) - .objectID refers to id number given in parse.com (ex."QF0lrQKW8j")
+//        }
+//      } else {
+//        print("Error: \(error) \(error!.userInfo)")
+//      }
+//      dispatch_async(dispatch_get_main_queue()){
+//        objectIDQuery.cachePolicy = PFCachePolicy.NetworkElseCache
+//      }
+//      self.CallData_Round1()
+//    })
   
-  
-  //Store Parse Data Locally
-  
-  func StoreParseDataLocally_Round1 () {
-    
-    let objectIDQuery = PFQuery(className: "Round_1")
-    // calls "Round_1" class on Parse.com
-    objectIDQuery.findObjectsInBackgroundWithBlock({
-      (objectsArray : [PFObject]?, error : NSError?) -> Void in
-      // takes objects from "QandA" Parse.com class and puts objects in an array, PFObject refers to the objects created in Parse.com
-      if error == nil {
-        var objectIDs = objectsArray
-        for i in 0..<objectIDs!.count{
-          self.round1_objectIDArray.append(objectIDs![i].objectId!)
-          //appending objects downloaded from Parse.com to local array (objectIDPublicArray) - .objectID refers to id number given in parse.com (ex."QF0lrQKW8j")
-        }
-      } else {
-        print("Error: \(error) \(error!.userInfo)")
-      }
-      dispatch_async(dispatch_get_main_queue()){
-        objectIDQuery.cachePolicy = PFCachePolicy.NetworkElseCache
-      }
-      self.CallData_Round1()
-    })
-  }
   
   
   //MARK: Remove Used Questions
@@ -175,7 +241,8 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     if (round1_objectIDArray.count > 0){
       round1_objectIDArray.removeAtIndex(randomID)
       //randomID = currently asked question
-      CallData_Round1()
+     // CallData_Round1()
+      getDataFromBackendless()
     }
   }
   
