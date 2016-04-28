@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 
-
 class MultiChoiceVC: UIViewController{
- 
+  
   //MARK: Parse Constants
   var randomID = 0//Used to represent question being displayed
   var randomQuestion = 0
@@ -21,6 +20,7 @@ class MultiChoiceVC: UIViewController{
   var question: String!
   var answers: [String]!
   var answer: String!
+  
   
   var wrongAnswers: [String]!
   var btnsArray: [UIButton]!

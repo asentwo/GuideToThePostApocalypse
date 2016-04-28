@@ -20,7 +20,7 @@ class BackendlessUserFunctions {
   var question: String!
   var answers: [String]!
   var answer: String!
-  
+  var image: String!
   
   private init() {
   
@@ -64,6 +64,7 @@ class  Questions: NSObject {
   }
 }
 
+/////////DATA TO BE USED AS PARAMETERS FOR getDataFromBackendless FUNCTION////////////////////
       
 //      response: { ( questions : BackendlessCollection!) -> () in
 //      print("Comments have been fetched:")

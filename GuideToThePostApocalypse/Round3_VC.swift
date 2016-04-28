@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+//import Parse
 
 class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
@@ -71,11 +71,32 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
    // StoreParseDataLocally_Round3()
     fireworkImage.alpha = 0
     
-    if self.questions == nil {
-      getDataFromBackendless()
+    if BackendlessUserFunctions.sharedInstance.questions == nil {
+      BackendlessUserFunctions.sharedInstance.getDataFromBackendless(3, rep: { ( questions : BackendlessCollection!) -> () in
+        print("Comments have been fetched:")
+        
+        BackendlessUserFunctions.sharedInstance.questions = []
+        
+        for question in questions.data {
+          
+          let currentQuestion = question as! BackendlessUserFunctions.Questions
+          
+          BackendlessUserFunctions.sharedInstance.questions.append(currentQuestion)
+        }
+        
+        dispatch_async(dispatch_get_main_queue()) {
+          
+          self.populateViewWithData()
+        }
+        }
+        , err: { ( fault : Fault!) -> () in
+          print("Questions were not fetched: \(fault)")
+        }
+      )
     } else {
       populateViewWithData()
     }
+
     
 
     
@@ -102,106 +123,57 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   
-  //MARK: Parse
+  //MARK: Parse JSON
   
   //Random Object
   
   func GetRandomQuestion () {
     
-    randomID = Int(arc4random_uniform(UInt32(questions.count)))
-    //creating random 32 bit interger from the objectIDs
-    
+    BackendlessUserFunctions.sharedInstance.randomQuestion = Int(arc4random_uniform(UInt32(BackendlessUserFunctions.sharedInstance.questions.count)))
+    //creating random 32 bit interger from the questions
   }
-  
-  //Call Parse
-  
-  //Store Data Locally
-  
-  
-  func getDataFromBackendless () {
-    
-    let backendless = Backendless.sharedInstance()
-    let dataStore = backendless.data.of(BackendlessUserFunctions.Questions.ofClass())
-    
-    let dataQuery = BackendlessDataQuery()
-    dataQuery.whereClause = "round = 3"
-    
-    dataStore.find( dataQuery, response: { ( questions : BackendlessCollection!) -> () in
-      print("Comments have been fetched:")
-      
-      self.questions = []
-      
-      for question in questions.data {
-        
-        let currentQuestion = question as! BackendlessUserFunctions.Questions
-        
-        self.questions.append(currentQuestion)
-      }
-      
-      dispatch_async(dispatch_get_main_queue()) {
-        
-        self.populateViewWithData()
-      }
-      
-      },
-                    
-                    error: { ( fault : Fault!) -> () in
-                      print("Questions were not fetched: \(fault)")
-      }
-    )
-    
-  }
-  
   
   func populateViewWithData() {
     
     GetRandomQuestion() //used to randomize
     
-    if questions.count > 0 {
-      let currentQuestion = questions[randomQuestion]  //self.questions.first
-      print("\(randomQuestion)")
-      self.question = currentQuestion.question as String!
-      // print("\(self.question)")
+    if BackendlessUserFunctions.sharedInstance.questions.count > 0 {
+      let currentQuestion = BackendlessUserFunctions.sharedInstance.questions[BackendlessUserFunctions.sharedInstance.randomQuestion]
+      
+      BackendlessUserFunctions.sharedInstance.question = currentQuestion.question as String!
       
       let answersJson = currentQuestion.answers as String!
-      // print("\(answersJson)")
-      
       
       let jsonData: NSData = answersJson.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
       
       let answersArray = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions(rawValue: 0)) as! NSArray
       
-      self.answers = answersArray as! [String]
-      print("\(answersArray)")
+      BackendlessUserFunctions.sharedInstance.answers = answersArray as! [String]
       
-      self.answer = currentQuestion.answer as String!
-      if (self.answers.count > 0) {
-        self.QuestionLabel.text = self.question
+      
+      BackendlessUserFunctions.sharedInstance.answer = currentQuestion.answer as String!
+      if (BackendlessUserFunctions.sharedInstance.answers.count > 0) {
+        self.QuestionLabel.text = BackendlessUserFunctions.sharedInstance.question
         
-        self.Button1.setTitle(self.answers[0], forState: UIControlState.Normal)
-        self.Button2.setTitle(self.answers[1], forState: UIControlState.Normal)
-        self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
-        self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
+        self.Button1.setTitle(BackendlessUserFunctions.sharedInstance.answers[0], forState: UIControlState.Normal)
+        self.Button2.setTitle(BackendlessUserFunctions.sharedInstance.answers[1], forState: UIControlState.Normal)
+        self.Button3.setTitle(BackendlessUserFunctions.sharedInstance.answers[2], forState: UIControlState.Normal)
+        self.Button4.setTitle(BackendlessUserFunctions.sharedInstance.answers[3], forState: UIControlState.Normal)
         self.HintButton.enabled = true
         timer.start()
         self.startAudioTimer()
       }
-  
     }
+  }
+  
+    //MARK: Remove Used Questions
     
-  }
-  
-  //MARK: Remove Used Questions
-  
-  func RemoveAlreadyUsedQuestion() {
-    if (questions.count > 0){
-      questions.removeAtIndex(randomQuestion)
-      print("\(randomQuestion)")
-      //randomID = currently asked question
-      populateViewWithData()
-      //getDataFromBackendless()
+    func RemoveAlreadyUsedQuestion() {
+      if (BackendlessUserFunctions.sharedInstance.questions.count > 0){
+        BackendlessUserFunctions.sharedInstance.questions.removeAtIndex(BackendlessUserFunctions.sharedInstance.randomQuestion)
+        populateViewWithData()
+      }
     }
-  }
   
   //MARK: Dismiss Q&A Buttons & Labels
   
@@ -368,7 +340,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func checkInitialTimer () {
-    if self.questions.count == 0 {
+    if BackendlessUserFunctions.sharedInstance.questions.count == 0 {
     } else {
       self.timerShakeAndReset()
     }
@@ -395,7 +367,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           self.view.layoutIfNeeded()
           }, completion: {_ in
             self.stopAudioTimer()
-            self.hideMadVaultBoyButtons(self.questions)
+            self.hideMadVaultBoyButtons(BackendlessUserFunctions.sharedInstance.questions)
             madVaultBoyRunning = false
         })
     })
@@ -452,7 +424,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
         UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion: {_ in
-            self.hideThumbsUpVaultBoyButtons(self.questions)
+            self.hideThumbsUpVaultBoyButtons(BackendlessUserFunctions.sharedInstance.questions)
             thumbsUpBoyRunning = false
             if self.hintButtonTapped == true {self.unHideBtns()
               self.hintButtonTapped = false
@@ -578,7 +550,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   @IBAction func Button1Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
-    if (self.answer == "0") {
+    if (BackendlessUserFunctions.sharedInstance.answer == "0") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
@@ -590,7 +562,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   @IBAction func Button2Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
-    if (self.answer == "1") {
+    if (BackendlessUserFunctions.sharedInstance.answer == "1") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
@@ -602,7 +574,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   @IBAction func Button3Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
-    if (self.answer == "2") {
+    if (BackendlessUserFunctions.sharedInstance.answer == "2") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
@@ -614,7 +586,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   @IBAction func Button4Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
-    if (self.answer == "3") {
+    if (BackendlessUserFunctions.sharedInstance.answer == "3") {
       audioController.playEffect(SoundButtonPressedCorrect)
       RightButtonSelected()
     } else {
@@ -638,7 +610,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     audioController.playEffect(SoundButtonPressed)
     self.HintButton.enabled = false
     self.hintButtonTapped = true
-    self.stringToInt = Int(self.answer)
+    self.stringToInt = Int(BackendlessUserFunctions.sharedInstance.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
     self.data.points -= pointsPerMultiHint
