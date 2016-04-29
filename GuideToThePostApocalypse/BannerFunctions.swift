@@ -11,10 +11,11 @@ import UIKit
 
 
 extension UIViewController {
+
   
   //MARK: ShowCongratulationsBanner()
   
-  func showCongratulationsBanner(banner: UIImageView, label: UILabel) {
+  func ShowCongratulationsBanner(banner: UIImageView, label: UILabel) {
     UIView.transitionWithView(banner, duration: 0.33, options: [.CurveEaseOut, .TransitionFlipFromLeft], animations: {
       banner.hidden = false
       label.hidden = false

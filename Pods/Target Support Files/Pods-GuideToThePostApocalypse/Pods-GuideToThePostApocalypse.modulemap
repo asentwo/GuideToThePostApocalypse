@@ -1,0 +1,6 @@
+framework module Pods_GuideToThePostApocalypse {
+  umbrella header "Pods-GuideToThePostApocalypse-umbrella.h"
+
+  export *
+  module * { export * }
+}

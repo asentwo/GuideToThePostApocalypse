@@ -7,26 +7,20 @@
 //
 
 import UIKit
-import Parse
 
 class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
-  
-  //MARK:Constants
-  
-  var round3_objectIDArray = [String]()
-  
   //MARK: IBOutlets
   
-  @IBOutlet var countDownLabel: UILabel!
-  @IBOutlet var questionLabel: UILabel!
-  @IBOutlet var button1: UIButton!
-  @IBOutlet var button2: UIButton!
-  @IBOutlet var button3: UIButton!
-  @IBOutlet var button4: UIButton!
-  @IBOutlet var playerScore: UILabel!
-  @IBOutlet var hintButton: UIButton!
-  @IBOutlet var backgroundImage: UIImageView!
+  @IBOutlet var CountDownLabel: UILabel!
+  @IBOutlet var QuestionLabel: UILabel!
+  @IBOutlet var Button1: UIButton!
+  @IBOutlet var Button2: UIButton!
+  @IBOutlet var Button3: UIButton!
+  @IBOutlet var Button4: UIButton!
+  @IBOutlet var PlayerScore: UILabel!
+  @IBOutlet var HintButton: UIButton!
+  @IBOutlet var BackgroundImage: UIImageView!
   
   //vaultBoy
   @IBOutlet weak var vaultBoyRight: UIImageView!
@@ -73,18 +67,49 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     
     labelSizeAdjustment()
     hideAllGraphics()
-    storeParseDataLocally_Round3()
+  
     fireworkImage.alpha = 0
+    
     
     let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
     totalScore = currentTotalScore
     self.data.points = totalScore
-    playerScore.text = "Score: \(totalScore)"
+    PlayerScore.text = "Score: \(totalScore)"
     currentRoundScore = 0
-    timer = CountdownTimer(timerLabel: self.countDownLabel, startingMin: 0, startingSec: 16)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
     timer.delegate = self
     userDefaults.setObject("Round_3", forKey: CURRENT_ROUND_KEY)
+
     
+    if self.questions == nil {
+       BackendlessUserFunctions.sharedInstance.getDataFromBackendless(3, rep: { ( questions : BackendlessCollection!) -> () in
+        print("Comments have been fetched:")
+        
+        self.questions = []
+        
+        for question in questions.data {
+          
+          let currentQuestion = question as! BackendlessUserFunctions.Questions
+          
+          self.questions.append(currentQuestion)
+        }
+        
+        dispatch_async(dispatch_get_main_queue()) {
+           self.tryAgainQuestions = self.questions
+          self.populateViewWithData()
+        }
+        }
+        , err: { ( fault : Fault!) -> () in
+          print("Questions were not fetched: \(fault)")
+        }
+      )
+    } else {
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tryAgainQuestions = self.questions
+        self.populateViewWithData()
+      }
+
+    }
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -99,103 +124,71 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   
-  //MARK: Parse
+  //MARK: Parse JSON
   
   //Random Object
   
-  func getRandomObjectID_Round3 () {
+  func GetRandomQuestion () {
     
-    randomID = Int(arc4random_uniform(UInt32(round3_objectIDArray.count)))
-    //creating random 32 bit interger from the objectIDs
-    
+    self.randomQuestion = Int(arc4random_uniform(UInt32(self.questions.count)))
+    //creating random 32 bit interger from the questions
   }
   
-  //Call Parse
-  
-  func callData_Round3 () {
+  func populateViewWithData() {
     
-    getRandomObjectID_Round3 ()
+    GetRandomQuestion() //used to randomize
     
-    if (round3_objectIDArray.count > 0) {
+    if self.questions.count > 0 {
+      let currentQuestion = self.questions[self.randomQuestion]
       
-      let query: PFQuery = PFQuery(className: "Round_3")
-      query.getObjectInBackgroundWithId(round3_objectIDArray[randomID], block:{
-        (objectHolder : PFObject?, error : NSError?) -> Void in
-        //holds all the objects (ie. questions & answers) created in parse.com
+      self.question = currentQuestion.question as String!
+      
+      let answersJson = currentQuestion.answers as String!
+      
+      let jsonData: NSData = answersJson.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+      
+      let answersArray = try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions(rawValue: 0)) as! NSArray
+      
+      self.answers = answersArray as! [String]
+      
+      
+      self.answer = currentQuestion.answer as String!
+      if (self.answers.count > 0) {
+        self.QuestionLabel.text = self.question
         
-        if (error == nil) {
-          self.question = objectHolder!["Question"] as! String!
-          self.answers = objectHolder!["Answers"] as! Array!
-          self.answer = objectHolder!["Answer"] as! String!
-          if (self.answers.count > 0) {
-            self.questionLabel.text = self.question
-            
-            self.button1.setTitle(self.answers[0], forState: UIControlState.Normal)
-            self.button2.setTitle(self.answers[1], forState: UIControlState.Normal)
-            self.button3.setTitle(self.answers[2], forState: UIControlState.Normal)
-            self.button4.setTitle(self.answers[3], forState: UIControlState.Normal)
-            self.hintButton.enabled = true
-            
-            timer.start()
-            self.startAudioTimer()
-          }
-          
-        } else {
-          NSLog("There is an error")
-        }
-      })
+        self.Button1.setTitle(self.answers[0], forState: UIControlState.Normal)
+        self.Button2.setTitle(self.answers[1], forState: UIControlState.Normal)
+        self.Button3.setTitle(self.answers[2], forState: UIControlState.Normal)
+        self.Button4.setTitle(self.answers[3], forState: UIControlState.Normal)
+        self.HintButton.enabled = true
+        timer.start()
+        self.startAudioTimer()
+      }
     }
   }
   
-  
-  //Store Parse Data Locally
-  
-  func storeParseDataLocally_Round3 () {
+    //MARK: Remove Used Questions
     
-    let objectIDQuery = PFQuery(className: "Round_3")
-    
-    objectIDQuery.findObjectsInBackgroundWithBlock({
-      (objectsArray : [PFObject]?, error : NSError?) -> Void in
-      
-      if error == nil {
-        var objectIDs = objectsArray
-        for i in 0..<objectIDs!.count{
-          self.round3_objectIDArray.append(objectIDs![i].objectId!)
-          //appending objects downloaded from Parse.com to local array (objectIDPublicArray) - .objectId refers to id number given in parse.com (ex."QF0lrQKW8j")
-        }
-      } else {
-        print("Error: \(error) \(error!.userInfo)")
+    func RemoveAlreadyUsedQuestion() {
+      if (self.questions.count > 0){
+        self.questions.removeAtIndex(self.randomQuestion)
+        populateViewWithData()
       }
-      dispatch_async(dispatch_get_main_queue()){
-        objectIDQuery.cachePolicy = PFCachePolicy.NetworkElseCache
-      }
-      self.callData_Round3()
-    })
-  }
-  
-  //MARK: Remove Used Questions
-  
-  func removeAlreadyUsedQuestion() {
-    if (round3_objectIDArray.count > 0){
-      round3_objectIDArray.removeAtIndex(randomID)
-      //randomID = currently asked question
-      callData_Round3()
     }
-  }
   
   //MARK: Dismiss Q&A Buttons & Labels
   
   func areBaseGraphicsHidden(buttons: Bool) {
     UIView.animateWithDuration(0.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [.CurveEaseOut], animations: {
-      self.button1.hidden = buttons
-      self.button2.hidden = buttons
-      self.button3.hidden = buttons
-      self.button4.hidden = buttons
-      self.questionLabel.hidden = buttons
-      self.playerScore.hidden = buttons
-      self.countDownLabel.hidden = buttons
-      self.backgroundImage.hidden = buttons
-      self.hintButton.hidden = buttons
+      self.Button1.hidden = buttons
+      self.Button2.hidden = buttons
+      self.Button3.hidden = buttons
+      self.Button4.hidden = buttons
+      self.QuestionLabel.hidden = buttons
+      self.PlayerScore.hidden = buttons
+      self.CountDownLabel.hidden = buttons
+      self.BackgroundImage.hidden = buttons
+      self.HintButton.hidden = buttons
       }, completion: nil)
   }
 
@@ -220,13 +213,13 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func labelSizeAdjustment () {
-    questionLabel.adjustsFontSizeToFitWidth = true
+    QuestionLabel.adjustsFontSizeToFitWidth = true
     youEarnedACoinLabel.adjustsFontSizeToFitWidth = true
     scoreLabel.adjustsFontSizeToFitWidth = true
     youFailedThisRoundLabel.adjustsFontSizeToFitWidth = true
     rightAnswerLabel.adjustsFontSizeToFitWidth = true
     wrongAnswerLabel.adjustsFontSizeToFitWidth = true
-    hintButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    HintButton.titleLabel?.adjustsFontSizeToFitWidth = true
   }
   
   //MARK: Buttons
@@ -249,7 +242,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   //Button Bounce
-  func bounceButton (button: UIButton) {
+  func BounceButton (button: UIButton) {
     let b = button.bounds
     UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
       button.bounds = CGRect(x: b.origin.x - 20, y: b.origin.y, width: b.size.width + 20, height: b.size.height)
@@ -262,7 +255,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //RightButtonSelected
   
-  func rightButtonSelected () {
+  func RightButtonSelected () {
     timer.pause()
     stopAudioTimer()
     thumbsUpVaultBoy()
@@ -271,23 +264,23 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   
   //WrongButtonSelected
-  func wrongButtonSelected(sender: AnyObject)
+  func WrongButtonSelected(sender: AnyObject)
   {
     switch sender.tag {
-    case 0: bounceButton(button1)
-    case 1: bounceButton(button2)
-    case 2: bounceButton(button3)
-    case 3: bounceButton(button4)
+    case 0: BounceButton(Button1)
+    case 1: BounceButton(Button2)
+    case 2: BounceButton(Button3)
+    case 3: BounceButton(Button4)
     default: print("Wrong Button Selected Error")
     }
   }
   
   func areButtonsEnabledButtons(enabled: Bool) {
-    button1.enabled = enabled
-    button2.enabled = enabled
-    button3.enabled = enabled
-    button4.enabled = enabled
-    hintButton.enabled = enabled
+    Button1.enabled = enabled
+    Button2.enabled = enabled
+    Button3.enabled = enabled
+    Button4.enabled = enabled
+    HintButton.enabled = enabled
   }
   
   
@@ -295,7 +288,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   func setUpWrongAnswers(rightAnswer: Int) {
     var answers = ["answer1","answer2","answer3","answer4"]
-    btnsArray = [button1, button2, button3, button4]
+    btnsArray = [Button1, Button2, Button3, Button4]
     wrongBtnsArray = btnsArray
     wrongBtnsArray.removeAtIndex(rightAnswer)
     answers.removeAtIndex(rightAnswer)
@@ -308,21 +301,21 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.data.points -= pointsPerWrongAnswer/2
     totalScore = self.data.points
     currentRoundScore = self.data.points
-    self.playerScore.text = "Score: \(totalScore)"
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScorePositive () {
     self.data.points += pointsPerQuestion
     totalScore = self.data.points
     currentRoundScore = self.data.points
-    self.playerScore.text = "Score: \(totalScore)"
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   func UpdateScoreRunOutOfTime () {
     self.data.points -= pointsTimeRunsOut
     totalScore = self.data.points
     currentRoundScore = self.data.points
-    self.playerScore.text = "Score: \(totalScore)"
+    self.PlayerScore.text = "Score: \(totalScore)"
   }
   
   
@@ -336,7 +329,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
       self.areButtonsEnabledButtons(false)
       self.UpdateScoreRunOutOfTime()
-      self.timerShake()
+      self.TimerShake()
       self.madVaultBoy()
     }
   }
@@ -348,7 +341,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   }
   
   func checkInitialTimer () {
-    if self.round3_objectIDArray.count == 0 {
+    if self.questions.count == 0 {
     } else {
       self.timerShakeAndReset()
     }
@@ -375,7 +368,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           self.view.layoutIfNeeded()
           }, completion: {_ in
             self.stopAudioTimer()
-            self.hideMadVaultBoyButtons(self.round3_objectIDArray)
+            self.hideMadVaultBoyButtons(self.questions)
             madVaultBoyRunning = false
         })
     })
@@ -386,9 +379,9 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     timer.pause()
     self.vaultboyToFront()
     self.vaultBoyWrong.hidden = false
-    self.audioController.playEffect(soundWrong)
+    self.audioController.playEffect(SoundWrong)
     self.UpdateScoreNegative()
-    self.removeAlreadyUsedQuestion()
+    self.RemoveAlreadyUsedQuestion()
     self.areButtonsEnabledButtons(false)
     self.UpdateScoreNegative()
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
@@ -396,7 +389,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
   }
   
-  func hideMadVaultBoyButtons(round:[String]) {
+  func hideMadVaultBoyButtons(round:[AnyObject]) {
     if round.count == 0 {
       self.areBaseGraphicsHidden(true)
       if self.currentRoundScore == 0 {
@@ -419,8 +412,8 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.vaultboyToFront()
     self.stopAudioTimer()
     timer.pause()
-    self.removeAlreadyUsedQuestion()
-    self.audioController.playEffect(soundDing)
+    self.RemoveAlreadyUsedQuestion()
+    self.audioController.playEffect(SoundDing)
     self.areButtonsEnabledButtons(false)
     UIView.transitionWithView(self.vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
@@ -432,18 +425,18 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
         UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           }, completion: {_ in
-            self.hideThumbsUpVaultBoyButtons(self.round3_objectIDArray)
+            self.hideThumbsUpVaultBoyButtons(self.questions)
             thumbsUpBoyRunning = false
             if self.hintButtonTapped == true {self.unHideBtns()
               self.hintButtonTapped = false
             }
-            self.hintButton.enabled = true
+            self.HintButton.enabled = true
         })
     })
   }
   
   
-  func hideThumbsUpVaultBoyButtons(round:[String] ) {
+  func hideThumbsUpVaultBoyButtons(round:[AnyObject] ) {
     if round.count == 0 {
       self.areBaseGraphicsHidden(true)
       self.congratulationsVaultBoy()
@@ -460,7 +453,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   func zeroScoreVaultBoy () {
     self.areBaseGraphicsHidden(true)
     self.stopAudioTimer()
-    self.audioController.playEffect(soundWrong)
+    self.audioController.playEffect(SoundWrong)
     self.tryAgainButton.hidden = false
     self.youFailedThisRoundLabel.hidden = false
     self.vaultBoyFailed.hidden = false
@@ -480,7 +473,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.areBaseGraphicsHidden(true)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
-    self.audioController.playEffect(soundWin)
+    self.audioController.playEffect(SoundWin)
     self.hintButtonTapped = false
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
@@ -500,9 +493,9 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           self.scoreLabel.hidden = true
           self.nextRoundButton.hidden = false
           self.youEarnedACoinLabel.hidden = false
-          self.audioController.playEffect(soundPerk)
-          let gif = UIImage.gifWithName("walkingDeadResize1")
-          self.coin.image = gif
+          self.audioController.playEffect(SoundPerk)
+          let Gif = UIImage.gifWithName("walkingDeadResize1")
+          self.coin.image = Gif
           self.coin.hidden = false
         })
     })
@@ -556,80 +549,80 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
   //MARK: IBActions
   
-  @IBAction func button1Action(sender: AnyObject) {
+  @IBAction func Button1Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "0") {
-      audioController.playEffect(soundButtonPressedCorrect)
-      rightButtonSelected()
+      audioController.playEffect(SoundButtonPressedCorrect)
+      RightButtonSelected()
     } else {
-      audioController.playEffect(soundButtonPressed)
-      wrongButtonSelected(button1)
+      audioController.playEffect(SoundButtonPressed)
+      WrongButtonSelected(Button1)
     }
   }
   
   
-  @IBAction func button2Action(sender: AnyObject) {
+  @IBAction func Button2Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "1") {
-      audioController.playEffect(soundButtonPressedCorrect)
-      rightButtonSelected()
+      audioController.playEffect(SoundButtonPressedCorrect)
+      RightButtonSelected()
     } else {
-      audioController.playEffect(soundButtonPressed)
-      wrongButtonSelected(button2)
+      audioController.playEffect(SoundButtonPressed)
+      WrongButtonSelected(Button2)
     }
   }
   
   
-  @IBAction func button3Action(sender: AnyObject) {
+  @IBAction func Button3Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "2") {
-      audioController.playEffect(soundButtonPressedCorrect)
-      rightButtonSelected()
+      audioController.playEffect(SoundButtonPressedCorrect)
+      RightButtonSelected()
     } else {
-      audioController.playEffect(soundButtonPressed)
-      wrongButtonSelected(button3)
+      audioController.playEffect(SoundButtonPressed)
+      WrongButtonSelected(Button3)
     }
   }
   
   
-  @IBAction func button4Action(sender: AnyObject) {
+  @IBAction func Button4Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "3") {
-      audioController.playEffect(soundButtonPressedCorrect)
-      rightButtonSelected()
+      audioController.playEffect(SoundButtonPressedCorrect)
+      RightButtonSelected()
     } else {
-      audioController.playEffect(soundButtonPressed)
-      wrongButtonSelected(button4)
+      audioController.playEffect(SoundButtonPressed)
+      WrongButtonSelected(Button4)
     }
   }
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     switchToRoundFour()
-    audioController.playEffect(soundButtonPressedCorrect)
+    audioController.playEffect(SoundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
-    audioController.playEffect(soundButtonPressed)
+    audioController.playEffect(SoundButtonPressed)
     restartViewController()
   }
   
   
   @IBAction func hintBtnTapped(sender: UIButton) {
-    audioController.playEffect(soundButtonPressed)
-    self.hintButton.enabled = false
+    audioController.playEffect(SoundButtonPressed)
+    self.HintButton.enabled = false
     self.hintButtonTapped = true
     self.stringToInt = Int(self.answer)
     self.setUpWrongAnswers(self.stringToInt!)
     self.hideAnAnswer(self.wrongAnswer(self.wrongAnswers.count))
     self.data.points -= pointsPerMultiHint
     totalScore = self.data.points
-    self.playerScore.text = "Score: \(totalScore)"
-    let b = hintButton.bounds
+    self.PlayerScore.text = "Score: \(totalScore)"
+    let b = HintButton.bounds
     UIView.animateWithDuration(0, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 20, options: [], animations: {
-      self.hintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)
+      self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width + 5, height: b.size.height + 5)
       //gives button bouncy effect
       }, completion: {_ in
-        self.hintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width, height: b.size.height)
+        self.HintButton.bounds = CGRect(x: b.origin.x, y: b.origin.y, width: b.size.width, height: b.size.height)
     })
   }
 }

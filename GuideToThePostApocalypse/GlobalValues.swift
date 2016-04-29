@@ -55,3 +55,12 @@ var SURVIVAL_KEY = "Survival"
 let userDefaults = NSUserDefaults.standardUserDefaults()
 let storyboard : UIStoryboard = UIStoryboard(name: "Survial", bundle: nil)
 
+//////////Backendless///////////////
+
+//var randomID: Int?
+////var objectIDArray: [Questions]?
+//
+//func GetRandomObjectID () {
+//  randomID = Int(arc4random_uniform(UInt32(objectIDArray!.count)))
+//  //creating random 32 bit interger from the objectIDs
+//}

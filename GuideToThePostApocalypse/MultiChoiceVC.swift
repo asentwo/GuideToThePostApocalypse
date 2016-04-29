@@ -9,15 +9,18 @@
 import Foundation
 import UIKit
 
-
 class MultiChoiceVC: UIViewController{
- 
-  //MARK: Parse Constants
-  var randomID = 0 //Used to represent question being displayed
+
+  var randomQuestion = 0
+  
+  var questions:[BackendlessUserFunctions.Questions]!
+  var tryAgainQuestions: [BackendlessUserFunctions.Questions]!
   
   var question: String!
   var answers: [String]!
   var answer: String!
+  var image: String!
+
   var wrongAnswers: [String]!
   var btnsArray: [UIButton]!
   var wrongBtnsArray: [UIButton]!
@@ -27,7 +30,6 @@ class MultiChoiceVC: UIViewController{
   var currentRoundScore = 0
   var data = GameScore()
   var audioController: AudioController!
-  var image: String!
   
   //MARK: ViewDidload
   

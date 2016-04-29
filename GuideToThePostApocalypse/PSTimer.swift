@@ -59,7 +59,7 @@ class CountdownTimer {
     
     func pause() {
         timing = false
-        timer.invalidate()
+   timer.invalidate()
     }
     
     func reset() {

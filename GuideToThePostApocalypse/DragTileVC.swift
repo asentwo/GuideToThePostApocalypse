@@ -10,14 +10,17 @@ import Foundation
 import UIKit
 
 class DragTileVC: UIViewController {
-
-  var randomID = 0 //Used to represent question being displayed
+  
+  var randomQuestion = 0
+  
+  var questions:[BackendlessUserFunctions.Questions]!
+  var tryAgainQuestions: [BackendlessUserFunctions.Questions]!
   
   var question: String!
-  var letters: String!
+  var answers: [String]!
   var answer: String!
   var image: String!
-  
+  var letters: String!  
   var lettersLength: Int!
   var answerLength: Int!
   
