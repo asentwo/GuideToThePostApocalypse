@@ -20,6 +20,9 @@ class MultiChoiceVC: UIViewController{
   var question: String!
   var answers: [String]!
   var answer: String!
+  var image: String!
+  var letters: String!
+
   
   
   var wrongAnswers: [String]!

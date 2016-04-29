@@ -10,13 +10,6 @@ import Foundation
 import UIKit
 
 class DragTileVC: UIViewController {
-
-  var randomID = 0 //Used to represent question being displayed
-  
-  var question: String!
-  var letters: String!
-  var answer: String!
-  var image: String!
   
   var lettersLength: Int!
   var answerLength: Int!

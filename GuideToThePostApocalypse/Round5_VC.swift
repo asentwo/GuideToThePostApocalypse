@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
 
@@ -70,6 +69,17 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     
     labelSizeAdjustment()
     hideAllGraphics()
+    
+    let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
+    totalScore = currentTotalScore
+    self.data.points = totalScore
+    self.data.points = totalScore
+    PlayerScore.text = "Score: \(totalScore)"
+    currentRoundScore = 0
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
+    timer.delegate = self
+    userDefaults.setObject("Round_5", forKey: CURRENT_ROUND_KEY)
+    fireworksImage.alpha = 0
 
     if BackendlessUserFunctions.sharedInstance.questions == nil {
       BackendlessUserFunctions.sharedInstance.getDataFromBackendless(5, rep: { ( questions : BackendlessCollection!) -> () in
@@ -96,18 +106,6 @@ class Round5_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     } else {
       populateViewWithData()
     }
-
-    
-    let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
-    totalScore = currentTotalScore
-    self.data.points = totalScore
-    self.data.points = totalScore
-    PlayerScore.text = "Score: \(totalScore)"
-    currentRoundScore = 0
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
-    timer.delegate = self
-    userDefaults.setObject("Round_5", forKey: CURRENT_ROUND_KEY)
-    fireworksImage.alpha = 0
   }
   
   override func viewWillAppear(animated: Bool) {

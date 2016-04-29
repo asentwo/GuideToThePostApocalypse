@@ -21,6 +21,7 @@ class BackendlessUserFunctions {
   var answers: [String]!
   var answer: String!
   var image: String!
+  var letters: String!
   
   private init() {
   

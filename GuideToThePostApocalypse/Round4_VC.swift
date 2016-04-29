@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Parse
+
 
 class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   
@@ -67,6 +67,16 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     labelSizeAdjustment()
     hideAllGraphics()
     
+    let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
+    totalScore = currentTotalScore
+    self.data.points = totalScore
+    PlayerScore.text = "Score: \(totalScore)"
+    currentRoundScore = 0
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
+    timer.delegate = self
+    userDefaults.setObject("Round_4", forKey: CURRENT_ROUND_KEY)
+
+    
     if BackendlessUserFunctions.sharedInstance.questions == nil {
       BackendlessUserFunctions.sharedInstance.getDataFromBackendless(4, rep: { ( questions : BackendlessCollection!) -> () in
         print("Comments have been fetched:")
@@ -93,15 +103,7 @@ class Round4_ViewController: MultiChoiceVC, CountdownTimerDelegate {
       populateViewWithData()
     }
 
-    let currentTotalScore = userDefaults.integerForKey(TOTAL_SCORE_SAVED_KEY)
-    totalScore = currentTotalScore
-    self.data.points = totalScore
-    PlayerScore.text = "Score: \(totalScore)"
-    currentRoundScore = 0
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
-    timer.delegate = self
-    userDefaults.setObject("Round_4", forKey: CURRENT_ROUND_KEY)
-  }
+    }
   
   
   override func viewWillAppear(animated: Bool) {

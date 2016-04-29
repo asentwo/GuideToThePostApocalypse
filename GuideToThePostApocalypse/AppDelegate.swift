@@ -32,10 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
     BackendlessUserFunctions.sharedInstance.backendless
     
-//    // Initialize Parse.
-//    Parse.setApplicationId("87A5spPzh2c4TyjG8cZBmpiLCCaruWVfXV567yR7",
-//      clientKey: "lio4F5ZLar678HBUfgstC8zuEfbfblJLpCcC4XQX")
-//    
+    // Initialize Parse.
+    Parse.setApplicationId("87A5spPzh2c4TyjG8cZBmpiLCCaruWVfXV567yR7",
+      clientKey: "lio4F5ZLar678HBUfgstC8zuEfbfblJLpCcC4XQX")
+//
 //    // [Optional] Track statistics around application opens.
 //    PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
     

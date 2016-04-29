@@ -69,8 +69,19 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
     
     labelSizeAdjustment()
     hideAllGraphics()
+
+    currentRoundScore = 0
+    PlayerScore.text = "Score: \(totalScore)"
     
-    if BackendlessUserFunctions.sharedInstance.questions == nil {
+   
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
+    timer.delegate = self
+  
+    userDefaults.setObject("Round_1", forKey: CURRENT_ROUND_KEY)
+    fireworksImage.alpha = 0
+
+    
+   // if BackendlessUserFunctions.sharedInstance.questions == nil {
       BackendlessUserFunctions.sharedInstance.getDataFromBackendless(1, rep: { ( questions : BackendlessCollection!) -> () in
         print("Comments have been fetched:")
         
@@ -92,18 +103,15 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
           print("Questions were not fetched: \(fault)")
         }
       )
-    } else {
-      populateViewWithData()
-    }
-    
-    currentRoundScore = 0
-    PlayerScore.text = "Score: \(totalScore)"
-    
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec: 16)
-    timer.delegate = self
-    userDefaults.setObject("Round_1", forKey: CURRENT_ROUND_KEY)
-    fireworksImage.alpha = 0
-  }
+//    } else {
+////      self.HintButton.enabled = true
+////      timer.start()
+////      self.startAudioTimer()
+//      populateViewWithData()
+//      print("\(BackendlessUserFunctions.sharedInstance.questions.count)")
+//    }
+//    
+     }
   
   override func viewWillAppear(animated: Bool) {
     
@@ -463,6 +471,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
     })
+    BackendlessUserFunctions.sharedInstance.questions = nil
   }
   
   
@@ -497,6 +506,7 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
           self.coin.hidden = false
         })
     })
+    BackendlessUserFunctions.sharedInstance.questions = nil
   }
   
   //MARK: Banner Animations
@@ -593,11 +603,13 @@ class Round1_ViewController:  MultiChoiceVC, CountdownTimerDelegate  {
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     audioController.playEffect(SoundButtonPressedCorrect)
+    BackendlessUserFunctions.sharedInstance.questions = []
     switchToRoundTwo()
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     audioController.playEffect(SoundButtonPressed)
+    BackendlessUserFunctions.sharedInstance.questions = []
     restartViewController()
   }
   
