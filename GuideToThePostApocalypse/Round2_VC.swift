@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+
 
 class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
@@ -83,7 +83,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.view.addSubview(buttons.hintBtn)
 
     //Timer/ Score
-    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:3)
+    timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:31)
     timer.delegate = self
     
     userDefaults.setObject("Round_2", forKey: CURRENT_ROUND_KEY)
@@ -93,23 +93,23 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     PlayerScore.text = "Score: \(totalScore)"
     currentRoundScore = 0
     
-    print("\(BackendlessUserFunctions.sharedInstance.questions.count)")
     
-//    if BackendlessUserFunctions.sharedInstance.questions == nil {
+    if self.questions == nil {
       BackendlessUserFunctions.sharedInstance.getDataFromBackendless(2, rep: { ( questions : BackendlessCollection!) -> () in
         print("Comments have been fetched:")
         
-        BackendlessUserFunctions.sharedInstance.questions = []
+        self.questions = []
         
         for question in questions.data {
           
           let currentQuestion = question as! BackendlessUserFunctions.Questions
           
-          BackendlessUserFunctions.sharedInstance.questions.append(currentQuestion)
+          self.questions.append(currentQuestion)
         }
         
         dispatch_async(dispatch_get_main_queue()) {
           
+          self.tryAgainQuestions = self.questions
           self.populateViewWithData()
         }
         }
@@ -117,9 +117,13 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           print("Questions were not fetched: \(fault)")
         }
       )
-//    } else {
-//      populateViewWithData()
-//    }
+    } else {
+      
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tryAgainQuestions = self.questions
+        self.populateViewWithData()
+      }
+    }
 
 
   }
@@ -143,7 +147,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   func GetRandomQuestion () {
     
-    BackendlessUserFunctions.sharedInstance.randomQuestion = Int(arc4random_uniform(UInt32(BackendlessUserFunctions.sharedInstance.questions.count)))
+    self.randomQuestion = Int(arc4random_uniform(UInt32(self.questions.count)))
     //creating random 32 bit interger from the questions
   }
   
@@ -156,19 +160,19 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     
     GetRandomQuestion() //used to randomize
     
-    if BackendlessUserFunctions.sharedInstance.questions.count > 0 {
-      let currentQuestion = BackendlessUserFunctions.sharedInstance.questions[BackendlessUserFunctions.sharedInstance.randomQuestion]
+    if self.questions.count > 0 {
+      let currentQuestion = self.questions[self.randomQuestion]
       
-      BackendlessUserFunctions.sharedInstance.question = currentQuestion.question as String!
-      BackendlessUserFunctions.sharedInstance.answer = currentQuestion.answer as String!
-      BackendlessUserFunctions.sharedInstance.image = currentQuestion.image as String!
-      BackendlessUserFunctions.sharedInstance.letters = currentQuestion.letters as String!
+      self.question = currentQuestion.question as String!
+      self.answer = currentQuestion.answer as String!
+      self.image = currentQuestion.image as String!
+      self.letters = currentQuestion.letters as String!
       
-     if (BackendlessUserFunctions.sharedInstance.questions.count > 0) {
-        self.QuestionLabel.text = BackendlessUserFunctions.sharedInstance.question
-        self.FalloutImage.image = UIImage(named: BackendlessUserFunctions.sharedInstance.image)
-        self.lettersLength = BackendlessUserFunctions.sharedInstance.letters.characters.count
-        self.answerLength = BackendlessUserFunctions.sharedInstance.answer.characters.count
+     if (self.questions.count > 0) {
+        self.QuestionLabel.text = self.question
+        self.FalloutImage.image = UIImage(named: self.image)
+        self.lettersLength = self.letters.characters.count
+        self.answerLength = self.answer.characters.count
       
         self.newTile()
         self.setTiles()
@@ -188,10 +192,10 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //MARK: Remove Used Questions
   
   func RemoveAlreadyUsedQuestion() {
-    if (BackendlessUserFunctions.sharedInstance.questions.count > 0){
-      BackendlessUserFunctions.sharedInstance.questions.removeAtIndex(BackendlessUserFunctions.sharedInstance.randomQuestion)
+    if (self.questions.count > 0){
+      self.questions.removeAtIndex(self.randomQuestion)
       populateViewWithData()
-      print("\(BackendlessUserFunctions.sharedInstance.questions.count)")
+      print("\(self.questions.count)")
     }
   }
   
@@ -233,7 +237,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         self.RemoveAlreadyUsedQuestion()
         userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
         userDefaults.synchronize()
-        if BackendlessUserFunctions.sharedInstance.questions.count == 0 {
+        if self.questions.count == 0 {
           self.areBaseGraphicsHidden(true)
           if self.currentRoundScore == 0 {
             self.mainTileTargetView.removeFromSuperview()
@@ -276,7 +280,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
         UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
           self.view.layoutIfNeeded()
           self.delay(1, closure: {
-            if BackendlessUserFunctions.sharedInstance.questions.count == 0 {
+            if self.questions.count == 0 {
               self.areBaseGraphicsHidden(true)
               self.CongratulationsVaultBoy()
               self.mainTileTargetView.removeFromSuperview()
@@ -407,7 +411,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func checkInitialTimer () {
-    if BackendlessUserFunctions.sharedInstance.questions.count == 0 {
+    if self.questions.count == 0 {
     } else {
       self.timerShakeAndReset()
     }
@@ -433,7 +437,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func newTile () {
-    print("\(BackendlessUserFunctions.sharedInstance.questions.count)")
+    print("\(self.questions.count)")
     switch mainTileTargetView {
     case tileTargetView0:
       let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
@@ -688,7 +692,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     //initialize target list
     targets = []
     //create targets
-    for (index, letter) in BackendlessUserFunctions.sharedInstance.answer.characters.enumerate() {
+    for (index, letter) in self.answer.characters.enumerate() {
       if letter != " " {
         let target = TargetView(letter: letter, sideLength: tileSide)
         target.center = CGPointMake(xOffset + CGFloat(index)*(tileSide + TileMargin), ScreenHeight/4*3)
@@ -716,7 +720,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     //1 initialize tile list
     tiles = []
     //2 create tiles
-    for (index, letter) in BackendlessUserFunctions.sharedInstance.letters.characters.enumerate() {
+    for (index, letter) in self.letters.characters.enumerate() {
       //3
       if letter != " " {
         let tile = TileView(letter: letter, sideLength: tileSide)

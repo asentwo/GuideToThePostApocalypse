@@ -11,6 +11,16 @@ import UIKit
 
 class DragTileVC: UIViewController {
   
+  var randomQuestion = 0
+  
+  var questions:[BackendlessUserFunctions.Questions]!
+  var tryAgainQuestions: [BackendlessUserFunctions.Questions]!
+  
+  var question: String!
+  var answers: [String]!
+  var answer: String!
+  var image: String!
+  var letters: String!  
   var lettersLength: Int!
   var answerLength: Int!
   
