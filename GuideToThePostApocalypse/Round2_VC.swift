@@ -76,13 +76,13 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     ButtonActions()
    
     //add tile view
-    let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+    let tileView = UIView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
     self.view.addSubview(tileView)
     self.tileTargetView0 = tileView
     self.mainTileTargetView = self.tileTargetView0
     self.view.addSubview(buttons.hintBtn)
 
-    //Timer/ Score
+    //timer/ Score
     timer = CountdownTimer(timerLabel: self.CountDownLabel, startingMin: 0, startingSec:31)
     timer.delegate = self
     
@@ -228,7 +228,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     madVaultBoyRunning = true
     self.vaultboyToFront()
     vaultBoyWrong.hidden = false
-    self.audioController.playEffect(SoundWrong)
+    self.audioController.playEffect(soundWrong)
     self.UpdateScoreNegative()
     self.vaultBoyWrongYConstraint.constant -= self.view.bounds.height
     UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
@@ -247,7 +247,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
             self.CongratulationsVaultBoy()
           }
         } else{
-          self.resetAllTimers()
+          self.resetAlltimers()
         }
         self.vaultBoyWrongYConstraint.constant += self.view.bounds.height
         UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [], animations: {
@@ -268,7 +268,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     self.stopAudioTimer()
     timer.pause()
     self.RemoveAlreadyUsedQuestion()
-    self.audioController.playEffect(SoundDing)
+    self.audioController.playEffect(soundDing)
     UIView.transitionWithView(vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
       
@@ -289,7 +289,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
               self.view.layoutIfNeeded()
               self.vaultBoyRight.hidden = true
               self.mainTileTargetView.hidden = false
-              self.resetAllTimers()
+              self.resetAlltimers()
             }
           })
           }, completion:{_ in
@@ -300,7 +300,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   }
   
   func ZeroScoreVaultBoy () {
-    self.audioController.playEffect(SoundWrong)
+    self.audioController.playEffect(soundWrong)
     self.tryAgain.hidden = false
     self.view.bringSubviewToFront(self.tryAgain)
     self.youFailedThisRound.hidden = false
@@ -318,7 +318,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   func CongratulationsVaultBoy() {
     self.stopAudioTimer()
     self.vaultBoySuccess.hidden = false
-    self.audioController.playEffect(SoundWin)
+    self.audioController.playEffect(soundWin)
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
     UIView.transitionWithView(vaultBoySuccess, duration: 0.7, options: [.TransitionFlipFromTop], animations: {
@@ -336,7 +336,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           self.scoreBanner.hidden = true
           self.scoreLabel.hidden = true
           self.youEarrnedACoin.hidden = false
-          self.audioController.playEffect(SoundPerk)
+          self.audioController.playEffect(soundPerk)
           let Gif = UIImage.gifWithName("fallout2Resize")
           self.coin.image = Gif
           self.coin.hidden = false
@@ -390,27 +390,27 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   
   
-  //MARK: Timer
+  //MARK: timer
   
   func countdownEnded() -> Void {
-    self.checkInitialTimer()
+    self.checkInitialtimer()
   }
   
   func timerShakeAndReset () {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
       self.UpdateScoreRunOutOfTime()
-      self.TimerShake()
+      self.timerShake()
       self.MadVaultBoy()
     }
   }
   
-  func resetAllTimers () {
+  func resetAlltimers () {
     timer.reset()
     timer.start()
     startAudioTimer()
   }
   
-  func checkInitialTimer () {
+  func checkInitialtimer () {
     if self.questions.count == 0 {
     } else {
       self.timerShakeAndReset()
@@ -440,14 +440,14 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
     print("\(self.questions.count)")
     switch mainTileTargetView {
     case tileTargetView0:
-      let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+      let tileView = UIView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
       self.view.addSubview(tileView)
       self.tileTargetView1 = tileView
       self.mainTileTargetView = self.tileTargetView1
       self.view.addSubview(buttons.hintBtn)
     case tileTargetView1:
       self.tileTargetView1.removeFromSuperview()
-      let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+      let tileView = UIView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
       self.view.addSubview(tileView)
       self.tileTargetView2 = tileView
       self.view.addSubview(tileTargetView2)
@@ -455,7 +455,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.view.addSubview(buttons.hintBtn)
     case tileTargetView2:
       self.tileTargetView2.removeFromSuperview()
-      let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+      let tileView = UIView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
       self.view.addSubview(tileView)
       self.tileTargetView3 = tileView
       self.view.addSubview(tileTargetView3)
@@ -463,7 +463,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.view.addSubview(buttons.hintBtn)
     case tileTargetView3:
       self.tileTargetView3.removeFromSuperview()
-      let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+      let tileView = UIView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
       self.view.addSubview(tileView)
       self.tileTargetView4 = tileView
       self.view.addSubview(tileTargetView4)
@@ -471,7 +471,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
       self.view.addSubview(buttons.hintBtn)
     case tileTargetView4:
       self.tileTargetView4.removeFromSuperview()
-      let tileView = UIView(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
+      let tileView = UIView(frame: CGRectMake(0, 0, screenWidth, screenHeight))
       self.view.addSubview(tileView)
       self.tileTargetView5 = tileView
       self.view.addSubview(tileTargetView5)
@@ -565,7 +565,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   //Give Hint
   
   func giveHint (sender: UIButton) {
-    audioController.playEffect(SoundHintButtonPressed)
+    audioController.playEffect(soundHintButtonPressed)
     self.buttons.hintBtn.enabled = false
     self.data.points -= pointsPerTile/2
     totalScore = self.data.points
@@ -602,7 +602,7 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
           //7 adjust view on spot
           if madVaultBoyRunning == false {
             self.placeTile(tile, targetView: target)
-            self.audioController.playEffect(SoundTileCorrect)
+            self.audioController.playEffect(soundTileCorrect)
             //8 re-enable the button
             self.buttons.hintButton.enabled = true
             //9 check for finished game
@@ -619,12 +619,12 @@ class Round2_ViewController: DragTileVC, CountdownTimerDelegate {
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     self.switchToRoundThree()
-    audioController.playEffect(SoundButtonPressedCorrect)
+    audioController.playEffect(soundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
     self.restartViewController()
-    audioController.playEffect(SoundButtonPressedCorrect)
+    audioController.playEffect(soundButtonPressedCorrect)
   }
   
 }
@@ -651,7 +651,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
         //3 called if tile is placed on right target
         placeTile(tileView, targetView: targetView)
         //4 sound tile was placed right target
-        audioController.playEffect(SoundTileCorrect)
+        audioController.playEffect(soundTileCorrect)
         //give points
         data.points += pointsPerTile
         //check if word is completed
@@ -671,7 +671,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
           },
                                    completion: nil)
         //more stuff to do on failure here
-        audioController.playEffect(SoundWrong)
+        audioController.playEffect(soundWrong)
         //take out points
         data.points -= pointsPerTile/2
         totalScore = self.data.points
@@ -684,9 +684,9 @@ extension Round2_ViewController:TileDragDelegateProtocol {
   func setTiles () {
     
     //calculate the tile size
-    let tileSide = ceil(ScreenWidth * 0.9 / CGFloat(max(lettersLength, answerLength))) - TileMargin
+    let tileSide = ceil(screenWidth * 0.9 / CGFloat(max(lettersLength, answerLength))) - TileMargin
     //get the left margin for first tile
-    var xOffset = (ScreenWidth - CGFloat(max(lettersLength, answerLength)) * (tileSide + TileMargin)) / 2.0
+    var xOffset = (screenWidth - CGFloat(max(lettersLength, answerLength)) * (tileSide + TileMargin)) / 2.0
     //adjust for tile center (instead of the tile's origin)
     xOffset += tileSide / 2.0
     //initialize target list
@@ -695,7 +695,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     for (index, letter) in self.answer.characters.enumerate() {
       if letter != " " {
         let target = TargetView(letter: letter, sideLength: tileSide)
-        target.center = CGPointMake(xOffset + CGFloat(index)*(tileSide + TileMargin), ScreenHeight/4*3)
+        target.center = CGPointMake(xOffset + CGFloat(index)*(tileSide + TileMargin), screenHeight/4*3)
         
         switch mainTileTargetView {
         case tileTargetView1:
@@ -724,7 +724,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
       //3
       if letter != " " {
         let tile = TileView(letter: letter, sideLength: tileSide)
-        tile.center = CGPointMake(xOffset + CGFloat(index)*(tileSide + TileMargin), ScreenHeight/7*6)
+        tile.center = CGPointMake(xOffset + CGFloat(index)*(tileSide + TileMargin), screenHeight/7*6)
         tile.dragDelegate = self
         
         switch mainTileTargetView {
@@ -789,7 +789,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     }
     self.stopAudioTimer()
     timer.pause()
-    audioController.playEffect(SoundStarDust)
+    audioController.playEffect(soundStarDust)
     
     //Points added to score
     self.data.points += pointsPerQuestion
@@ -799,7 +799,7 @@ extension Round2_ViewController:TileDragDelegateProtocol {
     // win animation
     let firstTarget = targets[0]
     let startX:CGFloat = 0
-    let endX:CGFloat = ScreenWidth + 300
+    let endX:CGFloat = screenWidth + 300
     let startY = firstTarget.center.y
     let stars = StardustView(frame: CGRectMake(startX, startY, 10, 10))
     self.view.addSubview(stars)

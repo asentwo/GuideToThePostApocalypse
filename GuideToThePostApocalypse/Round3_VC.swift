@@ -329,7 +329,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     if madVaultBoyRunning == false && thumbsUpBoyRunning == false {
       self.areButtonsEnabledButtons(false)
       self.UpdateScoreRunOutOfTime()
-      self.TimerShake()
+      self.timerShake()
       self.madVaultBoy()
     }
   }
@@ -379,7 +379,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     timer.pause()
     self.vaultboyToFront()
     self.vaultBoyWrong.hidden = false
-    self.audioController.playEffect(SoundWrong)
+    self.audioController.playEffect(soundWrong)
     self.UpdateScoreNegative()
     self.RemoveAlreadyUsedQuestion()
     self.areButtonsEnabledButtons(false)
@@ -413,7 +413,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.stopAudioTimer()
     timer.pause()
     self.RemoveAlreadyUsedQuestion()
-    self.audioController.playEffect(SoundDing)
+    self.audioController.playEffect(soundDing)
     self.areButtonsEnabledButtons(false)
     UIView.transitionWithView(self.vaultBoyRight, duration: 0.7, options: [.TransitionFlipFromBottom], animations: {
       self.vaultBoyRight.hidden = false
@@ -453,7 +453,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   func zeroScoreVaultBoy () {
     self.areBaseGraphicsHidden(true)
     self.stopAudioTimer()
-    self.audioController.playEffect(SoundWrong)
+    self.audioController.playEffect(soundWrong)
     self.tryAgainButton.hidden = false
     self.youFailedThisRoundLabel.hidden = false
     self.vaultBoyFailed.hidden = false
@@ -473,7 +473,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
     self.areBaseGraphicsHidden(true)
     self.view.bringSubviewToFront(vaultBoySuccess)
     self.vaultBoySuccess.hidden = false
-    self.audioController.playEffect(SoundWin)
+    self.audioController.playEffect(soundWin)
     self.hintButtonTapped = false
     userDefaults.setValue(totalScore, forKey: TOTAL_SCORE_SAVED_KEY)
     userDefaults.synchronize()
@@ -493,7 +493,7 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
           self.scoreLabel.hidden = true
           self.nextRoundButton.hidden = false
           self.youEarnedACoinLabel.hidden = false
-          self.audioController.playEffect(SoundPerk)
+          self.audioController.playEffect(soundPerk)
           let Gif = UIImage.gifWithName("walkingDeadResize1")
           self.coin.image = Gif
           self.coin.hidden = false
@@ -552,10 +552,10 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBAction func Button1Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "0") {
-      audioController.playEffect(SoundButtonPressedCorrect)
+      audioController.playEffect(soundButtonPressedCorrect)
       RightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
+      audioController.playEffect(soundButtonPressed)
       WrongButtonSelected(Button1)
     }
   }
@@ -564,10 +564,10 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBAction func Button2Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "1") {
-      audioController.playEffect(SoundButtonPressedCorrect)
+      audioController.playEffect(soundButtonPressedCorrect)
       RightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
+      audioController.playEffect(soundButtonPressed)
       WrongButtonSelected(Button2)
     }
   }
@@ -576,10 +576,10 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBAction func Button3Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "2") {
-      audioController.playEffect(SoundButtonPressedCorrect)
+      audioController.playEffect(soundButtonPressedCorrect)
       RightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
+      audioController.playEffect(soundButtonPressed)
       WrongButtonSelected(Button3)
     }
   }
@@ -588,27 +588,27 @@ class Round3_ViewController: MultiChoiceVC, CountdownTimerDelegate {
   @IBAction func Button4Action(sender: AnyObject) {
     areButtonsEnabledButtons(false)
     if (self.answer == "3") {
-      audioController.playEffect(SoundButtonPressedCorrect)
+      audioController.playEffect(soundButtonPressedCorrect)
       RightButtonSelected()
     } else {
-      audioController.playEffect(SoundButtonPressed)
+      audioController.playEffect(soundButtonPressed)
       WrongButtonSelected(Button4)
     }
   }
   
   @IBAction func nextRoundButton(sender: AnyObject) {
     switchToRoundFour()
-    audioController.playEffect(SoundButtonPressedCorrect)
+    audioController.playEffect(soundButtonPressedCorrect)
   }
   
   @IBAction func tryRoundAgainButton(sender: AnyObject) {
-    audioController.playEffect(SoundButtonPressed)
+    audioController.playEffect(soundButtonPressed)
     restartViewController()
   }
   
   
   @IBAction func hintBtnTapped(sender: UIButton) {
-    audioController.playEffect(SoundButtonPressed)
+    audioController.playEffect(soundButtonPressed)
     self.HintButton.enabled = false
     self.hintButtonTapped = true
     self.stringToInt = Int(self.answer)
